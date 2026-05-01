@@ -135,6 +135,60 @@ const reportDots = [0, 1]
   )
   .join("")
 
+const cardiacWireServicesSection = `
+    <section
+      class="figma-section sm-cardiac-wire"
+      id="cardiac-wire-interview"
+      aria-labelledby="sm-cw-heading-services"
+      data-sm-cardiac-root
+    >
+      <div class="figma-container sm-cardiac-wire__inner">
+        <h2 id="sm-cw-heading-services" class="figma-h2 figma-h2--center">
+          Hear How Specialized Medical&rsquo;s<br>
+          <span class="figma-h2__accent">Monitoring System Works</span>
+        </h2>
+        <p class="sm-cardiac-wire__lead">
+          Watch Steven M. Burns, President &amp; CEO of Specialized Medical, discuss the company&rsquo;s live-streaming ECG technology, stay-connected cellular system, patient-friendly monitor design, and turnkey support model in this Cardiac Wire interview.
+        </p>
+        <div class="sm-cardiac-wire__toolbar">
+          <a
+            class="figma-btn figma-btn--solid"
+            href="#sm-cardiac-wire-media-services"
+            data-sm-cardiac-watch
+            aria-label="Watch the Cardiac Wire interview (scrolls to the interview video area)"
+          >Watch the Interview</a>
+        </div>
+        <!-- When the Cardiac Wire interview embed URL is available, set data-sm-cardiac-embed on the slot below (e.g. https://www.youtube.com/embed/VIDEO_ID). The iframe loads lazily when the section enters the viewport or when "Watch the Interview" is clicked. -->
+        <div
+          class="sm-cardiac-wire__slot"
+          id="sm-cardiac-wire-media-services"
+          data-sm-cardiac-embed-slot
+          data-sm-cardiac-embed=""
+        >
+          <img
+            class="sm-cardiac-wire__poster"
+            src="${img("live-streaming-ecg.jpg")}"
+            alt="Cardiac Wire interview with Steven M. Burns, President &amp; CEO of Specialized Medical, discussing live-streaming ECG technology and ambulatory cardiac monitoring services."
+            width="1200"
+            height="675"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+        <div class="sm-cardiac-wire__pilot">
+          <p class="sm-cardiac-wire__pilot-text">
+            Interested in seeing how Specialized Medical can support your practice or organization?
+            Contact us to schedule a no-risk pilot program and experience our live-streaming ECG technology, simplified workflow, and turnkey cardiac monitoring support firsthand.
+          </p>
+          <a
+            class="figma-btn figma-btn--solid"
+            href="contact.html"
+            aria-label="Schedule a no-risk pilot program with Specialized Medical"
+          >Schedule a No-Risk Pilot</a>
+        </div>
+      </div>
+    </section>`
+
 const main = `<main class="services-page services-page--figma" data-design="figma-27-13">
     <section class="svc-hero" aria-labelledby="svc-hero-heading">
       <div class="svc-hero__plate">
@@ -170,6 +224,8 @@ const main = `<main class="services-page services-page--figma" data-design="figm
         </div>
       </div>
     </section>
+
+${cardiacWireServicesSection}
 
     <section class="figma-section svc-split" aria-labelledby="svc-four-heading">
       <div class="figma-container">
@@ -643,7 +699,7 @@ ${renderHeader({ base: "", active: "services" })}
 ${main}
 ${renderFooter({ base: "" })}
   </div>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20260501" defer></script>
   <script src="js/services-report-carousel.js" defer></script>
 </body>
 </html>`

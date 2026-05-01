@@ -492,6 +492,67 @@
     });
   }
 
+  function mountCardiacWireIframe(slot, src) {
+    if (!slot || !src) return false;
+    if (slot.getAttribute("data-sm-cardiac-mounted") === "1") return true;
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute("src", src);
+    iframe.setAttribute("loading", "lazy");
+    iframe.setAttribute(
+      "title",
+      "Cardiac Wire interview with Steven M. Burns, President & CEO of Specialized Medical, discussing live-streaming ECG technology and ambulatory cardiac monitoring services."
+    );
+    iframe.setAttribute("allowfullscreen", "");
+    iframe.setAttribute(
+      "allow",
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    );
+    iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    iframe.className = "sm-cardiac-wire__iframe";
+    slot.innerHTML = "";
+    slot.appendChild(iframe);
+    slot.setAttribute("data-sm-cardiac-mounted", "1");
+    return true;
+  }
+
+  function initCardiacWireEmbed() {
+    qsa("[data-sm-cardiac-root]").forEach(function (root) {
+      var slot = qs("[data-sm-cardiac-embed-slot]", root);
+      if (!slot) return;
+      var src = (slot.getAttribute("data-sm-cardiac-embed") || "").trim();
+      if (!src) return;
+
+      var io;
+      if ("IntersectionObserver" in window) {
+        io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (en) {
+              if (!en.isIntersecting) return;
+              if (io) io.disconnect();
+              mountCardiacWireIframe(slot, src);
+            });
+          },
+          { rootMargin: "120px", threshold: 0.01 }
+        );
+        io.observe(slot);
+      }
+
+      qsa("a[data-sm-cardiac-watch]", root).forEach(function (a) {
+        a.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          mountCardiacWireIframe(slot, src);
+          try {
+            slot.scrollIntoView({ behavior: "smooth", block: "center" });
+          } catch (_) {}
+          try {
+            var ifr = qs("iframe", slot);
+            if (ifr) ifr.focus();
+          } catch (_) {}
+        });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     fixRelativeAnchorsToSiteRoot();
     initInternalRootLinks();
@@ -517,5 +578,6 @@
     initVideoPlayStub();
     initOverviewVideo();
     initEcgVideoEndTrim();
+    initCardiacWireEmbed();
   });
 })();

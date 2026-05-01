@@ -1,54 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-    <script>
-    (function (w, d) {
-      function siteRootPathname() {
-        var segs = w.location.pathname.split("/").filter(Boolean)
-        // Some hosting panels / preview URLs can include a filesystem-like prefix
-        // such as /home/<user>/public_html/<site>/... . If present, strip it so
-        // <base href> always points at the public site path.
-        var ph = segs.lastIndexOf("public_html")
-        if (ph !== -1) segs = segs.slice(ph + 1)
-        var leaf = { about: 1, services: 1, faq: 1, contact: 1, "clinical-stories": 1, thanks: 1, "404": 1 }
-        while (segs.length) {
-          var last = segs[segs.length - 1]
-          if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {
-            segs.length -= 2
-            break
-          }
-          if (/\.html$/i.test(last)) {
-            segs.pop()
-            continue
-          }
-          if (leaf[last]) {
-            segs.pop()
-            continue
-          }
-          break
-        }
-        return "/" + (segs.join("/") + (segs.length ? "/" : ""))
-      }
-      var p = siteRootPathname()
-      var h = w.location.origin + (p === "/" ? "/" : p)
-      var b = d.createElement("base")
-      b.href = h
-      var m = d.head.querySelector("meta[charset]")
-      if (m && typeof m.insertAdjacentElement === "function") {
-        m.insertAdjacentElement("afterend", b)
-      } else if (m && m.nextSibling) {
-        d.head.insertBefore(b, m.nextSibling)
-      } else {
-        d.head.insertBefore(b, d.head.firstChild)
-      }
-    })(window, document)
-  </script>
-  <!-- sm-site-base -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services | Specialized Medical</title>
   <meta name="description" content="Holter, extended Holter, event monitoring, and MCT with live-streaming ECG data, streamlined workflow, and zero-cost equipment—built around the S-Patch Monitoring System.">
-  <link rel="icon" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -69,14 +25,14 @@
         <button type="button" class="nav-overlay" aria-label="Close menu" hidden></button>
         <nav id="primary-nav" class="figma-nav" aria-label="Primary">
           <a class="figma-nav__link" href="./">Home</a>
-          <a class="figma-nav__link" href="about.html">About Us</a>
+          <a class="figma-nav__link" href="about/">About Us</a>
           <a class="figma-nav__link is-active" href="services/">Services</a>
-          <a class="figma-nav__link" href="faq.html">FAQs</a>
-          <a class="figma-nav__link" href="contact.html">Contact</a>
+          <a class="figma-nav__link" href="faq/">FAQs</a>
+          <a class="figma-nav__link" href="contact/">Contact</a>
           <div class="figma-nav__mobile">
             <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
+              <a class="figma-btn figma-btn--outline-dark" href="contact/#contact-form">Request a Demo</a>
               <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
@@ -86,19 +42,11 @@
             <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
+          <a class="figma-btn figma-btn--outline-dark" href="contact/">Request a Demo</a>
           <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
     </header>
-
-
-
-
-
-
-
-
 
 <main class="services-page services-page--figma" data-design="figma-27-13">
     <section class="svc-hero" aria-labelledby="svc-hero-heading">
@@ -156,6 +104,60 @@
             <h3 class="svc-breakdown-card__title">MCT (Telemetry)</h3>
             <p class="svc-breakdown-card__meta">For post-TAVR patients</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section
+      class="figma-section sm-cardiac-wire"
+      id="cardiac-wire-interview"
+      aria-labelledby="sm-cw-heading-services"
+      data-sm-cardiac-root
+    >
+      <div class="figma-container sm-cardiac-wire__inner">
+        <h2 id="sm-cw-heading-services" class="figma-h2 figma-h2--center">
+          Hear How Specialized Medical&rsquo;s<br>
+          <span class="figma-h2__accent">Monitoring System Works</span>
+        </h2>
+        <p class="sm-cardiac-wire__lead">
+          Watch Steven M. Burns, President &amp; CEO of Specialized Medical, discuss the company&rsquo;s live-streaming ECG technology, stay-connected cellular system, patient-friendly monitor design, and turnkey support model in this Cardiac Wire interview.
+        </p>
+        <div class="sm-cardiac-wire__toolbar">
+          <a
+            class="figma-btn figma-btn--solid"
+            href="#sm-cardiac-wire-media-services"
+            data-sm-cardiac-watch
+            aria-label="Watch the Cardiac Wire interview (scrolls to the interview video area)"
+          >Watch the Interview</a>
+        </div>
+        <!-- When the Cardiac Wire interview embed URL is available, set data-sm-cardiac-embed on the slot below (e.g. https://www.youtube.com/embed/VIDEO_ID). The iframe loads lazily when the section enters the viewport or when "Watch the Interview" is clicked. -->
+        <div
+          class="sm-cardiac-wire__slot"
+          id="sm-cardiac-wire-media-services"
+          data-sm-cardiac-embed-slot
+          data-sm-cardiac-embed=""
+        >
+          <img
+            class="sm-cardiac-wire__poster"
+            src="images/figma-services/live-streaming-ecg.jpg"
+            alt="Cardiac Wire interview with Steven M. Burns, President &amp; CEO of Specialized Medical, discussing live-streaming ECG technology and ambulatory cardiac monitoring services."
+            width="1200"
+            height="675"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+        <div class="sm-cardiac-wire__pilot">
+          <p class="sm-cardiac-wire__pilot-text">
+            Interested in seeing how Specialized Medical can support your practice or organization?
+            Contact us to schedule a no-risk pilot program and experience our live-streaming ECG technology, simplified workflow, and turnkey cardiac monitoring support firsthand.
+          </p>
+          <a
+            class="figma-btn figma-btn--solid"
+            href="contact.html"
+            aria-label="Schedule a no-risk pilot program with Specialized Medical"
+          >Schedule a No-Risk Pilot</a>
         </div>
       </div>
     </section>
@@ -230,7 +232,7 @@
       <div class="figma-container">
         <div class="svc-split__inner">
           <div class="svc-split__copy">
-            <a class="svc-split__eyebrow" href="services/equipment.html">
+            <a class="svc-split__eyebrow" href="services/equipment/">
               <span class="svc-split__eyebrow-dot" aria-hidden="true"></span>
               Monitoring Equipment Options
             </a>
@@ -255,7 +257,7 @@
               <li>Live-streaming, real-time ECG data</li>
               <li>No manual uploading</li>
             </ul>
-            <a class="figma-btn figma-btn--solid" href="services/equipment.html">
+            <a class="figma-btn figma-btn--solid" href="services/equipment/">
               Compare Monitoring Systems
             </a>
           </div>
@@ -304,7 +306,7 @@
               <li>Secondary option where needed</li>
               <li>Separate system from S-Patch</li>
             </ul>
-            <a class="figma-btn figma-btn--solid" href="services/equipment.html">
+            <a class="figma-btn figma-btn--solid" href="services/equipment/">
               Compare Monitoring Systems
             </a>
           </div>
@@ -486,7 +488,7 @@
         <div class="svc-cases__more-wrap">
           <a
             class="figma-btn figma-btn--outline-dark svc-cases__more-btn"
-            href="clinical-stories.html"
+            href="clinical-stories/"
           >View clinical stories</a>
         </div>
       </div>
@@ -548,7 +550,7 @@
               runs at least 10 days per battery, and is water-resistant (IP55)—with
               industry-leading ECG clarity, including precise P-wave definition.
               <strong>Lead-Wire</strong> specifications differ; see
-              <a class="svc-split__inline-link" href="services/equipment.html">Monitoring Equipment Options</a>.
+              <a class="svc-split__inline-link" href="services/equipment/">Monitoring Equipment Options</a>.
             </p>
           </div>
           <div class="svc-split__media" style="border-radius: 30px">
@@ -600,7 +602,10 @@
             See how Specialized Medical can support your practice with: live-streaming
             ECG data; simplified office workflow.
           </p>
-          <p class="figma-cta__p">Anyone can make promises. We would rather prove it. Try Specialized Medical on a few patients with no hassle and no obligation.</p>
+          <p class="figma-cta__p">
+            Evaluate Specialized Medical with a small, no-obligation beta trial. If it
+            isn’t the right fit, we’ll take everything back—no hassle.
+          </p>
           <div class="figma-cta__actions">
             <a class="figma-btn figma-btn--solid" href="contact.html">
               Start Your No-Risk Beta Trial
@@ -626,10 +631,10 @@
           <div class="figma-footer__contact">
             <nav class="figma-footer__nav" aria-label="Footer">
               <a href="./">Home</a>
-              <a href="about.html">About Us</a>
-             <a href="services.html">Services</a>
-              <a href="faq.html">FAQs</a>
-              <a href="contact.html">Contact</a>
+              <a href="about/">About Us</a>
+              <a href="services/">Services</a>
+              <a href="faq/">FAQs</a>
+              <a href="contact/">Contact</a>
               <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </nav>
             <div class="figma-footer__line">
@@ -669,16 +674,8 @@
       </div>
     </footer>
 
-
-
-
-
-
-
-
-
   </div>
-  <script src="js/main.js?v=20260430" defer></script>
+  <script src="js/main.js?v=20260501" defer></script>
   <script src="js/services-report-carousel.js" defer></script>
 </body>
 </html>
