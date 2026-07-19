@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Block admin or sensitive areas if they exist
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /tmp/
+Disallow: /*.jsp
+
+# Allow important assets
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap
+Sitemap: https://www.specialized-med.com/sitemap.xml

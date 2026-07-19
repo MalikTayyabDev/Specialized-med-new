@@ -2,6 +2,18 @@
  * Specialized Medical — static site behaviors (nav, FAQ, contact form, hero CSS bg fallback).
  */
 (function () {
+
+  if (window.location.protocol === "http:") {
+    window.location.replace(
+        "https://" +
+        window.location.host +
+        window.location.pathname +
+        window.location.search +
+        window.location.hash
+    );
+}
+
+
   function getSiteRootPath() {
     // We deploy sometimes under a subfolder (e.g. /specialized-medical/static-site/).
     // Derive the site "root" from this script tag URL so asset paths always resolve.
@@ -188,6 +200,22 @@
         }
       });
     });
+
+    if (window.location.hash) {
+      var btn = document.querySelector(window.location.hash);
+  
+      if (btn) {
+          btn.click();
+  
+          setTimeout(function () {
+              btn.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center"
+              });
+          }, 100);
+      }
+  }
+
   }
 
   function initFaqTestimonialsCarousel() {
@@ -580,4 +608,6 @@
     initEcgVideoEndTrim();
     initCardiacWireEmbed();
   });
+
+  
 })();

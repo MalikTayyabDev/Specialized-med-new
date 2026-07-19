@@ -98,7 +98,7 @@ const FAQ_SECTIONS = [
       },
       {
         q: "How long is the monitoring period?",
-        a: "Duration depends on the clinical test ordered—Holter, extended Holter, event, or telemetry (MCT). Your team selects the study length that matches the clinical question.",
+        a: "Duration depends on the clinical test ordered—Holter Monitoring,  Long-Term Holter Monitoring, event, or Mobile Cardiac Telemetry (MCT). Your team selects the study length that matches the clinical question.",
       },
       {
         q: "How do patients return the monitor?",

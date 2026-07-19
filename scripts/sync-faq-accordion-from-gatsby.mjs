@@ -30,7 +30,7 @@ const SECTIONS = [
     items: [
       {
         q: "How does the office workflow work?",
-        a: "Your medical assistant completes a simple 3-step process: Enroll in web Portal → Hook Up → Disconnect (Under 15 Minutes). The workflow is designed to be straightforward for office staff and easy to repeat across patients. Once the patient is enrolled and leaves the office, Specialized Medical takes over the rest with continuous monitoring, real-time alerts, report generation, and patient support.",
+        a: "Your clinical staff can complete setup a simple 3-step process: Enroll in Web Portal → Hook Up → Disconnect (Under 15 Minutes). The workflow is designed to be straightforward for office staff and easy to repeat across patients. Once the patient is enrolled and leaves the office, Specialized Medical takes over the rest with continuous monitoring, real-time alerts, report generation, and patient support.",
       },
       {
         q: "How long does setup take?",

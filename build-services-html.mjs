@@ -34,8 +34,8 @@ const ECG_APP_VIDEO_SRC =
 
 const BREAKDOWN = [
   ["Holter", "24–48 hours"],
-  ["Extended Holter", "Greater than 48 hours up to 7 days"],
-  ["Extended Holter", "Greater than 7 days up to 14 days"],
+  ["Long-Term Holter Monitoring", "Greater than 48 hours up to 7 days"],
+  ["Long-Term Holter Monitoring", "Greater than 7 days up to 14 days"],
   ["Event Monitoring", "1 to 30 days"],
   ["MCT (Telemetry)", "1 to 30 days"],
   ["MCT (Telemetry)", "For post-TAVR patients"],
@@ -208,7 +208,7 @@ const main = `<main class="services-page services-page--figma" data-design="figm
           </p>
           <div class="svc-hero__actions">
             <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
-            <a class="figma-btn figma-btn--solid" href="contact.html">Start Your No-Risk Beta Trial</a>
+            <a class="figma-btn figma-btn--solid" href="contact.html">Start Your No-Risk Pilot Program</a>
           </div>
         </div>
       </div>
@@ -236,7 +236,7 @@ ${cardiacWireServicesSection}
               <span class="svc-split__title-accent">one consistent workflow</span>
             </h2>
             <p class="svc-split__text">
-              Support Holter, Extended Holter, Event Monitoring, and Telemetry (MCT)
+              Support Holter Monitoring,  Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry (MCT)
               through a turnkey monitoring program built around the S-Patch Monitoring
               System.
             </p>
@@ -307,7 +307,7 @@ ${cardiacWireServicesSection}
             <p class="svc-split__text">
               <strong>Primary Featured System.</strong> The S-Patch Monitoring System is
               Specialized Medical’s primary featured monitoring solution. It supports
-              Holter, Extended Holter, Event Monitoring, and Telemetry (MCT) while
+              Holter Monitoring,  Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry (MCT) while
               delivering live-streaming, real-time ECG data through a compact,
               patient-friendly design.
             </p>
@@ -318,7 +318,7 @@ ${cardiacWireServicesSection}
             </p>
             <ul class="svc-split__list">
               <li>Primary featured system for Specialized Medical</li>
-              <li>Supports Holter, Extended Holter, Event Monitoring, and Telemetry (MCT)</li>
+              <li>Supports Holter Monitoring,  Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry (MCT)</li>
               <li>Live-streaming, real-time ECG data</li>
               <li>No manual uploading</li>
             </ul>
@@ -386,8 +386,8 @@ ${cardiacWireServicesSection}
           <span class="svc-workflow__heading-accent">for Your Office</span>
         </h2>
         <p class="svc-workflow__sub">
-          Your medical assistant completes a simple 3-step process:
-          <strong>Enroll in web Portal → Hook Up → Disconnect</strong>
+          Your clinical staff can complete setup a simple 3-step process:
+          <strong>Enroll in Web Portal → Hook Up → Disconnect</strong>
           <strong>(Under 15 Minutes)</strong>
         </p>
         <div class="svc-workflow__panel">
@@ -668,7 +668,7 @@ ${cardiacWireServicesSection}
           </p>
           <div class="figma-cta__actions">
             <a class="figma-btn figma-btn--solid" href="contact.html">
-              Start Your No-Risk Beta Trial
+              Start Your No-Risk Pilot Program
             </a>
             <a class="figma-cta__talk" href="contact.html">
                 Talk to our team →
@@ -685,7 +685,7 @@ const doc = `<!DOCTYPE html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services | Specialized Medical</title>
-  <meta name="description" content="Holter, extended Holter, event monitoring, and MCT with live-streaming ECG data, streamlined workflow, and zero-cost equipment—built around the S-Patch Monitoring System.">
+  <meta name="description" content="Holter Monitoring,  Long-Term Holter Monitoring, event monitoring, and MCT with live-streaming ECG data, streamlined workflow, and zero-cost equipment—built around the S-Patch Monitoring System.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">

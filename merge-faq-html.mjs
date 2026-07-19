@@ -94,7 +94,7 @@ ${frag}
             <p class="figma-cta__p figma-cta__p--lead">See how Specialized Medical can support your practice with: live-streaming ECG data; simplified office workflow.</p>
             <p class="figma-cta__p">Evaluate Specialized Medical with a small, no-obligation beta trial. If it isn’t the right fit, we’ll take everything back—no hassle.</p>
             <div class="figma-cta__actions">
-              <a class="figma-btn figma-btn--solid" href="contact.html">Start Your No-Risk Beta Trial</a>
+              <a class="figma-btn figma-btn--solid" href="contact.html">Start Your No-Risk Pilot Program</a>
               <a class="figma-cta__talk" href="contact.html">Talk to Our Team→</a>
             </div>
           </div>

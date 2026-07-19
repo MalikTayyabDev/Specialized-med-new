@@ -26,7 +26,7 @@ function escapeHtml(s) {
 
 const SPATCH_SPECS = [
   "4-in-1 monitoring system",
-  "Supports Holter, Extended Holter, Event, and Telemetry (MCT)",
+  "Supports Holter Monitoring,  Long-Term Holter Monitoring, Event, and Mobile Cardiac Telemetry (MCT)",
   "Live-streaming, real-time ECG data. Continuous, resilient real-time data streaming even in rural areas",
   "No manual uploading",
   "No data delays",
@@ -47,7 +47,7 @@ const SPATCH_SPECS = [
 ]
 
 const FEATURE_HIGHLIGHTS = [
-  "Supports Holter, Extended Holter, Event Monitoring, and Telemetry (MCT)",
+  "Supports Holter Monitoring,  Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry (MCT)",
   "Simplified office workflow",
   "Designed for strong patient comfort and wearability",
   "Very small, lightweight dual-disk design—many patients forget they are wearing it",
@@ -59,7 +59,7 @@ const FEATURE_HIGHLIGHTS = [
 
 const LEAD_SPECS = [
   "4-in-1 live-streaming monitoring system",
-  "Supports Holter, Extended Holter, Event, and Telemetry (MCT)",
+  "Supports Holter Monitoring,  Long-Term Holter Monitoring, Event, and Mobile Cardiac Telemetry (MCT)",
   "Live-streaming monitoring capability",
   "No manual uploading",
   "Dimensions: 4.2 in × 2.6 in × 0.8 in",
@@ -113,7 +113,7 @@ const main = `<main class="equipment-page equipment-page--figma" data-design="fi
             ["Weight", "0.6 oz", "4 oz (113 g)"],
             ["Battery", "Minimum 10 days", "Change every 2 days"],
             ["Water resistance", "IP55", "Varies (see device specs)"],
-            ["Workflow", "Enroll in web Portal → Hook Up → Disconnect", "Enroll in web Portal → Hook Up → Disconnect"],
+            ["Workflow", "Enroll in Web Portal → Hook Up → Disconnect", "Enroll in Web Portal → Hook Up → Disconnect"],
             ["Positioning", "Primary featured system", "Secondary / legacy option"],
           ]
             .map(
@@ -140,7 +140,7 @@ const main = `<main class="equipment-page equipment-page--figma" data-design="fi
               </h2>
               <p class="eq-panel__tag">Primary Featured System</p>
               <p class="eq-panel__text">
-                The S-Patch Monitoring System is Specialized Medical’s primary featured monitoring solution. It supports Holter, Extended Holter, Event Monitoring, and Telemetry (MCT) while delivering live-streaming, real-time ECG data through a compact, patient-friendly design.
+                The S-Patch Monitoring System is Specialized Medical’s primary featured monitoring solution. It supports Holter Monitoring,  Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry (MCT) while delivering live-streaming, real-time ECG data through a compact, patient-friendly design.
               </p>
               <p class="eq-panel__text">
                 Our platform is designed for continuous, resilient real-time data streaming across a wide range of patient environments, including rural areas. Data is sent live to our monitoring center—no manual uploading and no data delays.
@@ -236,7 +236,7 @@ const main = `<main class="equipment-page equipment-page--figma" data-design="fi
           </p>
           <div class="figma-cta__actions">
             <a class="figma-btn figma-btn--solid" href="../contact.html">
-              Start Your No-Risk Beta Trial
+              Start Your No-Risk Pilot Program
             </a>
             <a class="figma-cta__talk" href="../contact.html">
                 Talk to our team →
