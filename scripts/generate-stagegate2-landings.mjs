@@ -11,6 +11,66 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 
+/** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
+const BASE_SNIPPET = `  <script>
+    (function (w, d) {
+      function siteRootPathname() {
+        var segs = w.location.pathname.split("/").filter(Boolean)
+        var ph = segs.lastIndexOf("public_html")
+        if (ph !== -1) segs = segs.slice(ph + 1)
+        var leaf = {
+          about: 1,
+          services: 1,
+          faq: 1,
+          contact: 1,
+          "clinical-stories": 1,
+          thanks: 1,
+          "404": 1,
+          "cardiac-monitoring-services": 1,
+          "mobile-cardiac-telemetry-mct": 1,
+          "holter-monitoring-services": 1,
+          "long-term-holter-monitoring": 1,
+          "cardiac-event-monitoring": 1,
+          "ambulatory-cardiac-monitoring": 1,
+          "s-patch-cardiac-monitoring-system": 1,
+          "live-ecg-monitoring": 1,
+          "post-tavr-cardiac-monitoring": 1,
+          "cardiology-practice-cardiac-monitoring": 1
+        }
+        while (segs.length) {
+          var last = segs[segs.length - 1]
+          if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {
+            segs.length -= 2
+            break
+          }
+          if (/\\.html$/i.test(last)) {
+            segs.pop()
+            continue
+          }
+          if (leaf[last]) {
+            segs.pop()
+            continue
+          }
+          break
+        }
+        return "/" + (segs.join("/") + (segs.length ? "/" : ""))
+      }
+      var p = siteRootPathname()
+      var h = w.location.origin + (p === "/" ? "/" : p)
+      var b = d.createElement("base")
+      b.href = h
+      var m = d.head.querySelector("meta[charset]")
+      if (m && typeof m.insertAdjacentElement === "function") {
+        m.insertAdjacentElement("afterend", b)
+      } else if (m && m.nextSibling) {
+        d.head.insertBefore(b, m.nextSibling)
+      } else {
+        d.head.insertBefore(b, d.head.firstChild)
+      }
+    })(window, document)
+  </script>
+  <!-- sm-site-base -->`
+
 const CHEVRON = `<svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
 
 function esc(s) {
@@ -94,8 +154,8 @@ function ctaSection(page) {
   const lead =
     cta.lead ||
     "Evaluate Specialized Medical with a small, no-obligation pilot program. If it is not the right fit, we will take everything back—no hassle."
-  const primary = cta.primary || { label: "Start Your No-Risk Pilot Program", href: "contact/" }
-  const secondary = cta.secondary || { label: "Talk to our team →", href: "contact/" }
+  const primary = cta.primary || { label: "Start Your No-Risk Pilot Program", href: "contact.html" }
+  const secondary = cta.secondary || { label: "Talk to our team →", href: "contact.html" }
   return `<section class="figma-section figma-cta" aria-labelledby="${page.id}-cta-heading">
       <div class="figma-container">
         <div class="figma-cta__box">
@@ -114,7 +174,7 @@ function ctaSection(page) {
 }
 
 function renderPage(page) {
-  const canonical = `${SITE}/${page.slug}/`
+  const canonical = `${SITE}/${page.slug}.html`
   const schemas = [serviceSchema(page.serviceName, page.metaDescription), faqSchema(page.faqs)]
   const header = renderHeader({ base: "", active: "services" })
   const footer = renderFooter({ base: "" })
@@ -122,6 +182,8 @@ function renderPage(page) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+${BASE_SNIPPET}
   <script type="application/ld+json">
 ${JSON.stringify(schemas[0], null, 2)}
   </script>
@@ -129,7 +191,6 @@ ${JSON.stringify(schemas[0], null, 2)}
 ${JSON.stringify(schemas[1], null, 2)}
   </script>
   <script src="js/analytics.js"></script>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(page.title)}</title>
   <meta name="description" content="${esc(page.metaDescription)}">
@@ -170,8 +231,8 @@ ${header}
           <p class="landing-hero__lead">${page.directAnswer}</p>
           <div class="landing-hero__actions">
 ${(page.heroActions || [
-  { className: "figma-btn figma-btn--outline-dark", href: "contact/", label: "Request a Demo" },
-  { className: "figma-btn figma-btn--solid", href: "contact/", label: "Start Your No-Risk Pilot Program" },
+  { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Request a Demo" },
+  { className: "figma-btn figma-btn--solid", href: "contact.html", label: "Start Your No-Risk Pilot Program" },
 ])
   .map((a) => `            <a class="${a.className}" href="${a.href}">${esc(a.label)}</a>`)
   .join("\n")}
@@ -221,40 +282,40 @@ const PAGES = [
         <h2 id="cms-modalities-heading" class="landing-h2">Monitoring Modalities <span class="landing-h2__accent">We Support</span></h2>
         <div class="landing-grid landing-grid--2">
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="holter-monitoring-services/">Holter Monitoring</a></h3>
+            <h3 class="landing-h3"><a href="holter-monitoring-services.html">Holter Monitoring</a></h3>
             <p class="landing-card__meta">Typically 24–48 hours</p>
             <p class="landing-p">Short-duration continuous recording for symptom correlation and rhythm review.</p>
           </article>
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="long-term-holter-monitoring/">Long-Term Holter Monitoring</a></h3>
+            <h3 class="landing-h3"><a href="long-term-holter-monitoring.html">Long-Term Holter Monitoring</a></h3>
             <p class="landing-card__meta">Beyond 24–48 hours</p>
             <p class="landing-p">Extended continuous monitoring when a longer window is ordered.</p>
           </article>
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="cardiac-event-monitoring/">Event Monitoring</a></h3>
+            <h3 class="landing-h3"><a href="cardiac-event-monitoring.html">Event Monitoring</a></h3>
             <p class="landing-card__meta">Longer ambulatory windows</p>
             <p class="landing-p">Symptom logging and rhythm-event capture over extended periods.</p>
           </article>
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="mobile-cardiac-telemetry-mct/">Mobile Cardiac Telemetry (MCT)</a></h3>
+            <h3 class="landing-h3"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></h3>
             <p class="landing-card__meta">Live-streaming ECG with alerts</p>
             <p class="landing-p">Near real-time visibility with 24/7 monitoring support and arrhythmia alert workflows.</p>
           </article>
         </div>
         <h3 class="landing-h3" style="margin-top:2rem">Technology, Reporting &amp; Support</h3>
         <ul class="landing-list">
-          <li><a href="s-patch-cardiac-monitoring-system/">S-Patch Monitoring System</a> as the primary featured device</li>
-          <li><a href="live-ecg-monitoring/">Live-streaming ECG data</a> across applicable study types</li>
+          <li><a href="s-patch-cardiac-monitoring-system.html">S-Patch Monitoring System</a> as the primary featured device</li>
+          <li><a href="live-ecg-monitoring.html">Live-streaming ECG data</a> across applicable study types</li>
           <li>24/7 monitoring support and arrhythmia alert routing based on practice protocol</li>
           <li>Physician-ready reporting with digital symptom context where captured</li>
           <li>Patient-friendly monitoring designed for wearability and support</li>
-          <li><a href="post-tavr-cardiac-monitoring/">Post-TAVR Cardiac Monitoring</a> use-case support via MCT workflows</li>
+          <li><a href="post-tavr-cardiac-monitoring.html">Post-TAVR Cardiac Monitoring</a> use-case support via MCT workflows</li>
         </ul>
         ${relatedLinks([
-          { href: "ambulatory-cardiac-monitoring/", label: "Ambulatory Cardiac Monitoring" },
-          { href: "cardiology-practice-cardiac-monitoring/", label: "For Cardiology Practices" },
-          { href: "services/equipment/", label: "Monitoring Equipment" },
-          { href: "contact/", label: "Contact" },
+          { href: "ambulatory-cardiac-monitoring.html", label: "Ambulatory Cardiac Monitoring" },
+          { href: "cardiology-practice-cardiac-monitoring.html", label: "For Cardiology Practices" },
+          { href: "services/equipment.html", label: "Monitoring Equipment" },
+          { href: "contact.html", label: "Contact" },
         ])}
       </div>
     </section>`,
@@ -307,12 +368,12 @@ const PAGES = [
           <li>Digital symptom context where symptoms are logged during the study</li>
         </ul>
         <h3 class="landing-h3">Post-TAVR Relevance</h3>
-        <p class="landing-p">MCT is frequently relevant after TAVR when clinicians want continuous outpatient rhythm visibility during recovery. Learn more on our <a href="post-tavr-cardiac-monitoring/">Post-TAVR Cardiac Monitoring</a> page.</p>
+        <p class="landing-p">MCT is frequently relevant after TAVR when clinicians want continuous outpatient rhythm visibility during recovery. Learn more on our <a href="post-tavr-cardiac-monitoring.html">Post-TAVR Cardiac Monitoring</a> page.</p>
         ${relatedLinks([
-          { href: "live-ecg-monitoring/", label: "Live ECG Monitoring" },
-          { href: "s-patch-cardiac-monitoring-system/", label: "S-Patch Monitoring System" },
-          { href: "cardiac-monitoring-services/", label: "All Cardiac Monitoring Services" },
-          { href: "contact/", label: "Contact" },
+          { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
+          { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Monitoring System" },
+          { href: "cardiac-monitoring-services.html", label: "All Cardiac Monitoring Services" },
+          { href: "contact.html", label: "Contact" },
         ])}
       </div>
     </section>`,
@@ -360,10 +421,10 @@ const PAGES = [
         <h3 class="landing-h3">Patient Experience</h3>
         <p class="landing-p">Studies are designed to be patient-friendly, with compact monitoring options such as the S-Patch Monitoring System and support resources if patients have questions during wear. Comfort and wearability help improve study completion without guaranteeing any clinical result.</p>
         ${relatedLinks([
-          { href: "long-term-holter-monitoring/", label: "Long-Term Holter Monitoring" },
-          { href: "cardiac-event-monitoring/", label: "Event Monitoring" },
-          { href: "s-patch-cardiac-monitoring-system/", label: "S-Patch Monitoring System" },
-          { href: "cardiac-monitoring-services/", label: "All Services" },
+          { href: "long-term-holter-monitoring.html", label: "Long-Term Holter Monitoring" },
+          { href: "cardiac-event-monitoring.html", label: "Event Monitoring" },
+          { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Monitoring System" },
+          { href: "cardiac-monitoring-services.html", label: "All Services" },
         ])}
       </div>
     </section>`,
@@ -393,8 +454,8 @@ const PAGES = [
       heading: "Request a Demo or",
       accent: "Start a No-Risk Pilot",
       lead: "See how Specialized Medical Holter Monitoring fits your practice workflow. Request a demo or start a no-risk pilot program with a small patient volume.",
-      primary: { label: "Request a Demo", href: "contact/" },
-      secondary: { label: "Start Your No-Risk Pilot Program →", href: "contact/" },
+      primary: { label: "Request a Demo", href: "contact.html" },
+      secondary: { label: "Start Your No-Risk Pilot Program →", href: "contact.html" },
     },
   },
   {
@@ -417,10 +478,10 @@ const PAGES = [
         <p class="landing-p">The S-Patch Monitoring System is designed for comfortable extended wear, with live-streaming ECG data where applicable and physician-ready reporting after study completion. Practices enroll patients through the web portal; Specialized Medical supports monitoring operations and patient questions during wear.</p>
         <p class="landing-p">A no-risk pilot program is available so practices can evaluate Long-Term Holter Monitoring workflow before broader adoption.</p>
         ${relatedLinks([
-          { href: "holter-monitoring-services/", label: "Holter Monitoring Services" },
-          { href: "mobile-cardiac-telemetry-mct/", label: "Mobile Cardiac Telemetry" },
-          { href: "s-patch-cardiac-monitoring-system/", label: "S-Patch Monitoring System" },
-          { href: "cardiac-monitoring-services/", label: "All Services" },
+          { href: "holter-monitoring-services.html", label: "Holter Monitoring Services" },
+          { href: "mobile-cardiac-telemetry-mct.html", label: "Mobile Cardiac Telemetry" },
+          { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Monitoring System" },
+          { href: "cardiac-monitoring-services.html", label: "All Services" },
         ])}
       </div>
     </section>`,
@@ -473,10 +534,10 @@ const PAGES = [
           <li>Turnkey operations so practices do not need an in-house monitoring center</li>
         </ul>
         ${relatedLinks([
-          { href: "holter-monitoring-services/", label: "Holter Monitoring" },
-          { href: "mobile-cardiac-telemetry-mct/", label: "Mobile Cardiac Telemetry" },
-          { href: "ambulatory-cardiac-monitoring/", label: "Ambulatory Cardiac Monitoring" },
-          { href: "contact/", label: "Contact" },
+          { href: "holter-monitoring-services.html", label: "Holter Monitoring" },
+          { href: "mobile-cardiac-telemetry-mct.html", label: "Mobile Cardiac Telemetry" },
+          { href: "ambulatory-cardiac-monitoring.html", label: "Ambulatory Cardiac Monitoring" },
+          { href: "contact.html", label: "Contact" },
         ])}
       </div>
     </section>`,
@@ -522,29 +583,29 @@ const PAGES = [
         <h2 class="landing-h2" style="margin-top:2rem">Modalities Practices <span class="landing-h2__accent">Can Order</span></h2>
         <div class="landing-grid landing-grid--2">
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="holter-monitoring-services/">Holter Monitoring</a></h3>
+            <h3 class="landing-h3"><a href="holter-monitoring-services.html">Holter Monitoring</a></h3>
             <p class="landing-p">Continuous short-window ECG recording, commonly 24–48 hours.</p>
           </article>
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="long-term-holter-monitoring/">Long-Term Holter Monitoring</a></h3>
+            <h3 class="landing-h3"><a href="long-term-holter-monitoring.html">Long-Term Holter Monitoring</a></h3>
             <p class="landing-p">Continuous monitoring beyond the typical short Holter window.</p>
           </article>
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="cardiac-event-monitoring/">Event Monitoring</a></h3>
+            <h3 class="landing-h3"><a href="cardiac-event-monitoring.html">Event Monitoring</a></h3>
             <p class="landing-p">Longer windows focused on symptom and rhythm-event capture.</p>
           </article>
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="mobile-cardiac-telemetry-mct/">Mobile Cardiac Telemetry</a></h3>
+            <h3 class="landing-h3"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry</a></h3>
             <p class="landing-p">Live-streaming ECG data with 24/7 monitoring support and alert workflows.</p>
           </article>
         </div>
         <h3 class="landing-h3" style="margin-top:2rem">Matching Modality to Order &amp; Workflow</h3>
         <p class="landing-p">Specialized Medical helps practices operationalize the ordered modality with equipment, enrollment workflow, monitoring support, and reporting. Clinical selection remains with the ordering physician. Neutral billing support materials may be provided; reimbursement is not guaranteed.</p>
         ${relatedLinks([
-          { href: "cardiac-monitoring-services/", label: "Cardiac Monitoring Services" },
-          { href: "cardiology-practice-cardiac-monitoring/", label: "Cardiology Practice Monitoring" },
-          { href: "s-patch-cardiac-monitoring-system/", label: "S-Patch Monitoring System" },
-          { href: "contact/", label: "Contact" },
+          { href: "cardiac-monitoring-services.html", label: "Cardiac Monitoring Services" },
+          { href: "cardiology-practice-cardiac-monitoring.html", label: "Cardiology Practice Monitoring" },
+          { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Monitoring System" },
+          { href: "contact.html", label: "Contact" },
         ])}
       </div>
     </section>`,
@@ -596,12 +657,12 @@ const PAGES = [
           <li>Integration with Specialized Medical’s turnkey monitoring workflow</li>
         </ul>
         <h3 class="landing-h3">S-Patch and Lead-Wire Options</h3>
-        <p class="landing-p">Lead-Wire systems remain available as a secondary monitoring option where appropriate. Specs differ by device; neither option is positioned to undermine the other. Compare details on our <a href="services/equipment/">Monitoring Equipment</a> page.</p>
+        <p class="landing-p">Lead-Wire systems remain available as a secondary monitoring option where appropriate. Specs differ by device; neither option is positioned to undermine the other. Compare details on our <a href="services/equipment.html">Monitoring Equipment</a> page.</p>
         ${relatedLinks([
-          { href: "live-ecg-monitoring/", label: "Live ECG Monitoring" },
-          { href: "post-tavr-cardiac-monitoring/", label: "Post-TAVR Cardiac Monitoring" },
-          { href: "services/equipment/", label: "Equipment Options" },
-          { href: "contact/", label: "Contact" },
+          { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
+          { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR Cardiac Monitoring" },
+          { href: "services/equipment.html", label: "Equipment Options" },
+          { href: "contact.html", label: "Contact" },
         ])}
       </div>
     </section>`,
@@ -653,10 +714,10 @@ const PAGES = [
         </ul>
         <p class="landing-p">Specialized Medical does not claim that connectivity, detection, clinical outcomes, or speed of intervention are guaranteed.</p>
         ${relatedLinks([
-          { href: "mobile-cardiac-telemetry-mct/", label: "Mobile Cardiac Telemetry" },
-          { href: "s-patch-cardiac-monitoring-system/", label: "S-Patch Monitoring System" },
-          { href: "post-tavr-cardiac-monitoring/", label: "Post-TAVR Cardiac Monitoring" },
-          { href: "cardiac-monitoring-services/", label: "All Services" },
+          { href: "mobile-cardiac-telemetry-mct.html", label: "Mobile Cardiac Telemetry" },
+          { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Monitoring System" },
+          { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR Cardiac Monitoring" },
+          { href: "cardiac-monitoring-services.html", label: "All Services" },
         ])}
       </div>
     </section>`,
@@ -696,9 +757,9 @@ const PAGES = [
     directAnswer:
       "Specialized Medical supports Post-TAVR cardiac monitoring programs with Mobile Cardiac Telemetry, the S-Patch Monitoring System, live-streaming ECG data, 24/7 monitoring support, physician-ready reports, and protocol-based arrhythmia alert workflows—helping practices operationalize ordered outpatient rhythm monitoring after TAVR.",
     heroActions: [
-      { className: "figma-btn figma-btn--solid", href: "contact/", label: "Discuss Post-TAVR Monitoring Support" },
-      { className: "figma-btn figma-btn--outline-dark", href: "contact/", label: "Request a Demo" },
-      { className: "figma-btn figma-btn--outline-dark", href: "contact/", label: "Start a No-Risk Pilot Program" },
+      { className: "figma-btn figma-btn--solid", href: "contact.html", label: "Discuss Post-TAVR Monitoring Support" },
+      { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Request a Demo" },
+      { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Start a No-Risk Pilot Program" },
     ],
     body: `    <section class="landing-section" aria-labelledby="tavr-why-heading">
       <div class="figma-container">
@@ -732,11 +793,11 @@ const PAGES = [
         <h3 class="landing-h3" style="margin-top:2rem">Reporting &amp; Notification</h3>
         <p class="landing-p">Notifications and reports follow practice-defined protocols. Specialized Medical coordinates monitoring operations and alert delivery preferences established with your team. Language is intentionally neutral and protocol-based—no guaranteed reimbursement, profit, clinical outcome, detection, or intervention timing.</p>
         ${relatedLinks([
-          { href: "mobile-cardiac-telemetry-mct/", label: "Mobile Cardiac Telemetry" },
-          { href: "live-ecg-monitoring/", label: "Live ECG Monitoring" },
-          { href: "s-patch-cardiac-monitoring-system/", label: "S-Patch Monitoring System" },
-          { href: "cardiology-practice-cardiac-monitoring/", label: "For Cardiology Practices" },
-          { href: "contact/", label: "Contact" },
+          { href: "mobile-cardiac-telemetry-mct.html", label: "Mobile Cardiac Telemetry" },
+          { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
+          { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Monitoring System" },
+          { href: "cardiology-practice-cardiac-monitoring.html", label: "For Cardiology Practices" },
+          { href: "contact.html", label: "Contact" },
         ])}
       </div>
     </section>`,
@@ -770,8 +831,8 @@ const PAGES = [
       heading: "Discuss Post-TAVR",
       accent: "Monitoring Support",
       lead: "Talk with Specialized Medical about MCT, live-streaming ECG data, and turnkey workflow support for your Post-TAVR monitoring program. You can also request a demo or start a no-risk pilot program.",
-      primary: { label: "Discuss Post-TAVR Monitoring Support", href: "contact/" },
-      secondary: { label: "Request a Demo or Start a No-Risk Pilot →", href: "contact/" },
+      primary: { label: "Discuss Post-TAVR Monitoring Support", href: "contact.html" },
+      secondary: { label: "Request a Demo or Start a No-Risk Pilot →", href: "contact.html" },
     },
   },
   {
@@ -811,13 +872,13 @@ const PAGES = [
         <p class="landing-p" style="margin-top:1.25rem">Neutral billing support may include documentation templates and coordination with billing staff. Specialized Medical does not guarantee reimbursement or profit.</p>
         <h3 class="landing-h3">Explore Service Pages</h3>
         ${relatedLinks([
-          { href: "cardiac-monitoring-services/", label: "Cardiac Monitoring Services" },
-          { href: "holter-monitoring-services/", label: "Holter Monitoring" },
-          { href: "long-term-holter-monitoring/", label: "Long-Term Holter" },
-          { href: "cardiac-event-monitoring/", label: "Event Monitoring" },
-          { href: "mobile-cardiac-telemetry-mct/", label: "MCT" },
-          { href: "post-tavr-cardiac-monitoring/", label: "Post-TAVR" },
-          { href: "contact/", label: "Contact" },
+          { href: "cardiac-monitoring-services.html", label: "Cardiac Monitoring Services" },
+          { href: "holter-monitoring-services.html", label: "Holter Monitoring" },
+          { href: "long-term-holter-monitoring.html", label: "Long-Term Holter" },
+          { href: "cardiac-event-monitoring.html", label: "Event Monitoring" },
+          { href: "mobile-cardiac-telemetry-mct.html", label: "MCT" },
+          { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR" },
+          { href: "contact.html", label: "Contact" },
         ])}
       </div>
     </section>`,
@@ -847,12 +908,12 @@ const PAGES = [
       heading: "Discuss Workflow or",
       accent: "Request a Demo",
       lead: "Talk with Specialized Medical about turnkey cardiac monitoring for your cardiology practice—implementation, staff workflow, equipment, reports, and patient support.",
-      primary: { label: "Request a Demo", href: "contact/" },
-      secondary: { label: "Talk to our team →", href: "contact/" },
+      primary: { label: "Request a Demo", href: "contact.html" },
+      secondary: { label: "Talk to our team →", href: "contact.html" },
     },
     heroActions: [
-      { className: "figma-btn figma-btn--solid", href: "contact/", label: "Request a Demo" },
-      { className: "figma-btn figma-btn--outline-dark", href: "contact/", label: "Talk to Our Team" },
+      { className: "figma-btn figma-btn--solid", href: "contact.html", label: "Request a Demo" },
+      { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Talk to Our Team" },
     ],
   },
 ]

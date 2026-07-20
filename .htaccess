@@ -18,4 +18,31 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^specialized-med\.com [NC]
 RewriteRule ^(.*)$ https://www.specialized-med.com/$1 [L,R=301]
 
+# --------------------------------------------------------------------------
+# Pretty URLs → flat HTML (internal rewrite, no redirect)
+# Live server is Apache; /services/ 404s without these rules.
+# Keep serving *.html directly as the primary live URL form.
+# --------------------------------------------------------------------------
+
+# Existing pages
+RewriteRule ^about/?$ /about.html [L]
+RewriteRule ^services/?$ /services.html [L]
+RewriteRule ^faq/?$ /faq.html [L]
+RewriteRule ^contact/?$ /contact.html [L]
+RewriteRule ^clinical-stories/?$ /clinical-stories.html [L]
+RewriteRule ^thanks/?$ /thanks.html [L]
+RewriteRule ^services/equipment/?$ /services/equipment.html [L]
+
+# Stagegate 2 landing pages
+RewriteRule ^cardiac-monitoring-services/?$ /cardiac-monitoring-services.html [L]
+RewriteRule ^mobile-cardiac-telemetry-mct/?$ /mobile-cardiac-telemetry-mct.html [L]
+RewriteRule ^holter-monitoring-services/?$ /holter-monitoring-services.html [L]
+RewriteRule ^long-term-holter-monitoring/?$ /long-term-holter-monitoring.html [L]
+RewriteRule ^cardiac-event-monitoring/?$ /cardiac-event-monitoring.html [L]
+RewriteRule ^ambulatory-cardiac-monitoring/?$ /ambulatory-cardiac-monitoring.html [L]
+RewriteRule ^s-patch-cardiac-monitoring-system/?$ /s-patch-cardiac-monitoring-system.html [L]
+RewriteRule ^live-ecg-monitoring/?$ /live-ecg-monitoring.html [L]
+RewriteRule ^post-tavr-cardiac-monitoring/?$ /post-tavr-cardiac-monitoring.html [L]
+RewriteRule ^cardiology-practice-cardiac-monitoring/?$ /cardiology-practice-cardiac-monitoring.html [L]
+
 ErrorDocument 404 /404.html

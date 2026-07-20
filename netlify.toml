@@ -1,0 +1,10 @@
+# Static site publish (repo root). _redirects handles pretty URLs on Netlify.
+[build]
+  publish = "."
+  command = "echo 'No build step — static HTML'"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"

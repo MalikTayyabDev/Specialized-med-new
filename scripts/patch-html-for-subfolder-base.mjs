@@ -18,7 +18,25 @@ const BASE_SNIPPET = `  <script>
         // <base href> always points at the public site path.
         var ph = segs.lastIndexOf("public_html")
         if (ph !== -1) segs = segs.slice(ph + 1)
-        var leaf = { about: 1, services: 1, faq: 1, contact: 1, "clinical-stories": 1, thanks: 1, "404": 1 }
+        var leaf = {
+          about: 1,
+          services: 1,
+          faq: 1,
+          contact: 1,
+          "clinical-stories": 1,
+          thanks: 1,
+          "404": 1,
+          "cardiac-monitoring-services": 1,
+          "mobile-cardiac-telemetry-mct": 1,
+          "holter-monitoring-services": 1,
+          "long-term-holter-monitoring": 1,
+          "cardiac-event-monitoring": 1,
+          "ambulatory-cardiac-monitoring": 1,
+          "s-patch-cardiac-monitoring-system": 1,
+          "live-ecg-monitoring": 1,
+          "post-tavr-cardiac-monitoring": 1,
+          "cardiology-practice-cardiac-monitoring": 1
+        }
         while (segs.length) {
           var last = segs[segs.length - 1]
           if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {

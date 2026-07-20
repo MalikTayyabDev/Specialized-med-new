@@ -1,6 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <script>
+    (function (w, d) {
+      function siteRootPathname() {
+        var segs = w.location.pathname.split("/").filter(Boolean)
+        var ph = segs.lastIndexOf("public_html")
+        if (ph !== -1) segs = segs.slice(ph + 1)
+        var leaf = {
+          about: 1,
+          services: 1,
+          faq: 1,
+          contact: 1,
+          "clinical-stories": 1,
+          thanks: 1,
+          "404": 1,
+          "cardiac-monitoring-services": 1,
+          "mobile-cardiac-telemetry-mct": 1,
+          "holter-monitoring-services": 1,
+          "long-term-holter-monitoring": 1,
+          "cardiac-event-monitoring": 1,
+          "ambulatory-cardiac-monitoring": 1,
+          "s-patch-cardiac-monitoring-system": 1,
+          "live-ecg-monitoring": 1,
+          "post-tavr-cardiac-monitoring": 1,
+          "cardiology-practice-cardiac-monitoring": 1
+        }
+        while (segs.length) {
+          var last = segs[segs.length - 1]
+          if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {
+            segs.length -= 2
+            break
+          }
+          if (/\.html$/i.test(last)) {
+            segs.pop()
+            continue
+          }
+          if (leaf[last]) {
+            segs.pop()
+            continue
+          }
+          break
+        }
+        return "/" + (segs.join("/") + (segs.length ? "/" : ""))
+      }
+      var p = siteRootPathname()
+      var h = w.location.origin + (p === "/" ? "/" : p)
+      var b = d.createElement("base")
+      b.href = h
+      var m = d.head.querySelector("meta[charset]")
+      if (m && typeof m.insertAdjacentElement === "function") {
+        m.insertAdjacentElement("afterend", b)
+      } else if (m && m.nextSibling) {
+        d.head.insertBefore(b, m.nextSibling)
+      } else {
+        d.head.insertBefore(b, d.head.firstChild)
+      }
+    })(window, document)
+  </script>
+  <!-- sm-site-base -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,7 +123,6 @@
 }
   </script>
   <script src="js/analytics.js"></script>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cardiac Event Monitoring | Symptom &amp; Rhythm Capture | Specialized Medical</title>
   <meta name="description" content="Cardiac Event Monitoring from Specialized Medical for longer ambulatory windows with symptom logging, rhythm-event capture, alerts, physician-ready reports, and patient support.">
@@ -78,7 +136,7 @@
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/faq.css">
   <link rel="stylesheet" href="css/landing.css">
-  <link rel="canonical" href="https://www.specialized-med.com/cardiac-event-monitoring/">
+  <link rel="canonical" href="https://www.specialized-med.com/cardiac-event-monitoring.html">
 </head>
 <body>
   <noscript>
@@ -101,14 +159,14 @@
         <button type="button" class="nav-overlay" aria-label="Close menu" hidden></button>
         <nav id="primary-nav" class="figma-nav" aria-label="Primary">
           <a class="figma-nav__link" href="./">Home</a>
-          <a class="figma-nav__link" href="about/">About Us</a>
-          <a class="figma-nav__link is-active" href="services/">Services</a>
-          <a class="figma-nav__link" href="faq/">FAQs</a>
-          <a class="figma-nav__link" href="contact/">Contact</a>
+          <a class="figma-nav__link" href="about.html">About Us</a>
+          <a class="figma-nav__link is-active" href="services.html">Services</a>
+          <a class="figma-nav__link" href="faq.html">FAQs</a>
+          <a class="figma-nav__link" href="contact.html">Contact</a>
           <div class="figma-nav__mobile">
             <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact/#contact-form">Request a Demo</a>
+              <a class="figma-btn figma-btn--outline-dark" href="contact.html#contact-form">Request a Demo</a>
               <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
@@ -118,7 +176,7 @@
             <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact/">Request a Demo</a>
+          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
           <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
@@ -137,8 +195,8 @@
           </h1>
           <p class="landing-hero__lead">Event Monitoring is an ambulatory cardiac monitoring approach used over longer windows to capture symptom-related and automatic rhythm events. Specialized Medical provides turnkey Event Monitoring with symptom logging, rhythm-event capture, protocol-based alerts, physician-ready reporting, and patient support.</p>
           <div class="landing-hero__actions">
-            <a class="figma-btn figma-btn--outline-dark" href="contact/">Request a Demo</a>
-            <a class="figma-btn figma-btn--solid" href="contact/">Start Your No-Risk Pilot Program</a>
+            <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
+            <a class="figma-btn figma-btn--solid" href="contact.html">Start Your No-Risk Pilot Program</a>
           </div>
         </div>
       </div>
@@ -158,10 +216,10 @@
           <li>Turnkey operations so practices do not need an in-house monitoring center</li>
         </ul>
         <ul class="landing-related">
-      <li><a href="holter-monitoring-services/">Holter Monitoring</a></li>
-      <li><a href="mobile-cardiac-telemetry-mct/">Mobile Cardiac Telemetry</a></li>
-      <li><a href="ambulatory-cardiac-monitoring/">Ambulatory Cardiac Monitoring</a></li>
-      <li><a href="contact/">Contact</a></li>
+      <li><a href="holter-monitoring-services.html">Holter Monitoring</a></li>
+      <li><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry</a></li>
+      <li><a href="ambulatory-cardiac-monitoring.html">Ambulatory Cardiac Monitoring</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
       </div>
     </section>
@@ -230,8 +288,8 @@
           </h2>
           <p class="figma-cta__p figma-cta__p--lead">Evaluate Specialized Medical with a small, no-obligation pilot program. If it is not the right fit, we will take everything back—no hassle.</p>
           <div class="figma-cta__actions">
-            <a class="figma-btn figma-btn--solid" href="contact/">Start Your No-Risk Pilot Program</a>
-            <a class="figma-cta__talk" href="contact/">Talk to our team →</a>
+            <a class="figma-btn figma-btn--solid" href="contact.html">Start Your No-Risk Pilot Program</a>
+            <a class="figma-cta__talk" href="contact.html">Talk to our team →</a>
           </div>
         </div>
       </div>
@@ -250,10 +308,10 @@
           <div class="figma-footer__contact">
             <nav class="figma-footer__nav" aria-label="Footer">
               <a href="./">Home</a>
-              <a href="about/">About Us</a>
-              <a href="services/">Services</a>
-              <a href="faq/">FAQs</a>
-              <a href="contact/">Contact</a>
+              <a href="about.html">About Us</a>
+              <a href="services.html">Services</a>
+              <a href="faq.html">FAQs</a>
+              <a href="contact.html">Contact</a>
               <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </nav>
             <div class="figma-footer__line">
