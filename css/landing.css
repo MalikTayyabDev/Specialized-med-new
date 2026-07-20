@@ -20,6 +20,13 @@
   background: linear-gradient(135deg, #fff 0%, #fcf4f5 55%, #f5e8ea 100%);
 }
 
+/* Left-align hero copy like services.html (override main .figma-container centering) */
+.landing-hero .figma-container.landing-hero__inner {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
 .landing-hero__inner {
   position: relative;
   z-index: 1;
@@ -213,10 +220,21 @@
   font-weight: 700;
 }
 
+.landing-faq.faq-accordion {
+  background: #faf8f8;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+}
+
 .landing-faq .faq-category__title {
   margin-bottom: 1rem;
 }
 
 .landing-faq .faq-category__list {
-  max-width: 48rem;
+  max-width: none;
+  width: 100%;
+}
+
+.landing-faq .faq-accordion__inner {
+  max-width: none;
+  width: 100%;
 }

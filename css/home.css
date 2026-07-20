@@ -3369,6 +3369,16 @@ display: none;
   color: #231f1e;
 }
 
+.figma-svc__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.figma-svc__title a:hover {
+  color: var(--color-red);
+  text-decoration: underline;
+}
+
 .figma-svc__meta {
   margin: 0;
   font-family: var(--font-sans);
@@ -4350,6 +4360,16 @@ video.figma-ecg__video {
   line-height: 20px;
   color: rgba(0, 0, 0, 0.7);
   padding: 8px 0 15px;
+}
+
+.figma-footer__triple a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.figma-footer__triple a:hover {
+  color: var(--color-red);
+  text-decoration: underline;
 }
 
 .figma-footer__bottom {

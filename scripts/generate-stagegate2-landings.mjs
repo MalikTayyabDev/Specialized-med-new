@@ -98,8 +98,8 @@ function faqHtml(faqs, prefix) {
     </div>`
     })
     .join("\n")
-  return `<section class="figma-section landing-section landing-faq landing-section--muted" aria-labelledby="${prefix}-faq-heading">
-      <div class="figma-container">
+  return `<section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="${prefix}-faq-heading">
+      <div class="figma-container faq-accordion__inner">
         <h2 id="${prefix}-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
         <div class="faq-category">
           <div class="faq-category__list">
