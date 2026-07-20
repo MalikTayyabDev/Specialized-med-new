@@ -1,82 +1,87 @@
-# Stagegate 2 — Acceptance Checklist
+# Specialized Medical SEO / AEO — Stagegate 2 Checklist
 
-**Project:** Specialized Medical SEO / AEO Stagegate 2  
+**Prepared for:** Specialized Medical, LLC  
+**Prepared by:** Development team  
+**Date:** July 20, 2026  
 **Source:** `Specialized_Medical_Stagegate_2_SEO_AEO.docx`  
-**Repo:** [MalikTayyabDev/Specialized-med-new](https://github.com/MalikTayyabDev/Specialized-med-new) (`main`)  
-**Preview (Netlify):** https://zesty-pothos-c8949b.netlify.app/  
-**Production (existing site):** https://www.specialized-med.com/  
-**Audit date:** 2026-07-20  
+**Branch:** `stagegate-2-seo-aeo-landing-pages`  
+**Repo:** [Nauman440/specialzed-med](https://github.com/Nauman440/specialzed-med)
 
-Use this checklist for internal QA and client Stage 2 acceptance. Mark **Done** when verified on the **deployed** environment you are submitting (Netlify preview and/or production).
-
----
-
-## General project rules (all stages)
-
-| Done | Requirement | Status / notes |
-|:----:|-------------|----------------|
-| [ ] | No full upfront payment model violated (Stage 2 deliverables documented for acceptance) | Deliverables listed below |
-| [x] | All new pages use visible, crawlable HTML (not image-only SEO content) | All 10 landings are HTML with text, H1–H3, FAQs, CTAs |
-| [x] | No guaranteed reimbursement, profit, clinical outcome, detection, or intervention speed | Wording uses “does not guarantee…” throughout; FAQs address this |
-| [x] | Consistent terminology (Specialized Medical, S-Patch Monitoring System, Holter, Long-Term Holter, Event Monitoring, MCT, live-streaming ECG, Post-TAVR) | Used across landings |
-| [x] | Unique title, meta, H1, direct-answer opening, visible FAQs, CTA, internal links, canonical, indexable | See per-page table |
-| [x] | Schema matches visible content only (Service + FAQPage JSON-LD) | 2 JSON-LD blocks per landing; FAQ schema matches visible Q&As |
-| [x] | No paid SEO subscriptions / plugins / recurring outside costs added | Static HTML only |
-| [ ] | Deliverables proven with screenshots, live URLs, validation (verbal only not sufficient) | **Client acceptance:** capture proof from live deploy |
+**Legend**
+- `[x]` = Done in code (developer side)
+- `[ ]` = Pending client acceptance / live production proof
 
 ---
 
-## Stage 2 — Ten required landing pages
+## General Project Rules — Required for All Stages
 
-| Done | Required URL | File | Preview link (.html) |
-|:----:|--------------|------|----------------------|
-| [ ] | `/cardiac-monitoring-services/` | `cardiac-monitoring-services.html` | https://zesty-pothos-c8949b.netlify.app/cardiac-monitoring-services.html |
-| [ ] | `/mobile-cardiac-telemetry-mct/` | `mobile-cardiac-telemetry-mct.html` | https://zesty-pothos-c8949b.netlify.app/mobile-cardiac-telemetry-mct.html |
-| [ ] | `/holter-monitoring-services/` | `holter-monitoring-services.html` | https://zesty-pothos-c8949b.netlify.app/holter-monitoring-services.html |
-| [ ] | `/long-term-holter-monitoring/` | `long-term-holter-monitoring.html` | https://zesty-pothos-c8949b.netlify.app/long-term-holter-monitoring.html |
-| [ ] | `/cardiac-event-monitoring/` | `cardiac-event-monitoring.html` | https://zesty-pothos-c8949b.netlify.app/cardiac-event-monitoring.html |
-| [ ] | `/ambulatory-cardiac-monitoring/` | `ambulatory-cardiac-monitoring.html` | https://zesty-pothos-c8949b.netlify.app/ambulatory-cardiac-monitoring.html |
-| [ ] | `/s-patch-cardiac-monitoring-system/` | `s-patch-cardiac-monitoring-system.html` | https://zesty-pothos-c8949b.netlify.app/s-patch-cardiac-monitoring-system.html |
-| [ ] | `/live-ecg-monitoring/` | `live-ecg-monitoring.html` | https://zesty-pothos-c8949b.netlify.app/live-ecg-monitoring.html |
-| [ ] | `/post-tavr-cardiac-monitoring/` | `post-tavr-cardiac-monitoring.html` | https://zesty-pothos-c8949b.netlify.app/post-tavr-cardiac-monitoring.html |
-| [ ] | `/cardiology-practice-cardiac-monitoring/` | `cardiology-practice-cardiac-monitoring.html` | https://zesty-pothos-c8949b.netlify.app/cardiology-practice-cardiac-monitoring.html |
-
-**Pretty URLs** also configured via `_redirects` (Netlify) and `.htaccess` (Apache production), e.g. `/post-tavr-cardiac-monitoring/`.
+| Done | Task / Requirement | Acceptance proof / Notes |
+|:----:|-------------------|-------------------------|
+| [ ] | No full upfront payment. Each stage paid only after deliverables completed, documented, reviewed, and accepted. | Payment terms |
+| [x] | All new pages use visible, crawlable HTML content (not images/screenshots/hidden text for SEO). | Live page review |
+| [x] | All claims cautious and accurate. No guaranteed reimbursement, profit, clinical outcome, detection, or speed of intervention. | Content review |
+| [x] | Consistent terms: Specialized Medical, S-Patch Monitoring System, Holter Monitoring, Long-Term Holter Monitoring, Event Monitoring, Mobile Cardiac Telemetry, live-streaming ECG data, Post-TAVR Cardiac Monitoring. | Content review |
+| [x] | Each page: unique title, meta description, H1, direct-answer opening, visible FAQ-style Q&As, CTA, internal links, self-referencing canonical, sitemap inclusion. | URL/title/meta table below |
+| [x] | Schema matches visible page content. No hidden FAQ schema. No invented credentials/outcomes. | Schema validation |
+| [x] | No paid SEO subscriptions, backlink services, directories, reporting platforms, plugins, call-tracking, or recurring outside costs added. | Written confirmation |
+| [ ] | Deliverables proven with screenshots, live URLs, validation results, lists, or reports. | Closeout proof — **client to verify on live deploy** |
 
 ---
 
-## Every landing page — universal requirements
+## Stage 2 — Dedicated Landing Page Buildout and Core SEO/AEO Content
 
-| Done | Requirement | Implementation |
-|:----:|-------------|----------------|
-| [x] | Unique `<title>` | All 10 pages |
-| [x] | Unique meta description | All 10 pages |
-| [x] | One clear H1 | All 10 pages |
-| [x] | H2/H3 subheadings | Body sections on all pages |
-| [x] | 2–4 sentence direct-answer opening (`landing-hero__lead`) | All 10 pages |
-| [x] | Who the service/page is for | Section copy on all pages |
-| [x] | How the service works | Section copy on all pages |
-| [x] | Turnkey provider positioning | All pages |
-| [x] | S-Patch / live-streaming ECG where appropriate | All pages (contextual) |
-| [x] | 24/7 monitoring & arrhythmia alert language where appropriate | MCT, overview, Post-TAVR, live ECG, etc. |
+**Milestone:** Dedicated landing page buildout and core SEO/AEO content  
+**Payment trigger:** Payment due after all ten service landing pages are live, indexable, internally linked, documented, and accepted.
+
+### Required landing pages to publish
+
+| Done | Required landing page | Proof / Notes |
+|:----:|----------------------|---------------|
+| [x] | Build and publish `/cardiac-monitoring-services/` | File: `cardiac-monitoring-services.html` · `_redirects` + `.htaccess` |
+| [x] | Build and publish `/mobile-cardiac-telemetry-mct/` | File: `mobile-cardiac-telemetry-mct.html` |
+| [x] | Build and publish `/holter-monitoring-services/` | File: `holter-monitoring-services.html` |
+| [x] | Build and publish `/long-term-holter-monitoring/` | File: `long-term-holter-monitoring.html` |
+| [x] | Build and publish `/cardiac-event-monitoring/` | File: `cardiac-event-monitoring.html` |
+| [x] | Build and publish `/ambulatory-cardiac-monitoring/` | File: `ambulatory-cardiac-monitoring.html` |
+| [x] | Build and publish `/s-patch-cardiac-monitoring-system/` | File: `s-patch-cardiac-monitoring-system.html` |
+| [x] | Build and publish `/live-ecg-monitoring/` | File: `live-ecg-monitoring.html` |
+| [x] | Build and publish `/post-tavr-cardiac-monitoring/` | File: `post-tavr-cardiac-monitoring.html` |
+| [x] | Build and publish `/cardiology-practice-cardiac-monitoring/` | File: `cardiology-practice-cardiac-monitoring.html` |
+| [ ] | **Live URL proof on production** specialized-med.com | Pending production deploy |
+
+---
+
+## Stage 2 Requirements — Every Landing Page
+
+| Done | Every landing page must include | Proof / Notes |
+|:----:|--------------------------------|---------------|
+| [x] | Unique SEO title tag | See title table below |
+| [x] | Unique meta description | See title table below |
+| [x] | One clear H1 heading | All 10 pages |
+| [x] | Proper H2/H3 subheadings | Body sections on all pages |
+| [x] | 2–4 sentence direct-answer opening paragraph at top | `landing-hero__lead` on all pages |
+| [x] | Clear explanation of who the service/page is for | Body copy |
+| [x] | Clear explanation of how the service works | Body copy |
+| [x] | Specialized Medical positioned as turnkey cardiac monitoring provider | All pages |
+| [x] | S-Patch and/or live-streaming ECG language where appropriate | All pages |
+| [x] | 24/7 monitoring and arrhythmia alert language where appropriate | MCT, overview, Post-TAVR, Live ECG, etc. |
 | [x] | Physician-ready reporting language | All pages |
-| [x] | Patient-friendly monitoring language | Holter, S-Patch, event, practice pages |
-| [x] | Neutral billing wording only | All pages |
-| [x] | 4–6 visible FAQ Q&As | 5 FAQs × 9 pages; **6 FAQs** on Post-TAVR |
-| [x] | FAQ accordion opens/closes | Fixed: `faq-accordion` class + `main.js` |
-| [x] | CTA section | All pages (`figma-cta` → contact) |
-| [x] | Internal links to related pages | Related links + cross-links in body |
-| [x] | Self-referencing canonical | All pages (`.html` form — see note below) |
-| [x] | `meta robots` indexable | `index, follow` on all landings |
-| [x] | In XML sitemap | All 10 in `sitemap.xml` |
-| [x] | `sm-site-base` injector (assets load on pretty URLs) | All 10 pages |
-| [x] | Hero text left-aligned (layout) | `css/landing.css` |
-
-**Canonical note:** Doc examples use trailing-slash pretty URLs (`/post-tavr-cardiac-monitoring/`). Current canonicals use **`.html`** to match live Apache production at [specialized-med.com](https://www.specialized-med.com/). Pretty URLs still work via `_redirects` / `.htaccess`. Confirm with client which canonical form they want for final acceptance.
+| [x] | Patient-friendly monitoring language | Holter, S-Patch, Event, practice pages |
+| [x] | Neutral billing/support wording only | All pages |
+| [x] | No guaranteed reimbursement, profit, clinical outcome, or detection language | Disclaimers + FAQ answers |
+| [x] | 4–6 visible FAQ-style questions and answers | 5 FAQs × 9 pages; 6 on Post-TAVR |
+| [x] | FAQ accordion functional (open/close) | Fixed: `faq-accordion` class + `main.js` |
+| [x] | CTA section (Demo / Pilot / Talk / Post-TAVR discuss) | `figma-cta` → contact on all pages |
+| [x] | Internal links to related pages | Cross-links + services/index/footer |
+| [x] | Self-referencing canonical URL | All pages (`.html` form; pretty URLs via redirects) |
+| [x] | Page indexable (`index, follow`) | All landings |
+| [x] | Page in XML sitemap | `sitemap.xml` — all 10 URLs |
+| [x] | Hero banner left-aligned (layout QA) | `css/landing.css` |
+| [x] | FAQ section full content width (layout QA) | `css/landing.css` |
 
 ---
 
-## Title / meta / H1 reference table
+## Title / Meta / H1 Table
 
 | Page | Title tag | H1 |
 |------|-----------|-----|
@@ -93,172 +98,141 @@ Use this checklist for internal QA and client Stage 2 acceptance. Mark **Done** 
 
 ---
 
-## Page-specific requirements
+## Page-Specific Checklists
 
 ### `/cardiac-monitoring-services/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | Turnkey cardiac monitoring overview | Done |
-| [x] | Holter, Long-Term Holter, Event, MCT covered | Modality cards + copy |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Explain turnkey cardiac monitoring services | Body section |
+| [x] | Include Holter, Long-Term Holter, Event Monitoring, MCT | Modality cards |
 | [x] | Live ECG, 24/7 support, S-Patch, reporting, workflow, no-risk pilot | Body + list |
-| [x] | Links to MCT, Holter, Long-Term Holter, Event, S-Patch, Live ECG, Post-TAVR, Contact | Related links + cards |
+| [x] | Link to MCT, Holter, Long-Term Holter, Event, S-Patch, Live ECG, Post-TAVR, Contact | Related links |
 
 ### `/mobile-cardiac-telemetry-mct/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | What MCT is | Section |
-| [x] | Live-streaming ECG + 24/7 support | Section |
-| [x] | Alerts, physician-ready reports, patient support | Section |
-| [x] | Post-TAVR relevance + link to Post-TAVR page | Body + link |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Explain what Mobile Cardiac Telemetry is | Section |
+| [x] | Live-streaming ECG + 24/7 monitoring support | Section |
+| [x] | Arrhythmia alerts, physician-ready reports, patient support | Section |
+| [x] | Post-TAVR use-case + link to Post-TAVR page | Body + link |
 
 ### `/holter-monitoring-services/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | 24–48 hour Holter explained | Done |
-| [x] | Setup workflow + reporting | Section |
-| [x] | Symptom support + patient experience | Section |
-| [x] | CTA: demo or no-risk pilot | Custom CTA on page |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Explain 24–48 hour Holter Monitoring | Section |
+| [x] | Setup workflow and reporting process | Section |
+| [x] | Symptom support and patient experience | Section |
+| [x] | CTA: request demo or start no-risk pilot | Custom CTA |
 
 ### `/long-term-holter-monitoring/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | Beyond 24–48 hours explained | Done |
-| [x] | “Extended Holter” as supporting phrase only | Body + FAQ |
-| [x] | S-Patch comfort, reporting, workflow, pilot | Section |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Explain Long-Term Holter beyond 24–48 hours | Section |
+| [x] | “Extended Holter” only as supporting phrase | Body + FAQ |
+| [x] | S-Patch comfort, reporting, workflow, no-risk pilot | Section |
 | [x] | FAQ: Long-Term Holter vs Extended Holter | FAQ #1 |
 
 ### `/cardiac-event-monitoring/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | Event monitoring + longer windows | Done |
-| [x] | Symptom logging + rhythm-event capture | Section |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Event Monitoring and longer windows | Section |
+| [x] | Symptom logging and rhythm-event capture | Section |
 | [x] | Alerts, reporting, patient support | Section |
-| [x] | FAQ: Event vs Holter | FAQ #1 |
+| [x] | FAQ: Event vs Holter Monitoring | FAQ #1 |
 
 ### `/ambulatory-cardiac-monitoring/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | Broader category explained | Done |
-| [x] | Covers Holter, Long-Term Holter, Event, MCT | Cards |
-| [x] | Links to each modality page | Cards |
-| [x] | Choosing modality by physician order/workflow | Section |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Ambulatory cardiac monitoring as broader category | Section |
+| [x] | Cover Holter, Long-Term Holter, Event, MCT | Cards |
+| [x] | Link to each modality page | Cards |
+| [x] | Choosing monitoring type by physician order/workflow | Section |
 
 ### `/s-patch-cardiac-monitoring-system/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | S-Patch as primary featured system | Done |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | S-Patch as primary featured monitoring system | Section |
 | [x] | Comfort, battery, water resistance (IP55), live ECG, patient experience, reporting | Section |
 | [x] | Lead-Wire comparison without undermining either | Section + equipment link |
-| [x] | Links to Live ECG, Post-TAVR, Equipment, Contact | Related links |
+| [x] | Link to Live ECG, Post-TAVR, Equipment, Contact | Related links |
 
 ### `/live-ecg-monitoring/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | Live-streaming ECG + real-time visibility | Done |
-| [x] | Symptom logging, alerts, reduced upload delays | Section |
-| [x] | Rural/lower-coverage + physician-ready reporting | Section |
-| [x] | No guaranteed connectivity/outcomes | Explicit disclaimers |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Live-streaming ECG + real-time rhythm visibility | Section |
+| [x] | Symptom logging, arrhythmia alerts, reduced upload delays | Section |
+| [x] | Rural/lower-coverage support + physician-ready reporting | Section |
+| [x] | No guaranteed connectivity or outcomes | Explicit disclaimers |
 
 ### `/post-tavr-cardiac-monitoring/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | URL path `post-tavr-cardiac-monitoring` | File + redirects |
-| [x] | SEO title (exact) | Post-TAVR Cardiac Monitoring \| Live ECG & MCT \| Specialized Medical |
-| [x] | H1 (exact) | Post-TAVR Cardiac Monitoring with Live-Streaming ECG |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | URL: `https://www.specialized-med.com/post-tavr-cardiac-monitoring/` | Redirects + `.htaccess` |
+| [x] | SEO title: Post-TAVR Cardiac Monitoring \| Live ECG & MCT \| Specialized Medical | Exact match |
+| [x] | H1: Post-TAVR Cardiac Monitoring with Live-Streaming ECG | Exact match |
 | [x] | Primary CTA: Discuss Post-TAVR Monitoring Support | Hero + bottom CTA |
-| [x] | Secondary: Request a Demo / Start a No-Risk Pilot | Hero buttons |
-| [x] | Direct-answer paragraph (MCT, S-Patch, live ECG, 24/7, reports, alerts) | Hero lead |
+| [x] | Secondary CTA: Request a Demo / Start a No-Risk Pilot Program | Hero buttons |
+| [x] | Direct-answer: MCT, S-Patch, live ECG, 24/7 support, reports, alerts | Hero lead |
 | [x] | Why Post-TAVR rhythm monitoring matters | Section |
-| [x] | Live ECG, S-Patch, cellular, rural support | Section |
+| [x] | Live ECG, S-Patch, cellular transmission, rural support | Section |
 | [x] | Workflow: Enroll → Hook Up → Monitor/Alert → Physician-ready report | 4-step list |
 | [x] | Reporting & notification (neutral, protocol-based) | Section |
-| [x] | Post-TAVR-specific FAQs (6) | Done |
-| [x] | No guaranteed detection/outcome/reimbursement language | Disclaimers throughout |
+| [x] | Post-TAVR-specific FAQs (6) | FAQ section |
+| [x] | No guaranteed detection/outcome/reimbursement language | Disclaimers |
 
 ### `/cardiology-practice-cardiac-monitoring/`
 
-| Done | Requirement | Status |
-|:----:|-------------|--------|
-| [x] | Turnkey workflow for cardiology practices | Done |
+| Done | Specific requirement | Proof / Notes |
+|:----:|---------------------|---------------|
+| [x] | Turnkey monitoring workflow for cardiology practices | Section |
 | [x] | Implementation, staff workflow, equipment, reports, patient support, pilot | Cards |
-| [x] | Links to service pages + Contact | Related links |
-| [x] | Direct CTA: discuss workflow / request demo | Hero + CTA |
+| [x] | Link to service pages and Contact | Related links |
+| [x] | Direct CTA: discuss workflow or request demo | Hero + CTA |
 
 ---
 
-## Internal linking map (implemented)
+## Internal Linking (developer complete)
 
-| From | Links to new landings |
-|------|------------------------|
-| `index.html` | Service summary cards → all modalities + Post-TAVR; TAVR card → Post-TAVR; footer triple |
-| `services.html` | Breakdown cards → all modalities; Post-TAVR band → 3 links |
-| Each landing page | Related modality pages + `contact.html` |
-| `partials/footer.html` | MCT, Holter, Event → landing pages |
-| **Not linked** | Top nav still points to `services.html` only (not required by Stage 2 doc) |
-
----
-
-## Technical / deploy checklist
-
-| Done | Item | Status |
-|:----:|------|--------|
-| [x] | 10 HTML files at repo root | Done |
-| [x] | `_redirects` pretty URL rules (Netlify) | Done |
-| [x] | `.htaccess` pretty URL rules (Apache production) | Done |
-| [x] | `sitemap.xml` includes all 10 pages | Done |
-| [x] | `scripts/apply-partials.mjs` registers landings | Done |
-| [x] | `netlify.toml` publish = `.` | Done |
-| [x] | Layout fixes pushed to `main` | Commit `2eca7fc` |
-| [ ] | Deployed to **production** specialized-med.com | **Pending** — currently on Netlify preview only |
-| [ ] | Client acceptance sign-off | **Pending** |
+| Done | Link source | Links to new landings |
+|:----:|-------------|----------------------|
+| [x] | `services.html` | All modality cards + Post-TAVR band |
+| [x] | `index.html` | Service summary cards + TAVR card + footer |
+| [x] | Each landing page | Related pages + contact |
+| [x] | `partials/footer.html` | MCT, Holter, Event landings |
+| [ ] | Top nav → individual landings | Not required by scope; nav still → Services |
 
 ---
 
-## Stage 2 acceptance proof pack (submit to client)
+## Stage 2 Acceptance Proof Required (client sign-off)
 
-Collect these after final production deploy:
+| Done | Stage 2 acceptance proof required | Proof / Notes |
+|:----:|----------------------------------|---------------|
+| [ ] | Live URL list for all ten pages | URL list |
+| [ ] | Title tag, meta description, H1 for each page | This document / view-source |
+| [ ] | Each page confirmed indexable | Indexability proof |
+| [ ] | Each page has self-referencing canonical | Source/code proof |
+| [ ] | Each page has direct-answer content | AEO inventory |
+| [ ] | Each page has visible FAQ content | FAQ inventory + screenshots |
+| [ ] | Each page has CTA section | CTA screenshots |
+| [ ] | Each page has internal links | Internal link map |
+| [ ] | Sitemap inclusion for each live page | Sitemap screenshot/export |
+| [ ] | Post-TAVR page live URL + screenshot | Post-TAVR proof |
 
-| Done | Proof item |
-|:----:|------------|
-| [ ] | Live URL list (all 10 pages) |
-| [ ] | Title / meta / H1 table (copy from section above or export) |
-| [ ] | Indexability confirmation (`index, follow`, no `noindex`) |
-| [ ] | Canonical screenshot or view-source per page |
-| [ ] | Direct-answer opening inventory (screenshot or URL list) |
-| [ ] | FAQ inventory (screenshot showing visible Q&As open) |
-| [ ] | CTA screenshots |
-| [ ] | Internal link map (or this document) |
-| [ ] | Sitemap screenshot or `sitemap.xml` export |
-| [ ] | Post-TAVR page live URL + screenshot |
-
----
-
-## Known gaps / decisions for client
-
-1. **Production deploy** — Code is on GitHub `main` and Netlify preview; not yet merged to live [specialized-med.com](https://www.specialized-med.com/) Apache hosting.
-2. **Canonical format** — `.html` canonicals vs doc’s trailing-slash URLs; both URL forms work via redirects.
-3. **Nav menu** — Does not list individual landings (only Services); add only if client wants.
-4. **Homepage / services** — Now link into landings; nav unchanged by design.
+**Stage 2 accepted by Specialized Medical:** Date: _______________
 
 ---
 
-## Quick QA steps (5 minutes)
+## Developer notes (not blockers for code complete)
 
-1. Open Post-TAVR page → confirm left-aligned hero, FAQs open, full-width FAQ block.
-2. Click footer “Holter Monitoring” → lands on holter page.
-3. From `services.html` → click MCT card → MCT landing loads with styles.
-4. View page source → confirm canonical + FAQPage JSON-LD present.
-5. Open `sitemap.xml` on deploy → confirm all 10 `.html` URLs listed.
-
----
-
-*Generated from codebase audit on branch `main` (commit `2eca7fc`). Update checkboxes as you verify on Netlify and production.*
+1. **Canonical format:** Pages use `.html` canonicals to match live Apache at [specialized-med.com](https://www.specialized-med.com/). Pretty trailing-slash URLs work via `_redirects` (Netlify) and `.htaccess` (production).
+2. **Production deploy:** Code complete on branch; live specialized-med.com deploy pending.
+3. **Preview:** Netlify preview available for QA before production merge.
