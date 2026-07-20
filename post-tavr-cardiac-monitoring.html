@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-    <script>
-    (function (w, d) {
-      function siteRootPathname() {
-        var segs = w.location.pathname.split("/").filter(Boolean)
-        // Some hosting panels / preview URLs can include a filesystem-like prefix
-        // such as /home/<user>/public_html/<site>/... . If present, strip it so
-        // <base href> always points at the public site path.
-        var ph = segs.lastIndexOf("public_html")
-        if (ph !== -1) segs = segs.slice(ph + 1)
-        var leaf = { about: 1, services: 1, faq: 1, contact: 1, "clinical-stories": 1, thanks: 1, "404": 1 }
-        while (segs.length) {
-          var last = segs[segs.length - 1]
-          if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {
-            segs.length -= 2
-            break
-          }
-          if (/\.html$/i.test(last)) {
-            segs.pop()
-            continue
-          }
-          if (leaf[last]) {
-            segs.pop()
-            continue
-          }
-          break
-        }
-        return "/" + (segs.join("/") + (segs.length ? "/" : ""))
-      }
-      var p = siteRootPathname()
-      var h = w.location.origin + (p === "/" ? "/" : p)
-      var b = d.createElement("base")
-      b.href = h
-      var m = d.head.querySelector("meta[charset]")
-      if (m && typeof m.insertAdjacentElement === "function") {
-        m.insertAdjacentElement("afterend", b)
-      } else if (m && m.nextSibling) {
-        d.head.insertBefore(b, m.nextSibling)
-      } else {
-        d.head.insertBefore(b, d.head.firstChild)
-      }
-    })(window, document)
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Post-TAVR Cardiac Monitoring",
+  "provider": {
+    "@type": "Organization",
+    "name": "Specialized Medical",
+    "url": "https://www.specialized-med.com/"
+  },
+  "serviceType": "Cardiac Monitoring",
+  "description": "Post-TAVR cardiac monitoring with live-streaming ECG, MCT, S-Patch technology, 24/7 monitoring support, and physician-ready reports from Specialized Medical."
+}
   </script>
-    <script src="js/analytics.js"></script>
-  <!-- sm-site-base -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Post-TAVR cardiac monitoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is outpatient cardiac rhythm monitoring ordered after TAVR to help clinicians review ECG activity during recovery. Specialized Medical supports these programs with MCT, S-Patch technology, live-streaming ECG data, and protocol-based alerts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Post-TAVR monitoring guarantee arrhythmia detection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Monitoring supports clinician awareness within ordered protocols. Specialized Medical does not guarantee detection, clinical outcomes, or speed of intervention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What technology is used for Post-TAVR monitoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Programs commonly use Mobile Cardiac Telemetry with the S-Patch Monitoring System and live-streaming ECG data, supported by multi-path cellular transmission designed for broader coverage environments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the workflow work for clinic staff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Staff enroll the patient in the web portal, complete hook-up, and Specialized Medical supports monitor/alert operations and physician-ready reporting according to practice protocols."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we discuss Post-TAVR monitoring support for our program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use Discuss Post-TAVR Monitoring Support, Request a Demo, or Start a No-Risk Pilot Program to talk with Specialized Medical about workflow fit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is reimbursement guaranteed for Post-TAVR monitoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Billing support may be available, but Specialized Medical does not guarantee reimbursement, payment, or financial results."
+      }
+    }
+  ]
+}
+  </script>
+  <script src="js/analytics.js"></script>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Cardiac Monitoring Team for Doctors Support</title>
-  <meta name="description" content="Get in touch with our cardiac monitoring team for setup support demos and service information designed for clinics and physician practices.">
+  <title>Post-TAVR Cardiac Monitoring | Live ECG &amp; MCT | Specialized Medical</title>
+  <meta name="description" content="Post-TAVR cardiac monitoring with live-streaming ECG, MCT, S-Patch technology, 24/7 monitoring support, and physician-ready reports from Specialized Medical.">
+  <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/contact.css">
-  <link rel="canonical" href="https://www.specialized-med.com/contact.html" />
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="canonical" href="https://www.specialized-med.com/post-tavr-cardiac-monitoring/">
 </head>
 <body>
   <noscript>
@@ -71,7 +101,7 @@
 ﻿    <header class="site-header site-header--figma">
       <div class="figma-container figma-header__inner site-header__inner">
         <a href="./" class="figma-brand" aria-label="Specialized Medical home">
-          <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="Specialized Medical – Cardiac Monitoring Services" width="236" height="52" decoding="async">
+          <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="" width="236" height="52" decoding="async">
         </a>
         <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
           <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -79,14 +109,14 @@
         <button type="button" class="nav-overlay" aria-label="Close menu" hidden></button>
         <nav id="primary-nav" class="figma-nav" aria-label="Primary">
           <a class="figma-nav__link" href="./">Home</a>
-          <a class="figma-nav__link" href="about.html">About Us</a>
-         <a class="figma-nav__link" href="services.html">Services</a>
-          <a class="figma-nav__link" href="faq.html">FAQs</a>
-          <a class="figma-nav__link is-active" href="contact/">Contact</a>
+          <a class="figma-nav__link" href="about/">About Us</a>
+          <a class="figma-nav__link is-active" href="services/">Services</a>
+          <a class="figma-nav__link" href="faq/">FAQs</a>
+          <a class="figma-nav__link" href="contact/">Contact</a>
           <div class="figma-nav__mobile">
             <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
+              <a class="figma-btn figma-btn--outline-dark" href="contact/#contact-form">Request a Demo</a>
               <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
@@ -96,76 +126,211 @@
             <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
+          <a class="figma-btn figma-btn--outline-dark" href="contact/">Request a Demo</a>
           <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
     </header>
 
-    <h1> Coming soon</h1>
-    </div>
+<main class="landing-page services-page services-page--figma" data-landing="post-tavr-cardiac-monitoring">
+    <section class="landing-hero" aria-labelledby="tavr-hero-heading">
+      <div class="landing-hero__plate">
+        <div class="landing-hero__inner figma-container">
+          <p class="figma-hero__pill">
+            <span class="figma-hero__pill-dot" aria-hidden="true"></span>
+            Post-TAVR Cardiac Monitoring
+          </p>
+          <h1 id="tavr-hero-heading" class="landing-hero__title">
+            Post-TAVR Cardiac Monitoring with <span class="landing-hero__title-accent">Live-Streaming ECG</span>
+          </h1>
+          <p class="landing-hero__lead">Specialized Medical supports Post-TAVR cardiac monitoring programs with Mobile Cardiac Telemetry, the S-Patch Monitoring System, live-streaming ECG data, 24/7 monitoring support, physician-ready reports, and protocol-based arrhythmia alert workflows—helping practices operationalize ordered outpatient rhythm monitoring after TAVR.</p>
+          <div class="landing-hero__actions">
+            <a class="figma-btn figma-btn--solid" href="contact/">Discuss Post-TAVR Monitoring Support</a>
+            <a class="figma-btn figma-btn--outline-dark" href="contact/">Request a Demo</a>
+            <a class="figma-btn figma-btn--outline-dark" href="contact/">Start a No-Risk Pilot Program</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer class="site-footer site-footer--figma">
-        <div class="figma-container">
-          <div class="figma-footer__hr" aria-hidden="true"></div>
-          <div class="figma-footer__main">
-            <div class="figma-footer__brand">
-              <a href="./" class="figma-brand figma-brand--footer">
-                <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="Specialized Medical – Cardiac Monitoring Services" width="412" height="90" decoding="async">
-              </a>
-              <p class="figma-footer__tagline">Turnkey cardiac monitoring. Live ECG data. S-Patch as the primary featured system.</p>
-            </div>
-            <div class="figma-footer__contact">
-              <nav class="figma-footer__nav" aria-label="Footer">
-                <a href="./">Home</a>
-                <a href="about.html">About Us</a>
-               <a href="services.html">Services</a>
-                <a href="faq.html">FAQs</a>
-                <a href="contact.html">Contact</a>
-                <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
-              </nav>
-              <div class="figma-footer__line">
-                <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
-                  <img src="icons/vector3527-jgyk.svg" alt="Phone Icon" width="20" height="20" decoding="async">
-                </span>
-                <a class="figma-footer__link" href="tel:+18557732633">
-                  <span class="figma-footer__muted">1-855-SPEC-MED</span> 
-                  <span class="figma-footer__strong">(1-855-773-2633)</span>
-                </a>
-              </div>
-              <div class="figma-footer__line">
-                <img src="icons/fi62447103527-gtjs.svg" alt="" width="20" height="20" decoding="async">
-                <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
-              </div>
-              <div class="figma-footer__line">
-                <img src="images/figma-assets/location_icon.png" alt="" width="20" height="20" decoding="async">
-                <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
-              </div>
-            </div>
+    <section class="landing-section" aria-labelledby="tavr-why-heading">
+      <div class="figma-container">
+        <h2 id="tavr-why-heading" class="landing-h2">Why Post-TAVR Rhythm Monitoring <span class="landing-h2__accent">Matters</span></h2>
+        <p class="landing-p">After TAVR, patients may remain at elevated risk for delayed conduction abnormalities and arrhythmias during recovery. Outpatient cardiac monitoring can help clinicians review rhythm activity over an ordered window. Monitoring supports clinical awareness; it does not guarantee detection of every event, any clinical outcome, or a specific speed of intervention.</p>
+        <h2 class="landing-h2" style="margin-top:2rem">Live ECG, S-Patch &amp; <span class="landing-h2__accent">Coverage Support</span></h2>
+        <p class="landing-p">Specialized Medical’s Post-TAVR-relevant MCT workflows pair the S-Patch Monitoring System with live-streaming ECG data and a multi-path cellular transmission platform designed to support consistent capture, including in rural and lower-coverage environments. Connectivity is not guaranteed in every location or moment.</p>
+      </div>
+    </section>
+    <section class="landing-section landing-section--muted" aria-labelledby="tavr-workflow-heading">
+      <div class="figma-container">
+        <h2 id="tavr-workflow-heading" class="landing-h2">Post-TAVR Monitoring <span class="landing-h2__accent">Workflow</span></h2>
+        <ol class="landing-steps">
+          <li class="landing-steps__item">
+            <h3 class="landing-h3">Enroll in Web Portal</h3>
+            <p class="landing-p">Staff enroll the patient and capture order details in the secure web portal.</p>
+          </li>
+          <li class="landing-steps__item">
+            <h3 class="landing-h3">Hook Up</h3>
+            <p class="landing-p">Apply the ordered monitor and confirm the patient understands wear instructions.</p>
+          </li>
+          <li class="landing-steps__item">
+            <h3 class="landing-h3">Monitor / Alert</h3>
+            <p class="landing-p">Live-streaming ECG data and 24/7 monitoring support enable protocol-based arrhythmia alert routing.</p>
+          </li>
+          <li class="landing-steps__item">
+            <h3 class="landing-h3">Physician-Ready Report</h3>
+            <p class="landing-p">Clinicians receive physician-ready reports designed for efficient review and documentation workflows.</p>
+          </li>
+        </ol>
+        <h3 class="landing-h3" style="margin-top:2rem">Reporting &amp; Notification</h3>
+        <p class="landing-p">Notifications and reports follow practice-defined protocols. Specialized Medical coordinates monitoring operations and alert delivery preferences established with your team. Language is intentionally neutral and protocol-based—no guaranteed reimbursement, profit, clinical outcome, detection, or intervention timing.</p>
+        <ul class="landing-related">
+      <li><a href="mobile-cardiac-telemetry-mct/">Mobile Cardiac Telemetry</a></li>
+      <li><a href="live-ecg-monitoring/">Live ECG Monitoring</a></li>
+      <li><a href="s-patch-cardiac-monitoring-system/">S-Patch Monitoring System</a></li>
+      <li><a href="cardiology-practice-cardiac-monitoring/">For Cardiology Practices</a></li>
+      <li><a href="contact/">Contact</a></li>
+    </ul>
+      </div>
+    </section>
+
+<section class="figma-section landing-section landing-faq landing-section--muted" aria-labelledby="tavr-faq-heading">
+      <div class="figma-container">
+        <h2 id="tavr-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
+        <div class="faq-category">
+          <div class="faq-category__list">
+<div class="faq-item is-open">
+      <button type="button" id="faq-trigger-tavr-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-tavr-0">
+        <span class="faq-item__q">What is Post-TAVR cardiac monitoring?</span>
+        <svg class="faq-item__chevron is-open" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-tavr-0" role="region" aria-labelledby="faq-trigger-tavr-0" class="faq-item__panel">
+        <p>It is outpatient cardiac rhythm monitoring ordered after TAVR to help clinicians review ECG activity during recovery. Specialized Medical supports these programs with MCT, S-Patch technology, live-streaming ECG data, and protocol-based alerts.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-tavr-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-tavr-1">
+        <span class="faq-item__q">Does Post-TAVR monitoring guarantee arrhythmia detection?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-tavr-1" role="region" aria-labelledby="faq-trigger-tavr-1" class="faq-item__panel" hidden>
+        <p>No. Monitoring supports clinician awareness within ordered protocols. Specialized Medical does not guarantee detection, clinical outcomes, or speed of intervention.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-tavr-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-tavr-2">
+        <span class="faq-item__q">What technology is used for Post-TAVR monitoring?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-tavr-2" role="region" aria-labelledby="faq-trigger-tavr-2" class="faq-item__panel" hidden>
+        <p>Programs commonly use Mobile Cardiac Telemetry with the S-Patch Monitoring System and live-streaming ECG data, supported by multi-path cellular transmission designed for broader coverage environments.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-tavr-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-tavr-3">
+        <span class="faq-item__q">How does the workflow work for clinic staff?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-tavr-3" role="region" aria-labelledby="faq-trigger-tavr-3" class="faq-item__panel" hidden>
+        <p>Staff enroll the patient in the web portal, complete hook-up, and Specialized Medical supports monitor/alert operations and physician-ready reporting according to practice protocols.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-tavr-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-tavr-4">
+        <span class="faq-item__q">Can we discuss Post-TAVR monitoring support for our program?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-tavr-4" role="region" aria-labelledby="faq-trigger-tavr-4" class="faq-item__panel" hidden>
+        <p>Yes. Use Discuss Post-TAVR Monitoring Support, Request a Demo, or Start a No-Risk Pilot Program to talk with Specialized Medical about workflow fit.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-tavr-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-tavr-5">
+        <span class="faq-item__q">Is reimbursement guaranteed for Post-TAVR monitoring?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-tavr-5" role="region" aria-labelledby="faq-trigger-tavr-5" class="faq-item__panel" hidden>
+        <p>No. Billing support may be available, but Specialized Medical does not guarantee reimbursement, payment, or financial results.</p>
+      </div>
+    </div>
           </div>
-          <div class="figma-footer__triple">
-            <span>Mobile Cardiac Telemetry</span>
-            <span>Holter Monitoring</span>
-            <span>Event Monitoring</span>
+        </div>
+      </div>
+    </section>
+
+<section class="figma-section figma-cta" aria-labelledby="tavr-cta-heading">
+      <div class="figma-container">
+        <div class="figma-cta__box">
+          <h2 id="tavr-cta-heading" class="figma-h2 figma-h2--center figma-h2--narrow">
+            Discuss Post-TAVR<br>
+            <span class="figma-h2__accent">Monitoring Support</span>
+          </h2>
+          <p class="figma-cta__p figma-cta__p--lead">Talk with Specialized Medical about MCT, live-streaming ECG data, and turnkey workflow support for your Post-TAVR monitoring program. You can also request a demo or start a no-risk pilot program.</p>
+          <div class="figma-cta__actions">
+            <a class="figma-btn figma-btn--solid" href="contact/">Discuss Post-TAVR Monitoring Support</a>
+            <a class="figma-cta__talk" href="contact/">Request a Demo or Start a No-Risk Pilot →</a>
           </div>
-          <div class="figma-footer__hr" aria-hidden="true"></div>
-          <div class="figma-footer__bottom">
-            <p class="figma-footer__copy">© <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
-            <div class="figma-footer__social">
-              <img src="images/figma-assets/hipaa-badge.png" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
-                <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
-                <img src="images/facebook-like.jpg" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+  </main>
+﻿    <footer class="site-footer site-footer--figma">
+      <div class="figma-container">
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__main">
+          <div class="figma-footer__brand">
+            <a href="./" class="figma-brand figma-brand--footer">
+              <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="" width="412" height="90" decoding="async">
+            </a>
+            <p class="figma-footer__tagline">Turnkey cardiac monitoring. Live ECG data. S-Patch as the primary featured system.</p>
+          </div>
+          <div class="figma-footer__contact">
+            <nav class="figma-footer__nav" aria-label="Footer">
+              <a href="./">Home</a>
+              <a href="about/">About Us</a>
+              <a href="services/">Services</a>
+              <a href="faq/">FAQs</a>
+              <a href="contact/">Contact</a>
+              <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+            </nav>
+            <div class="figma-footer__line">
+              <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
+                <img src="icons/vector3527-jgyk.svg" alt="Phone Icon" width="20" height="20" decoding="async">
+              </span>
+              <a class="figma-footer__link" href="tel:+18557732633">
+                <span class="figma-footer__muted">1-855-SPEC-MED</span> 
+                <span class="figma-footer__strong">(1-855-773-2633)</span>
               </a>
-              <a href="https://www.instagram.com/specialized_medical_llc/" class="figma-footer__fb" aria-label="Instagram">
-                <img src="images/instagram-follow.png" alt="Like us on instagram" width="100" height="40" loading="lazy" decoding="async">
-              </a>
-              <a href="https://www.linkedin.com/company/specialized-medical-l-l-c-/" class="figma-footer__fb" aria-label="Linkedin">
-                <img src="images/linkedin.png" alt="Like us on Linkedin" width="100" height="40" loading="lazy" decoding="async">
-              </a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="icons/fi62447103527-gtjs.svg" alt="" width="20" height="20" decoding="async">
+              <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="images/figma-assets/location_icon.png" alt="" width="20" height="20" decoding="async">
+              <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
             </div>
           </div>
         </div>
-      </footer>
-  
-    </body>
-    </html>
+        <div class="figma-footer__triple">
+          <span>Mobile Cardiac Telemetry</span>
+          <span>Holter Monitoring</span>
+          <span>Event Monitoring</span>
+        </div>
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__bottom">
+          <p class="figma-footer__copy">© <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
+          <div class="figma-footer__social">
+            <img src="images/figma-assets/hipaa-badge.png" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
+              <img src="images/facebook-like.jpg" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="js/main.js?v=20260501" defer></script>
+</body>
+</html>

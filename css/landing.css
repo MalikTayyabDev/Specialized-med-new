@@ -1,0 +1,222 @@
+/* Stagegate 2 SEO/AEO service landing pages */
+
+.landing-page {
+  overflow-x: hidden;
+  background: #fff;
+}
+
+.landing-hero {
+  padding: var(--page-hero-gutter, 1.5rem) 0 0;
+}
+
+.landing-hero__plate {
+  position: relative;
+  max-width: 1430px;
+  margin: 0 auto;
+  min-height: min(420px, 70vh);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  background: linear-gradient(135deg, #fff 0%, #fcf4f5 55%, #f5e8ea 100%);
+}
+
+.landing-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--hero-plate-inner-pt, 3rem);
+  padding-bottom: var(--hero-plate-inner-pb, 3rem);
+  padding-inline: var(--figma-inline, 1.5rem);
+  max-width: 760px;
+}
+
+.landing-hero__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.85rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #231f1e;
+}
+
+.landing-hero__title-accent {
+  font-family: var(--font-display, var(--font-sans));
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-red, #c9222f);
+}
+
+.landing-hero__lead {
+  margin: 0 0 1.5rem;
+  max-width: 40rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(35, 31, 30, 0.78);
+}
+
+.landing-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.landing-section {
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+}
+
+.landing-section--muted {
+  background: #faf8f8;
+}
+
+.landing-h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #231f1e;
+}
+
+.landing-h2__accent {
+  font-family: var(--font-display, var(--font-sans));
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-red, #c9222f);
+}
+
+.landing-h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #231f1e;
+}
+
+.landing-p {
+  margin: 0 0 1rem;
+  max-width: 48rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(35, 31, 30, 0.78);
+}
+
+.landing-p:last-child {
+  margin-bottom: 0;
+}
+
+.landing-list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  max-width: 48rem;
+  color: rgba(35, 31, 30, 0.78);
+  line-height: 1.6;
+}
+
+.landing-list li + li {
+  margin-top: 0.4rem;
+}
+
+.landing-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .landing-grid--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .landing-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.landing-card {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.landing-card a {
+  color: var(--color-red, #c9222f);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.landing-card a:hover {
+  text-decoration: underline;
+}
+
+.landing-card__meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(35, 31, 30, 0.6);
+}
+
+.landing-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.landing-related a {
+  color: var(--color-red, #c9222f);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.landing-related a:hover {
+  text-decoration: underline;
+}
+
+.landing-steps {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: land-step;
+}
+
+@media (min-width: 800px) {
+  .landing-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.landing-steps__item {
+  position: relative;
+  padding: 1.15rem 1.2rem 1.15rem 1.2rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  counter-increment: land-step;
+}
+
+.landing-steps__item::before {
+  content: counter(land-step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 0.65rem;
+  border-radius: 999px;
+  background: var(--color-red, #c9222f);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.landing-faq .faq-category__title {
+  margin-bottom: 1rem;
+}
+
+.landing-faq .faq-category__list {
+  max-width: 48rem;
+}

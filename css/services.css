@@ -159,6 +159,16 @@
   text-transform: capitalize;
 }
 
+.svc-breakdown-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.svc-breakdown-card__title a:hover {
+  color: var(--color-red, #c9222f);
+  text-decoration: underline;
+}
+
 .svc-breakdown-card__meta {
   margin: 0;
   font-size: 0.875rem;

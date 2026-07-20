@@ -22,6 +22,17 @@ const PAGES = [
   { file: "services.html", base: "", active: "services" },
   { file: "clinical-stories.html", base: "", active: "services" },
   { file: "thanks.html", base: "", active: "contact" },
+  // Stagegate 2 SEO/AEO landing pages
+  { file: "cardiac-monitoring-services.html", base: "", active: "services" },
+  { file: "mobile-cardiac-telemetry-mct.html", base: "", active: "services" },
+  { file: "holter-monitoring-services.html", base: "", active: "services" },
+  { file: "long-term-holter-monitoring.html", base: "", active: "services" },
+  { file: "cardiac-event-monitoring.html", base: "", active: "services" },
+  { file: "ambulatory-cardiac-monitoring.html", base: "", active: "services" },
+  { file: "s-patch-cardiac-monitoring-system.html", base: "", active: "services" },
+  { file: "live-ecg-monitoring.html", base: "", active: "services" },
+  { file: "post-tavr-cardiac-monitoring.html", base: "", active: "services" },
+  { file: "cardiology-practice-cardiac-monitoring.html", base: "", active: "services" },
   // This page lives in a subfolder, but we inject <base href> so links should
   // be site-root-relative (no ../ prefixes), otherwise nav can escape the subfolder.
   { file: "services/equipment.html", base: "", active: "services" },

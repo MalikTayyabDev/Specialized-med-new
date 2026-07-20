@@ -13,6 +13,16 @@
 /clinical-stories.html /clinical-stories/ 301
 /thanks.html /thanks/ 301
 /services/equipment.html /services/equipment/ 301
+/cardiac-monitoring-services.html /cardiac-monitoring-services/ 301
+/mobile-cardiac-telemetry-mct.html /mobile-cardiac-telemetry-mct/ 301
+/holter-monitoring-services.html /holter-monitoring-services/ 301
+/long-term-holter-monitoring.html /long-term-holter-monitoring/ 301
+/cardiac-event-monitoring.html /cardiac-event-monitoring/ 301
+/ambulatory-cardiac-monitoring.html /ambulatory-cardiac-monitoring/ 301
+/s-patch-cardiac-monitoring-system.html /s-patch-cardiac-monitoring-system/ 301
+/live-ecg-monitoring.html /live-ecg-monitoring/ 301
+/post-tavr-cardiac-monitoring.html /post-tavr-cardiac-monitoring/ 301
+/cardiology-practice-cardiac-monitoring.html /cardiology-practice-cardiac-monitoring/ 301
 
 # Pretty URLs → actual files (serve the flat *.html pages)
 /about /about.html 200
@@ -29,6 +39,26 @@
 /thanks/ /thanks.html 200
 /services/equipment /services/equipment.html 200
 /services/equipment/ /services/equipment.html 200
+/cardiac-monitoring-services /cardiac-monitoring-services.html 200
+/cardiac-monitoring-services/ /cardiac-monitoring-services.html 200
+/mobile-cardiac-telemetry-mct /mobile-cardiac-telemetry-mct.html 200
+/mobile-cardiac-telemetry-mct/ /mobile-cardiac-telemetry-mct.html 200
+/holter-monitoring-services /holter-monitoring-services.html 200
+/holter-monitoring-services/ /holter-monitoring-services.html 200
+/long-term-holter-monitoring /long-term-holter-monitoring.html 200
+/long-term-holter-monitoring/ /long-term-holter-monitoring.html 200
+/cardiac-event-monitoring /cardiac-event-monitoring.html 200
+/cardiac-event-monitoring/ /cardiac-event-monitoring.html 200
+/ambulatory-cardiac-monitoring /ambulatory-cardiac-monitoring.html 200
+/ambulatory-cardiac-monitoring/ /ambulatory-cardiac-monitoring.html 200
+/s-patch-cardiac-monitoring-system /s-patch-cardiac-monitoring-system.html 200
+/s-patch-cardiac-monitoring-system/ /s-patch-cardiac-monitoring-system.html 200
+/live-ecg-monitoring /live-ecg-monitoring.html 200
+/live-ecg-monitoring/ /live-ecg-monitoring.html 200
+/post-tavr-cardiac-monitoring /post-tavr-cardiac-monitoring.html 200
+/post-tavr-cardiac-monitoring/ /post-tavr-cardiac-monitoring.html 200
+/cardiology-practice-cardiac-monitoring /cardiology-practice-cardiac-monitoring.html 200
+/cardiology-practice-cardiac-monitoring/ /cardiology-practice-cardiac-monitoring.html 200
 
 # Catch-all: any other legacy .jsp paths → homepage (avoid duplicate crawl paths)
 /*.jsp / 301
