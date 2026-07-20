@@ -11,6 +11,7 @@ Read these **before** changing pages. They document how the live static site act
 | 5 | [05-stagegate-2-requirements.md](./05-stagegate-2-requirements.md) | Stage 2 landing-page checklist |
 | 6 | [06-dev-checklist.md](./06-dev-checklist.md) | Do / don’t before commit or push |
 | 7 | [07-production-urls.md](./07-production-urls.md) | Live Apache URL rules (no broken links) |
+| 8 | [08-stagegate-2-acceptance-checklist.md](./08-stagegate-2-acceptance-checklist.md) | **Stage 2 QA + client acceptance checklist** |
 
 ## Critical lesson (styles/images)
 
