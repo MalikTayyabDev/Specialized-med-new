@@ -93,9 +93,7 @@
           }
         }
         </script>
-        
-    
-  <script src="js/analytics.js"></script>
+
   <!-- sm-site-base -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Advanced Cardiac Monitoring Services | Specialized Med</title>
@@ -114,6 +112,8 @@
   <link rel="icon" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://datacoreservices.com" crossorigin>
+  <link rel="preload" as="image" href="images/specialized-medical-spatch-hero.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/home.css">
@@ -199,14 +199,18 @@
             <div class="figma-hero__visual">
               <p class="figma-hero__chip figma-hero__chip--bl" id="alert-custom"><a href="faq.html#faq-trigger-0-3">24/7 Monitoring & Arrhythmia Alerts.</a></p>
              
-              <img
-                class="figma-hero__photo"
-                src="images/specialized-medical-spatch-hero.jpg"
-                alt="Patient wearing a lightweight cardiac monitor"
-                width="1536"
-                height="1024"
-                decoding="async"
-              >
+              <picture>
+                <source srcset="images/specialized-medical-spatch-hero.webp" type="image/webp">
+                <img
+                  class="figma-hero__photo"
+                  src="images/specialized-medical-spatch-hero.jpg"
+                  alt="Patient wearing a lightweight cardiac monitor"
+                  width="1536"
+                  height="1024"
+                  decoding="async"
+                  fetchpriority="high"
+                >
+              </picture>
             </div>
           </div>
         </div>
@@ -224,15 +228,14 @@
             <video
               class="figma-video__media"
               id="overview-video"
-              poster="images/figma-assets/Rectangle 34.png"
+              poster="images/figma-assets/Rectangle 34.webp"
               playsinline
-              preload="metadata"
+              preload="none"
               muted
               width="738"
               height="442"
             >
-              <!-- Place your file at static-site/video/medical-overview.mp4 (or change the path below) -->
-              <source src="video/main-video.mp4" type="video/mp4">
+              <source data-src="video/main-video.mp4" type="video/mp4">
             </video>
             <button type="button" class="figma-video__mute figma-video__mute--muted" data-overview-mute aria-label="Unmute video" aria-pressed="true">
               <span class="figma-video__mute-icon figma-video__mute-icon--off" aria-hidden="true">
@@ -295,15 +298,18 @@
             data-sm-cardiac-embed-slot
             data-sm-cardiac-embed="https://player.vimeo.com/video/1187931821?dnt=1"
           >
-            <img
-              class="sm-cardiac-wire__poster"
-              src="images/figma-services/live-streaming-ecg.jpg"
-              alt="Cardiac Wire interview with Steven M. Burns, President &amp; CEO of Specialized Medical, discussing live-streaming ECG technology and ambulatory cardiac monitoring services."
-              width="1200"
-              height="675"
-              loading="lazy"
-              decoding="async"
-            >
+            <picture>
+              <source srcset="images/figma-services/live-streaming-ecg.webp" type="image/webp">
+              <img
+                class="sm-cardiac-wire__poster"
+                src="images/figma-services/live-streaming-ecg.jpg"
+                alt="Cardiac Wire interview with Steven M. Burns, President &amp; CEO of Specialized Medical, discussing live-streaming ECG technology and ambulatory cardiac monitoring services."
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
           </div>
           <div class="sm-cardiac-wire__pilot">
             <p class="sm-cardiac-wire__pilot-text">
@@ -437,7 +443,7 @@
       <section class="figma-section figma-ecg" aria-labelledby="figma-ecg-heading">
         <div class="figma-container figma-ecg__grid">
           <div class="figma-ecg__visual">
-            <video class="figma-ecg__video" src="video/Holter-Monitoring.mp4" poster="images/figma-services/live-streaming-ecg.jpg" playsinline preload="metadata" controls="controls" loop="loop"></video>
+            <video class="figma-ecg__video" data-src="video/Holter-Monitoring.mp4" poster="images/figma-services/live-streaming-ecg.webp" playsinline preload="none" controls loop></video>
 
           </div>
           <div class="figma-ecg__copy">
@@ -534,7 +540,7 @@
               </p>
             </div>
             <div class="figma-proof-patient-experience__media">
-              <video class="figma-ai__video figma-ai__video--proof" src="video/Avatar_Video_Take_14_buttons.mp4#t=0.001" poster="images/figma-services/patient-friendly.jpg" width="520" height="906" controls loop playsinline preload="metadata"></video>
+              <video class="figma-ai__video figma-ai__video--proof" data-src="video/Avatar_Video_Take_14_buttons.mp4" poster="images/figma-services/patient-friendly.webp" width="520" height="906" controls loop playsinline preload="none"></video>
             </div>
           </div>
         </div>
@@ -562,7 +568,7 @@
         <div class="figma-footer__hr" aria-hidden="true"></div>
         <div class="figma-footer__main">
           <div class="figma-footer__brand">
-            <a href="./" class="figma-brand figma-brand--footer">
+            <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
               <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="" width="412" height="90" decoding="async">
             </a>
             <p class="figma-footer__tagline">Turnkey cardiac monitoring. Live ECG data. S-Patch as the primary featured system.</p>
@@ -617,6 +623,7 @@
 
 
   </div>
+  <script src="js/analytics.js" defer></script>
   <script src="js/main.js?v=20260501" defer></script>
 </body>
 </html>

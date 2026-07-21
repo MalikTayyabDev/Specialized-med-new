@@ -83,18 +83,18 @@
 
 ## Title / Meta / H1 Table
 
-| Page | Title tag | H1 |
-|------|-----------|-----|
-| Cardiac monitoring services | Cardiac Monitoring Services \| Holter, Event & MCT \| Specialized Medical | Turnkey **Cardiac Monitoring Services** |
-| MCT | Mobile Cardiac Telemetry (MCT) \| Live ECG & Alerts \| Specialized Medical | Mobile Cardiac Telemetry **(MCT)** |
-| Holter | Holter Monitoring Services (24–48 Hour) \| Specialized Medical | 24–48 Hour **Holter Monitoring** |
-| Long-term Holter | Long-Term Holter Monitoring \| Extended Wear ECG \| Specialized Medical | Long-Term **Holter Monitoring** |
-| Event monitoring | Cardiac Event Monitoring \| Symptom & Rhythm Capture \| Specialized Medical | Cardiac **Event Monitoring** |
-| Ambulatory | Ambulatory Cardiac Monitoring \| Holter, Event & MCT \| Specialized Medical | Ambulatory **Cardiac Monitoring** |
-| S-Patch | S-Patch Monitoring System \| Live ECG Cardiac Monitor \| Specialized Medical | S-Patch **Monitoring System** |
-| Live ECG | Live ECG Monitoring \| Live-Streaming ECG Data \| Specialized Medical | Live-Streaming **ECG Monitoring** |
-| Post-TAVR | Post-TAVR Cardiac Monitoring \| Live ECG & MCT \| Specialized Medical | Post-TAVR Cardiac Monitoring with **Live-Streaming ECG** |
-| Cardiology practice | Cardiac Monitoring for Cardiology Practices \| Specialized Medical | Cardiac Monitoring for **Cardiology Practices** |
+| Page | Title tag | Meta description | H1 |
+|------|-----------|------------------|-----|
+| Cardiac monitoring services | Cardiac Monitoring Services \| Holter, Event & MCT \| Specialized Medical | Turnkey cardiac monitoring services from Specialized Medical: Holter Monitoring, Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry with live-streaming ECG data. | Turnkey **Cardiac Monitoring Services** |
+| MCT | Mobile Cardiac Telemetry (MCT) \| Live ECG & Alerts \| Specialized Medical | Mobile Cardiac Telemetry (MCT) with live-streaming ECG data, 24/7 monitoring support, arrhythmia alerts, and physician-ready reports from Specialized Medical—including Post-TAVR relevance. | Mobile Cardiac Telemetry **(MCT)** |
+| Holter | Holter Monitoring Services (24–48 Hour) \| Specialized Medical | 24–48 hour Holter Monitoring services from Specialized Medical with patient-friendly setup, S-Patch technology, physician-ready reports, and a no-risk pilot program option. | 24–48 Hour **Holter Monitoring** |
+| Long-term Holter | Long-Term Holter Monitoring \| Extended Wear ECG \| Specialized Medical | Long-Term Holter Monitoring beyond 24–48 hours from Specialized Medical, featuring the S-Patch Monitoring System, physician-ready reporting, workflow support, and a no-risk pilot option. | Long-Term **Holter Monitoring** |
+| Event monitoring | Cardiac Event Monitoring \| Symptom & Rhythm Capture \| Specialized Medical | Cardiac Event Monitoring from Specialized Medical for longer ambulatory windows with symptom logging, rhythm-event capture, alerts, physician-ready reports, and patient support. | Cardiac **Event Monitoring** |
+| Ambulatory | Ambulatory Cardiac Monitoring \| Holter, Event & MCT \| Specialized Medical | Ambulatory cardiac monitoring overview from Specialized Medical covering Holter Monitoring, Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry for physician practices. | Ambulatory **Cardiac Monitoring** |
+| S-Patch | S-Patch Monitoring System \| Live ECG Cardiac Monitor \| Specialized Medical | The S-Patch Monitoring System is Specialized Medical’s primary featured cardiac monitor—compact, patient-friendly, with live ECG data support, reporting, and practice workflow integration. | S-Patch **Monitoring System** |
+| Live ECG | Live ECG Monitoring \| Live-Streaming ECG Data \| Specialized Medical | Live-streaming ECG monitoring from Specialized Medical for real-time rhythm visibility, symptom logging, arrhythmia alerts, and physician-ready reports—without guaranteed connectivity claims. | Live-Streaming **ECG Monitoring** |
+| Post-TAVR | Post-TAVR Cardiac Monitoring \| Live ECG & MCT \| Specialized Medical | Post-TAVR cardiac monitoring with live-streaming ECG, MCT, S-Patch technology, 24/7 monitoring support, and physician-ready reports from Specialized Medical. | Post-TAVR Cardiac Monitoring with **Live-Streaming ECG** |
+| Cardiology practice | Cardiac Monitoring for Cardiology Practices \| Specialized Medical | Turnkey cardiac monitoring for cardiology practices: implementation, staff workflow, equipment, physician-ready reports, patient support, and a no-risk pilot program from Specialized Medical. | Cardiac Monitoring for **Cardiology Practices** |
 
 ---
 
@@ -204,7 +204,7 @@
 
 | Done | Link source | Links to new landings |
 |:----:|-------------|----------------------|
-| [x] | `services.html` | All modality cards + Post-TAVR band |
+| [x] | `services.html` | All modality cards + Post-TAVR band + hub links (ambulatory, S-Patch, live ECG, practices) |
 | [x] | `index.html` | Service summary cards + TAVR card + footer |
 | [x] | Each landing page | Related pages + contact |
 | [x] | `partials/footer.html` | MCT, Holter, Event landings |
@@ -236,3 +236,4 @@
 1. **Canonical format:** Pages use `.html` canonicals to match live Apache at [specialized-med.com](https://www.specialized-med.com/). Pretty trailing-slash URLs work via `_redirects` (Netlify) and `.htaccess` (production).
 2. **Production deploy:** Code complete on branch; live specialized-med.com deploy pending.
 3. **Preview:** Netlify preview available for QA before production merge.
+4. **Automated QA:** Run `node scripts/qa-stagegate2.mjs` — see `docs/09-stagegate-2-qa-report.json`.

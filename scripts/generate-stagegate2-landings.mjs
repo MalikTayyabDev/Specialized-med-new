@@ -147,6 +147,32 @@ ${links.map((l) => `      <li><a href="${l.href}">${esc(l.label)}</a></li>`).joi
     </ul>`
 }
 
+/** Contact form deep link — pre-selects interest + service context on contact page. */
+function contactHref({ interest, service }) {
+  const p = new URLSearchParams()
+  if (interest) p.set("interest", interest)
+  if (service) p.set("service", service)
+  const q = p.toString()
+  return `contact.html${q ? `?${q}` : ""}#contact-form`
+}
+
+const PHONE_HREF = "tel:+18557732633"
+
+function defaultHeroActions(page) {
+  return [
+    {
+      className: "figma-btn figma-btn--solid",
+      href: contactHref({ interest: "demo", service: page.slug }),
+      label: "Request a Demo",
+    },
+    {
+      className: "figma-btn figma-btn--outline-dark",
+      href: `#${page.id}-faq-heading`,
+      label: "View FAQs",
+    },
+  ]
+}
+
 function ctaSection(page) {
   const cta = page.cta || {}
   const heading = cta.heading || "Start Your No-Risk"
@@ -154,8 +180,11 @@ function ctaSection(page) {
   const lead =
     cta.lead ||
     "Evaluate Specialized Medical with a small, no-obligation pilot program. If it is not the right fit, we will take everything back—no hassle."
-  const primary = cta.primary || { label: "Start Your No-Risk Pilot Program", href: "contact.html" }
-  const secondary = cta.secondary || { label: "Talk to our team →", href: "contact.html" }
+  const primary = cta.primary || {
+    label: "Start Your No-Risk Pilot Program",
+    href: contactHref({ interest: "beta", service: page.slug }),
+  }
+  const secondary = cta.secondary || { label: "Call 1-855-SPEC-MED →", href: PHONE_HREF }
   return `<section class="figma-section figma-cta" aria-labelledby="${page.id}-cta-heading">
       <div class="figma-container">
         <div class="figma-cta__box">
@@ -190,7 +219,6 @@ ${JSON.stringify(schemas[0], null, 2)}
   <script type="application/ld+json">
 ${JSON.stringify(schemas[1], null, 2)}
   </script>
-  <script src="js/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(page.title)}</title>
   <meta name="description" content="${esc(page.metaDescription)}">
@@ -230,10 +258,7 @@ ${header}
           </h1>
           <p class="landing-hero__lead">${page.directAnswer}</p>
           <div class="landing-hero__actions">
-${(page.heroActions || [
-  { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Request a Demo" },
-  { className: "figma-btn figma-btn--solid", href: "contact.html", label: "Start Your No-Risk Pilot Program" },
-])
+${(page.heroActions || defaultHeroActions(page))
   .map((a) => `            <a class="${a.className}" href="${a.href}">${esc(a.label)}</a>`)
   .join("\n")}
           </div>
@@ -249,6 +274,7 @@ ${ctaSection(page)}
   </main>
 ${footer}
   </div>
+  <script src="js/analytics.js" defer></script>
   <script src="js/main.js?v=20260501" defer></script>
 </body>
 </html>
@@ -319,6 +345,18 @@ const PAGES = [
         ])}
       </div>
     </section>`,
+    heroActions: [
+      {
+        className: "figma-btn figma-btn--solid",
+        href: contactHref({ interest: "demo", service: "cardiac-monitoring-services" }),
+        label: "Request a Demo",
+      },
+      {
+        className: "figma-btn figma-btn--outline-dark",
+        href: "#cms-modalities-heading",
+        label: "Explore Modalities",
+      },
+    ],
     faqs: [
       {
         q: "What cardiac monitoring services does Specialized Medical provide?",
@@ -354,6 +392,18 @@ const PAGES = [
     h1Html: `Mobile Cardiac Telemetry <span class="landing-hero__title-accent">(MCT)</span>`,
     directAnswer:
       "Mobile Cardiac Telemetry (MCT) is an ambulatory cardiac monitoring modality that streams ECG data for near real-time review with 24/7 monitoring support. Specialized Medical pairs MCT with the S-Patch Monitoring System, arrhythmia alert workflows, physician-ready reports, and patient support—including relevance for Post-TAVR monitoring programs.",
+    heroActions: [
+      {
+        className: "figma-btn figma-btn--solid",
+        href: contactHref({ interest: "demo", service: "mobile-cardiac-telemetry-mct" }),
+        label: "Request a Demo",
+      },
+      {
+        className: "figma-btn figma-btn--outline-dark",
+        href: "post-tavr-cardiac-monitoring.html",
+        label: "Post-TAVR Monitoring",
+      },
+    ],
     body: `    <section class="landing-section" aria-labelledby="mct-what-heading">
       <div class="figma-container">
         <h2 id="mct-what-heading" class="landing-h2">What Is Mobile Cardiac <span class="landing-h2__accent">Telemetry?</span></h2>
@@ -450,12 +500,24 @@ const PAGES = [
         a: "No. Holter Monitoring provides continuous ECG data for clinical review within the ordered window. Specialized Medical does not guarantee detection, outcomes, or reimbursement.",
       },
     ],
+    heroActions: [
+      {
+        className: "figma-btn figma-btn--solid",
+        href: contactHref({ interest: "demo", service: "holter-monitoring-services" }),
+        label: "Request a Demo",
+      },
+      {
+        className: "figma-btn figma-btn--outline-dark",
+        href: "#holter-what-heading",
+        label: "How Holter Monitoring Works",
+      },
+    ],
     cta: {
       heading: "Request a Demo or",
       accent: "Start a No-Risk Pilot",
       lead: "See how Specialized Medical Holter Monitoring fits your practice workflow. Request a demo or start a no-risk pilot program with a small patient volume.",
-      primary: { label: "Request a Demo", href: "contact.html" },
-      secondary: { label: "Start Your No-Risk Pilot Program →", href: "contact.html" },
+      primary: { label: "Request a Demo", href: contactHref({ interest: "demo", service: "holter-monitoring-services" }) },
+      secondary: { label: "Call 1-855-SPEC-MED →", href: PHONE_HREF },
     },
   },
   {
@@ -644,6 +706,18 @@ const PAGES = [
     h1Html: `S-Patch <span class="landing-hero__title-accent">Monitoring System</span>`,
     directAnswer:
       "The S-Patch Monitoring System is Specialized Medical’s primary featured ambulatory cardiac monitoring device. It is designed for patient comfort, live-streaming ECG data support, and physician-ready reporting across Holter Monitoring, Long-Term Holter Monitoring, Event Monitoring, and Mobile Cardiac Telemetry workflows.",
+    heroActions: [
+      {
+        className: "figma-btn figma-btn--solid",
+        href: contactHref({ interest: "demo", service: "s-patch-cardiac-monitoring-system" }),
+        label: "Request a Demo",
+      },
+      {
+        className: "figma-btn figma-btn--outline-dark",
+        href: "services/equipment.html",
+        label: "Compare Equipment",
+      },
+    ],
     body: `    <section class="landing-section" aria-labelledby="spatch-what-heading">
       <div class="figma-container">
         <h2 id="spatch-what-heading" class="landing-h2">Primary Featured <span class="landing-h2__accent">Monitoring System</span></h2>
@@ -757,9 +831,21 @@ const PAGES = [
     directAnswer:
       "Specialized Medical supports Post-TAVR cardiac monitoring programs with Mobile Cardiac Telemetry, the S-Patch Monitoring System, live-streaming ECG data, 24/7 monitoring support, physician-ready reports, and protocol-based arrhythmia alert workflows—helping practices operationalize ordered outpatient rhythm monitoring after TAVR.",
     heroActions: [
-      { className: "figma-btn figma-btn--solid", href: "contact.html", label: "Discuss Post-TAVR Monitoring Support" },
-      { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Request a Demo" },
-      { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Start a No-Risk Pilot Program" },
+      {
+        className: "figma-btn figma-btn--solid",
+        href: contactHref({ interest: "sales", service: "post-tavr-cardiac-monitoring" }),
+        label: "Discuss Post-TAVR Monitoring Support",
+      },
+      {
+        className: "figma-btn figma-btn--outline-dark",
+        href: "#tavr-workflow-heading",
+        label: "See the Monitoring Workflow",
+      },
+      {
+        className: "figma-btn figma-btn--outline-dark",
+        href: contactHref({ interest: "beta", service: "post-tavr-cardiac-monitoring" }),
+        label: "Start a No-Risk Pilot Program",
+      },
     ],
     body: `    <section class="landing-section" aria-labelledby="tavr-why-heading">
       <div class="figma-container">
@@ -831,8 +917,14 @@ const PAGES = [
       heading: "Discuss Post-TAVR",
       accent: "Monitoring Support",
       lead: "Talk with Specialized Medical about MCT, live-streaming ECG data, and turnkey workflow support for your Post-TAVR monitoring program. You can also request a demo or start a no-risk pilot program.",
-      primary: { label: "Discuss Post-TAVR Monitoring Support", href: "contact.html" },
-      secondary: { label: "Request a Demo or Start a No-Risk Pilot →", href: "contact.html" },
+      primary: {
+        label: "Discuss Post-TAVR Monitoring Support",
+        href: contactHref({ interest: "sales", service: "post-tavr-cardiac-monitoring" }),
+      },
+      secondary: {
+        label: "Request a Demo →",
+        href: contactHref({ interest: "demo", service: "post-tavr-cardiac-monitoring" }),
+      },
     },
   },
   {
@@ -908,12 +1000,23 @@ const PAGES = [
       heading: "Discuss Workflow or",
       accent: "Request a Demo",
       lead: "Talk with Specialized Medical about turnkey cardiac monitoring for your cardiology practice—implementation, staff workflow, equipment, reports, and patient support.",
-      primary: { label: "Request a Demo", href: "contact.html" },
-      secondary: { label: "Talk to our team →", href: "contact.html" },
+      primary: {
+        label: "Request a Demo",
+        href: contactHref({ interest: "demo", service: "cardiology-practice-cardiac-monitoring" }),
+      },
+      secondary: { label: "Call 1-855-SPEC-MED →", href: PHONE_HREF },
     },
     heroActions: [
-      { className: "figma-btn figma-btn--solid", href: "contact.html", label: "Request a Demo" },
-      { className: "figma-btn figma-btn--outline-dark", href: "contact.html", label: "Talk to Our Team" },
+      {
+        className: "figma-btn figma-btn--solid",
+        href: contactHref({ interest: "demo", service: "cardiology-practice-cardiac-monitoring" }),
+        label: "Request a Demo",
+      },
+      {
+        className: "figma-btn figma-btn--outline-dark",
+        href: PHONE_HREF,
+        label: "Call 1-855-SPEC-MED",
+      },
     ],
   },
 ]

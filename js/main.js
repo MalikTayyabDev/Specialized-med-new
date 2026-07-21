@@ -293,6 +293,43 @@
     var form = qs(".contact-form");
     if (!form) return;
 
+    function applyContactDeepLinks() {
+      var params = new URLSearchParams(window.location.search);
+      var interest = params.get("interest");
+      var service = params.get("service");
+      if (interest) {
+        var select = form.querySelector('select[name="interest"]');
+        if (select && qs('option[value="' + interest + '"]', select)) {
+          select.value = interest;
+        }
+      }
+      if (service) {
+        var textarea = form.querySelector('textarea[name="message"]');
+        var pretty = service.replace(/-/g, " ");
+        if (textarea && !String(textarea.value || "").trim()) {
+          textarea.value = "I'm reaching out about " + pretty + ".\n\n";
+        }
+        var hidden = form.querySelector('input[name="service_page"]');
+        if (!hidden) {
+          hidden = document.createElement("input");
+          hidden.type = "hidden";
+          hidden.name = "service_page";
+          form.appendChild(hidden);
+        }
+        hidden.value = service;
+      }
+      if (interest || service || window.location.hash === "#contact-form") {
+        window.requestAnimationFrame(function () {
+          var wrap = qs(".contact-main__form-wrap");
+          if (wrap && (interest || service)) {
+            wrap.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
+    }
+
+    applyContactDeepLinks();
+
     var submitBtn = qs('button[type="submit"]', form);
     var statusEl = qs(".contact-form__status", form);
 
@@ -443,6 +480,37 @@
     v.addEventListener("loadedmetadata", capTime);
   }
 
+  function loadVideoMedia(video) {
+    if (!video || video.getAttribute("data-media-loaded") === "1") return;
+    var dataSrc = video.getAttribute("data-src");
+    if (dataSrc) {
+      video.src = dataSrc;
+    }
+    qsa("source[data-src]", video).forEach(function (source) {
+      source.src = source.getAttribute("data-src") || "";
+    });
+    if (dataSrc || qs("source[data-src]", video)) {
+      try {
+        video.load();
+      } catch (_) {}
+    }
+    video.setAttribute("data-media-loaded", "1");
+  }
+
+  function initLazyVideos() {
+    qsa("video[data-src]").forEach(function (video) {
+      if (video.getAttribute("data-lazy-init") === "1") return;
+      video.setAttribute("data-lazy-init", "1");
+
+      var prime = function () {
+        loadVideoMedia(video);
+      };
+
+      video.addEventListener("play", prime, { once: true });
+      video.addEventListener("loadeddata", function () {}, { once: true });
+    });
+  }
+
   function initOverviewVideo() {
     var frame = qs("[data-overview-video]");
     var video = frame ? frame.querySelector(".figma-video__media") : null;
@@ -474,6 +542,7 @@
 
     btn.addEventListener("click", function (e) {
       e.stopPropagation();
+      loadVideoMedia(video);
       if (video.paused) {
         pauseOtherVideos(video);
         video.play().catch(function () {});
@@ -604,6 +673,7 @@
     initFaqTestimonialsCarousel();
     initContactPage();
     initVideoPlayStub();
+    initLazyVideos();
     initOverviewVideo();
     initEcgVideoEndTrim();
     initCardiacWireEmbed();

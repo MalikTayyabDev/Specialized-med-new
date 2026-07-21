@@ -3322,7 +3322,16 @@ display: none;
   font-family: var(--font-sans);
   font-size: 14px;
   line-height: 19px;
-  color: rgba(35, 31, 30, 0.5);
+  color: rgba(35, 31, 30, 0.72);
+}
+
+.figma-card__body a {
+  color: #8f1424;
+  font-weight: 500;
+}
+
+.figma-card__body a:hover {
+  color: var(--color-red);
 }
 
 @media (max-width: 900px) {
@@ -3341,7 +3350,16 @@ display: none;
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 22px;
-  color: rgba(35, 31, 30, 0.5);
+  color: rgba(35, 31, 30, 0.72);
+}
+
+.figma-services__eyebrow a {
+  color: #8f1424;
+  font-weight: 500;
+}
+
+.figma-services__eyebrow a:hover {
+  color: var(--color-red);
 }
 
 .figma-services__row {
@@ -3468,7 +3486,7 @@ display: none;
   font-family: var(--font-sans);
   font-size: 14px;
   line-height: 22px;
-  color: rgba(35, 31, 30, 0.5);
+  color: rgba(35, 31, 30, 0.72);
 }
 
 .figma-workflow__panel {
