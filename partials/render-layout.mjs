@@ -5,8 +5,8 @@ import { PATIENT_PORTAL_URL } from "./site-config.mjs"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const headerTpl = readFileSync(join(__dirname, "header.html"), "utf8")
-const footerTpl = readFileSync(join(__dirname, "footer.html"), "utf8")
+const headerTpl = readFileSync(join(__dirname, "header.html"), "utf8").replace(/^\uFEFF/, "")
+const footerTpl = readFileSync(join(__dirname, "footer.html"), "utf8").replace(/^\uFEFF/, "")
 
 const NAV = ["home", "about", "services", "faq", "contact"]
 
