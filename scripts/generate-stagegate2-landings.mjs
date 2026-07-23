@@ -290,7 +290,7 @@ ${JSON.stringify(schemas[1], null, 2)}
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/faq.css">
-  <link rel="stylesheet" href="css/landing.css?v=20260723c">
+  <link rel="stylesheet" href="css/landing.css?v=20260723d">
   <link rel="canonical" href="${canonical}">
 </head>
 <body>
