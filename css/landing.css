@@ -17,47 +17,59 @@
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.11);
+  background-color: #f3f1f0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.landing-hero__bg {
+/* True banner background on the plate (same pattern as /services hero plate) */
+.landing-hero__plate--cardiac-monitoring-services {
+  background-image: url("../images/landing/cardiac-monitoring-services.png");
+}
+.landing-hero__plate--mobile-cardiac-telemetry-mct {
+  background-image: url("../images/landing/mobile-cardiac-telemetry-mct.jpg");
+}
+.landing-hero__plate--holter-monitoring-services {
+  background-image: url("../images/landing/holter-monitoring-services.jpg");
+}
+.landing-hero__plate--long-term-holter-monitoring {
+  background-image: url("../images/landing/long-term-holter-monitoring.jpg");
+}
+.landing-hero__plate--cardiac-event-monitoring {
+  background-image: url("../images/landing/cardiac-event-monitoring.webp");
+}
+.landing-hero__plate--ambulatory-cardiac-monitoring {
+  background-image: url("../images/landing/ambulatory-cardiac-monitoring.jpg");
+}
+.landing-hero__plate--s-patch-cardiac-monitoring-system {
+  background-image: url("../images/landing/s-patch-cardiac-monitoring-system.webp");
+  background-position: 28% center;
+}
+.landing-hero__plate--live-ecg-monitoring {
+  background-image: url("../images/landing/live-ecg-monitoring.jpg");
+}
+.landing-hero__plate--post-tavr-cardiac-monitoring {
+  background-image: url("../images/landing/post-tavr-cardiac-monitoring.jpg");
+}
+.landing-hero__plate--cardiology-practice-cardiac-monitoring {
+  background-image: url("../images/landing/cardiology-practice-cardiac-monitoring.jpg");
+}
+
+/* Media layer mirrors plate bg so the photo always paints (img + CSS bg) */
+.landing-hero__media {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   pointer-events: none;
 }
 
-.landing-hero__bg--cardiac-monitoring-services {
-  background-image: url("../images/landing/cardiac-monitoring-services.png");
-}
-.landing-hero__bg--mobile-cardiac-telemetry-mct {
-  background-image: url("../images/landing/mobile-cardiac-telemetry-mct.jpg");
-}
-.landing-hero__bg--holter-monitoring-services {
-  background-image: url("../images/landing/holter-monitoring-services.jpg");
-}
-.landing-hero__bg--long-term-holter-monitoring {
-  background-image: url("../images/landing/long-term-holter-monitoring.jpg");
-}
-.landing-hero__bg--cardiac-event-monitoring {
-  background-image: url("../images/landing/cardiac-event-monitoring.webp");
-}
-.landing-hero__bg--ambulatory-cardiac-monitoring {
-  background-image: url("../images/landing/ambulatory-cardiac-monitoring.jpg");
-}
-.landing-hero__bg--s-patch-cardiac-monitoring-system {
-  background-image: url("../images/landing/s-patch-cardiac-monitoring-system.webp");
-}
-.landing-hero__bg--live-ecg-monitoring {
-  background-image: url("../images/landing/live-ecg-monitoring.jpg");
-}
-.landing-hero__bg--post-tavr-cardiac-monitoring {
-  background-image: url("../images/landing/post-tavr-cardiac-monitoring.jpg");
-}
-.landing-hero__bg--cardiology-practice-cardiac-monitoring {
-  background-image: url("../images/landing/cardiology-practice-cardiac-monitoring.jpg");
+.landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__media {
+  object-position: 28% center;
 }
 
 .landing-hero__gradient {
@@ -65,12 +77,13 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Match /services: left fade so copy stays readable, image shows on right */
+  /* Softer left fade so photo remains visible (services-style, less opaque) */
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.9) 32%,
+    rgba(255, 255, 255, 0.35) 52%,
+    rgba(255, 255, 255, 0) 68%
   );
 }
 

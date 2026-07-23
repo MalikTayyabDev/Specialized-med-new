@@ -290,7 +290,7 @@ ${JSON.stringify(schemas[1], null, 2)}
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/faq.css">
-  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/landing.css?v=20260723c">
   <link rel="canonical" href="${canonical}">
 </head>
 <body>
@@ -306,8 +306,8 @@ ${JSON.stringify(schemas[1], null, 2)}
 ${header}
 <main class="landing-page services-page services-page--figma" data-landing="${page.slug}">
     <section class="landing-hero" aria-labelledby="${page.id}-hero-heading">
-      <div class="landing-hero__plate">
-        <div class="landing-hero__bg landing-hero__bg--${page.slug}" role="img" aria-label="${esc(banner.alt)}"></div>
+      <div class="landing-hero__plate landing-hero__plate--${page.slug}">
+        <img class="landing-hero__media" src="${esc(banner.src)}" alt="${esc(banner.alt)}" width="1430" height="550" fetchpriority="high" decoding="async">
         <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
           <p class="figma-hero__pill">
