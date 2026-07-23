@@ -307,7 +307,7 @@ ${header}
 <main class="landing-page services-page services-page--figma" data-landing="${page.slug}">
     <section class="landing-hero" aria-labelledby="${page.id}-hero-heading">
       <div class="landing-hero__plate">
-        <img class="landing-hero__banner" src="${esc(banner.src)}" alt="${esc(banner.alt)}" width="1430" height="550" fetchpriority="high" decoding="async">
+        <div class="landing-hero__bg" role="img" aria-label="${esc(banner.alt)}" style="background-image:url('${esc(banner.src)}')"></div>
         <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
           <p class="figma-hero__pill">
