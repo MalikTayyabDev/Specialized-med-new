@@ -202,8 +202,55 @@ function ctaSection(page) {
     </section>`
 }
 
+/** Hero banner image + ALT per landing (files in images/landing/). */
+const BANNERS = {
+  "cardiac-monitoring-services": {
+    src: "images/landing/cardiac-monitoring-services.png",
+    alt: "Holter, Event Monitoring, and Mobile Cardiac Telemetry services from Specialized Medical for physician practices",
+  },
+  "mobile-cardiac-telemetry-mct": {
+    src: "images/landing/mobile-cardiac-telemetry-mct.jpg",
+    alt: "Mobile Cardiac Telemetry (MCT) with live-streaming ECG monitoring for ambulatory patients",
+  },
+  "holter-monitoring-services": {
+    src: "images/landing/holter-monitoring-services.jpg",
+    alt: "24 to 48 hour Holter Monitoring with patient-friendly ambulatory ECG recording",
+  },
+  "long-term-holter-monitoring": {
+    src: "images/landing/long-term-holter-monitoring.jpg",
+    alt: "Long-Term Holter Monitoring for extended ambulatory ECG wear beyond 48 hours",
+  },
+  "cardiac-event-monitoring": {
+    src: "images/landing/cardiac-event-monitoring.webp",
+    alt: "Cardiac Event Monitoring for symptom-triggered and longer-window rhythm capture",
+  },
+  "ambulatory-cardiac-monitoring": {
+    src: "images/landing/ambulatory-cardiac-monitoring.jpg",
+    alt: "Ambulatory cardiac monitoring covering Holter, Event Monitoring, and MCT for outpatient ECG studies",
+  },
+  "s-patch-cardiac-monitoring-system": {
+    src: "images/landing/s-patch-cardiac-monitoring-system.webp",
+    alt: "S-Patch Monitoring System compact wearable cardiac monitor used by Specialized Medical",
+  },
+  "live-ecg-monitoring": {
+    src: "images/landing/live-ecg-monitoring.jpg",
+    alt: "Live-streaming ECG monitoring with near real-time rhythm visibility for clinicians",
+  },
+  "post-tavr-cardiac-monitoring": {
+    src: "images/landing/post-tavr-cardiac-monitoring.jpg",
+    alt: "Post-TAVR cardiac monitoring with live-streaming ECG and Mobile Cardiac Telemetry support",
+  },
+  "cardiology-practice-cardiac-monitoring": {
+    src: "images/landing/cardiology-practice-cardiac-monitoring.jpg",
+    alt: "Turnkey cardiac monitoring support designed for cardiology practices and clinics",
+  },
+}
+
 function renderPage(page) {
   const canonical = `${SITE}/${page.slug}.html`
+  const banner = page.banner || BANNERS[page.slug]
+  if (!banner) throw new Error(`Missing banner for ${page.slug}`)
+  const ogImage = `${SITE}/${banner.src}`
   const schemas = [serviceSchema(page.serviceName, page.metaDescription), faqSchema(page.faqs)]
   const header = renderHeader({ base: "", active: "services" })
   const footer = renderFooter({ base: "" })
@@ -222,10 +269,22 @@ ${JSON.stringify(schemas[1], null, 2)}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(page.title)}</title>
   <meta name="description" content="${esc(page.metaDescription)}">
+  <!-- Social sharing (iMessage/WhatsApp/Facebook/Twitter) -->
+  <meta property="og:site_name" content="Specialized Medical">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${esc(page.title)}">
+  <meta property="og:description" content="${esc(page.metaDescription)}">
+  <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${esc(ogImage)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(page.title)}">
+  <meta name="twitter:description" content="${esc(page.metaDescription)}">
+  <meta name="twitter:image" content="${esc(ogImage)}">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="${esc(banner.src)}" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/home.css">
@@ -248,6 +307,8 @@ ${header}
 <main class="landing-page services-page services-page--figma" data-landing="${page.slug}">
     <section class="landing-hero" aria-labelledby="${page.id}-hero-heading">
       <div class="landing-hero__plate">
+        <img class="landing-hero__banner" src="${esc(banner.src)}" alt="${esc(banner.alt)}" width="1430" height="550" fetchpriority="high" decoding="async">
+        <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
           <p class="figma-hero__pill">
             <span class="figma-hero__pill-dot" aria-hidden="true"></span>
