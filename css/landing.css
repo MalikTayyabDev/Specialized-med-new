@@ -22,15 +22,48 @@
 .landing-hero__bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
   pointer-events: none;
 }
 
+.landing-hero__bg--cardiac-monitoring-services {
+  background-image: url("../images/landing/cardiac-monitoring-services.png");
+}
+.landing-hero__bg--mobile-cardiac-telemetry-mct {
+  background-image: url("../images/landing/mobile-cardiac-telemetry-mct.jpg");
+}
+.landing-hero__bg--holter-monitoring-services {
+  background-image: url("../images/landing/holter-monitoring-services.jpg");
+}
+.landing-hero__bg--long-term-holter-monitoring {
+  background-image: url("../images/landing/long-term-holter-monitoring.jpg");
+}
+.landing-hero__bg--cardiac-event-monitoring {
+  background-image: url("../images/landing/cardiac-event-monitoring.webp");
+}
+.landing-hero__bg--ambulatory-cardiac-monitoring {
+  background-image: url("../images/landing/ambulatory-cardiac-monitoring.jpg");
+}
+.landing-hero__bg--s-patch-cardiac-monitoring-system {
+  background-image: url("../images/landing/s-patch-cardiac-monitoring-system.webp");
+}
+.landing-hero__bg--live-ecg-monitoring {
+  background-image: url("../images/landing/live-ecg-monitoring.jpg");
+}
+.landing-hero__bg--post-tavr-cardiac-monitoring {
+  background-image: url("../images/landing/post-tavr-cardiac-monitoring.jpg");
+}
+.landing-hero__bg--cardiology-practice-cardiac-monitoring {
+  background-image: url("../images/landing/cardiology-practice-cardiac-monitoring.jpg");
+}
+
 .landing-hero__gradient {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
   /* Match /services: left fade so copy stays readable, image shows on right */
   background: linear-gradient(
@@ -50,7 +83,7 @@
 
 .landing-hero__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding-top: var(--hero-plate-inner-pt, 3rem);
   padding-bottom: var(--hero-plate-inner-pb, 3rem);
   padding-inline: var(--figma-inline, 1.5rem);
