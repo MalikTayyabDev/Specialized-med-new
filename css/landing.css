@@ -182,6 +182,25 @@
   margin-bottom: 0;
 }
 
+/* LIVE comparison explainer — breathing room above/below before the table */
+.landing-compare-block {
+  margin: clamp(2rem, 4vw, 2.75rem) 0 clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(1.35rem, 2.5vw, 1.85rem) clamp(1.25rem, 2.5vw, 1.75rem);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.landing-section--muted .landing-compare-block {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.landing-compare-block .landing-p {
+  margin: 0;
+}
+
 .landing-list {
   margin: 0 0 1.15rem;
   padding-left: 1.25rem;
@@ -198,16 +217,16 @@
 .landing-split {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  align-items: stretch;
+  gap: 2rem;
+  align-items: center;
   width: 100%;
 }
 
 @media (min-width: 900px) {
   .landing-split {
     flex-direction: row;
-    align-items: flex-start;
-    gap: 2.5rem 3rem;
+    align-items: center;
+    gap: 2.75rem 3.25rem;
   }
 
   .landing-split__copy {
@@ -219,6 +238,7 @@
     flex: 0 1 42%;
     max-width: 520px;
     min-width: 0;
+    width: 100%;
   }
 
   .landing-split__copy .landing-p,
@@ -227,13 +247,20 @@
   }
 }
 
+.landing-split__copy .landing-h2 {
+  margin-top: 0;
+  margin-bottom: 1.15rem;
+}
+
 .landing-split__media .landing-figure {
   margin-top: 0;
   max-width: none;
+  width: 100%;
 }
 
 .landing-split__media .landing-media-pair {
   margin-top: 0;
+  width: 100%;
 }
 
 .landing-grid {
@@ -411,13 +438,17 @@
 
 /* Comparison / troubleshooting tables */
 .landing-table-wrap {
-  margin: 1.5rem 0 0;
+  margin: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   background: #fff;
   width: 100%;
+}
+
+.landing-compare-block + .landing-table-wrap {
+  margin-top: 0;
 }
 
 .landing-table {

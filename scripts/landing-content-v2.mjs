@@ -19,6 +19,23 @@ ${inner}
     </section>`
 }
 
+/** Split layout: H2 lives with the copy column so heading + text stay together. */
+function secSplit(id, headingHtml, copyInner, mediaInner, { muted = false } = {}) {
+  return `    <section class="landing-section${muted ? " landing-section--muted" : ""}" aria-labelledby="${id}-heading">
+      <div class="figma-container">
+        <div class="landing-split">
+          <div class="landing-split__copy">
+            <h2 id="${id}-heading" class="landing-h2">${headingHtml}</h2>
+${copyInner}
+          </div>
+          <div class="landing-split__media">
+${mediaInner}
+          </div>
+        </div>
+      </div>
+    </section>`
+}
+
 function flow(items, label) {
   return `        <ol class="landing-flow" aria-label="${label}">
 ${items.map((s) => `          <li class="landing-flow__step"><strong>${s.t}</strong>${s.d ? `<span>${s.d}</span>` : ""}</li>`).join("\n")}
@@ -105,7 +122,9 @@ export function comparisonTable(currentSlug, { withExplainer = true } = {}) {
             </tr>`
   }).join("\n")
   const explainer = withExplainer
-    ? `        <p class="landing-p landing-p--wide">${COMPARISON_EXPLAINER}</p>\n`
+    ? `        <div class="landing-compare-block">
+          <p class="landing-p landing-p--wide">${COMPARISON_EXPLAINER}</p>
+        </div>\n`
     : ""
   return `${explainer}        <div class="landing-table-wrap" role="region" aria-label="Cardiac monitoring service comparison" tabindex="0">
           <table class="landing-table">
@@ -215,55 +234,43 @@ export const PAGES = [
           ),
         ].join("\n")
       ),
-      sec(
+      secSplit(
         "cms-efficiency",
         `Designed for Cardiology <span class="landing-h2__accent">Practice Efficiency</span>`,
         [
-          `        <div class="landing-split">
-          <div class="landing-split__copy">
-${p(
-  `Specialized Medical provides staff training, implementation guidance, patient support, report delivery, and workflow assistance. The objective is not merely to supply a device. The objective is to provide a complete service that fits the practice&rsquo;s clinical and operational needs.`
-)}
-${p(
-  `The physician portal supports review and electronic signature of reports. Workflow details are configured to the practice, including which staff members enroll patients, how reports are routed, and how physician notification protocols are documented. See how this works for <a href="cardiology-practice-cardiac-monitoring.html">cardiology practices</a> or across the broader category of <a href="ambulatory-cardiac-monitoring.html">ambulatory cardiac monitoring</a>.`
-)}
-          </div>
-          <div class="landing-split__media">
-${figureImg(
-  REPORT_IMG,
-  "De-identified physician-ready cardiac monitoring report as reviewed and electronically signed in the Specialized Medical portal",
-  "Physician-ready report review with electronic signature in the portal (de-identified sample)."
-)}
-          </div>
-        </div>`,
+          p(
+            `Specialized Medical provides staff training, implementation guidance, patient support, report delivery, and workflow assistance. The objective is not merely to supply a device. The objective is to provide a complete service that fits the practice&rsquo;s clinical and operational needs.`
+          ),
+          p(
+            `The physician portal supports review and electronic signature of reports. Workflow details are configured to the practice, including which staff members enroll patients, how reports are routed, and how physician notification protocols are documented. See how this works for <a href="cardiology-practice-cardiac-monitoring.html">cardiology practices</a> or across the broader category of <a href="ambulatory-cardiac-monitoring.html">ambulatory cardiac monitoring</a>.`
+          ),
         ].join("\n"),
+        figureImg(
+          REPORT_IMG,
+          "De-identified physician-ready cardiac monitoring report as reviewed and electronically signed in the Specialized Medical portal",
+          "Physician-ready report review with electronic signature in the portal (de-identified sample)."
+        ),
         { muted: true }
       ),
-      sec(
+      secSplit(
         "cms-why",
         `Why Practices Choose <span class="landing-h2__accent">Specialized Medical</span>`,
         [
-          `        <div class="landing-split">
-          <div class="landing-split__copy">
-        <ul class="landing-list">
+          `        <ul class="landing-list">
           <li>Live-streaming ECG capability for MCT</li>
           <li>Multi-path cellular connectivity with support for rural and variable coverage environments</li>
           <li>Multiple monitoring modalities through one coordinated platform</li>
           <li>Physician-ready reporting with electronic signatures</li>
           <li>Responsive implementation and direct operational support</li>
-        </ul>
-${p(
-  `Differentiation is evidence-based: one coordinated platform, practical workflow design, live ECG visibility where prescribed, and reporting configured for physician review.`
-)}
-          </div>
-          <div class="landing-split__media">
-        <div class="landing-media-pair">
+        </ul>`,
+          p(
+            `Differentiation is evidence-based: one coordinated platform, practical workflow design, live ECG visibility where prescribed, and reporting configured for physician review.`
+          ),
+        ].join("\n"),
+        `        <div class="landing-media-pair">
 ${figureImg(SPATCH_IMG, "S-Patch wearable cardiac monitor, the primary Specialized Medical wearable option", "S-Patch &mdash; primary wearable option.")}
 ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an alternative configuration", "Lead-wire system &mdash; alternative configuration.")}
-        </div>
-          </div>
-        </div>`,
-        ].join("\n")
+        </div>`
       ),
     ].join("\n\n"),
     faqs: [
