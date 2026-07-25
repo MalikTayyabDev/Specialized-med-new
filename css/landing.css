@@ -135,7 +135,7 @@
 }
 
 .landing-section {
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+  padding: clamp(3.25rem, 6.5vw, 5.5rem) 0;
 }
 
 .landing-section--muted {
@@ -143,7 +143,7 @@
 }
 
 .landing-h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.35rem;
   font-family: var(--font-sans);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 500;
@@ -166,11 +166,16 @@
 }
 
 .landing-p {
-  margin: 0 0 1rem;
+  margin: 0 0 1.15rem;
   max-width: 48rem;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: rgba(35, 31, 30, 0.78);
+}
+
+.landing-p--wide {
+  max-width: none;
+  width: 100%;
 }
 
 .landing-p:last-child {
@@ -178,15 +183,57 @@
 }
 
 .landing-list {
-  margin: 0 0 1rem;
+  margin: 0 0 1.15rem;
   padding-left: 1.25rem;
   max-width: 48rem;
   color: rgba(35, 31, 30, 0.78);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .landing-list li + li {
-  margin-top: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+/* Copy + media flex splits (Efficiency / Why Practices / similar) */
+.landing-split {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .landing-split {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem 3rem;
+  }
+
+  .landing-split__copy {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .landing-split__media {
+    flex: 0 1 42%;
+    max-width: 520px;
+    min-width: 0;
+  }
+
+  .landing-split__copy .landing-p,
+  .landing-split__copy .landing-list {
+    max-width: none;
+  }
+}
+
+.landing-split__media .landing-figure {
+  margin-top: 0;
+  max-width: none;
+}
+
+.landing-split__media .landing-media-pair {
+  margin-top: 0;
 }
 
 .landing-grid {
@@ -288,7 +335,7 @@
 
 .landing-faq.faq-accordion {
   background: #faf8f8;
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+  padding: clamp(3.25rem, 6.5vw, 5.5rem) 0;
 }
 
 .landing-faq .faq-category__title {
@@ -364,12 +411,13 @@
 
 /* Comparison / troubleshooting tables */
 .landing-table-wrap {
-  margin: 1.25rem 0 0;
+  margin: 1.5rem 0 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   background: #fff;
+  width: 100%;
 }
 
 .landing-table {
@@ -474,13 +522,15 @@
 
 /* Note / disclaimer boxes */
 .landing-note {
-  margin: 1.25rem 0 0;
-  max-width: 48rem;
-  padding: 1rem 1.2rem;
+  margin: 1.5rem 0 0;
+  max-width: none;
+  width: 100%;
+  padding: 1.15rem 1.35rem;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 4px solid #231f1e;
   background: #faf8f8;
+  box-sizing: border-box;
 }
 
 .landing-note--alert {
@@ -527,19 +577,27 @@
 }
 
 .landing-media-pair {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.25rem;
   margin-top: 0.5rem;
+  width: 100%;
 }
 
 @media (min-width: 720px) {
   .landing-media-pair {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .landing-media-pair .landing-figure {
+    flex: 1 1 0;
+    min-width: 0;
   }
 }
 
 .landing-media-pair .landing-figure {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 /* Swimlane (patient / practice / monitoring center) */

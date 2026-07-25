@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 const PHONE_HREF = "tel:+18557732633"
-const CSS_VERSION = "20260725a"
+const CSS_VERSION = "20260725b"
 const WEB3FORMS_KEY = "8ec7a28a-1979-4c39-8791-18fbf60bba44"
 
 /** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
@@ -367,11 +367,12 @@ function ctaFormSection(page) {
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric">
+                <input name="locations" type="number" min="1" inputmode="numeric" required>
               </label>
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest">
+                <select name="interest" required>
+                  <option value="" disabled>Select an option</option>
 ${options}
                 </select>
               </label>

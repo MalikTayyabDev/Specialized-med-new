@@ -228,7 +228,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/faq.css">
-  <link rel="stylesheet" href="css/landing.css?v=20260725a">
+  <link rel="stylesheet" href="css/landing.css?v=20260725b">
   <link rel="canonical" href="https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html">
 </head>
 <body>
@@ -536,11 +536,12 @@
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric">
+                <input name="locations" type="number" min="1" inputmode="numeric" required>
               </label>
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest">
+                <select name="interest" required>
+                  <option value="" disabled>Select an option</option>
                   <option value="Holter Monitoring">Holter Monitoring</option>
                   <option value="Long-Term Holter Monitoring">Long-Term Holter Monitoring</option>
                   <option value="Cardiac Event Monitoring">Cardiac Event Monitoring</option>
@@ -634,6 +635,6 @@
 
   </div>
   <script src="js/analytics.js" defer></script>
-  <script src="js/main.js?v=20260725a" defer></script>
+  <script src="js/main.js?v=20260725b" defer></script>
 </body>
 </html>

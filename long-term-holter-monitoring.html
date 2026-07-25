@@ -229,7 +229,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/faq.css">
-  <link rel="stylesheet" href="css/landing.css?v=20260725a">
+  <link rel="stylesheet" href="css/landing.css?v=20260725b">
   <link rel="canonical" href="https://www.specialized-med.com/long-term-holter-monitoring.html">
 </head>
 <body>
@@ -366,7 +366,7 @@
       <div class="figma-container">
         <h2 id="lth-compare-heading" class="landing-h2">Long-Term Holter <span class="landing-h2__accent">Compared With MCT</span></h2>
         <p class="landing-p">Long-Term Holter and MCT both provide LIVE operational visibility while the study is in progress. Long-Term Holter provides an extended recording window with clinical results presented after the final report. MCT presents qualifying clinical findings during the study according to the prescribed notification protocol. Neither modality is universally superior &mdash; the ordering physician selects based on the clinical question. Compare <a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a> and <a href="holter-monitoring-services.html">Holter Monitoring</a>.</p>
-        <p class="landing-p">Every Specialized Medical test provides <strong>LIVE test-status visibility</strong> while the study is in progress. Specialized Medical can see operational information such as battery level, electrode contact and signal quality, whether the monitor is communicating, and whether the patient appears to remain properly connected. When a parameter falls outside the expected range, Specialized Medical contacts the patient and works with the patient to correct the issue so the study has the best opportunity to be completed successfully. The distinction between test types is not whether the study is visible live; it is <strong>when clinical findings are presented</strong>. For Holter and Extended / Long-Term Holter, clinical results are presented after the final report is generated. For Event Monitoring and Mobile Cardiac Telemetry (MCT), qualifying clinical findings are presented while the test is in progress according to the prescribed notification protocol.</p>
+        <p class="landing-p landing-p--wide">Every Specialized Medical test provides <strong>LIVE test-status visibility</strong> while the study is in progress. Specialized Medical can see operational information such as battery level, electrode contact and signal quality, whether the monitor is communicating, and whether the patient appears to remain properly connected. When a parameter falls outside the expected range, Specialized Medical contacts the patient and works with the patient to correct the issue so the study has the best opportunity to be completed successfully. The distinction between test types is not whether the study is visible live; it is <strong>when clinical findings are presented</strong>. For Holter and Extended / Long-Term Holter, clinical results are presented after the final report is generated. For Event Monitoring and Mobile Cardiac Telemetry (MCT), qualifying clinical findings are presented while the test is in progress according to the prescribed notification protocol.</p>
         <div class="landing-table-wrap" role="region" aria-label="Cardiac monitoring service comparison" tabindex="0">
           <table class="landing-table">
             <caption class="sr-only">Comparison of Specialized Medical ambulatory cardiac monitoring test types by duration, LIVE test-status visibility, clinical-findings timing, and typical use</caption>
@@ -551,11 +551,12 @@
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric">
+                <input name="locations" type="number" min="1" inputmode="numeric" required>
               </label>
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest">
+                <select name="interest" required>
+                  <option value="" disabled>Select an option</option>
                   <option value="Holter Monitoring">Holter Monitoring</option>
                   <option value="Long-Term Holter Monitoring" selected>Long-Term Holter Monitoring</option>
                   <option value="Cardiac Event Monitoring">Cardiac Event Monitoring</option>
@@ -649,6 +650,6 @@
 
   </div>
   <script src="js/analytics.js" defer></script>
-  <script src="js/main.js?v=20260725a" defer></script>
+  <script src="js/main.js?v=20260725b" defer></script>
 </body>
 </html>
