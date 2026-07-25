@@ -265,6 +265,18 @@
   width: 100%;
 }
 
+/* Inside the narrow media column, stack paired images vertically. */
+@media (min-width: 900px) {
+  .landing-split__media .landing-media-pair {
+    flex-direction: column;
+  }
+}
+
+/* Full-width content placed below a split (e.g. flow diagrams). */
+.landing-split + .landing-flow {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
 .landing-grid {
   display: grid;
   gap: 1.25rem;

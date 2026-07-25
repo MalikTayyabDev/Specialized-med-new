@@ -20,7 +20,7 @@ ${inner}
 }
 
 /** Split layout: H2 lives with the copy column so heading + text stay together. */
-function secSplit(id, headingHtml, copyInner, mediaInner, { muted = false } = {}) {
+function secSplit(id, headingHtml, copyInner, mediaInner, { muted = false, after = "" } = {}) {
   return `    <section class="landing-section${muted ? " landing-section--muted" : ""}" aria-labelledby="${id}-heading">
       <div class="figma-container">
         <div class="landing-split">
@@ -31,7 +31,7 @@ ${copyInner}
           <div class="landing-split__media">
 ${mediaInner}
           </div>
-        </div>
+        </div>${after ? `\n${after}` : ""}
       </div>
     </section>`
 }
@@ -389,19 +389,17 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
           ),
         ].join("\n")
       ),
-      sec(
+      secSplit(
         "mct-notify",
         `Physician Notification <span class="landing-h2__accent">and Reporting</span>`,
-        [
-          p(
-            `Notifications follow the physician&rsquo;s defined protocol and the practice&rsquo;s communication preferences. An interim notification communicates a qualifying finding while the study is in progress; the final diagnostic report organizes the monitoring findings for physician interpretation and clinical decision-making.`
-          ),
-          figureImg(
-            REPORT_IMG,
-            "De-identified MCT report sample showing event summary, rhythm strips, and physician interpretation area",
-            "De-identified MCT report layout: event summary, rhythm strips, and physician interpretation area. Electronic review and signature are supported in the portal."
-          ),
-        ].join("\n"),
+        p(
+          `Notifications follow the physician&rsquo;s defined protocol and the practice&rsquo;s communication preferences. An interim notification communicates a qualifying finding while the study is in progress; the final diagnostic report organizes the monitoring findings for physician interpretation and clinical decision-making.`
+        ),
+        figureImg(
+          REPORT_IMG,
+          "De-identified MCT report sample showing event summary, rhythm strips, and physician interpretation area",
+          "De-identified MCT report layout: event summary, rhythm strips, and physician interpretation area. Electronic review and signature are supported in the portal."
+        ),
         { muted: true }
       ),
       sec(
@@ -556,7 +554,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
         </div>`,
         ].join("\n")
       ),
-      sec(
+      secSplit(
         "holter-report",
         `Holter Analysis and <span class="landing-h2__accent">Final Reporting</span>`,
         [
@@ -566,12 +564,12 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
           p(
             `No specific finding or diagnosis is promised. The physician reviews the report in the context of the patient&rsquo;s history, symptoms, examination, and other testing.`
           ),
-          figureImg(
-            REPORT_IMG,
-            "De-identified Holter final report sample showing rhythm overview and representative ECG strips",
-            "De-identified final report sample."
-          ),
         ].join("\n"),
+        figureImg(
+          REPORT_IMG,
+          "De-identified Holter final report sample showing rhythm overview and representative ECG strips",
+          "De-identified final report sample."
+        ),
         { muted: true }
       ),
       sec(
@@ -672,14 +670,20 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
           ),
         ].join("\n")
       ),
-      sec(
+      secSplit(
         "lth-fulldisclosure",
         `Full-Disclosure <span class="landing-h2__accent">ECG Recording</span>`,
-        [
-          p(
-            `Full-disclosure reporting refers to the availability of the recorded ECG data for analysis across the prescribed study, subject to device operation, electrode contact, data quality, and patient adherence. Not every second is clinically interpretable if artifact or signal loss is present.`
-          ),
-          flow(
+        p(
+          `Full-disclosure reporting refers to the availability of the recorded ECG data for analysis across the prescribed study, subject to device operation, electrode contact, data quality, and patient adherence. Not every second is clinically interpretable if artifact or signal loss is present.`
+        ),
+        figureImg(
+          REPORT_IMG,
+          "De-identified full-disclosure Long-Term Holter report sample",
+          "Full-disclosure report (de-identified sample)."
+        ),
+        {
+          muted: true,
+          after: flow(
             [
               { t: "Study start", d: "Enrollment and hookup" },
               { t: "Multi-day recording", d: "Continuous ECG with LIVE test-status visibility" },
@@ -690,13 +694,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
             ],
             "Multi-day Long-Term Holter recording timeline"
           ),
-          figureImg(
-            REPORT_IMG,
-            "De-identified full-disclosure Long-Term Holter report sample",
-            "Full-disclosure report (de-identified sample)."
-          ),
-        ].join("\n"),
-        { muted: true }
+        }
       ),
       sec(
         "lth-timing",
@@ -857,19 +855,17 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
           emergencyBox(),
         ].join("\n")
       ),
-      sec(
+      secSplit(
         "event-reporting",
         `Reporting and Physician <span class="landing-h2__accent">Communication</span>`,
-        [
-          p(
-            `Event reports and notifications are handled according to the prescribed monitoring protocol. Routine event documentation is distinct from findings that meet the physician&rsquo;s notification criteria.`
-          ),
-          figureImg(
-            REPORT_IMG,
-            "De-identified cardiac event report example showing symptom, time, rhythm description, representative strip, and communication status",
-            "De-identified event report example: symptom, time, rhythm description, representative strip, and communication status."
-          ),
-        ].join("\n"),
+        p(
+          `Event reports and notifications are handled according to the prescribed monitoring protocol. Routine event documentation is distinct from findings that meet the physician&rsquo;s notification criteria.`
+        ),
+        figureImg(
+          REPORT_IMG,
+          "De-identified cardiac event report example showing symptom, time, rhythm description, representative strip, and communication status",
+          "De-identified event report example: symptom, time, rhythm description, representative strip, and communication status."
+        ),
         { muted: true }
       ),
       sec(
@@ -1136,7 +1132,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
     schemaTypes: ["Product", "Service", "BreadcrumbList", "FAQPage"],
     emergency: true,
     body: [
-      sec(
+      secSplit(
         "spatch-overview",
         `S-Patch System <span class="landing-h2__accent">Overview</span>`,
         [
@@ -1146,11 +1142,11 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
           p(
             `Exact battery performance depends on configuration and use. Specific battery-life durations are published only for validated and released product configurations.`
           ),
-          `        <div class="landing-media-pair">
+        ].join("\n"),
+        `        <div class="landing-media-pair">
 ${figureImg(SPATCH_IMG, "S-Patch two-disk wearable cardiac monitor, front product view", "S-Patch product view.")}
 ${figureImg("images/landing/s-patch-cardiac-monitoring-system.webp", "S-Patch wearable cardiac monitor worn on a patient&rsquo;s chest", "S-Patch as worn on the chest.")}
-        </div>`,
-        ].join("\n")
+        </div>`
       ),
       sec(
         "spatch-services",
@@ -1220,18 +1216,16 @@ ${figureImg("images/landing/s-patch-cardiac-monitoring-system.webp", "S-Patch we
         ].join("\n"),
         { muted: true }
       ),
-      sec(
+      secSplit(
         "spatch-leadwire",
         `S-Patch and <span class="landing-h2__accent">Lead-Wire Options</span>`,
-        [
-          p(
-            `The S-Patch is the primary wearable option, and a lead-wire system is available as an alternative when a different configuration is needed. Both are supported service configurations &mdash; neither is disparaged. Differences in channels, wear style, battery routines, patient comfort considerations, and use cases are compared only with verified specifications during program setup.`
-          ),
-          `        <div class="landing-media-pair">
+        p(
+          `The S-Patch is the primary wearable option, and a lead-wire system is available as an alternative when a different configuration is needed. Both are supported service configurations &mdash; neither is disparaged. Differences in channels, wear style, battery routines, patient comfort considerations, and use cases are compared only with verified specifications during program setup.`
+        ),
+        `        <div class="landing-media-pair">
 ${figureImg(SPATCH_IMG, "S-Patch primary wearable cardiac monitoring option", "S-Patch &mdash; primary wearable option.")}
 ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative configuration", "Lead-wire system &mdash; alternative configuration.")}
-        </div>`,
-        ].join("\n")
+        </div>`
       ),
     ].join("\n\n"),
     faqs: [
@@ -1505,19 +1499,17 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
         ].join("\n"),
         { muted: true }
       ),
-      sec(
+      secSplit(
         "tavr-quality",
         `Program Reporting and <span class="landing-h2__accent">Quality Improvement</span>`,
-        [
-          p(
-            `Reports can support physician review and internal program evaluation. Potential program metrics may include enrollment completion, wear duration, transmission continuity, notification documentation, final-report turnaround, and follow-up completion. Outcome improvements are not claimed unless measured and substantiated.`
-          ),
-          figureImg(
-            REPORT_IMG,
-            "De-identified post-TAVR ambulatory monitoring report example for physician review",
-            "De-identified post-TAVR report example."
-          ),
-        ].join("\n")
+        p(
+          `Reports can support physician review and internal program evaluation. Potential program metrics may include enrollment completion, wear duration, transmission continuity, notification documentation, final-report turnaround, and follow-up completion. Outcome improvements are not claimed unless measured and substantiated.`
+        ),
+        figureImg(
+          REPORT_IMG,
+          "De-identified post-TAVR ambulatory monitoring report example for physician review",
+          "De-identified post-TAVR report example."
+        )
       ),
     ].join("\n\n"),
     faqs: [
@@ -1633,14 +1625,19 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
         ].join("\n"),
         { muted: true }
       ),
-      sec(
+      secSplit(
         "practice-reporting",
         `Reporting and Physician <span class="landing-h2__accent">Electronic Signature</span>`,
-        [
-          p(
-            `Physician-ready reports can be reviewed through the portal and electronically signed. Dictation or staff-assisted entry may be used where configured, while the physician retains responsibility for the final interpretation and signature.`
-          ),
-          flow(
+        p(
+          `Physician-ready reports can be reviewed through the portal and electronically signed. Dictation or staff-assisted entry may be used where configured, while the physician retains responsibility for the final interpretation and signature.`
+        ),
+        figureImg(
+          REPORT_IMG,
+          "De-identified portal report view showing physician review and electronic signature workflow",
+          "Portal report review and e-signature (de-identified)."
+        ),
+        {
+          after: flow(
             [
               { t: "Report ready", d: "Completed study appears in the portal" },
               { t: "Physician review", d: "Findings and strips reviewed" },
@@ -1649,12 +1646,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
             ],
             "Physician report review and e-signature steps"
           ),
-          figureImg(
-            REPORT_IMG,
-            "De-identified portal report view showing physician review and electronic signature workflow",
-            "Portal report review and e-signature (de-identified)."
-          ),
-        ].join("\n")
+        }
       ),
       sec(
         "practice-locations",
