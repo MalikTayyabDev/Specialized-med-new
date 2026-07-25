@@ -720,6 +720,7 @@
   background: #231f1e;
   border-radius: 20px;
   margin-inline: var(--page-hero-gutter, 1.5rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .landing-cta-block__box {
