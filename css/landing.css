@@ -265,10 +265,11 @@
   width: 100%;
 }
 
-/* Inside the narrow media column, stack paired images vertically. */
+/* Give paired images a bit more room in the media column. */
 @media (min-width: 900px) {
-  .landing-split__media .landing-media-pair {
-    flex-direction: column;
+  .landing-split__media:has(.landing-media-pair) {
+    flex: 0 1 48%;
+    max-width: 560px;
   }
 }
 
@@ -626,25 +627,48 @@
 .landing-media-pair {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   margin-top: 0.5rem;
   width: 100%;
 }
 
-@media (min-width: 720px) {
+.landing-media-pair .landing-figure {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Side-by-side with equal image height (object-fit keeps crop consistent). */
+@media (min-width: 560px) {
   .landing-media-pair {
     flex-direction: row;
     align-items: stretch;
+    gap: 1.15rem;
   }
 
   .landing-media-pair .landing-figure {
     flex: 1 1 0;
-    min-width: 0;
+  }
+
+  .landing-media-pair .landing-figure img {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    min-height: 160px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
-.landing-media-pair .landing-figure {
-  margin-top: 0;
+@media (max-width: 559px) {
+  .landing-media-pair .landing-figure img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 /* Swimlane (patient / practice / monitoring center) */
@@ -737,20 +761,23 @@
 
 .landing-cta-block__box {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   text-align: left;
   align-items: center;
+  min-width: 0;
 }
 
 @media (min-width: 900px) {
   .landing-cta-block__box {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 2rem;
     align-items: center;
   }
 }
 
 .landing-cta-block .landing-h2 {
   color: #fff;
+  overflow-wrap: anywhere;
 }
 
 .landing-cta-block .landing-p {
@@ -762,6 +789,7 @@
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
+  overflow-wrap: anywhere;
 }
 
 .landing-cta-form__emergency {
@@ -776,16 +804,27 @@
 }
 
 .landing-cta-form {
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: 16px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 620px) {
+  .landing-cta-form {
+    padding: 1.5rem;
+  }
 }
 
 .landing-cta-form__row {
   display: grid;
   gap: 1rem;
   margin-bottom: 1rem;
+  min-width: 0;
 }
 
 @media (min-width: 620px) {
@@ -799,6 +838,7 @@
   flex-direction: column;
   gap: 0.35rem;
   text-align: left;
+  min-width: 0;
 }
 
 .landing-cta-form__label {
@@ -810,13 +850,20 @@
 .landing-cta-form input:not([type="checkbox"]),
 .landing-cta-form select {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.65rem 0.8rem;
   border: 1px solid rgba(0, 0, 0, 0.18);
   border-radius: 8px;
   font: inherit;
-  font-size: 0.95rem;
+  font-size: 16px; /* avoid iOS zoom on focus */
   color: #231f1e;
   background: #fff;
+  box-sizing: border-box;
+}
+
+.landing-cta-form select {
+  text-overflow: ellipsis;
 }
 
 .landing-cta-form input:focus,
@@ -827,8 +874,14 @@
 
 .landing-cta-form__submit {
   width: 100%;
+  max-width: 100%;
   border: 0;
   cursor: pointer;
+  white-space: normal;
+  line-height: 1.35;
+  text-align: center;
+  padding-block: 0.85rem;
+  box-sizing: border-box;
 }
 
 .landing-cta-form__status {
@@ -836,6 +889,23 @@
   min-height: 1.25rem;
   font-size: 0.9rem;
   color: #231f1e;
+}
+
+@media (max-width: 559px) {
+  .landing-cta-block {
+    border-radius: 16px;
+    margin-inline: max(10px, var(--page-hero-gutter, 14px));
+  }
+
+  .landing-cta-form {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .landing-cta-form__row {
+    gap: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
 }
 
 /* Global diagnostic disclaimer strip */
