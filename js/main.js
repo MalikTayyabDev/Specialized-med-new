@@ -650,6 +650,85 @@
     });
   }
 
+  /** CTA forms on the SEO landing pages (short form: name, organization, email, phone, locations, interest). */
+  function initLandingCtaForms() {
+    qsa(".landing-cta-form").forEach(function (form) {
+      var submitBtn = qs('button[type="submit"]', form);
+      var statusEl = qs(".landing-cta-form__status", form);
+
+      function setStatus(msg, isError) {
+        if (!statusEl) return;
+        statusEl.textContent = msg || "";
+        statusEl.style.color = isError ? "#c9222f" : "rgba(35,31,30,0.7)";
+      }
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        if (submitBtn && submitBtn.disabled) return;
+
+        var fd = new FormData(form);
+        // Web3Forms requires an absolute redirect URL; set it at submit time.
+        try {
+          var redirectEl = form.querySelector('input[name="redirect"]');
+          if (redirectEl && !redirectEl.value) {
+            redirectEl.value = String(new URL("thanks.html", siteBaseUrl()));
+            fd.set("redirect", redirectEl.value);
+          }
+        } catch (_) {}
+        if (!fd.get("access_key")) {
+          fd.append("access_key", "8ec7a28a-1979-4c39-8791-18fbf60bba44");
+        }
+
+        var originalText = submitBtn ? submitBtn.textContent : "";
+        if (submitBtn) {
+          submitBtn.textContent = "Sending...";
+          submitBtn.disabled = true;
+        }
+        setStatus("Sending…", false);
+
+        try {
+          var response = await fetch(form.getAttribute("action") || "https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: fd,
+          });
+          var data = await response.json().catch(function () {
+            return null;
+          });
+
+          if (response.ok && data && data.success === true) {
+            setStatus("Success! Your request has been sent.", false);
+            var dest = String(new URL("thanks.html", siteBaseUrl()));
+            try {
+              var rEl = form.querySelector('input[name="redirect"]');
+              if (rEl && rEl.value) dest = String(rEl.value);
+            } catch (_) {}
+            try {
+              window.sessionStorage.setItem("sm_form_submitted", "1");
+              window.sessionStorage.setItem("sm_form_submitted_at", String(Date.now()));
+            } catch (_) {}
+            window.setTimeout(function () {
+              window.location.assign(dest);
+            }, 50);
+            return;
+          }
+          setStatus("Error: " + ((data && data.message) || "Unable to send. Please try again."), true);
+        } catch (error) {
+          try {
+            form.submit();
+            return;
+          } catch (_) {}
+          setStatus("Something went wrong. Please try again.", true);
+        } finally {
+          if (submitBtn) {
+            submitBtn.textContent = originalText || "Submit";
+            submitBtn.disabled = false;
+          }
+        }
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     fixRelativeAnchorsToSiteRoot();
     initInternalRootLinks();
@@ -672,6 +751,7 @@
     initFaqAccordion();
     initFaqTestimonialsCarousel();
     initContactPage();
+    initLandingCtaForms();
     initVideoPlayStub();
     initLazyVideos();
     initOverviewVideo();
