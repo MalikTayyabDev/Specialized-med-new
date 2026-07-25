@@ -145,7 +145,7 @@
 }
 
 .landing-h2 {
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.25rem;
   font-family: var(--font-sans);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 500;
@@ -180,13 +180,24 @@
   width: 100%;
 }
 
-.landing-p:last-child {
+.landing-p:last-child,
+.landing-list:last-child {
   margin-bottom: 0;
+}
+
+/* Space after a block before the next paragraph */
+.landing-flow + .landing-p,
+.landing-media-pair + .landing-p,
+.landing-table-wrap + .landing-p,
+.landing-note + .landing-p,
+.landing-figure + .landing-p,
+.landing-compare-block + .landing-p {
+  margin-top: 1.25rem;
 }
 
 /* LIVE comparison explainer — breathing room above/below before the table */
 .landing-compare-block {
-  margin: clamp(2rem, 4vw, 2.75rem) 0 clamp(1.5rem, 3vw, 2rem);
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) 0 clamp(1.35rem, 2.75vw, 1.85rem);
   padding: clamp(1.35rem, 2.5vw, 1.85rem) clamp(1.25rem, 2.5vw, 1.75rem);
   border-radius: 14px;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -251,7 +262,7 @@
 
 .landing-split__copy .landing-h2 {
   margin-top: 0;
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.25rem;
 }
 
 .landing-split__media .landing-figure {
@@ -455,13 +466,17 @@
 
 /* Comparison / troubleshooting tables */
 .landing-table-wrap {
-  margin: 0;
+  margin: 1.25rem 0 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   background: #fff;
   width: 100%;
+}
+
+.landing-table-wrap:last-child {
+  margin-bottom: 0;
 }
 
 .landing-compare-block + .landing-table-wrap {
@@ -522,10 +537,20 @@
 .landing-flow {
   display: grid;
   gap: 0.85rem;
-  margin: 1.25rem 0 0;
+  margin: 0 0 1.5rem;
   padding: 0;
   list-style: none;
   counter-reset: land-flow;
+}
+
+.landing-h2 + .landing-flow,
+.landing-p + .landing-flow,
+.landing-list + .landing-flow {
+  margin-top: 0.15rem;
+}
+
+.landing-flow:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: 800px) {
@@ -581,6 +606,10 @@
   box-sizing: border-box;
 }
 
+.landing-note:last-child {
+  margin-bottom: 0;
+}
+
 .landing-note--alert {
   border-left-color: var(--color-red, #c9222f);
   background: #fdf3f3;
@@ -610,6 +639,10 @@
   max-width: 640px;
 }
 
+.landing-figure:last-child {
+  margin-bottom: 0;
+}
+
 .landing-figure img {
   display: block;
   width: 100%;
@@ -628,8 +661,12 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin-top: 0.5rem;
+  margin: 1.5rem 0 0;
   width: 100%;
+}
+
+.landing-media-pair:last-child {
+  margin-bottom: 0;
 }
 
 .landing-media-pair .landing-figure {
