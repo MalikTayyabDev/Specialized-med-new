@@ -625,8 +625,8 @@
 }
 
 .landing-media-pair {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-top: 0.5rem;
   width: 100%;
@@ -635,23 +635,35 @@
 .landing-media-pair .landing-figure {
   margin-top: 0;
   min-width: 0;
+  width: 100%;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Side-by-side; keep each image at its natural height. */
+.landing-media-pair .landing-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Side-by-side, equal height (shared portrait frame — no short square crop). */
 @media (min-width: 560px) {
   .landing-media-pair {
-    flex-direction: row;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
     gap: 1.15rem;
-  }
-
-  .landing-media-pair .landing-figure {
-    flex: 1 1 0;
+    align-items: stretch;
   }
 
   .landing-media-pair .landing-figure img {
-    width: 100%;
+    aspect-ratio: 3 / 4;
     height: auto;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .landing-media-pair .landing-figure__cap {
+    margin-top: 0.5rem;
   }
 }
 
