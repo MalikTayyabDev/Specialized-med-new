@@ -634,16 +634,14 @@
 
 .landing-media-pair .landing-figure {
   margin-top: 0;
-  display: flex;
-  flex-direction: column;
   min-width: 0;
 }
 
-/* Side-by-side with equal image height (object-fit keeps crop consistent). */
+/* Side-by-side; keep each image at its natural height. */
 @media (min-width: 560px) {
   .landing-media-pair {
     flex-direction: row;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 1.15rem;
   }
 
@@ -652,22 +650,8 @@
   }
 
   .landing-media-pair .landing-figure img {
-    flex: 1 1 auto;
     width: 100%;
-    height: 100%;
-    min-height: 160px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
-@media (max-width: 559px) {
-  .landing-media-pair .landing-figure img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
   }
 }
 
