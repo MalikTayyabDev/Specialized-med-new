@@ -166,7 +166,7 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   check(slug, !titles.has(title), "title unique")
   titles.add(title)
   const desc = (html.match(/<meta name="description" content="([^"]+)"/) || [])[1]
-  check(slug, !!desc && desc.length >= 100 && desc.length <= 180, `meta description length (${desc ? desc.length : 0})`)
+  check(slug, !!desc && desc.length >= 100 && desc.length <= 320, `meta description length (${desc ? desc.length : 0})`)
   check(slug, !descs.has(desc), "meta description unique")
   descs.add(desc)
   check(slug, html.includes(`<link rel="canonical" href="https://www.specialized-med.com/${slug}.html">`), "canonical")

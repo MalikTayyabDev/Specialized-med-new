@@ -251,6 +251,30 @@ const REPORT_IMG = "images/figma-services/report-sample.jpg"
 const SPATCH_IMG = "images/figma-services/s-patch.jpg"
 const LEADWIRE_IMG = "images/figma-services/lead-wire.jpg"
 
+/** Meta descriptions: PDF field text completed only with the next words from Publication-Ready Opening Copy where the manual uses ellipsis. */
+export const PDF_META = {
+  "cardiac-monitoring-services":
+    "Specialized Medical provides a turnkey ambulatory cardiac monitoring program designed to help cardiology practices select, enroll, monitor, report, and follow patients through one coordinated workflow.",
+  "mobile-cardiac-telemetry-mct":
+    "Mobile Cardiac Telemetry is an ambulatory ECG monitoring service designed to transmit rhythm data during the prescribed study rather than waiting until the monitor is returned.",
+  "holter-monitoring-services":
+    "Holter monitoring records the patient\u2019s ECG continuously for a defined short period, commonly 24 to 48 hours. It is often selected when symptoms occur frequently enough that a short recording window may capture the relevant rhythm.",
+  "long-term-holter-monitoring":
+    "Long-Term Holter monitoring extends continuous ambulatory ECG recording beyond the traditional 24- to 48-hour window. Specialized Medical maintains LIVE test-status visibility throughout the study.",
+  "cardiac-event-monitoring":
+    "Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended monitoring period.",
+  "ambulatory-cardiac-monitoring":
+    "Ambulatory cardiac monitoring records the heart\u2019s electrical activity while the patient continues normal daily life outside the clinic or hospital. The category includes Holter monitoring, extended Holter monitoring, cardiac event monitoring, and mobile cardiac telemetry.",
+  "s-patch-cardiac-monitoring-system":
+    "The S-Patch cardiac monitoring system is Specialized Medical\u2019s primary wearable platform for ambulatory ECG monitoring. Its compact two-component design is intended to provide a practical alternative to traditional multi-lead systems while supporting several prescribed monitoring services.",
+  "live-ecg-monitoring":
+    "Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available.",
+  "post-tavr-cardiac-monitoring":
+    "Post-TAVR cardiac monitoring supports rhythm surveillance after transcatheter aortic valve replacement when the treating team determines that ambulatory monitoring is appropriate.",
+  "cardiology-practice-cardiac-monitoring":
+    "Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support.",
+}
+
 /* --------------------------------- pages --------------------------------- */
 
 export const PAGES = [
@@ -260,8 +284,7 @@ export const PAGES = [
     slug: "cardiac-monitoring-services",
     file: "cardiac-monitoring-services.html",
     title: "Cardiac Monitoring Services | Specialized Medical",
-    metaDescription:
-      "Specialized Medical provides a turnkey ambulatory cardiac monitoring program designed to help cardiology practices select, enroll, monitor, report, and follow patients.",
+    metaDescription: PDF_META["cardiac-monitoring-services"],
     serviceName: "Cardiac Monitoring Services",
     pill: "Cardiac Monitoring Services",
     h1Html: `Cardiac <span class="landing-hero__title-accent">Monitoring Services</span>`,
@@ -319,54 +342,26 @@ export const PAGES = [
         `How the Specialized Medical <span class="landing-h2__accent">Workflow Works</span>`,
         [
           p(
-            `The office workflow is built around three principal steps: <strong>Hook Up</strong>, <strong>Enroll</strong>, and <strong>Disconnect</strong>. Practices may pre-enroll patients days or weeks in advance so the in-office portion can be faster when the patient arrives. During enrollment, the office confirms the prescribed test, patient information, monitoring duration, notification instructions, and other requested information. At the end of monitoring, the device is disconnected or returned according to the selected workflow, and the completed report is prepared for physician review.`
+            `The workflow has three principal steps: <strong>Hook Up</strong>, <strong>Enroll</strong>, and <strong>Disconnect</strong>. Practices may pre-enroll patients days or weeks in advance so the in-office portion can be faster when the patient arrives. During enrollment, the office confirms the prescribed test, patient information, monitoring duration, notification instructions, and other requested information. At the end of monitoring, the device is disconnected or returned according to the selected workflow, and the completed report is prepared for physician review.`
           ),
           flow(
             [
               { t: "Hook Up", d: "Device applied and verified in the office" },
-              { t: "Enroll", d: "Prescribed test, duration, and notification instructions confirmed (pre-enrollment available)" },
-              { t: "Monitor", d: "Study in progress with LIVE test-status visibility" },
-              { t: "Report", d: "Completed report prepared for physician review and e-signature" },
+              { t: "Enroll", d: "Prescribed test, duration, and notification instructions confirmed" },
+              { t: "Disconnect", d: "Device disconnected or returned; completed report prepared for physician review" },
             ],
-            "Hook Up, Enroll, Monitor, Report workflow"
+            "Hook Up, Enroll, and Disconnect workflow"
           ),
           noteBox(
             "LIVE operational visibility on every study",
-            "While any test is in progress, Specialized Medical can monitor battery status, electrode contact / signal quality, device communication, and whether the patient appears connected &mdash; then contact the patient when corrective support is needed. Clinical-result timing differs: Holter and Extended / Long-Term Holter results are presented after the final report is generated, whereas qualifying Event and MCT findings are presented during the study according to protocol."
+            "All studies have LIVE operational visibility while the test is in progress. Specialized Medical can monitor battery status, electrode contact / signal quality, device communication, and whether the patient appears connected, then contact the patient when corrective support is needed. Clinical-result timing differs: Holter and Extended / Long-Term Holter results are presented after the final report is generated, whereas qualifying Event and MCT findings are presented during the study according to protocol."
           ),
-          `        <div class="landing-swimlane" role="group" aria-label="Patient, practice, monitoring center, and physician portal workflow">
-          <div class="landing-swimlane__lane">
-            <h3 class="landing-h3">Patient</h3>
-            <ul class="landing-list">
-              <li>Wear device and follow care instructions</li>
-              <li>Mark symptoms when directed</li>
-              <li>Maintain phone proximity where required</li>
-            </ul>
-          </div>
-          <div class="landing-swimlane__lane">
-            <h3 class="landing-h3">Practice</h3>
-            <ul class="landing-list">
-              <li>Prescribe test and enroll patient</li>
-              <li>Apply device and set notification protocols</li>
-              <li>Review completed reports</li>
-            </ul>
-          </div>
-          <div class="landing-swimlane__lane">
-            <h3 class="landing-h3">Monitoring center</h3>
-            <ul class="landing-list">
-              <li>LIVE test-status visibility during every study</li>
-              <li>Patient support and corrective outreach</li>
-              <li>Process recordings and prepare reports</li>
-            </ul>
-          </div>
-          <div class="landing-swimlane__lane">
-            <h3 class="landing-h3">Physician portal</h3>
-            <ul class="landing-list">
-              <li>Report review and interpretation</li>
-              <li>Electronic signature when configured</li>
-              <li>Final report delivery for clinical decisions</li>
-            </ul>
-          </div>
+          `        <div class="landing-swimlane" role="group" aria-label="Patient, practice, monitoring center, physician portal, and final report workflow">
+          <div class="landing-swimlane__lane"><h3 class="landing-h3">Patient</h3></div>
+          <div class="landing-swimlane__lane"><h3 class="landing-h3">Practice</h3></div>
+          <div class="landing-swimlane__lane"><h3 class="landing-h3">Monitoring center</h3></div>
+          <div class="landing-swimlane__lane"><h3 class="landing-h3">Physician portal</h3></div>
+          <div class="landing-swimlane__lane"><h3 class="landing-h3">Final report</h3></div>
         </div>`,
         ].join("\n")
       ),
@@ -378,7 +373,7 @@ export const PAGES = [
             `Specialized Medical provides staff training, implementation guidance, patient support, report delivery, and workflow assistance. The objective is not merely to supply a device. The objective is to provide a complete service that fits the practice&rsquo;s clinical and operational needs.`
           ),
           p(
-            `The physician portal supports review and electronic signature of reports. Workflow details are configured to the practice, including which staff members enroll patients, how reports are routed, and how physician notification protocols are documented. See how this works for <a href="cardiology-practice-cardiac-monitoring.html">cardiology practices</a> or across the broader category of <a href="ambulatory-cardiac-monitoring.html">ambulatory cardiac monitoring</a>.`
+            `The physician portal can support review and electronic signature of reports. Workflow details should be configured to the practice, including which staff members enroll patients, how reports are routed, and how physician notification protocols are documented.`
           ),
         ].join("\n"),
         figureImg(
@@ -394,13 +389,16 @@ export const PAGES = [
         [
           `        <ul class="landing-list">
           <li>Live-streaming ECG capability for MCT</li>
-          <li>Multi-path cellular connectivity with support for rural and variable coverage environments</li>
-          <li>Multiple monitoring modalities through one coordinated platform</li>
-          <li>Physician-ready reporting with electronic signatures</li>
-          <li>Responsive implementation and direct operational support</li>
+          <li>Multi-path cellular connectivity</li>
+          <li>Support for rural and variable coverage environments</li>
+          <li>Multiple monitoring modalities</li>
+          <li>Physician-ready reporting</li>
+          <li>Electronic signatures</li>
+          <li>Responsive implementation</li>
+          <li>Direct operational support</li>
         </ul>`,
           p(
-            `Differentiation is evidence-based: one coordinated platform, practical workflow design, live ECG visibility where prescribed, and reporting configured for physician review.`
+            `One coordinated platform, practical workflow design, live ECG visibility where prescribed, and reporting configured for physician review.`
           ),
         ].join("\n"),
         `        <div class="landing-media-pair">
@@ -467,8 +465,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
     slug: "mobile-cardiac-telemetry-mct",
     file: "mobile-cardiac-telemetry-mct.html",
     title: "Mobile Cardiac Telemetry (MCT) | Specialized Medical",
-    metaDescription:
-      "Mobile Cardiac Telemetry is an ambulatory ECG monitoring service designed to transmit rhythm data during the prescribed study rather than waiting until the monitor is returned.",
+    metaDescription: PDF_META["mobile-cardiac-telemetry-mct"],
     serviceName: "Mobile Cardiac Telemetry (MCT)",
     pill: "Mobile Cardiac Telemetry",
     h1Html: `Mobile Cardiac Telemetry <span class="landing-hero__title-accent">(MCT)</span>`,
@@ -487,7 +484,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
             `Mobile Cardiac Telemetry, commonly called MCT, is used when a physician wants an extended period of ambulatory rhythm monitoring with live remote data transmission. The patient wears the prescribed monitor during normal daily activities while the system sends ECG data through the connected phone. The monitoring service reviews incoming information and follows the physician-defined notification process for qualifying events.`
           ),
           p(
-            `MCT is a diagnostic monitoring service. It is not an emergency response system and it does not replace instructions to call 911 or seek emergency care when a patient experiences urgent symptoms.`
+            `MCT should be described accurately as a diagnostic monitoring service. It is not an emergency response system and it does not replace instructions to call 911 or seek emergency care when a patient experiences urgent symptoms.`
           ),
         ].join("\n")
       ),
@@ -496,7 +493,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
         `How the Specialized Medical <span class="landing-h2__accent">MCT System Works</span>`,
         [
           p(
-            `The signal path is straightforward: the wearable monitor connects to the smartphone by Bluetooth, and the smartphone transmits to the monitoring platform through available cellular or network connectivity. The phone should remain near the patient and powered during the study. The system is designed to reconnect when temporary interruptions occur, but successful transmission still depends on device placement, phone status, network availability, and patient adherence.`
+            `Wearable monitor to smartphone by Bluetooth, then smartphone to the monitoring platform through available cellular or network connectivity. The phone should remain near the patient and powered during the study. The system is designed to reconnect when temporary interruptions occur, but successful transmission still depends on device placement, phone status, network availability, and patient adherence.`
           ),
           flow(
             [
@@ -508,7 +505,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
             "Wearable to phone to cloud transmission path"
           ),
           p(
-            `Every Specialized Medical test has LIVE operational visibility, including battery status, electrode contact / signal quality, device communication, and whether the patient appears connected. The MCT distinction is that qualifying clinical findings are also presented during the study according to the prescribed notification protocol. This does not mean every beat is manually watched continuously by one person; ECG information is processed and reviewed within the monitoring workflow. Learn more about <a href="live-ecg-monitoring.html">live ECG monitoring</a> and the <a href="s-patch-cardiac-monitoring-system.html">S-Patch cardiac monitoring system</a>.`
+            `Every Specialized Medical test has LIVE operational visibility, including battery status, electrode contact / signal quality, device communication, and whether the patient appears connected. The MCT distinction is that qualifying clinical findings are also presented during the study according to the prescribed notification protocol. Do not imply that every beat is manually watched continuously by one person.`
           ),
         ].join("\n"),
         { muted: true }
@@ -518,10 +515,10 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
         `Who May Be <span class="landing-h2__accent">Considered for MCT?</span>`,
         [
           p(
-            `MCT may be considered when the ordering physician wants a longer monitoring period and live remote rhythm surveillance. Examples may include intermittent palpitations, dizziness, syncope or near-syncope evaluation, suspected paroxysmal arrhythmias, <a href="post-tavr-cardiac-monitoring.html">post-procedure monitoring</a>, or other indications determined by the treating provider.`
+            `MCT may be considered when the ordering physician wants a longer monitoring period and live remote rhythm surveillance. Examples may include intermittent palpitations, dizziness, syncope or near-syncope evaluation, suspected paroxysmal arrhythmias, post-procedure monitoring, or other indications determined by the treating provider.`
           ),
           p(
-            `MCT is not promised to detect every arrhythmia or prevent adverse outcomes. Diagnostic yield depends on the patient&rsquo;s rhythm, recording quality, study duration, adherence, and other clinical factors.`
+            `Do not promise that MCT will detect every arrhythmia or prevent adverse outcomes. State that diagnostic yield depends on the patient&rsquo;s rhythm, recording quality, study duration, adherence, and other clinical factors.`
           ),
         ].join("\n")
       ),
@@ -630,8 +627,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
     slug: "holter-monitoring-services",
     file: "holter-monitoring-services.html",
     title: "Holter Monitoring Services | Specialized Medical",
-    metaDescription:
-      "Holter monitoring records the patient’s ECG continuously for a defined short period, commonly 24 to 48 hours. It is often selected when symptoms occur frequently.",
+    metaDescription: PDF_META["holter-monitoring-services"],
     serviceName: "Holter Monitoring Services",
     pill: "Holter Monitoring",
     h1Html: `Holter Monitoring <span class="landing-hero__title-accent">Services</span>`,
@@ -651,7 +647,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
           ),
           noteBox(
             "Two points to remember",
-            "(1) LIVE test-status visibility is maintained while the Holter study is in progress, and (2) clinical results are presented After Final Reports Generated."
+            "(1) LIVE test-status visibility is maintained while the Holter study is in progress, and (2) clinical results are presented after the final report is generated."
           ),
         ].join("\n")
       ),
@@ -784,8 +780,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
     slug: "long-term-holter-monitoring",
     file: "long-term-holter-monitoring.html",
     title: "Long-Term Holter Monitoring | Specialized Medical",
-    metaDescription:
-      "Long-Term Holter monitoring extends continuous ambulatory ECG recording beyond the traditional 24- to 48-hour window. Specialized Medical supports 3- to 14-day studies.",
+    metaDescription: PDF_META["long-term-holter-monitoring"],
     serviceName: "Long-Term Holter Monitoring",
     pill: "Long-Term Holter Monitoring",
     h1Html: `Long-Term <span class="landing-hero__title-accent">Holter Monitoring</span>`,
@@ -937,8 +932,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
     slug: "cardiac-event-monitoring",
     file: "cardiac-event-monitoring.html",
     title: "Cardiac Event Monitoring | Specialized Medical",
-    metaDescription:
-      "Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended period.",
+    metaDescription: PDF_META["cardiac-event-monitoring"],
     serviceName: "Cardiac Event Monitoring",
     pill: "Cardiac Event Monitoring",
     h1Html: `Cardiac <span class="landing-hero__title-accent">Event Monitoring</span>`,
@@ -1077,8 +1071,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
     slug: "ambulatory-cardiac-monitoring",
     file: "ambulatory-cardiac-monitoring.html",
     title: "Ambulatory Cardiac Monitoring | Specialized Medical",
-    metaDescription:
-      "Ambulatory cardiac monitoring records the heart’s electrical activity while the patient continues normal daily life outside the clinic or hospital. Compare all four test types.",
+    metaDescription: PDF_META["ambulatory-cardiac-monitoring"],
     serviceName: "Ambulatory Cardiac Monitoring",
     pill: "Ambulatory Cardiac Monitoring",
     h1Html: `Ambulatory <span class="landing-hero__title-accent">Cardiac Monitoring</span>`,
@@ -1263,8 +1256,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
     slug: "s-patch-cardiac-monitoring-system",
     file: "s-patch-cardiac-monitoring-system.html",
     title: "S-Patch Cardiac Monitoring System | Specialized Medical",
-    metaDescription:
-      "The S-Patch cardiac monitoring system is Specialized Medical’s primary wearable platform for ambulatory ECG monitoring, with a compact two-component design.",
+    metaDescription: PDF_META["s-patch-cardiac-monitoring-system"],
     serviceName: "S-Patch Cardiac Monitoring System",
     pill: "S-Patch Monitoring System",
     h1Html: `S-Patch Cardiac <span class="landing-hero__title-accent">Monitoring System</span>`,
@@ -1429,8 +1421,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
     slug: "live-ecg-monitoring",
     file: "live-ecg-monitoring.html",
     title: "Live ECG Monitoring | Specialized Medical",
-    metaDescription:
-      "Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study, with qualifying events reviewed per protocol.",
+    metaDescription: PDF_META["live-ecg-monitoring"],
     serviceName: "Live ECG Monitoring",
     pill: "Live ECG Monitoring",
     h1Html: `Live ECG <span class="landing-hero__title-accent">Monitoring</span>`,
@@ -1501,7 +1492,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
         `Live ECG Versus <span class="landing-h2__accent">Post-Study Review</span>`,
         [
           p(
-            `Every modality has LIVE operational visibility during the test. <a href="mobile-cardiac-telemetry-mct.html">MCT</a> and Event Monitoring present qualifying clinical findings during the test according to protocol, while <a href="holter-monitoring-services.html">Holter</a> and <a href="long-term-holter-monitoring.html">Long-Term Holter</a> clinical results are presented After Final Reports Generated. Each modality has an appropriate role &mdash; the ordering physician selects based on the clinical question.`
+            `Every modality has LIVE operational visibility during the test. MCT and Event Monitoring present qualifying clinical findings during the test according to protocol, while Holter and Long-Term Holter clinical results are presented after the final report is generated. Each modality has an appropriate role &mdash; the ordering physician selects based on the clinical question.`
           ),
           comparisonTable("live-ecg-monitoring"),
         ].join("\n")
@@ -1564,8 +1555,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
     slug: "post-tavr-cardiac-monitoring",
     file: "post-tavr-cardiac-monitoring.html",
     title: "Post-TAVR Cardiac Monitoring | Specialized Medical",
-    metaDescription:
-      "Post-TAVR cardiac monitoring supports rhythm surveillance after transcatheter aortic valve replacement when the treating team determines monitoring is appropriate.",
+    metaDescription: PDF_META["post-tavr-cardiac-monitoring"],
     serviceName: "Post-TAVR Cardiac Monitoring",
     pill: "Post-TAVR Cardiac Monitoring",
     h1Html: `Post-TAVR Cardiac <span class="landing-hero__title-accent">Monitoring</span>`,
@@ -1712,8 +1702,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
     slug: "cardiology-practice-cardiac-monitoring",
     file: "cardiology-practice-cardiac-monitoring.html",
     title: "Cardiac Monitoring for Cardiology Practices | Specialized Medical",
-    metaDescription:
-      "Specialized Medical provides cardiology practices with more than a monitor: a complete operational program for enrollment, monitoring, reporting, and physician review.",
+    metaDescription: PDF_META["cardiology-practice-cardiac-monitoring"],
     serviceName: "Cardiac Monitoring for Cardiology Practices",
     pill: "For Cardiology Practices",
     h1Html: `Cardiac Monitoring for <span class="landing-hero__title-accent">Cardiology Practices</span>`,
