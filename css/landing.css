@@ -13,12 +13,12 @@
   position: relative;
   max-width: 1430px;
   margin: 0 auto;
-  min-height: min(550px, 88vh);
+  min-height: 280px;
   border-radius: 20px;
   overflow: hidden;
   background-color: #f3f1f0;
   background-size: cover;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
 }
 
@@ -43,7 +43,6 @@
 }
 .landing-hero__plate--s-patch-cardiac-monitoring-system {
   background-image: url("../images/landing/s-patch-cardiac-monitoring-system.webp");
-  background-position: 28% center;
 }
 .landing-hero__plate--live-ecg-monitoring {
   background-image: url("../images/landing/live-ecg-monitoring.jpg");
@@ -63,12 +62,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center bottom;
   pointer-events: none;
-}
-
-.landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__media {
-  object-position: 28% center;
 }
 
 .landing-hero__gradient {
@@ -96,18 +91,18 @@
 .landing-hero__inner {
   position: relative;
   z-index: 2;
-  padding-top: var(--hero-plate-inner-pt, 3rem);
-  padding-bottom: var(--hero-plate-inner-pb, 3rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
   padding-inline: var(--figma-inline, 1.5rem);
-  max-width: 720px;
+  max-width: min(960px, 72%);
 }
 
 .landing-hero__title {
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-sans);
-  font-size: clamp(1.85rem, 4.5vw, 3.25rem);
+  font-size: clamp(1.75rem, 3.8vw, 2.85rem);
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.08;
   letter-spacing: -0.02em;
   color: #231f1e;
 }
@@ -120,10 +115,10 @@
 }
 
 .landing-hero__lead {
-  margin: 0 0 1.5rem;
-  max-width: 40rem;
-  font-size: 1.05rem;
-  line-height: 1.55;
+  margin: 0 0 1.25rem;
+  max-width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
   color: rgba(35, 31, 30, 0.78);
 }
 
@@ -713,16 +708,23 @@
 
 @media (min-width: 800px) {
   .landing-swimlane {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
   }
 }
 
 .landing-swimlane__lane {
-  padding: 1.1rem 1.2rem;
+  padding: 1rem 1.1rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-top: 4px solid var(--color-red, #c9222f);
   border-radius: 12px;
   background: #fff;
+}
+
+.landing-swimlane__lane .landing-h3 {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.35;
 }
 
 .landing-swimlane__lane .landing-list {
@@ -1187,4 +1189,25 @@
       rgba(35, 31, 30, 0.35) 5px 8px,
       transparent 8px 11px
     );
+}
+
+@media (max-width: 720px) {
+  .landing-hero__plate {
+    min-height: 260px;
+  }
+
+  .landing-hero__inner {
+    max-width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.35rem;
+  }
+
+  .landing-hero__title {
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+  }
+
+  .landing-hero__lead {
+    font-size: 0.95rem;
+    line-height: 1.48;
+  }
 }
