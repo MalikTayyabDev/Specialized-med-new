@@ -268,7 +268,7 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
     check(slug, /landing-diagram__symptom-btn/.test(html), "symptom button diagram")
   }
   if (slug === "long-term-holter-monitoring") {
-    check(slug, /landing-diagram__electrode/.test(html), "electrode placement diagram")
+    check(slug, /Site preparation/.test(html) && /landing-flow/.test(html), "electrode placement steps")
   }
   if (slug === "ambulatory-cardiac-monitoring") {
     check(slug, /landing-diagram__signal/.test(html), "signal quality diagram")

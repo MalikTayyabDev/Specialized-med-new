@@ -94,22 +94,14 @@ function symptomButtonDiagram() {
   )
 }
 
-function electrodePlacementDiagram() {
-  return diagramFig(
-    "Electrode placement and rotation for multi-day Holter monitoring",
-    `          <div class="landing-diagram__electrode">
-            <div class="landing-diagram__torso" aria-hidden="true">
-              <span class="landing-diagram__dot landing-diagram__dot--a" title="Electrode site A">A</span>
-              <span class="landing-diagram__dot landing-diagram__dot--b" title="Electrode site B">B</span>
-              <span class="landing-diagram__dot landing-diagram__dot--c" title="Electrode site C">C</span>
-            </div>
-            <ul class="landing-diagram__legend">
-              <li>Follow prescribed electrode sites for the monitor</li>
-              <li>Prepare skin for reliable contact</li>
-              <li>Rotate locations only when instructed</li>
-            </ul>
-          </div>`,
-    "Electrode placement and rotation illustration; exact sites follow the monitor instructions for the prescribed configuration."
+function electrodeCareSteps() {
+  return flow(
+    [
+      { t: "Site preparation", d: "Prepare skin for reliable electrode contact" },
+      { t: "Placement", d: "Follow prescribed electrode sites for the monitor" },
+      { t: "Rotation", d: "Change adhesive locations only when instructed" },
+    ],
+    "Electrode placement and rotation steps"
   )
 }
 
@@ -853,7 +845,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
             "Electrode placement and rotation",
             "Follow the electrode placement and rotation instructions provided for the specific monitor. If adhesive causes significant irritation, contact the practice or support team before continuing use."
           ),
-          electrodePlacementDiagram(),
+          electrodeCareSteps(),
           `        <ul class="landing-list">
           <li><strong>Loose electrode:</strong> follow the replacement instructions provided with the study or contact support</li>
           <li><strong>Temporary signal loss:</strong> the system is designed to resume recording; contact support if the device indicates a problem</li>
