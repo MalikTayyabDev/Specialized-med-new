@@ -109,7 +109,10 @@ const NEEDS_TABLE = [
 /** Pages with patient-facing urgent-guidance content -> emergency disclaimer required. */
 const NEEDS_EMERGENCY = [
   "mobile-cardiac-telemetry-mct",
+  "holter-monitoring-services",
+  "long-term-holter-monitoring",
   "cardiac-event-monitoring",
+  "ambulatory-cardiac-monitoring",
   "live-ecg-monitoring",
   "post-tavr-cardiac-monitoring",
   "s-patch-cardiac-monitoring-system",
@@ -253,6 +256,27 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
 
   // Answer-first: opening copy present in hero lead
   check(slug, /landing-hero__lead/.test(html), "opening answer in hero")
+
+  // Manual-required diagrams / swimlanes
+  if (slug === "cardiac-monitoring-services") {
+    check(slug, /landing-swimlane/.test(html), "workflow swimlane (patient/practice/monitoring center/portal)")
+  }
+  if (slug === "mobile-cardiac-telemetry-mct") {
+    check(slug, /landing-diagram__phone-prox/.test(html), "phone proximity diagram")
+  }
+  if (slug === "cardiac-event-monitoring") {
+    check(slug, /landing-diagram__symptom-btn/.test(html), "symptom button diagram")
+  }
+  if (slug === "long-term-holter-monitoring") {
+    check(slug, /landing-diagram__electrode/.test(html), "electrode placement diagram")
+  }
+  if (slug === "ambulatory-cardiac-monitoring") {
+    check(slug, /landing-diagram__signal/.test(html), "signal quality diagram")
+    check(slug, /landing-swimlane/.test(html), "patient/practice/monitoring swimlane")
+  }
+  if (slug === "s-patch-cardiac-monitoring-system") {
+    check(slug, /landing-diagram__connect/.test(html), "connectivity diagram")
+  }
 }
 
 console.log(failures === 0 ? "\nALL CHECKS PASSED" : `\n${failures} CHECK(S) FAILED`)

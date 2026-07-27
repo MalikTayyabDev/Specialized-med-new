@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 const PHONE_HREF = "tel:+18557732633"
-const CSS_VERSION = "20260725j"
+const CSS_VERSION = "20260727b"
 const WEB3FORMS_KEY = "8ec7a28a-1979-4c39-8791-18fbf60bba44"
 
 /** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
@@ -327,7 +327,7 @@ function ctaFormSection(page) {
   const options = INTEREST_OPTIONS.map(
     (o) => `                  <option value="${esc(o)}"${o === page.interestDefault ? " selected" : ""}>${esc(o)}</option>`
   ).join("\n")
-  const emergencyNote = page.ctaEmergencyNote
+  const emergencyNote = page.emergency || page.ctaEmergencyNote
     ? `\n            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>`
     : ""
   return `    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="${page.id}-cta-heading">

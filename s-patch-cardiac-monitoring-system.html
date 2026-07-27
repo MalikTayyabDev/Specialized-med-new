@@ -228,7 +228,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/faq.css">
-  <link rel="stylesheet" href="css/landing.css?v=20260725j">
+  <link rel="stylesheet" href="css/landing.css?v=20260727b">
   <link rel="canonical" href="https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html">
 </head>
 <body>
@@ -349,6 +349,19 @@
           <li class="landing-flow__step"><strong>Multi-path cellular / network</strong><span>Phone transmits when connectivity is available</span></li>
           <li class="landing-flow__step"><strong>Monitoring platform</strong><span>Data received and processed</span></li>
         </ol>
+        <figure class="landing-diagram" role="group" aria-label="Monitor-to-phone connectivity">
+          <div class="landing-diagram__frame">
+          <div class="landing-diagram__connect">
+            <div class="landing-diagram__device landing-diagram__device--patch"><span>S-Patch monitor</span></div>
+            <div class="landing-diagram__connector" aria-hidden="true">Bluetooth ~30 ft*</div>
+            <div class="landing-diagram__device landing-diagram__device--phone"><span>Connected phone</span></div>
+            <div class="landing-diagram__connector" aria-hidden="true">Cellular / network</div>
+            <div class="landing-diagram__device landing-diagram__device--cloud"><span>Monitoring platform</span></div>
+            <p class="landing-diagram__hint">*Range varies with walls, body position, and interference.</p>
+          </div>
+          </div>
+          <figcaption class="landing-figure__cap">Monitor-to-phone-to-cloud connectivity diagram for live-transmission workflows.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -518,6 +531,7 @@
             <h2 id="spatch-cta-heading" class="landing-h2">Request an S-Patch Demonstration</h2>
             <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
             <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
+            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>
           </div>
           <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
@@ -647,6 +661,6 @@
 
   </div>
   <script src="js/analytics.js" defer></script>
-  <script src="js/main.js?v=20260725j" defer></script>
+  <script src="js/main.js?v=20260727b" defer></script>
 </body>
 </html>

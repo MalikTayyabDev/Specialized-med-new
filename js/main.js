@@ -651,6 +651,55 @@
   }
 
   /** CTA forms on the SEO landing pages (short form: name, organization, email, phone, locations, interest). */
+  function pushSmEvent(eventName, params) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(
+      Object.assign(
+        {
+          event: eventName,
+        },
+        params || {}
+      )
+    );
+  }
+
+  function initLandingAnalytics() {
+    var landing = qs("[data-landing]");
+    if (!landing) return;
+    var slug = landing.getAttribute("data-landing") || "";
+
+    qsa('a[href^="tel:"]', landing).forEach(function (a) {
+      a.addEventListener("click", function () {
+        pushSmEvent("landing_phone_click", {
+          landing_page: slug,
+          link_text: (a.textContent || "").trim(),
+        });
+      });
+    });
+
+    qsa('.landing-hero__actions a[href="#cta-form"]', landing).forEach(function (a) {
+      a.addEventListener("click", function () {
+        pushSmEvent("landing_cta_click", {
+          landing_page: slug,
+          cta_location: "hero",
+        });
+      });
+    });
+
+    qsa(".landing-cta-form").forEach(function (form) {
+      var started = false;
+      form.addEventListener(
+        "focusin",
+        function () {
+          if (started) return;
+          started = true;
+          pushSmEvent("landing_form_start", { landing_page: slug });
+        },
+        true
+      );
+    });
+  }
+
   function initLandingCtaForms() {
     qsa(".landing-cta-form").forEach(function (form) {
       var submitBtn = qs('button[type="submit"]', form);
@@ -698,6 +747,13 @@
 
           if (response.ok && data && data.success === true) {
             setStatus("Success! Your request has been sent.", false);
+            try {
+              var landingEl = qs("[data-landing]");
+              pushSmEvent("landing_form_submit", {
+                landing_page: landingEl ? landingEl.getAttribute("data-landing") || "" : "",
+                form_interest: String(fd.get("interest") || ""),
+              });
+            } catch (_) {}
             var dest = String(new URL("thanks.html", siteBaseUrl()));
             try {
               var rEl = form.querySelector('input[name="redirect"]');
@@ -752,6 +808,7 @@
     initFaqTestimonialsCarousel();
     initContactPage();
     initLandingCtaForms();
+    initLandingAnalytics();
     initVideoPlayStub();
     initLazyVideos();
     initOverviewVideo();

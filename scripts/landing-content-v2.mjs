@@ -49,6 +49,108 @@ function figureImg(src, alt, caption) {
         </figure>`
 }
 
+/** Accessible HTML diagram when a dedicated image asset is not yet supplied. */
+function diagramFig(label, inner, caption) {
+  return `        <figure class="landing-diagram" role="group" aria-label="${label}">
+          <div class="landing-diagram__frame">
+${inner}
+          </div>
+          ${caption ? `<figcaption class="landing-figure__cap">${caption}</figcaption>` : ""}
+        </figure>`
+}
+
+function phoneProximityDiagram() {
+  return diagramFig(
+    "Phone proximity and charging during ambulatory monitoring",
+    `          <div class="landing-diagram__phone-prox">
+            <div class="landing-diagram__device landing-diagram__device--patch"><span>Wearable monitor</span></div>
+            <div class="landing-diagram__connector" aria-hidden="true">Bluetooth</div>
+            <div class="landing-diagram__device landing-diagram__device--phone">
+              <span>Connected phone</span>
+              <span class="landing-diagram__badge">Charged &amp; powered on</span>
+            </div>
+            <p class="landing-diagram__hint">Keep the phone within the operating range stated in patient instructions.</p>
+          </div>`,
+    "Phone proximity and charging illustration: the connected phone must stay near the patient and powered during live-transmission studies."
+  )
+}
+
+function symptomButtonDiagram() {
+  return diagramFig(
+    "Patient symptom button and event capture",
+    `          <div class="landing-diagram__symptom-btn">
+            <div class="landing-diagram__symptom-device" aria-hidden="true">
+              <span class="landing-diagram__symptom-label">Symptom button</span>
+              <span class="landing-diagram__symptom-action">Press / tap when instructed</span>
+            </div>
+            <ol class="landing-diagram__mini-steps">
+              <li>Symptom occurs</li>
+              <li>Patient marks the event</li>
+              <li>ECG segment is stored or transmitted</li>
+              <li>Event is reviewed per protocol</li>
+            </ol>
+          </div>`,
+    "Patient symptom-button illustration: mark symptoms when instructed; urgent symptoms require emergency care rather than waiting for a monitoring call."
+  )
+}
+
+function electrodePlacementDiagram() {
+  return diagramFig(
+    "Electrode placement and rotation for multi-day Holter monitoring",
+    `          <div class="landing-diagram__electrode">
+            <div class="landing-diagram__torso" aria-hidden="true">
+              <span class="landing-diagram__dot landing-diagram__dot--a" title="Electrode site A">A</span>
+              <span class="landing-diagram__dot landing-diagram__dot--b" title="Electrode site B">B</span>
+              <span class="landing-diagram__dot landing-diagram__dot--c" title="Electrode site C">C</span>
+            </div>
+            <ul class="landing-diagram__legend">
+              <li>Follow prescribed electrode sites for the monitor</li>
+              <li>Prepare skin for reliable contact</li>
+              <li>Rotate locations only when instructed</li>
+            </ul>
+          </div>`,
+    "Electrode placement and rotation illustration; exact sites follow the monitor instructions for the prescribed configuration."
+  )
+}
+
+function signalQualityDiagram() {
+  return diagramFig(
+    "ECG signal quality and artifact factors",
+    `          <div class="landing-diagram__signal">
+            <div class="landing-diagram__trace">
+              <span class="landing-diagram__trace-label">Clean trace</span>
+              <div class="landing-diagram__wave" aria-hidden="true"></div>
+            </div>
+            <div class="landing-diagram__trace landing-diagram__trace--artifact">
+              <span class="landing-diagram__trace-label">Artifact</span>
+              <div class="landing-diagram__wave landing-diagram__wave--noisy" aria-hidden="true"></div>
+            </div>
+            <ul class="landing-diagram__legend">
+              <li>Movement</li>
+              <li>Poor electrode contact</li>
+              <li>Loose leads</li>
+              <li>Skin preparation</li>
+            </ul>
+          </div>`,
+    "Signal quality and artifact illustration: recording quality depends on electrode contact, adherence, and environment."
+  )
+}
+
+function connectivityDiagram() {
+  return diagramFig(
+    "Monitor-to-phone connectivity",
+    `          <div class="landing-diagram__connect">
+            <div class="landing-diagram__device landing-diagram__device--patch"><span>S-Patch monitor</span></div>
+            <div class="landing-diagram__connector" aria-hidden="true">Bluetooth ~30 ft*</div>
+            <div class="landing-diagram__device landing-diagram__device--phone"><span>Connected phone</span></div>
+            <div class="landing-diagram__connector" aria-hidden="true">Cellular / network</div>
+            <div class="landing-diagram__device landing-diagram__device--cloud"><span>Monitoring platform</span></div>
+            <p class="landing-diagram__hint">*Range varies with walls, body position, and interference.</p>
+          </div>`,
+    "Monitor-to-phone-to-cloud connectivity diagram for live-transmission workflows."
+  )
+}
+
 function noteBox(title, html, kind = "info") {
   return `        <div class="landing-note landing-note--${kind}" role="note">
           ${title ? `<p class="landing-note__title">${title}</p>` : ""}
@@ -232,6 +334,40 @@ export const PAGES = [
             "LIVE operational visibility on every study",
             "While any test is in progress, Specialized Medical can monitor battery status, electrode contact / signal quality, device communication, and whether the patient appears connected &mdash; then contact the patient when corrective support is needed. Clinical-result timing differs: Holter and Extended / Long-Term Holter results are presented after the final report is generated, whereas qualifying Event and MCT findings are presented during the study according to protocol."
           ),
+          `        <div class="landing-swimlane" role="group" aria-label="Patient, practice, monitoring center, and physician portal workflow">
+          <div class="landing-swimlane__lane">
+            <h3 class="landing-h3">Patient</h3>
+            <ul class="landing-list">
+              <li>Wear device and follow care instructions</li>
+              <li>Mark symptoms when directed</li>
+              <li>Maintain phone proximity where required</li>
+            </ul>
+          </div>
+          <div class="landing-swimlane__lane">
+            <h3 class="landing-h3">Practice</h3>
+            <ul class="landing-list">
+              <li>Prescribe test and enroll patient</li>
+              <li>Apply device and set notification protocols</li>
+              <li>Review completed reports</li>
+            </ul>
+          </div>
+          <div class="landing-swimlane__lane">
+            <h3 class="landing-h3">Monitoring center</h3>
+            <ul class="landing-list">
+              <li>LIVE test-status visibility during every study</li>
+              <li>Patient support and corrective outreach</li>
+              <li>Process recordings and prepare reports</li>
+            </ul>
+          </div>
+          <div class="landing-swimlane__lane">
+            <h3 class="landing-h3">Physician portal</h3>
+            <ul class="landing-list">
+              <li>Report review and interpretation</li>
+              <li>Electronic signature when configured</li>
+              <li>Final report delivery for clinical decisions</li>
+            </ul>
+          </div>
+        </div>`,
         ].join("\n")
       ),
       secSplit(
@@ -430,6 +566,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
             "Phone proximity and charging",
             "The connected phone is the transmission gateway. Keep it powered, charged, and within the operating range stated in the patient instructions &mdash; walls, distance, device placement, and interference can affect the connection."
           ),
+          phoneProximityDiagram(),
           emergencyBox(),
         ].join("\n"),
         { muted: true }
@@ -552,6 +689,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
 ${figureImg(SPATCH_IMG, "S-Patch wearable patch Holter monitor used for short-duration ambulatory ECG studies", "Patch configuration &mdash; S-Patch.")}
 ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrodes and leads", "Lead-wire configuration.")}
         </div>`,
+          emergencyBox(),
         ].join("\n")
       ),
       secSplit(
@@ -720,12 +858,14 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
             "Electrode placement and rotation",
             "Follow the electrode placement and rotation instructions provided for the specific monitor. If adhesive causes significant irritation, contact the practice or support team before continuing use."
           ),
+          electrodePlacementDiagram(),
           `        <ul class="landing-list">
           <li><strong>Loose electrode:</strong> follow the replacement instructions provided with the study or contact support</li>
           <li><strong>Temporary signal loss:</strong> the system is designed to resume recording; contact support if the device indicates a problem</li>
           <li><strong>Skin irritation:</strong> contact the practice or support team for guidance; sensitive-skin options may be available</li>
           <li><strong>Uncertainty about device status:</strong> contact the support number supplied with the study</li>
         </ul>`,
+          emergencyBox(),
         ].join("\n"),
         { muted: true }
       ),
@@ -852,6 +992,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
             "Marking symptoms",
             "Mark symptoms as soon as practical after they begin, record what was felt and what you were doing, and follow the study instructions for confirming the event was captured."
           ),
+          symptomButtonDiagram(),
           emergencyBox(),
         ].join("\n")
       ),
@@ -1007,6 +1148,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
             "Why recording quality matters",
             "Movement, poor electrode contact, skin preparation, loose leads, and environmental factors can produce artifact and affect signal quality. Good adherence and electrode care give the study the best opportunity to produce interpretable data."
           ),
+          signalQualityDiagram(),
         ].join("\n")
       ),
       sec(
@@ -1047,6 +1189,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
           p(
             `The physician remains responsible for diagnosis, interpretation, and treatment decisions.`
           ),
+          emergencyBox(),
         ].join("\n"),
         { muted: true }
       ),
@@ -1180,6 +1323,7 @@ ${figureImg("images/landing/s-patch-cardiac-monitoring-system.webp", "S-Patch we
             ],
             "Monitor to phone connectivity path"
           ),
+          connectivityDiagram(),
         ].join("\n")
       ),
       sec(

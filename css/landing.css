@@ -958,3 +958,233 @@
   color: rgba(35, 31, 30, 0.7);
   text-align: left;
 }
+
+/* Manual-required diagrams (HTML illustrations when image assets are not yet supplied) */
+.landing-diagram {
+  margin: 1.5rem 0 0;
+  max-width: 100%;
+}
+
+.landing-diagram__frame {
+  padding: 1.15rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.landing-diagram__device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 4.5rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #faf8f8;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #231f1e;
+  text-align: center;
+}
+
+.landing-diagram__device--patch {
+  border-top: 3px solid var(--color-red, #c9222f);
+}
+
+.landing-diagram__device--phone {
+  border-top: 3px solid #231f1e;
+}
+
+.landing-diagram__device--cloud {
+  border-top: 3px solid rgba(35, 31, 30, 0.45);
+}
+
+.landing-diagram__badge {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(35, 31, 30, 0.65);
+}
+
+.landing-diagram__connector {
+  margin: 0.5rem 0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(201, 34, 47, 0.08);
+  color: var(--color-red, #c9222f);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.landing-diagram__hint {
+  margin: 0.85rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(35, 31, 30, 0.62);
+}
+
+.landing-diagram__phone-prox,
+.landing-diagram__connect {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 22rem;
+  margin-inline: auto;
+}
+
+.landing-diagram__symptom-btn {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .landing-diagram__symptom-btn {
+    grid-template-columns: minmax(0, 11rem) 1fr;
+    align-items: center;
+  }
+}
+
+.landing-diagram__symptom-device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 7rem;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px dashed rgba(201, 34, 47, 0.45);
+  background: #fdf3f3;
+}
+
+.landing-diagram__symptom-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.5rem;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-red, #c9222f);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.landing-diagram__symptom-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #231f1e;
+}
+
+.landing-diagram__mini-steps {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: rgba(35, 31, 30, 0.78);
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.landing-diagram__electrode,
+.landing-diagram__signal {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .landing-diagram__electrode,
+  .landing-diagram__signal {
+    grid-template-columns: minmax(0, 10rem) 1fr;
+    align-items: center;
+  }
+}
+
+.landing-diagram__torso {
+  position: relative;
+  width: 7.5rem;
+  height: 9.5rem;
+  margin-inline: auto;
+  border-radius: 3.75rem 3.75rem 2rem 2rem;
+  border: 2px solid rgba(35, 31, 30, 0.15);
+  background: linear-gradient(180deg, #faf8f8 0%, #f0eeed 100%);
+}
+
+.landing-diagram__dot {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: var(--color-red, #c9222f);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.landing-diagram__dot--a {
+  top: 28%;
+  left: 22%;
+}
+
+.landing-diagram__dot--b {
+  top: 42%;
+  right: 20%;
+}
+
+.landing-diagram__dot--c {
+  bottom: 24%;
+  left: 42%;
+}
+
+.landing-diagram__legend {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: rgba(35, 31, 30, 0.75);
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+
+.landing-diagram__trace {
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #faf8f8;
+}
+
+.landing-diagram__trace-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #231f1e;
+}
+
+.landing-diagram__wave {
+  height: 2rem;
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 6px,
+      rgba(201, 34, 47, 0.75) 6px 7px,
+      transparent 7px 12px,
+      rgba(201, 34, 47, 0.75) 12px 13px,
+      transparent 13px 18px,
+      rgba(201, 34, 47, 0.75) 18px 19px,
+      transparent 19px 24px
+    );
+}
+
+.landing-diagram__wave--noisy {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(35, 31, 30, 0.15) 0 3px,
+      transparent 3px 5px,
+      rgba(35, 31, 30, 0.35) 5px 8px,
+      transparent 8px 11px
+    );
+}

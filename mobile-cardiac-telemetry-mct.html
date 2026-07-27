@@ -229,7 +229,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/faq.css">
-  <link rel="stylesheet" href="css/landing.css?v=20260725j">
+  <link rel="stylesheet" href="css/landing.css?v=20260727b">
   <link rel="canonical" href="https://www.specialized-med.com/mobile-cardiac-telemetry-mct.html">
 </head>
 <body>
@@ -423,6 +423,20 @@
           <p class="landing-note__title">Phone proximity and charging</p>
           <p class="landing-note__body">The connected phone is the transmission gateway. Keep it powered, charged, and within the operating range stated in the patient instructions &mdash; walls, distance, device placement, and interference can affect the connection.</p>
         </div>
+        <figure class="landing-diagram" role="group" aria-label="Phone proximity and charging during ambulatory monitoring">
+          <div class="landing-diagram__frame">
+          <div class="landing-diagram__phone-prox">
+            <div class="landing-diagram__device landing-diagram__device--patch"><span>Wearable monitor</span></div>
+            <div class="landing-diagram__connector" aria-hidden="true">Bluetooth</div>
+            <div class="landing-diagram__device landing-diagram__device--phone">
+              <span>Connected phone</span>
+              <span class="landing-diagram__badge">Charged &amp; powered on</span>
+            </div>
+            <p class="landing-diagram__hint">Keep the phone within the operating range stated in patient instructions.</p>
+          </div>
+          </div>
+          <figcaption class="landing-figure__cap">Phone proximity and charging illustration: the connected phone must stay near the patient and powered during live-transmission studies.</figcaption>
+        </figure>
         <div class="landing-note landing-note--alert" role="note">
           <p class="landing-note__title">Emergency symptoms</p>
           <p class="landing-note__body">Patients with chest pain, severe shortness of breath, fainting, stroke symptoms, or other urgent symptoms should follow their physician&rsquo;s instructions and seek emergency assistance &mdash; call 911 &mdash; rather than waiting for a monitoring call.</p>
@@ -537,6 +551,7 @@
             <h2 id="mct-cta-heading" class="landing-h2">Request an MCT Workflow Demonstration</h2>
             <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
             <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
+            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>
           </div>
           <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
@@ -667,6 +682,6 @@
 
   </div>
   <script src="js/analytics.js" defer></script>
-  <script src="js/main.js?v=20260725j" defer></script>
+  <script src="js/main.js?v=20260727b" defer></script>
 </body>
 </html>
