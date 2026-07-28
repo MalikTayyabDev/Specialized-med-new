@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 const PHONE_HREF = "tel:+18557732633"
-const CSS_VERSION = "20260727e"
+const CSS_VERSION = "20260728a"
 const WEB3FORMS_KEY = "8ec7a28a-1979-4c39-8791-18fbf60bba44"
 
 /** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
@@ -261,7 +261,7 @@ const BANNERS = {
   },
   "long-term-holter-monitoring": {
     src: "images/landing/long-term-holter-monitoring.jpg",
-    alt: "Long-Term Holter monitoring extending continuous ambulatory ECG recording from 3 to 14 days",
+    alt: "S-Patch wearable cardiac monitor used for Long-Term Holter monitoring during multi-day ambulatory ECG recording",
   },
   "cardiac-event-monitoring": {
     src: "images/landing/cardiac-event-monitoring.webp",

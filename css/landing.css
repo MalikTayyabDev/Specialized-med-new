@@ -37,6 +37,10 @@
 }
 .landing-hero__plate--long-term-holter-monitoring {
   background-image: url("../images/landing/long-term-holter-monitoring.jpg");
+  background-position: center center;
+}
+.landing-hero__plate--long-term-holter-monitoring .landing-hero__media {
+  object-position: center center;
 }
 .landing-hero__plate--cardiac-event-monitoring {
   background-image: url("../images/landing/cardiac-event-monitoring.webp");

@@ -168,51 +168,75 @@ function liveEcgDisclaimer() {
 
 /* --------------- Required Global Comparison Language + table --------------- */
 
-const COMPARISON_EXPLAINER = `Every Specialized Medical test provides <strong>LIVE test-status visibility</strong> while the study is in progress. Specialized Medical can see operational information such as battery level, electrode contact and signal quality, whether the monitor is communicating, and whether the patient appears to remain properly connected. When a parameter falls outside the expected range, Specialized Medical contacts the patient and works with the patient to correct the issue so the study has the best opportunity to be completed successfully. The distinction between test types is not whether the study is visible live; it is <strong>when clinical findings are presented</strong>. For Holter and Extended / Long-Term Holter, clinical results are presented after the final report is generated. For Event Monitoring and Mobile Cardiac Telemetry (MCT), qualifying clinical findings are presented while the test is in progress according to the prescribed notification protocol.`
+const COMPARISON_EXPLAINER = `Specialized Medical <strong>LIVE STREAMING</strong> configurations provide <strong>LIVE test-status visibility</strong> while the study is in progress. Specialized Medical can see operational information such as battery level, electrode contact and signal quality, whether the monitor is communicating, and whether the patient appears to remain properly connected. When a parameter falls outside the expected range, Specialized Medical contacts the patient and works with the patient to correct the issue so the study has the best opportunity to be completed successfully. For Holter and Extended / Long-Term Holter LIVE STREAMING studies, clinical results are presented after the final report is generated. For Event Monitoring and Mobile Cardiac Telemetry (MCT), qualifying clinical findings are presented while the test is in progress according to the prescribed notification protocol. Traditional <strong>NOT LIVE STREAMING</strong> Holter configurations do not provide LIVE test-status visibility during the study.`
 
-const MODALITIES = [
+/** Client-approved comparison rows (LIVE STREAMING vs NOT LIVE STREAMING). */
+const COMPARISON_ROWS = [
   {
     slug: "holter-monitoring-services",
-    name: "Holter Monitoring",
+    name: "Holter Monitoring (LIVE STREAMING)",
     duration: "24&ndash;48 hours",
+    live: "Yes",
     findings: "After Final Report Is Generated",
-    suited: "Frequent symptoms and short-term rhythm assessment",
+    linkable: true,
   },
   {
     slug: "long-term-holter-monitoring",
-    name: "Extended / Long-Term Holter",
+    name: "Extended / Long-Term Holter (LIVE STREAMING)",
     duration: "3&ndash;14 days",
+    live: "Yes",
     findings: "After Final Report Is Generated",
-    suited: "Intermittent symptoms requiring a longer recording window",
+    linkable: true,
   },
   {
     slug: "cardiac-event-monitoring",
-    name: "Cardiac Event Monitoring",
+    name: "Cardiac Event Monitoring (LIVE STREAMING)",
     duration: "Up to 30 days",
+    live: "Yes",
     findings: "During Test &mdash; According to Prescribed Notification Protocol",
-    suited: "Intermittent symptoms that may require patient or automatic event capture",
+    linkable: true,
   },
   {
     slug: "mobile-cardiac-telemetry-mct",
-    name: "Mobile Cardiac Telemetry (MCT)",
+    name: "Mobile Cardiac Telemetry (MCT) (LIVE STREAMING)",
     duration: "Up to 30 days",
+    live: "Yes",
     findings: "During Test &mdash; According to Prescribed Notification Protocol",
-    suited: "Patients who may benefit from continuous remote rhythm surveillance",
+    linkable: true,
+  },
+  {
+    slug: null,
+    name: "Holter Monitoring (NOT LIVE STREAMING VERSION)",
+    duration: "24&ndash;48 hours",
+    live: "<strong>NO</strong>",
+    findings: "After Final Report Is Generated",
+    linkable: false,
+  },
+  {
+    slug: null,
+    name: "Extended Holter (NOT LIVE STREAMING VERSION)",
+    duration: "3&ndash;7 days",
+    live: "<strong>NO</strong>",
+    findings: "After Final Report Is Generated",
+    linkable: false,
   },
 ]
 
 export function comparisonTable(currentSlug, { withExplainer = true } = {}) {
-  const rows = MODALITIES.map((m) => {
-    const name =
-      m.slug === currentSlug
-        ? `<strong>${m.name}</strong>`
-        : `<a href="${m.slug}.html">${m.name}</a>`
+  const rows = COMPARISON_ROWS.map((m) => {
+    let name
+    if (!m.linkable || !m.slug) {
+      name = m.name
+    } else if (m.slug === currentSlug) {
+      name = `<strong>${m.name}</strong>`
+    } else {
+      name = `<a href="${m.slug}.html">${m.name}</a>`
+    }
     return `            <tr>
               <th scope="row">${name}</th>
               <td>${m.duration}</td>
-              <td>Yes</td>
+              <td>${m.live}</td>
               <td>${m.findings}</td>
-              <td>${m.suited}</td>
             </tr>`
   }).join("\n")
   const explainer = withExplainer
@@ -222,14 +246,13 @@ export function comparisonTable(currentSlug, { withExplainer = true } = {}) {
     : ""
   return `${explainer}        <div class="landing-table-wrap" role="region" aria-label="Cardiac monitoring service comparison" tabindex="0">
           <table class="landing-table">
-            <caption class="sr-only">Comparison of Specialized Medical ambulatory cardiac monitoring test types by duration, LIVE test-status visibility, clinical-findings timing, and typical use</caption>
+            <caption class="sr-only">Comparison of live-streaming and non-live Holter, Event, and MCT monitoring by duration, LIVE test-status visibility, and clinical-findings timing</caption>
             <thead>
               <tr>
                 <th scope="col">Monitoring Type</th>
                 <th scope="col">Typical Duration</th>
                 <th scope="col">LIVE Test-Status Visibility</th>
                 <th scope="col">Clinical Findings Presented</th>
-                <th scope="col">Best Suited For</th>
               </tr>
             </thead>
             <tbody>
@@ -490,7 +513,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system available as an a
           flow(
             [
               { t: "Wearable monitor", d: "ECG acquired on the body" },
-              { t: "Bluetooth", d: "Monitor connects to the patient&rsquo;s smartphone" },
+              { t: "Bluetooth", d: "Monitor connects to the provided smartphone" },
               { t: "Cellular / network", d: "Phone transmits ECG data to the monitoring platform" },
               { t: "Monitoring platform", d: "Data reviewed; qualifying events communicated per protocol" },
             ],
@@ -1444,7 +1467,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
           flow(
             [
               { t: "ECG acquired", d: "Wearable monitor records the rhythm" },
-              { t: "Bluetooth", d: "Monitor connects to the patient&rsquo;s phone" },
+              { t: "Bluetooth", d: "Monitor connects to the provided smartphone" },
               { t: "Network transmission", d: "Phone transmits through available network" },
               { t: "Monitoring workflow", d: "Data enters the monitoring platform" },
               { t: "Protocol communication", d: "Qualifying findings communicated according to protocol" },

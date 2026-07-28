@@ -183,16 +183,18 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   const faqCount = (html.match(/class="faq-item__trigger"/g) || []).length
   check(slug, faqCount === 10, `10 visible FAQs (found ${faqCount})`)
 
-  // Comparison table
+  // Comparison table (client-approved LIVE STREAMING vs NOT LIVE STREAMING)
   if (NEEDS_TABLE.includes(slug)) {
     check(slug, html.includes("LIVE Test-Status Visibility"), "comparison table header")
-    check(slug, (html.match(/After Final Report Is Generated/g) || []).length >= 2, "Holter/LT-Holter findings wording")
+    check(slug, html.includes("LIVE STREAMING"), "LIVE STREAMING rows present")
+    check(slug, html.includes("NOT LIVE STREAMING VERSION"), "NOT LIVE STREAMING rows present")
+    check(slug, (html.match(/After Final Report Is Generated/g) || []).length >= 4, "Holter findings wording")
     check(
       slug,
       (html.match(/During Test &mdash; According to Prescribed Notification Protocol|During Test — According to Prescribed Notification Protocol/g) || []).length >= 2,
       "Event/MCT findings wording"
     )
-    check(slug, !/not live|no live visibility/i.test(html), "no 'not live' phrasing")
+    check(slug, (html.match(/<strong>NO<\/strong>/g) || []).length >= 2, "NO visibility on non-live rows")
   }
 
   // Disclaimers
