@@ -15,6 +15,9 @@ const REQUIRED_LINKS = {
     "long-term-holter-monitoring",
     "cardiac-event-monitoring",
     "ambulatory-cardiac-monitoring",
+    "s-patch-cardiac-monitoring-system",
+    "live-ecg-monitoring",
+    "post-tavr-cardiac-monitoring",
     "cardiology-practice-cardiac-monitoring",
   ],
   "mobile-cardiac-telemetry-mct": [
@@ -119,7 +122,7 @@ const NEEDS_EMERGENCY = [
 ]
 
 const EXPECT_TITLE = {
-  "cardiac-monitoring-services": "Cardiac Monitoring Services | Specialized Medical",
+  "cardiac-monitoring-services": "Cardiac Monitoring Services | LIVE Streaming ECG | Specialized Medical",
   "mobile-cardiac-telemetry-mct": "Mobile Cardiac Telemetry (MCT) | Specialized Medical",
   "holter-monitoring-services": "Holter Monitoring Services | Specialized Medical",
   "long-term-holter-monitoring": "Long-Term Holter Monitoring | Specialized Medical",
@@ -132,7 +135,7 @@ const EXPECT_TITLE = {
 }
 
 const CTA_LABEL = {
-  "cardiac-monitoring-services": "Request a Cardiac Monitoring Program Review",
+  "cardiac-monitoring-services": "Schedule a Cardiac Monitoring Demonstration",
   "mobile-cardiac-telemetry-mct": "Request an MCT Workflow Demonstration",
   "holter-monitoring-services": "Request Holter Monitoring Information",
   "long-term-holter-monitoring": "Request Long-Term Holter Program Details",
@@ -181,7 +184,8 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
 
   // FAQs visible
   const faqCount = (html.match(/class="faq-item__trigger"/g) || []).length
-  check(slug, faqCount === 10, `10 visible FAQs (found ${faqCount})`)
+  const expectedFaqs = slug === "cardiac-monitoring-services" ? 17 : 10
+  check(slug, faqCount === expectedFaqs, `${expectedFaqs} visible FAQs (found ${faqCount})`)
 
   // Comparison table (client-approved LIVE STREAMING vs NOT LIVE STREAMING)
   if (NEEDS_TABLE.includes(slug)) {
@@ -261,7 +265,13 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
 
   // Manual-required diagrams / swimlanes
   if (slug === "cardiac-monitoring-services") {
-    check(slug, /landing-swimlane/.test(html), "workflow swimlane (patient/practice/monitoring center/portal)")
+    check(slug, /Choose &amp; Compare Specialized Medical Cardiac Monitoring/.test(html), "comparison section heading")
+    check(slug, /landing-status-strip/.test(html), "LIVE status indicator strip")
+    check(slug, /landing-phone-screens/.test(html), "patient phone two-screen visual")
+    check(slug, /cms-post-tavr|Post-TAVR Monitoring Designed/.test(html), "Post-TAVR section present")
+    check(slug, /href="post-tavr-cardiac-monitoring\.html"/.test(html), "Post-TAVR dedicated link")
+    check(slug, /Order and pre-enroll/.test(html) && /Deliver the final report/.test(html), "six-step workflow")
+    check(slug, !/growth opportunity/i.test(html), "no internal strategy language")
   }
   if (slug === "mobile-cardiac-telemetry-mct") {
     check(slug, /landing-diagram__phone-prox/.test(html), "phone proximity diagram")

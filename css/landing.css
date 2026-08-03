@@ -1198,6 +1198,81 @@
     );
 }
 
+/* CMS Blueprint v3 — LIVE status indicator strip */
+.landing-status-strip {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 720px) {
+  .landing-status-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.landing-status-strip li {
+  position: relative;
+  padding: 0.75rem 0.9rem 0.75rem 2.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba(35, 31, 30, 0.78);
+}
+
+.landing-status-strip li::before {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  top: 1.05rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--color-red, #c9222f);
+}
+
+/* CMS Blueprint v3 — locked-down patient phone screens */
+.landing-phone-screens {
+  display: grid;
+  gap: 1rem;
+  margin: 0.25rem 0 0;
+}
+
+@media (min-width: 560px) {
+  .landing-phone-screens {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.landing-phone-screens__device {
+  min-height: 11rem;
+  padding: 1rem 1.1rem 1.15rem;
+  border: 2px solid rgba(35, 31, 30, 0.18);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, #faf8f8 0%, #f0eeed 100%);
+}
+
+.landing-phone-screens__label {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #231f1e;
+}
+
+.landing-phone-screens__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: rgba(35, 31, 30, 0.75);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 @media (max-width: 720px) {
   .landing-hero__plate {
     height: min(600px, 88vh);
