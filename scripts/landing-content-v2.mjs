@@ -10,8 +10,12 @@ function p(html) {
   return `        <p class="landing-p">${html}</p>`
 }
 
-function sec(id, headingHtml, inner, { muted = false, wide = false } = {}) {
-  return `    <section class="landing-section${muted ? " landing-section--muted" : ""}" aria-labelledby="${id}-heading">
+function sec(id, headingHtml, inner, { muted = false, wide = false, introBand = false } = {}) {
+  const extras = [
+    muted ? " landing-section--muted" : "",
+    introBand ? " landing-section--intro-band" : "",
+  ].join("")
+  return `    <section class="landing-section${extras}" aria-labelledby="${id}-heading">
       <div class="figma-container${wide ? "" : ""}">
         <h2 id="${id}-heading" class="landing-h2">${headingHtml}</h2>
 ${inner}
@@ -385,7 +389,7 @@ export const PAGES = [
           ),
           `        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form">Schedule a Cardiac Monitoring Demonstration</a></p>`,
         ].join("\n"),
-        { muted: true }
+        { muted: true, introBand: true }
       ),
       sec(
         "cms-live-visibility",
