@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 const PHONE_HREF = "tel:+18557732633"
-const CSS_VERSION = "20260805a"
+const CSS_VERSION = "20260805b"
 const WEB3FORMS_KEY = "8ec7a28a-1979-4c39-8791-18fbf60bba44"
 
 /** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
@@ -466,11 +466,9 @@ ${breadcrumbHtml(page)}
           <h1 id="${page.id}-hero-heading" class="landing-hero__title">
             ${page.h1Html}
           </h1>
-          <p class="landing-hero__lead">${page.directAnswer}</p>
-          <div class="landing-hero__actions">
+${page.directAnswer ? `          <p class="landing-hero__lead">${page.directAnswer}</p>\n` : ""}          <div class="landing-hero__actions">
             <a class="figma-btn figma-btn--solid" href="#cta-form">${esc(page.ctaLabel)}</a>
-            <a class="figma-btn figma-btn--outline-dark" href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist</a>
-          </div>
+${page.showSecondaryCta === false ? "" : `            <a class="figma-btn figma-btn--outline-dark" href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist</a>\n`}          </div>
         </div>
       </div>
     </section>
@@ -483,7 +481,7 @@ ${ctaFormSection(page)}
 
 ${relatedLinksSection(page)}
 
-${diagnosticDisclaimer()}
+${page.showDisclaimer === false ? "" : diagnosticDisclaimer()}
   </main>
 ${footer}
   </div>

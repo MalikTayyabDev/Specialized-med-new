@@ -202,7 +202,9 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   }
 
   // Disclaimers
-  check(slug, html.includes("Diagnostic Service Disclaimer"), "global diagnostic disclaimer")
+  if (slug !== "cardiac-monitoring-services") {
+    check(slug, html.includes("Diagnostic Service Disclaimer"), "global diagnostic disclaimer")
+  }
   if (NEEDS_EMERGENCY.includes(slug)) {
     check(slug, /call 911/i.test(html), "emergency 911 language")
     check(slug, /landing-note--alert|landing-cta-form__emergency/.test(html), "prominent emergency block")
@@ -260,8 +262,13 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   const lazyCount = (html.match(/loading="lazy"/g) || []).length
   check(slug, lazyCount >= 1, "below-fold images lazy-loaded")
 
-  // Answer-first: opening copy present in hero lead
-  check(slug, /landing-hero__lead/.test(html), "opening answer in hero")
+  // Answer-first: opening copy (CMS Blueprint v3 keeps PART 1 opening below H1)
+  if (slug === "cardiac-monitoring-services") {
+    check(slug, /landing-section--opening/.test(html), "PART 1 opening copy below hero")
+    check(slug, !/landing-hero__lead/.test(html), "no invented hero teaser")
+  } else {
+    check(slug, /landing-hero__lead/.test(html), "opening answer in hero")
+  }
 
   // Manual-required diagrams / swimlanes
   if (slug === "cardiac-monitoring-services") {
@@ -270,9 +277,8 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
     check(slug, /landing-phone-demo|landing-phone-screens/.test(html), "patient phone two-screen visual")
     check(slug, !/Related Cardiac Monitoring/.test(html), "no Related Resources block (not in PART 1)")
     check(slug, !/See how this works for/.test(html), "no invented practice cross-link sentence")
-    check(slug, /landing-section--opening/.test(html), "opening copy below hero")
-    check(slug, /Monitor-to-phone-to-network-to-monitoring-center diagram/.test(html), "network diagram caption matches PART 2")
     check(slug, /Only two simple screens - connection status and symptom logging/.test(html), "phone caption matches PART 2")
+    check(slug, !/Diagnostic Service Disclaimer/.test(html), "no non-PDF disclaimer on CMS pillar")
     check(slug, /cms-post-tavr|Post-TAVR Monitoring Designed/.test(html), "Post-TAVR section present")
     check(slug, /href="post-tavr-cardiac-monitoring\.html"/.test(html), "Post-TAVR dedicated link")
     check(slug, /Order and pre-enroll/.test(html) && /Deliver the final report/.test(html), "six-step workflow")

@@ -160,13 +160,13 @@ function liveStatusIndicators() {
         </ul>`
 }
 
-/** Blueprint v3 — monitor → phone → network → monitoring center (PART 2 visual). */
+/** Blueprint v3 — monitor → phone → network → monitoring center (PART 2 visual only). */
 function cmsNetworkPathDiagram() {
   return diagramFig(
     "Monitor to phone to network to monitoring center",
     `          <div class="landing-diagram__network">
             <div class="landing-diagram__network-chain">
-              <div class="landing-diagram__device landing-diagram__device--patch"><span>Wearable monitor</span></div>
+              <div class="landing-diagram__device landing-diagram__device--patch"><span>Monitor</span></div>
               <div class="landing-diagram__connector landing-diagram__connector--inline" aria-hidden="true">Bluetooth</div>
               <div class="landing-diagram__device landing-diagram__device--phone"><span>Assigned phone</span></div>
               <div class="landing-diagram__connector landing-diagram__connector--inline" aria-hidden="true">Cellular</div>
@@ -178,21 +178,22 @@ function cmsNetworkPathDiagram() {
               <span>AT&amp;T</span>
             </div>
           </div>`,
-    "Monitor-to-phone-to-network-to-monitoring-center diagram."
+    ""
   )
 }
 
-/** Blueprint v3 PART 2 — locked-down patient phone (Device Status + Log Symptoms only). */
+/** Blueprint v3 PART 2 — two patient screens only; caption is the only public-facing visual copy. */
 function patientPhoneScreensDiagram() {
   return diagramFig(
     "Assigned patient phone with Device Status and Log Symptoms screens",
     `          <div class="landing-phone-demo" aria-hidden="true">
             <div class="landing-phone-demo__shell">
               <div class="landing-phone-demo__screen">
-                <p class="landing-phone-demo__brand">Specialized Medical</p>
                 <div class="landing-phone-demo__card">
                   <p class="landing-phone-demo__card-title">Device Status</p>
-                  <p class="landing-phone-demo__card-body">Simple connection view for the prescribed study</p>
+                </div>
+                <div class="landing-phone-demo__card">
+                  <p class="landing-phone-demo__card-title">Log Symptoms</p>
                 </div>
                 <div class="landing-phone-demo__tabs">
                   <span class="landing-phone-demo__tab landing-phone-demo__tab--active">Device Status</span>
@@ -205,7 +206,7 @@ function patientPhoneScreensDiagram() {
   )
 }
 
-/** Opening copy block after H1 (no invented heading — PART 1 structure). */
+/** Opening copy block after H1 (PART 1 — no invented heading). */
 function openingBlock(inner) {
   return `    <section class="landing-section landing-section--opening" aria-label="Cardiac monitoring services overview">
       <div class="figma-container">
@@ -214,14 +215,14 @@ ${inner}
     </section>`
 }
 
-/** Blueprint v3 — hospital-to-home Post-TAVR timeline. */
+/** PART 2: post-TAVR hospital-to-home timeline — labels only, no invented body copy. */
 function postTavrTimeline() {
   return flow(
     [
-      { t: "Hospital", d: "Heart team selects patient, test type, duration, and notification protocol" },
-      { t: "Discharge", d: "Monitor and assigned phone applied; LIVE status verified" },
-      { t: "Home", d: "LIVE STREAMING ECG with proactive patient support while the patient returns home" },
-      { t: "Review", d: "Qualifying findings presented per protocol; final report and e-signature" },
+      { t: "Hospital", d: "" },
+      { t: "Discharge", d: "" },
+      { t: "Home", d: "" },
+      { t: "Physician review", d: "" },
     ],
     "Post-TAVR hospital-to-home monitoring timeline"
   )
@@ -387,13 +388,15 @@ export const PAGES = [
     serviceName: "Cardiac Monitoring Services",
     pill: "Cardiac Monitoring Services",
     h1Html: `Cardiac Monitoring Services Built Around <span class="landing-hero__title-accent">LIVE Visibility</span> and Patient Support`,
-    directAnswer:
-      "Ambulatory cardiac monitoring with LIVE test-status visibility, proactive patient support and physician-ready reporting across Holter, Extended and Long-Term Holter, Event Monitoring and MCT.",
+    // PART 1 puts opening paragraphs after H1 — no invented hero teaser
+    directAnswer: "",
     ctaLabel: "Schedule a Cardiac Monitoring Demonstration",
     interestDefault: "Multiple test types / full program",
     schemaTypes: ["WebPage", "OrganizationMedicalBusiness", "Service", "BreadcrumbList", "FAQPage"],
     emergency: false,
     showRelated: false,
+    showSecondaryCta: false,
+    showDisclaimer: false,
     body: [
       openingBlock(
         [
@@ -477,7 +480,7 @@ export const PAGES = [
             <p class="landing-p"><a href="cardiac-event-monitoring.html">View Cardiac Event Monitoring</a></p>
           </article>
           <article class="landing-card">
-            <h3 class="landing-h3"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry &mdash; MCT (LIVE STREAMING)</a></h3>
+            <h3 class="landing-h3"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry - MCT (LIVE STREAMING)</a></h3>
             <p class="landing-p">MCT provides continuous rhythm surveillance with qualifying clinical findings presented during the monitoring period according to the prescribed notification protocol. It is well suited to patients who require closer rhythm oversight, including selected patients following procedures such as TAVR.</p>
             <p class="landing-p"><a href="mobile-cardiac-telemetry-mct.html">Learn About Mobile Cardiac Telemetry</a></p>
           </article>
@@ -506,7 +509,7 @@ export const PAGES = [
           <li>Visibility into battery, electrodes, connectivity and successful data transmission</li>
           <li>Proactive contact with the patient when a technical issue is identified</li>
           <li>Multi-carrier cellular connectivity using Verizon, T-Mobile and AT&amp;T</li>
-          <li>Single-wire, two-electrode S-Patch configuration designed for patient mobility and repositioning</li>
+          <li>Single-wire, two-electrode <a href="s-patch-cardiac-monitoring-system.html">S-Patch</a> configuration designed for patient mobility and repositioning</li>
           <li>Physician-ready reporting and electronic signature workflow</li>
           <li>A dedicated monitoring process that can be aligned with the heart team&rsquo;s post-TAVR protocol</li>
         </ul>`,
@@ -598,21 +601,21 @@ export const PAGES = [
         `A Simple Two-Electrode Monitoring <span class="landing-h2__accent">Configuration</span>`,
         [
           p(
-            `The <a href="s-patch-cardiac-monitoring-system.html">S-Patch</a> uses a single wire with two electrodes, allowing the electrode positions to be changed on the skin as directed. This can help reduce repeated stress on the same skin location while maintaining strong P-wave clarity and reliable ECG acquisition. The compact configuration is designed to support everyday movement while the patient remains connected to the assigned phone.`
+            `The S-Patch uses a single wire with two electrodes, allowing the electrode positions to be changed on the skin as directed. This can help reduce repeated stress on the same skin location while maintaining strong P-wave clarity and reliable ECG acquisition. The compact configuration is designed to support everyday movement while the patient remains connected to the assigned phone.`
           ),
         ].join("\n"),
         figureImg(
           SPATCH_IMG,
-          "S-Patch single-wire two-electrode wearable cardiac monitor from Specialized Medical",
-          "S-Patch &mdash; compact two-electrode configuration."
+          "Specialized Medical S-Patch single-wire two-electrode wearable cardiac monitor",
+          ""
         )
       ),
       sec(
         "cms-practice",
-        `Designed to Fit the <a href="cardiology-practice-cardiac-monitoring.html">Cardiology Practice</a> <span class="landing-h2__accent">Workflow</span>`,
+        `Designed to Fit the Cardiology Practice <span class="landing-h2__accent">Workflow</span>`,
         [
           p(
-            `Specialized Medical provides more than a monitor. The service is designed to support the complete practice workflow, including patient enrollment, pre-enrollment, device hookup, technical support, physician-ready reporting, electronic signature and billing-support information. The goal is to make monitoring easier for the practice while keeping the physician in control of the prescribed test and notification parameters.`
+            `Specialized Medical provides more than a monitor. The service is designed to support the complete <a href="cardiology-practice-cardiac-monitoring.html">practice</a> workflow, including patient enrollment, pre-enrollment, device hookup, technical support, physician-ready reporting, electronic signature and billing-support information. The goal is to make monitoring easier for the practice while keeping the physician in control of the prescribed test and notification parameters.`
           ),
           `        <ul class="landing-list">
           <li>Pre-enroll patients before the appointment</li>
@@ -641,7 +644,7 @@ export const PAGES = [
         figureImg(
           REPORT_IMG,
           "De-identified physician-ready cardiac monitoring report with electronic signature workflow",
-          "Physician-ready report review with electronic signature in the portal (de-identified sample)."
+          ""
         )
       ),
       sec(
