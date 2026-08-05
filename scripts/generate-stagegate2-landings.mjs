@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 const PHONE_HREF = "tel:+18557732633"
-const CSS_VERSION = "20260803b"
+const CSS_VERSION = "20260805a"
 const WEB3FORMS_KEY = "8ec7a28a-1979-4c39-8791-18fbf60bba44"
 
 /** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
@@ -302,7 +302,7 @@ function breadcrumbHtml(page) {
 }
 
 function relatedLinksSection(page) {
-  if (!page.links?.length) return ""
+  if (page.showRelated === false || !page.links?.length) return ""
   return `    <section class="landing-section" aria-labelledby="${page.id}-related-heading">
       <div class="figma-container">
         <h2 id="${page.id}-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>

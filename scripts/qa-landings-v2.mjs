@@ -198,7 +198,7 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
       (html.match(/During Test &mdash; According to Prescribed Notification Protocol|During Test — According to Prescribed Notification Protocol/g) || []).length >= 2,
       "Event/MCT findings wording"
     )
-    check(slug, (html.match(/<strong>NO<\/strong>/g) || []).length >= 2, "NO visibility on non-live rows")
+    check(slug, (html.match(/landing-table__no|>NO<|>NO<\/strong>/g) || []).length >= 2 || (html.match(/<strong>NO<\/strong>/g) || []).length >= 2, "NO visibility on non-live rows")
   }
 
   // Disclaimers
@@ -267,7 +267,12 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   if (slug === "cardiac-monitoring-services") {
     check(slug, /Choose &amp; Compare Specialized Medical Cardiac Monitoring/.test(html), "comparison section heading")
     check(slug, /landing-status-strip/.test(html), "LIVE status indicator strip")
-    check(slug, /landing-phone-screens/.test(html), "patient phone two-screen visual")
+    check(slug, /landing-phone-demo|landing-phone-screens/.test(html), "patient phone two-screen visual")
+    check(slug, !/Related Cardiac Monitoring/.test(html), "no Related Resources block (not in PART 1)")
+    check(slug, !/See how this works for/.test(html), "no invented practice cross-link sentence")
+    check(slug, /landing-section--opening/.test(html), "opening copy below hero")
+    check(slug, /Monitor-to-phone-to-network-to-monitoring-center diagram/.test(html), "network diagram caption matches PART 2")
+    check(slug, /Only two simple screens - connection status and symptom logging/.test(html), "phone caption matches PART 2")
     check(slug, /cms-post-tavr|Post-TAVR Monitoring Designed/.test(html), "Post-TAVR section present")
     check(slug, /href="post-tavr-cardiac-monitoring\.html"/.test(html), "Post-TAVR dedicated link")
     check(slug, /Order and pre-enroll/.test(html) && /Deliver the final report/.test(html), "six-step workflow")

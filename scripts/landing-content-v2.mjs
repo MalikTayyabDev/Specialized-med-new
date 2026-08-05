@@ -160,44 +160,58 @@ function liveStatusIndicators() {
         </ul>`
 }
 
-/** Blueprint v3 — monitor → phone → network → monitoring center. */
+/** Blueprint v3 — monitor → phone → network → monitoring center (PART 2 visual). */
 function cmsNetworkPathDiagram() {
   return diagramFig(
     "Monitor to phone to network to monitoring center",
-    `          <div class="landing-diagram__connect">
-            <div class="landing-diagram__device landing-diagram__device--patch"><span>Wearable monitor</span></div>
-            <div class="landing-diagram__connector" aria-hidden="true">Bluetooth</div>
-            <div class="landing-diagram__device landing-diagram__device--phone"><span>Assigned phone</span></div>
-            <div class="landing-diagram__connector" aria-hidden="true">Verizon / T-Mobile / AT&amp;T</div>
-            <div class="landing-diagram__device landing-diagram__device--cloud"><span>Monitoring center</span></div>
+    `          <div class="landing-diagram__network">
+            <div class="landing-diagram__network-chain">
+              <div class="landing-diagram__device landing-diagram__device--patch"><span>Wearable monitor</span></div>
+              <div class="landing-diagram__connector landing-diagram__connector--inline" aria-hidden="true">Bluetooth</div>
+              <div class="landing-diagram__device landing-diagram__device--phone"><span>Assigned phone</span></div>
+              <div class="landing-diagram__connector landing-diagram__connector--inline" aria-hidden="true">Cellular</div>
+              <div class="landing-diagram__device landing-diagram__device--cloud"><span>Monitoring center</span></div>
+            </div>
+            <div class="landing-diagram__carriers" aria-label="Cellular networks">
+              <span>Verizon</span>
+              <span>T-Mobile</span>
+              <span>AT&amp;T</span>
+            </div>
           </div>`,
-    "Monitor-to-phone-to-network-to-monitoring-center path for LIVE STREAMING studies."
+    "Monitor-to-phone-to-network-to-monitoring-center diagram."
   )
 }
 
-/** Blueprint v3 — locked-down patient phone with two screens. */
+/** Blueprint v3 PART 2 — locked-down patient phone (Device Status + Log Symptoms only). */
 function patientPhoneScreensDiagram() {
   return diagramFig(
     "Assigned patient phone with Device Status and Log Symptoms screens",
-    `          <div class="landing-phone-screens">
-            <div class="landing-phone-screens__device" aria-hidden="true">
-              <p class="landing-phone-screens__label">Device Status</p>
-              <ul class="landing-phone-screens__list">
-                <li>Connection</li>
-                <li>Battery</li>
-                <li>Signal</li>
-              </ul>
-            </div>
-            <div class="landing-phone-screens__device" aria-hidden="true">
-              <p class="landing-phone-screens__label">Log Symptoms</p>
-              <ul class="landing-phone-screens__list">
-                <li>Record symptom time</li>
-                <li>Simple logging only</li>
-              </ul>
+    `          <div class="landing-phone-demo" aria-hidden="true">
+            <div class="landing-phone-demo__shell">
+              <div class="landing-phone-demo__screen">
+                <p class="landing-phone-demo__brand">Specialized Medical</p>
+                <div class="landing-phone-demo__card">
+                  <p class="landing-phone-demo__card-title">Device Status</p>
+                  <p class="landing-phone-demo__card-body">Simple connection view for the prescribed study</p>
+                </div>
+                <div class="landing-phone-demo__tabs">
+                  <span class="landing-phone-demo__tab landing-phone-demo__tab--active">Device Status</span>
+                  <span class="landing-phone-demo__tab">Log Symptoms</span>
+                </div>
+              </div>
             </div>
           </div>`,
     "Only two simple screens - connection status and symptom logging."
   )
+}
+
+/** Opening copy block after H1 (no invented heading — PART 1 structure). */
+function openingBlock(inner) {
+  return `    <section class="landing-section landing-section--opening" aria-label="Cardiac monitoring services overview">
+      <div class="figma-container">
+${inner}
+      </div>
+    </section>`
 }
 
 /** Blueprint v3 — hospital-to-home Post-TAVR timeline. */
@@ -278,7 +292,7 @@ const COMPARISON_ROWS = [
     slug: null,
     name: "Holter Monitoring (NOT LIVE STREAMING VERSION)",
     duration: "24&ndash;48 hours",
-    live: "<strong>NO</strong>",
+    live: '<span class="landing-table__no">NO</span>',
     findings: "After Final Report Is Generated",
     linkable: false,
   },
@@ -286,7 +300,7 @@ const COMPARISON_ROWS = [
     slug: null,
     name: "Extended Holter (NOT LIVE STREAMING VERSION)",
     duration: "3&ndash;7 days",
-    live: "<strong>NO</strong>",
+    live: '<span class="landing-table__no">NO</span>',
     findings: "After Final Report Is Generated",
     linkable: false,
   },
@@ -374,12 +388,26 @@ export const PAGES = [
     pill: "Cardiac Monitoring Services",
     h1Html: `Cardiac Monitoring Services Built Around <span class="landing-hero__title-accent">LIVE Visibility</span> and Patient Support`,
     directAnswer:
-      "Specialized Medical provides a complete range of ambulatory cardiac monitoring solutions designed to help healthcare organizations obtain dependable ECG data, maintain visibility into active studies and receive clear, physician-ready reporting. Our platform supports Holter Monitoring, Extended and Long-Term Holter Monitoring, Cardiac Event Monitoring and Mobile Cardiac Telemetry (MCT), with flexible device options for a wide range of clinical and patient needs. Unlike monitoring workflows that may not reveal a technical problem until a study has ended, our LIVE STREAMING solutions allow our team to follow key test-status indicators while monitoring is in progress. We can see battery status, electrode quality and contact with the body, device and phone connectivity, cellular communication and whether ECG data is being received. When a parameter falls outside the expected range, our team contacts the patient and works with them to correct the issue before valuable monitoring time is lost. Every monitoring type has a different clinical purpose. The key distinction is not simply whether the device records ECG data. It is whether the study provides LIVE test-status visibility and when clinical findings are presented to the ordering provider.",
+      "Ambulatory cardiac monitoring with LIVE test-status visibility, proactive patient support and physician-ready reporting across Holter, Extended and Long-Term Holter, Event Monitoring and MCT.",
     ctaLabel: "Schedule a Cardiac Monitoring Demonstration",
     interestDefault: "Multiple test types / full program",
     schemaTypes: ["WebPage", "OrganizationMedicalBusiness", "Service", "BreadcrumbList", "FAQPage"],
     emergency: false,
+    showRelated: false,
     body: [
+      openingBlock(
+        [
+          p(
+            `Specialized Medical provides a complete range of <a href="ambulatory-cardiac-monitoring.html">ambulatory cardiac monitoring</a> solutions designed to help healthcare organizations obtain dependable ECG data, maintain visibility into active studies and receive clear, physician-ready reporting. Our platform supports Holter Monitoring, Extended and Long-Term Holter Monitoring, Cardiac Event Monitoring and Mobile Cardiac Telemetry (MCT), with flexible device options for a wide range of clinical and patient needs.`
+          ),
+          p(
+            `Unlike monitoring workflows that may not reveal a technical problem until a study has ended, our LIVE STREAMING solutions allow our team to follow key test-status indicators while monitoring is in progress. We can see battery status, electrode quality and contact with the body, device and phone connectivity, cellular communication and whether ECG data is being received. When a parameter falls outside the expected range, our team contacts the patient and works with them to correct the issue before valuable monitoring time is lost.`
+          ),
+          p(
+            `Every monitoring type has a different clinical purpose. The key distinction is not simply whether the device records ECG data. It is whether the study provides LIVE test-status visibility and when clinical findings are presented to the ordering provider.`
+          ),
+        ].join("\n")
+      ),
       sec(
         "cms-better-visibility",
         `Cardiac Monitoring Built for <span class="landing-h2__accent">Better Visibility</span>`,
@@ -473,7 +501,7 @@ export const PAGES = [
           ),
           `        <h3 class="landing-h3">Why Specialized Medical is a strong post-TAVR monitoring partner</h3>`,
           `        <ul class="landing-list">
-          <li>LIVE ECG transmission throughout the prescribed monitoring period</li>
+          <li><a href="live-ecg-monitoring.html">LIVE ECG transmission</a> throughout the prescribed monitoring period</li>
           <li>Qualifying clinical findings presented during MCT according to the prescribed notification protocol</li>
           <li>Visibility into battery, electrodes, connectivity and successful data transmission</li>
           <li>Proactive contact with the patient when a technical issue is identified</li>
@@ -539,7 +567,7 @@ export const PAGES = [
           cmsNetworkPathDiagram(),
         ].join("\n")
       ),
-      sec(
+      secSplit(
         "cms-patient-phone",
         `A Patient Phone Simplified for <span class="landing-h2__accent">Cardiac Monitoring</span>`,
         [
@@ -549,7 +577,6 @@ export const PAGES = [
           p(
             `The Device Status screen gives the patient a simple view of the monitoring connection. The Log Symptoms screen allows the patient to record symptoms during the study so the physician can compare the reported symptom time with the transmitted ECG data. If the assigned phone is misplaced, Specialized Medical can help locate it using geolocation and can remotely activate an audible ring to make it easier for the patient to find, provided the phone is powered on and connected.`
           ),
-          patientPhoneScreensDiagram(),
           `        <ul class="landing-list">
           <li>Dedicated exclusively to the prescribed cardiac monitoring study</li>
           <li>Only two patient-facing screens: Device Status and Log Symptoms</li>
@@ -563,6 +590,7 @@ export const PAGES = [
           <li>LIVE visibility that allows Specialized Medical to identify communication interruptions and assist the patient when needed</li>
         </ul>`,
         ].join("\n"),
+        patientPhoneScreensDiagram(),
         { muted: true }
       ),
       secSplit(
@@ -570,10 +598,7 @@ export const PAGES = [
         `A Simple Two-Electrode Monitoring <span class="landing-h2__accent">Configuration</span>`,
         [
           p(
-            `The S-Patch uses a single wire with two electrodes, allowing the electrode positions to be changed on the skin as directed. This can help reduce repeated stress on the same skin location while maintaining strong P-wave clarity and reliable ECG acquisition. The compact configuration is designed to support everyday movement while the patient remains connected to the assigned phone.`
-          ),
-          p(
-            `Learn more about the <a href="s-patch-cardiac-monitoring-system.html">S-Patch Cardiac Monitoring System</a> and <a href="live-ecg-monitoring.html">Live ECG Monitoring</a>.`
+            `The <a href="s-patch-cardiac-monitoring-system.html">S-Patch</a> uses a single wire with two electrodes, allowing the electrode positions to be changed on the skin as directed. This can help reduce repeated stress on the same skin location while maintaining strong P-wave clarity and reliable ECG acquisition. The compact configuration is designed to support everyday movement while the patient remains connected to the assigned phone.`
           ),
         ].join("\n"),
         figureImg(
@@ -584,7 +609,7 @@ export const PAGES = [
       ),
       sec(
         "cms-practice",
-        `Designed to Fit the Cardiology Practice <span class="landing-h2__accent">Workflow</span>`,
+        `Designed to Fit the <a href="cardiology-practice-cardiac-monitoring.html">Cardiology Practice</a> <span class="landing-h2__accent">Workflow</span>`,
         [
           p(
             `Specialized Medical provides more than a monitor. The service is designed to support the complete practice workflow, including patient enrollment, pre-enrollment, device hookup, technical support, physician-ready reporting, electronic signature and billing-support information. The goal is to make monitoring easier for the practice while keeping the physician in control of the prescribed test and notification parameters.`
@@ -597,9 +622,6 @@ export const PAGES = [
           <li>Complete electronic signatures from the portal</li>
           <li>Access monitoring options from a single service partner</li>
         </ul>`,
-          p(
-            `See how this works for <a href="cardiology-practice-cardiac-monitoring.html">cardiology practices</a> and across <a href="ambulatory-cardiac-monitoring.html">ambulatory cardiac monitoring</a>.`
-          ),
         ].join("\n"),
         { muted: true }
       ),
@@ -704,17 +726,7 @@ export const PAGES = [
         a: `Physicians can review and complete the electronic signature workflow through the Specialized Medical portal.`,
       },
     ],
-    links: [
-      { href: "mobile-cardiac-telemetry-mct.html", label: "Mobile Cardiac Telemetry (MCT)" },
-      { href: "holter-monitoring-services.html", label: "Holter Monitoring Services" },
-      { href: "long-term-holter-monitoring.html", label: "Long-Term Holter Monitoring" },
-      { href: "cardiac-event-monitoring.html", label: "Cardiac Event Monitoring" },
-      { href: "ambulatory-cardiac-monitoring.html", label: "Ambulatory Cardiac Monitoring" },
-      { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Cardiac Monitoring System" },
-      { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
-      { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR Cardiac Monitoring" },
-      { href: "cardiology-practice-cardiac-monitoring.html", label: "Cardiac Monitoring for Cardiology Practices" },
-    ],
+    links: [],
   },
 
   /* --------------------- 2. Mobile Cardiac Telemetry --------------------- */

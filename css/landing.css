@@ -143,11 +143,12 @@
   background: #faf8f8;
   border-radius: 20px;
   margin-inline: var(--page-hero-gutter, 1.5rem);
+  padding-inline: 0;
 }
 
 /* Short post-hero CTA band: more top padding so the heading isn’t cramped */
 .landing-section--intro-band {
-  margin-top: 1.75rem;
+  margin-top: 0.5rem;
   padding-top: clamp(3.75rem, 7.5vw, 5.75rem);
   padding-bottom: clamp(2.75rem, 5.5vw, 4.25rem);
 }
@@ -158,6 +159,32 @@
 
 .landing-section--intro-band .landing-p:last-child {
   margin-bottom: 0;
+}
+
+/* PART 1 opening copy sits below hero (reference layout) — not stuffed into the banner */
+.landing-section--opening {
+  padding-top: clamp(2.25rem, 4.5vw, 3.25rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.landing-section--opening .landing-p:last-child {
+  margin-bottom: 0;
+}
+
+.landing-section--muted .landing-list:last-child,
+.landing-section--muted .landing-p:last-child {
+  margin-bottom: 0;
+}
+
+.landing-h2 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.landing-h2 a:hover {
+  color: var(--color-red, #c9222f);
 }
 
 .landing-h2 {
@@ -284,6 +311,11 @@
 .landing-split__media .landing-figure {
   margin-top: 0;
   max-width: none;
+  width: 100%;
+}
+
+.landing-split__media .landing-diagram {
+  margin-top: 0;
   width: 100%;
 }
 
@@ -814,6 +846,9 @@
   border-radius: 20px;
   margin-inline: var(--page-hero-gutter, 1.5rem);
   margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  padding-top: clamp(2.5rem, 5vw, 3.75rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.75rem);
 }
 
 .landing-cta-block__box {
@@ -1057,6 +1092,66 @@
   margin-inline: auto;
 }
 
+/* CMS network path — horizontal on desktop (matches blueprint layout reference) */
+.landing-diagram__network {
+  display: grid;
+  gap: 1rem;
+}
+
+.landing-diagram__network-chain {
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media (min-width: 720px) {
+  .landing-diagram__network-chain {
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .landing-diagram__network-chain .landing-diagram__connector--inline {
+    margin: 0;
+    writing-mode: horizontal-tb;
+    white-space: nowrap;
+  }
+}
+
+.landing-diagram__connector--inline {
+  justify-self: center;
+}
+
+.landing-diagram__carriers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.landing-diagram__carriers span {
+  display: grid;
+  place-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #faf8f8;
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: #231f1e;
+  text-align: center;
+}
+
+.landing-table__no {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(35, 31, 30, 0.08);
+  color: #231f1e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .landing-diagram__symptom-btn {
   display: grid;
   gap: 1rem;
@@ -1250,7 +1345,84 @@
   background: var(--color-red, #c9222f);
 }
 
-/* CMS Blueprint v3 — locked-down patient phone screens */
+/* CMS Blueprint v3 — locked-down patient phone (PART 2 visual) */
+.landing-phone-demo {
+  display: grid;
+  place-items: center;
+  margin: 0.25rem 0 0;
+}
+
+.landing-phone-demo__shell {
+  width: min(100%, 17.5rem);
+  padding: 0.75rem;
+  border-radius: 2.25rem;
+  background: #231f1e;
+  box-shadow: 0 18px 40px rgba(35, 31, 30, 0.18);
+}
+
+.landing-phone-demo__screen {
+  min-height: 22rem;
+  padding: 1.35rem 1rem 1rem;
+  border-radius: 1.75rem;
+  background: linear-gradient(180deg, #faf8f8 0%, #f3f1f0 100%);
+}
+
+.landing-phone-demo__brand {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(35, 31, 30, 0.7);
+}
+
+.landing-phone-demo__card {
+  padding: 1.1rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.landing-phone-demo__card-title {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #231f1e;
+}
+
+.landing-phone-demo__card-body {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(35, 31, 30, 0.7);
+}
+
+.landing-phone-demo__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.landing-phone-demo__tab {
+  display: grid;
+  place-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.4rem;
+  border-radius: 12px;
+  background: rgba(35, 31, 30, 0.88);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.landing-phone-demo__tab--active {
+  background: var(--color-red, #c9222f);
+}
+
 .landing-phone-screens {
   display: grid;
   gap: 1rem;
@@ -1289,9 +1461,14 @@
 }
 
 @media (max-width: 720px) {
+  .landing-hero {
+    padding-top: 0.85rem;
+  }
+
   .landing-hero__plate {
-    height: min(600px, 88vh);
-    min-height: min(600px, 88vh);
+    height: auto;
+    min-height: 0;
+    padding-block: 1.75rem 1.5rem;
   }
 
   .landing-hero__inner {
@@ -1301,10 +1478,24 @@
 
   .landing-hero__title {
     font-size: clamp(1.65rem, 7vw, 2.15rem);
+    margin-bottom: 0.85rem;
   }
 
   .landing-hero__lead {
     font-size: 0.95rem;
-    line-height: 1.48;
+    line-height: 1.5;
+    margin-bottom: 1.35rem;
+  }
+
+  .landing-breadcrumb {
+    padding-bottom: 0.35rem;
+  }
+
+  .landing-section--muted {
+    margin-inline: 1rem;
+  }
+
+  .landing-cta-block {
+    padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
   }
 }
