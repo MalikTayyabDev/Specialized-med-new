@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 const PHONE_HREF = "tel:+18557732633"
-const CSS_VERSION = "20260805b"
+const CSS_VERSION = "20260807a"
 const WEB3FORMS_KEY = "8ec7a28a-1979-4c39-8791-18fbf60bba44"
 
 /** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
@@ -162,26 +162,65 @@ function serviceSchema(page) {
 }
 
 function webPageSchema(page, medical) {
-  return {
+  const base = {
     "@context": "https://schema.org",
     "@type": medical ? "MedicalWebPage" : "WebPage",
     name: page.title,
+    headline: stripTags(page.h1Html || page.title),
     url: `${SITE}/${page.slug}.html`,
     description: page.metaDescription,
     inLanguage: "en-US",
     isPartOf: { "@type": "WebSite", name: "Specialized Medical", url: `${SITE}/` },
   }
+  if (page.dateModified) {
+    base.dateModified = page.dateModified
+    base.lastReviewed = page.dateModified
+  }
+  if (page.author) {
+    base.author = {
+      "@type": "Person",
+      name: page.author.name,
+      jobTitle: page.author.jobTitle,
+      worksFor: { "@type": "Organization", name: page.author.worksFor || "Specialized Medical LLC" },
+    }
+  }
+  if (medical) {
+    base.medicalAudience = {
+      "@type": "MedicalAudience",
+      audienceType: "Clinician",
+    }
+  }
+  return base
 }
 
 function breadcrumbSchema(page) {
+  const items = [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }]
+  if (page.breadcrumbParent) {
+    items.push({
+      "@type": "ListItem",
+      position: 2,
+      name: page.breadcrumbParent.name,
+      item: `${SITE}/${page.breadcrumbParent.href}`,
+    })
+    items.push({
+      "@type": "ListItem",
+      position: 3,
+      name: page.serviceName,
+      item: `${SITE}/${page.slug}.html`,
+    })
+  } else {
+    items.push({ "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services.html` })
+    items.push({
+      "@type": "ListItem",
+      position: 3,
+      name: page.serviceName,
+      item: `${SITE}/${page.slug}.html`,
+    })
+  }
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-      { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services.html` },
-      { "@type": "ListItem", position: 3, name: page.serviceName, item: `${SITE}/${page.slug}.html` },
-    ],
+    itemListElement: items,
   }
 }
 
@@ -281,7 +320,7 @@ const BANNERS = {
   },
   "post-tavr-cardiac-monitoring": {
     src: "images/landing/post-tavr-cardiac-monitoring.jpg",
-    alt: "Post-TAVR cardiac monitoring supporting rhythm surveillance after transcatheter aortic valve replacement",
+    alt: "Older adult wearing an S-Patch cardiac monitor on the skin of the upper chest during post-TAVR recovery, beside a LIVE ECG display",
   },
   "cardiology-practice-cardiac-monitoring": {
     src: "images/landing/cardiology-practice-cardiac-monitoring.jpg",
@@ -290,11 +329,14 @@ const BANNERS = {
 }
 
 function breadcrumbHtml(page) {
+  const middle = page.breadcrumbParent
+    ? `          <li><a href="${esc(page.breadcrumbParent.href)}">${esc(page.breadcrumbParent.name)}</a></li>`
+    : `          <li><a href="services.html">Services</a></li>`
   return `    <nav class="landing-breadcrumb" aria-label="Breadcrumb">
       <div class="figma-container">
         <ol class="landing-breadcrumb__list">
           <li><a href="./">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+${middle}
           <li><span aria-current="page">${esc(page.serviceName)}</span></li>
         </ol>
       </div>
@@ -330,21 +372,44 @@ function ctaFormSection(page) {
   const emergencyNote = page.emergency || page.ctaEmergencyNote
     ? `\n            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>`
     : ""
-  return `    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="${page.id}-cta-heading">
-      <div class="figma-container">
-        <div class="landing-cta-block__box">
-          <div class="landing-cta-block__copy">
-            <h2 id="${page.id}-cta-heading" class="landing-h2">${esc(page.ctaLabel)}</h2>
-            <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
-            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>${emergencyNote}
-          </div>
-          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="${WEB3FORMS_KEY}">
-            <input type="hidden" name="subject" value="${esc(page.ctaLabel)} — ${esc(page.serviceName)}">
-            <input type="hidden" name="from_page" value="${esc(page.slug)}">
-            <input type="hidden" name="redirect" value="">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+  const isPostTavr = page.formVariant === "postTavr"
+  const formFields = isPostTavr
+    ? `            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Name</span>
+                <input name="name" type="text" autocomplete="name" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Organization</span>
+                <input name="organization" type="text" autocomplete="organization" required>
+              </label>
+            </div>
             <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Role</span>
+                <input name="role" type="text" autocomplete="organization-title" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Email</span>
+                <input name="email" type="email" autocomplete="email" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Phone</span>
+                <input name="phone" type="tel" autocomplete="tel" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Preferred contact method</span>
+                <select name="preferred_contact" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Email">Email</option>
+                  <option value="Phone">Phone</option>
+                  <option value="Either">Either</option>
+                </select>
+              </label>
+            </div>`
+    : `            <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Name</span>
                 <input name="name" type="text" autocomplete="name" required>
@@ -376,7 +441,26 @@ function ctaFormSection(page) {
 ${options}
                 </select>
               </label>
-            </div>
+            </div>`
+  const ctaCopy = isPostTavr
+    ? `<p class="landing-p">Discuss patient selection, notification protocols, LIVE STREAMING workflow, reporting and implementation requirements for your structural heart program.</p>
+            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>${emergencyNote}`
+    : `<p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
+            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>${emergencyNote}`
+  return `    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="${page.id}-cta-heading">
+      <div class="figma-container">
+        <div class="landing-cta-block__box">
+          <div class="landing-cta-block__copy">
+            <h2 id="${page.id}-cta-heading" class="landing-h2">${esc(page.ctaLabel)}</h2>
+            ${ctaCopy}
+          </div>
+          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="${WEB3FORMS_KEY}">
+            <input type="hidden" name="subject" value="${esc(page.ctaLabel)} — ${esc(page.serviceName)}">
+            <input type="hidden" name="from_page" value="${esc(page.slug)}">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+${formFields}
             <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">${esc(page.ctaLabel)}</button>
             <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
           </form>
@@ -401,12 +485,21 @@ function renderPage(page) {
   const banner = BANNERS[page.slug]
   if (!banner) throw new Error(`Missing banner for ${page.slug}`)
   const ogImage = `${SITE}/${banner.src}`
+  const ogTitle = page.ogTitle || page.title
+  const ogDescription = page.ogDescription || page.metaDescription
+  const robots = page.robots || "index, follow"
   const schemas = schemasFor(page)
   const header = renderHeader({ base: "", active: "services" })
   const footer = renderFooter({ base: "" })
   const schemaBlocks = schemas
     .map((s) => `  <script type="application/ld+json">\n${JSON.stringify(s, null, 2)}\n  </script>`)
     .join("\n")
+  const secondaryHref = page.secondaryCtaHref || PHONE_HREF
+  const secondaryLabel = page.secondaryCtaLabel || "Speak With a Cardiac Monitoring Specialist"
+  const secondaryBtnClass =
+    page.secondaryCtaHref && page.secondaryCtaHref.startsWith("#")
+      ? "figma-btn figma-btn--outline-dark"
+      : "figma-btn figma-btn--outline-dark"
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -420,15 +513,15 @@ ${schemaBlocks}
   <!-- Social sharing (iMessage/WhatsApp/Facebook/Twitter) -->
   <meta property="og:site_name" content="Specialized Medical">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="${esc(page.title)}">
-  <meta property="og:description" content="${esc(page.metaDescription)}">
+  <meta property="og:title" content="${esc(ogTitle)}">
+  <meta property="og:description" content="${esc(ogDescription)}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${esc(ogImage)}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${esc(page.title)}">
-  <meta name="twitter:description" content="${esc(page.metaDescription)}">
+  <meta name="twitter:title" content="${esc(ogTitle)}">
+  <meta name="twitter:description" content="${esc(ogDescription)}">
   <meta name="twitter:image" content="${esc(ogImage)}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="${esc(robots)}">
   <link rel="icon" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -468,7 +561,7 @@ ${breadcrumbHtml(page)}
           </h1>
 ${page.directAnswer ? `          <p class="landing-hero__lead">${page.directAnswer}</p>\n` : ""}          <div class="landing-hero__actions">
             <a class="figma-btn figma-btn--solid" href="#cta-form">${esc(page.ctaLabel)}</a>
-${page.showSecondaryCta === false ? "" : `            <a class="figma-btn figma-btn--outline-dark" href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist</a>\n`}          </div>
+${page.showSecondaryCta === false ? "" : `            <a class="${secondaryBtnClass}" href="${esc(secondaryHref)}">${esc(secondaryLabel)}</a>\n`}          </div>
         </div>
       </div>
     </section>

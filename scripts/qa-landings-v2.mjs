@@ -62,6 +62,7 @@ const REQUIRED_LINKS = {
     "long-term-holter-monitoring",
     "cardiac-event-monitoring",
     "live-ecg-monitoring",
+    "post-tavr-cardiac-monitoring",
   ],
   "live-ecg-monitoring": [
     "mobile-cardiac-telemetry-mct",
@@ -75,6 +76,7 @@ const REQUIRED_LINKS = {
     "live-ecg-monitoring",
     "cardiac-monitoring-services",
     "cardiology-practice-cardiac-monitoring",
+    "s-patch-cardiac-monitoring-system",
   ],
   "cardiology-practice-cardiac-monitoring": [
     "cardiac-monitoring-services",
@@ -130,7 +132,7 @@ const EXPECT_TITLE = {
   "ambulatory-cardiac-monitoring": "Ambulatory Cardiac Monitoring | Specialized Medical",
   "s-patch-cardiac-monitoring-system": "S-Patch Cardiac Monitoring System | Specialized Medical",
   "live-ecg-monitoring": "Live ECG Monitoring | Specialized Medical",
-  "post-tavr-cardiac-monitoring": "Post-TAVR Cardiac Monitoring | Specialized Medical",
+  "post-tavr-cardiac-monitoring": "Post-TAVR Cardiac Monitoring for Delayed Heart Block | Specialized Medical",
   "cardiology-practice-cardiac-monitoring": "Cardiac Monitoring for Cardiology Practices | Specialized Medical",
 }
 
@@ -143,7 +145,7 @@ const CTA_LABEL = {
   "ambulatory-cardiac-monitoring": "Request an Ambulatory Monitoring Program Consultation",
   "s-patch-cardiac-monitoring-system": "Request an S-Patch Demonstration",
   "live-ecg-monitoring": "Request a Live ECG Monitoring Demonstration",
-  "post-tavr-cardiac-monitoring": "Request a Post-TAVR Monitoring Workflow Review",
+  "post-tavr-cardiac-monitoring": "Discuss a Post-TAVR Monitoring Protocol",
   "cardiology-practice-cardiac-monitoring": "Request a Practice Workflow Demonstration",
 }
 
@@ -173,7 +175,7 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   check(slug, !descs.has(desc), "meta description unique")
   descs.add(desc)
   check(slug, html.includes(`<link rel="canonical" href="https://www.specialized-med.com/${slug}.html">`), "canonical")
-  check(slug, html.includes('content="index, follow"'), "indexable")
+  check(slug, /content="index, follow/.test(html), "indexable")
   check(slug, html.includes('property="og:image"') && html.includes('name="twitter:card"'), "social meta")
 
   // Structure
@@ -184,7 +186,7 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
 
   // FAQs visible
   const faqCount = (html.match(/class="faq-item__trigger"/g) || []).length
-  const expectedFaqs = slug === "cardiac-monitoring-services" ? 17 : 10
+  const expectedFaqs = slug === "cardiac-monitoring-services" ? 17 : slug === "post-tavr-cardiac-monitoring" ? 15 : 10
   check(slug, faqCount === expectedFaqs, `${expectedFaqs} visible FAQs (found ${faqCount})`)
 
   // Comparison table (client-approved LIVE STREAMING vs NOT LIVE STREAMING)
@@ -214,8 +216,14 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   check(slug, html.includes(CTA_LABEL[slug]), "primary CTA label")
   check(slug, html.includes('href="#cta-form"'), "above-the-fold CTA anchor")
   check(slug, /class="landing-cta-form"/.test(html), "CTA short form present")
-  for (const f of ["name", "organization", "email", "phone", "locations", "interest"]) {
-    check(slug, new RegExp(`name="${f}"`).test(html), `form field: ${f}`)
+  if (slug === "post-tavr-cardiac-monitoring") {
+    for (const f of ["name", "organization", "role", "email", "phone", "preferred_contact"]) {
+      check(slug, new RegExp(`name="${f}"`).test(html), `form field: ${f}`)
+    }
+  } else {
+    for (const f of ["name", "organization", "email", "phone", "locations", "interest"]) {
+      check(slug, new RegExp(`name="${f}"`).test(html), `form field: ${f}`)
+    }
   }
   check(slug, html.includes("Speak With a Cardiac Monitoring Specialist"), "secondary CTA (specialist)")
 

@@ -228,6 +228,147 @@ function postTavrTimeline() {
   )
 }
 
+/* ---------- Post-TAVR SEO/AEO Implementation Guide (Aug 2026) helpers ---------- */
+
+const TAVR_REFS = [
+  {
+    n: 1,
+    label: "ACC Expert Consensus Decision Pathway (2020)",
+    href: "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2020/10/20/20/59/2020-ACC-Expert-Consensus-Conduction-Disturbances",
+  },
+  {
+    n: 2,
+    label: "Tian et al., Circ Cardiovasc Interv. 2019. PMID 31833417",
+    href: "https://pubmed.ncbi.nlm.nih.gov/31833417/",
+  },
+  {
+    n: 3,
+    label: "Muntané-Carol et al., JACC Cardiovasc Interv. 2021. PMID 34949396",
+    href: "https://pubmed.ncbi.nlm.nih.gov/34949396/",
+  },
+  {
+    n: 4,
+    label: "REdireCT TAVI, Europace. 2022. PMID 35699482",
+    href: "https://pubmed.ncbi.nlm.nih.gov/35699482/",
+  },
+  {
+    n: 5,
+    label: "Systematic AECG monitoring study, 2026. PMID 42059075",
+    href: "https://pubmed.ncbi.nlm.nih.gov/42059075/",
+  },
+]
+
+function cite(n) {
+  const r = TAVR_REFS.find((x) => x.n === n)
+  return `<sup class="landing-cite"><a href="${r.href}" target="_blank" rel="noopener noreferrer">[${n}]</a></sup>`
+}
+
+function trustStrip(items) {
+  return `        <ul class="landing-trust-strip" aria-label="Post-TAVR monitoring differentiators">
+${items.map((it) => `          <li><strong>${it.t}</strong><span>${it.d}</span></li>`).join("\n")}
+        </ul>`
+}
+
+function featureBlocks(items) {
+  return `        <div class="landing-feature-grid" role="list">
+${items
+  .map(
+    (it) => `          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">${it.t}</h3>
+            <p class="landing-p">${it.d}</p>
+          </article>`
+  )
+  .join("\n")}
+        </div>`
+}
+
+function evidenceCards(items) {
+  return `        <div class="landing-evidence" role="list">
+${items
+  .map(
+    (it) => `          <article class="landing-evidence__card" role="listitem">
+            <h3 class="landing-h3">${it.title} ${cite(it.n)}</h3>
+            <p class="landing-p">${it.summary}</p>
+            <p class="landing-evidence__label">${it.label}</p>
+          </article>`
+  )
+  .join("\n")}
+        </div>`
+}
+
+function followUpCompareTable() {
+  return `        <div class="landing-table-wrap" role="region" aria-label="Follow-up alone versus LIVE ambulatory monitoring" tabindex="0">
+          <table class="landing-table">
+            <caption class="sr-only">Comparison of follow-up without continuous ambulatory monitoring versus LIVE ambulatory monitoring after TAVR</caption>
+            <thead>
+              <tr>
+                <th scope="col">Consideration</th>
+                <th scope="col">Follow-up without continuous ambulatory monitoring</th>
+                <th scope="col">LIVE ambulatory monitoring</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Rhythm visibility</th>
+                <td>Intermittent office visits and symptom-driven follow-up</td>
+                <td>Continuous ambulatory ECG collection during the prescribed period</td>
+              </tr>
+              <tr>
+                <th scope="row">Delayed heart block</th>
+                <td>May not be apparent during a scheduled office encounter</td>
+                <td>Qualifying AV block, bradycardia or pauses may be identified during monitoring</td>
+              </tr>
+              <tr>
+                <th scope="row">Patient symptoms</th>
+                <td>Relies heavily on patient recognition and communication</td>
+                <td>Patient-triggered symptoms can be correlated with ECG; auto-detected findings may also be reviewed</td>
+              </tr>
+              <tr>
+                <th scope="row">Operational status</th>
+                <td>No continuous device oversight</td>
+                <td>Battery, electrode status, signal quality and connectivity can be monitored</td>
+              </tr>
+              <tr>
+                <th scope="row">Clinical response</th>
+                <td>Information may be available only after a visit or final report</td>
+                <td>Qualifying findings may be presented while the study remains active, based on prescribed protocol</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>`
+}
+
+function eeatBlock() {
+  return `        <div class="landing-eeat">
+          <div class="landing-eeat__author">
+            <h3 class="landing-h3">Author</h3>
+            <p class="landing-p"><strong>Steven M. Burns</strong>, President &amp; CEO, Specialized Medical LLC. Mr. Burns leads Specialized Medical&rsquo;s ambulatory cardiac monitoring operations, including LIVE STREAMING workflows, practice implementation and physician-ready reporting support for structural heart and cardiology programs.</p>
+          </div>
+          <div class="landing-eeat__review">
+            <h3 class="landing-h3">Clinical review</h3>
+            <p class="landing-p"><strong>Clinically reviewed by:</strong> Pending authorized clinical reviewer. This page will display the reviewing physician&rsquo;s name, credentials and specialty after Specialized Medical completes clinical review and receives authorization to publish the reviewer attribution.</p>
+            <p class="landing-p"><strong>Last medically reviewed:</strong> Pending clinical review &middot; <strong>Last updated:</strong> August 2026</p>
+          </div>
+          <div class="landing-eeat__policy">
+            <h3 class="landing-h3">Editorial policy</h3>
+            <p class="landing-p">Specialized Medical publishes monitoring-service and technology information for healthcare professionals. Content is reviewed for clinical accuracy before publication. Corrections or questions may be directed to <a href="contact.html">Contact Specialized Medical</a> or 1-855-SPEC-MED (1-855-773-2633). Specialized Medical is a monitoring service and technology provider; it does not replace physician judgment, emergency care or institutional protocols.</p>
+          </div>
+          <div class="landing-eeat__refs">
+            <h3 class="landing-h3">References</h3>
+            <ol class="landing-refs">
+${TAVR_REFS.map((r) => `              <li id="ref-${r.n}"><a href="${r.href}" target="_blank" rel="noopener noreferrer">${r.label}</a></li>`).join("\n")}
+            </ol>
+          </div>
+        </div>`
+}
+
+function calloutBand(title, bodyHtml) {
+  return `        <aside class="landing-callout" role="note">
+          <p class="landing-callout__title">${title}</p>
+          <p class="landing-callout__body">${bodyHtml}</p>
+        </aside>`
+}
+
 function noteBox(title, html, kind = "info") {
   return `        <div class="landing-note landing-note--${kind}" role="note">
           ${title ? `<p class="landing-note__title">${title}</p>` : ""}
@@ -370,7 +511,7 @@ export const PDF_META = {
   "live-ecg-monitoring":
     "Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available.",
   "post-tavr-cardiac-monitoring":
-    "Post-TAVR cardiac monitoring supports rhythm surveillance after transcatheter aortic valve replacement when the treating team determines that ambulatory monitoring is appropriate.",
+    "LIVE post-TAVR cardiac monitoring helps physicians identify delayed heart block, atrial fibrillation and other arrhythmias after discharge. Learn how Specialized Medical supports structural heart teams.",
   "cardiology-practice-cardiac-monitoring":
     "Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support.",
 }
@@ -518,7 +659,7 @@ export const PAGES = [
             "Building or Expanding a Post-TAVR Monitoring Program?",
             "Learn how Specialized Medical can support post-discharge rhythm surveillance with LIVE ECG transmission, multi-carrier connectivity, proactive patient support and a workflow designed around the heart team&rsquo;s protocol."
           ),
-          `        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="post-tavr-cardiac-monitoring.html">Explore Post-TAVR Monitoring</a></p>`,
+          `        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="post-tavr-cardiac-monitoring.html">Explore delayed heart-block monitoring after TAVR</a></p>`,
         ].join("\n"),
         { muted: true }
       ),
@@ -869,7 +1010,7 @@ export const PAGES = [
       },
       {
         q: "Can MCT be used after a cardiac procedure?",
-        a: `A physician may prescribe MCT after a procedure when ongoing rhythm surveillance is clinically appropriate.`,
+        a: `A physician may prescribe MCT after a procedure when ongoing rhythm surveillance is clinically appropriate, including selected <a href="post-tavr-cardiac-monitoring.html">post-TAVR monitoring</a> pathways.`,
       },
       {
         q: "What happens if the phone loses cellular service?",
@@ -889,7 +1030,7 @@ export const PAGES = [
       { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
       { href: "cardiac-event-monitoring.html", label: "Cardiac Event Monitoring" },
       { href: "holter-monitoring-services.html", label: "Holter Monitoring Services" },
-      { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR Cardiac Monitoring" },
+      { href: "post-tavr-cardiac-monitoring.html", label: "LIVE post-TAVR Mobile Cardiac Telemetry" },
       { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Cardiac Monitoring System" },
     ],
   },
@@ -1685,6 +1826,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
       { href: "long-term-holter-monitoring.html", label: "Long-Term Holter Monitoring" },
       { href: "cardiac-event-monitoring.html", label: "Cardiac Event Monitoring" },
       { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
+      { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR ambulatory monitoring with the S-Patch" },
     ],
   },
 
@@ -1810,163 +1952,339 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire cardiac monitoring system alternative confi
       },
       {
         q: "Can live ECG monitoring be used after discharge?",
-        a: `A physician may prescribe it after discharge when ambulatory rhythm surveillance is appropriate.`,
+        a: `A physician may prescribe it after discharge when ambulatory rhythm surveillance is appropriate, including selected <a href="post-tavr-cardiac-monitoring.html">delayed heart-block surveillance after TAVR</a>.`,
       },
     ],
     links: [
       { href: "mobile-cardiac-telemetry-mct.html", label: "Mobile Cardiac Telemetry (MCT)" },
-      { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR Cardiac Monitoring" },
-      { href: "holter-monitoring-services.html", label: "Holter Monitoring Services" },
+      { href: "post-tavr-cardiac-monitoring.html", label: "Outpatient monitoring after TAVR" },
       { href: "long-term-holter-monitoring.html", label: "Long-Term Holter Monitoring" },
       { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Cardiac Monitoring System" },
     ],
   },
 
-  /* ---------------------- 9. Post-TAVR Cardiac Monitoring ---------------------- */
+  /* ---------------------- 9. Post-TAVR Cardiac Monitoring (Aug 2026 Guide) ---------------------- */
   {
     id: "tavr",
     slug: "post-tavr-cardiac-monitoring",
     file: "post-tavr-cardiac-monitoring.html",
-    title: "Post-TAVR Cardiac Monitoring | Specialized Medical",
+    title: "Post-TAVR Cardiac Monitoring for Delayed Heart Block | Specialized Medical",
     metaDescription: PDF_META["post-tavr-cardiac-monitoring"],
+    ogTitle: "Post-TAVR Cardiac Monitoring With LIVE Mobile Cardiac Telemetry",
+    ogDescription:
+      "Continuous outpatient ECG monitoring designed to help structural heart teams identify delayed conduction disturbances and clinically important arrhythmias after TAVR.",
     serviceName: "Post-TAVR Cardiac Monitoring",
-    pill: "Post-TAVR Cardiac Monitoring",
-    h1Html: `Post-TAVR Cardiac <span class="landing-hero__title-accent">Monitoring</span>`,
+    pill: "CONTINUOUS MONITORING. EARLIER INSIGHT. BETTER-INFORMED CARE.",
+    h1Html: `Post-TAVR Cardiac Monitoring With <span class="landing-hero__title-accent">LIVE Mobile Cardiac Telemetry</span>`,
     directAnswer:
-      "Post-TAVR cardiac monitoring supports rhythm surveillance after transcatheter aortic valve replacement when the treating team determines that ambulatory monitoring is appropriate. The goal is to extend observation beyond the hospital stay and provide organized rhythm information to the treating physician during the prescribed post-discharge period. Specialized Medical can support live mobile cardiac telemetry and practice-specific workflows for post-TAVR patients.",
-    ctaLabel: "Request a Post-TAVR Monitoring Workflow Review",
+      "Delayed heart block and other conduction disturbances can occur after transcatheter aortic valve replacement, including after hospital discharge. Specialized Medical provides LIVE STREAMING outpatient cardiac monitoring designed to help structural heart teams identify qualifying rhythm findings, maintain continuous operational visibility and receive physician-ready reports.",
+    ctaLabel: "Discuss a Post-TAVR Monitoring Protocol",
+    secondaryCtaLabel: "Request a Demonstration",
+    secondaryCtaHref: "#cta-form",
     interestDefault: "Post-TAVR monitoring program",
     schemaTypes: ["MedicalWebPage", "Service", "BreadcrumbList", "FAQPage"],
     emergency: true,
+    formVariant: "postTavr",
+    breadcrumbParent: {
+      name: "Cardiac Monitoring Services",
+      href: "cardiac-monitoring-services.html",
+    },
+    robots: "index, follow, max-image-preview:large",
+    showRelated: false,
+    author: {
+      name: "Steven M. Burns",
+      jobTitle: "President & CEO",
+      worksFor: "Specialized Medical LLC",
+    },
+    dateModified: "2026-08-05",
     body: [
       sec(
+        "tavr-trust",
+        `LIVE Differentiation for <span class="landing-h2__accent">Structural Heart Teams</span>`,
+        trustStrip([
+          { t: "LIVE ECG streaming", d: "ECG data transmitted during the monitoring period" },
+          { t: "Prescribed alerts", d: "Notification thresholds follow the ordering physician&rsquo;s protocol" },
+          { t: "Multi-carrier connectivity", d: "Available cellular pathways for urban and rural recovery" },
+          { t: "Physician-ready reports", d: "Organized ECG findings for clinical review" },
+        ]),
+        { muted: true }
+      ),
+      sec(
         "tavr-why",
-        `Why Rhythm Surveillance May <span class="landing-h2__accent">Continue After TAVR</span>`,
+        `Why Cardiac Monitoring After TAVR <span class="landing-h2__accent">Matters</span>`,
         [
           p(
-            `Conduction disturbances and arrhythmias may occur after TAVR, and clinical teams may prescribe ambulatory monitoring based on the patient&rsquo;s procedural findings, ECG changes, symptoms, risk factors, and institutional protocol. Specific incidence rates, guideline classes, and timing recommendations are not published here; monitoring decisions rest with the treating team.`
+            `TAVR can affect the heart&rsquo;s electrical conduction system. Although many conduction disturbances are recognized before discharge, clinically important abnormalities may also appear later. Published studies have identified delayed high-grade atrioventricular block and complete heart block during ambulatory monitoring after TAVR, sometimes leading to permanent pacemaker implantation. For selected patients, outpatient ECG monitoring can extend rhythm surveillance beyond the hospital stay and provide the treating team with clinically relevant information during recovery.`
+          ),
+          p(
+            `Specialized Medical&rsquo;s <a href="mobile-cardiac-telemetry-mct.html">LIVE Mobile Cardiac Telemetry</a> workflow helps physicians identify concerning rhythms while the study is still underway.`
+          ),
+        ].join("\n")
+      ),
+      sec(
+        "tavr-heart-block",
+        `Detecting Delayed Heart Block After <span class="landing-h2__accent">TAVR</span>`,
+        [
+          p(
+            `One of the most important reasons to consider ambulatory monitoring after TAVR is the possibility of delayed atrioventricular conduction disease. Monitoring may identify Mobitz II second-degree AV block, high-grade AV block, complete heart block, significant bradycardia and pauses that were not apparent at the time of discharge. Specialized Medical&rsquo;s LIVE STREAMING platform can present qualifying ECG findings according to the physician&rsquo;s prescribed notification protocol, allowing the clinical team to review the information while monitoring is still underway. The treating physician remains responsible for diagnosis and treatment decisions.`
+          ),
+          calloutBand(
+            "HEART BLOCK CAN OCCUR AFTER DISCHARGE",
+            `In a prospective multicenter study using 14 days of ambulatory ECG monitoring, delayed high-grade AV block or complete heart block occurred in 4.6% of monitored patients, with a median occurrence five days after TAVR.${cite(3)} In another prospective study, 30-day continuous monitoring identified additional patients who developed late symptomatic bradycardia or advanced AV block and required permanent pacing.${cite(2)}`
+          ),
+        ].join("\n"),
+        { muted: true }
+      ),
+      sec(
+        "tavr-who",
+        `Which Patients May Benefit From Outpatient <span class="landing-h2__accent">Monitoring?</span>`,
+        [
+          p(
+            `Patient selection and monitoring duration should be determined by the treating heart team. ACC expert consensus identifies post-procedure conduction changes that may warrant continued telemetry and outpatient monitoring, including new or progressive AV block, new bundle branch block, and progression of baseline conduction disease.${cite(1)} Baseline right bundle branch block, PR prolongation, QRS changes, new left bundle branch block and transient heart block are clinically relevant considerations.`
+          ),
+          `        <ul class="landing-list">
+          <li>New left bundle branch block after TAVR</li>
+          <li>Baseline right bundle branch block or other pre-existing conduction disease</li>
+          <li>New or progressive first- or second-degree AV block</li>
+          <li>PR or QRS prolongation after the procedure</li>
+          <li>Transient intraprocedural or post-procedural heart block</li>
+          <li>Unexplained dizziness, presyncope, syncope, palpitations or bradycardia</li>
+          <li>Patients selected by the structural heart or electrophysiology team for extended surveillance</li>
+        </ul>`,
+        ].join("\n")
+      ),
+      sec(
+        "tavr-tech",
+        `LIVE Monitoring Designed for Structural Heart <span class="landing-h2__accent">Teams</span>`,
+        [
+          p(
+            `Specialized Medical combines <a href="live-ecg-monitoring.html">LIVE ECG monitoring</a> streaming with continuous operational monitoring of device status, battery level, electrode connection, signal quality, cellular connectivity and patient connection status. Qualifying rhythm findings can be presented according to the physician&rsquo;s prescribed notification protocol, while final reports are prepared for physician review. Multi-carrier connectivity using available nationwide networks helps the system remain connected as patients recover at home and resume normal daily activities.`
+          ),
+          featureBlocks([
+            {
+              t: "LIVE ECG streaming",
+              d: "ECG data is transmitted during the monitoring period, supporting review of qualifying events while the study is active.",
+            },
+            {
+              t: "Prescribed notifications",
+              d: "Notification thresholds and escalation procedures follow the ordering physician&rsquo;s selected protocol.",
+            },
+            {
+              t: "Operational visibility",
+              d: "Specialized Medical monitors device status, battery, electrodes, signal quality, connectivity and patient connection.",
+            },
+            {
+              t: "Multi-carrier connectivity",
+              d: "The monitoring system uses available cellular pathways to support connectivity across urban and rural areas.",
+            },
+            {
+              t: "Physician-ready reports",
+              d: "Reports organize clinically relevant ECG findings for physician review and interpretation.",
+            },
+            {
+              t: "Patient and office support",
+              d: "Specialized Medical helps manage enrollment, monitoring workflow, technical support and reporting.",
+            },
+          ]),
+          p(
+            `The wearable platform is the <a href="s-patch-cardiac-monitoring-system.html">S-Patch cardiac monitoring system</a>, configured for the prescribed post-TAVR ambulatory study.`
+          ),
+        ].join("\n"),
+        { muted: true }
+      ),
+      sec(
+        "tavr-detect",
+        `Clinically Important Rhythms After <span class="landing-h2__accent">TAVR</span>`,
+        [
+          p(
+            `Post-TAVR monitoring is not limited to atrial fibrillation. Depending on the patient and prescribed monitoring protocol, clinically important findings may include:`
+          ),
+          `        <ul class="landing-list">
+          <li>High-grade atrioventricular block</li>
+          <li>Complete heart block</li>
+          <li>Mobitz II second-degree AV block</li>
+          <li>Progressive bradycardia and significant pauses</li>
+          <li>New atrial fibrillation or atrial flutter</li>
+          <li>Supraventricular tachycardia</li>
+          <li>Ventricular tachycardia or wide-complex tachycardia</li>
+          <li>Changes in conduction intervals or rhythm patterns that warrant physician review</li>
+        </ul>`,
+          noteBox(
+            "Compliance wording",
+            "Specialized Medical detects, records, identifies ECG findings and presents qualifying findings. The system does not diagnose, treat, prevent or guarantee avoidance of hospitalization, stroke, sudden death or pacemaker implantation."
           ),
         ].join("\n")
       ),
       sec(
         "tavr-workflow",
-        `A Practical Post-Discharge <span class="landing-h2__accent">Monitoring Workflow</span>`,
+        `A Practical Post-TAVR Monitoring <span class="landing-h2__accent">Workflow</span>`,
         [
           flow(
             [
-              { t: "Patient identified", d: "Before discharge, per program protocol" },
-              { t: "Device applied", d: "Patient trained before leaving the hospital" },
-              { t: "Monitoring begins", d: "LIVE test-status visibility during the study" },
-              { t: "Data transmitted", d: "When live monitoring is prescribed" },
-              { t: "Qualifying findings communicated", d: "According to the configured protocol" },
-              { t: "Final report delivered", d: "For physician review and interpretation" },
+              {
+                t: "Risk assessment",
+                d: "Review baseline ECG, conduction history and procedural factors.",
+              },
+              {
+                t: "TAVR and inpatient observation",
+                d: "Monitor for new AV block, bundle branch block, PR/QRS changes and transient heart block.",
+              },
+              {
+                t: "Physician-directed discharge plan",
+                d: "Select appropriate patients and monitoring duration based on clinical findings and institutional protocol.",
+              },
+              {
+                t: "LIVE outpatient monitoring",
+                d: "Begin monitoring promptly after discharge; maintain operational visibility and apply prescribed notification thresholds.",
+              },
+              {
+                t: "Clinical review and final reporting",
+                d: "Review qualifying findings during the study and the final report at completion; determine any treatment or follow-up.",
+              },
             ],
-            "Post-TAVR post-discharge monitoring workflow"
-          ),
-          p(
-            `Programs may establish a pre-procedure or pre-discharge rhythm baseline when that is part of the program. Not every patient requires the same pathway &mdash; the treating team defines it. The underlying technology is described on the <a href="mobile-cardiac-telemetry-mct.html">MCT</a> and <a href="live-ecg-monitoring.html">Live ECG Monitoring</a> pages.`
+            "Five-step post-TAVR monitoring workflow"
           ),
         ].join("\n"),
         { muted: true }
       ),
       sec(
-        "tavr-criteria",
-        `Physician-Defined <span class="landing-h2__accent">Notification Criteria</span>`,
+        "tavr-evidence",
+        `Clinical Evidence for Post-TAVR <span class="landing-h2__accent">Monitoring</span>`,
         [
           p(
-            `The structural heart or cardiology team defines the communication criteria, contact hierarchy, after-hours pathway, and documentation expectations. Specialized Medical follows the configured protocol rather than using one universal threshold for every program.`
+            `The following summaries reflect published guideline and peer-reviewed evidence. Citations link to primary ACC or PubMed records. Specialized Medical did not claim proprietary authorship of these study results.`
           ),
-          `        <div class="landing-proto" role="group" aria-label="Sample notification protocol template (non-clinical)">
-          <p class="landing-note__title">Sample notification protocol template (non-clinical illustration)</p>
-          <div class="landing-proto__grid">
-            <span>Rhythm type</span><span>Rate</span><span>Duration</span><span>Symptoms</span>
-            <span>Time of day</span><span>First contact</span><span>Backup contact</span><span>Documentation</span>
-          </div>
-        </div>`,
+          evidenceCards([
+            {
+              n: 1,
+              title: "ACC Expert Consensus Decision Pathway (2020)",
+              label: "ACC Key Points / JACC consensus",
+              summary:
+                "Patients with new or progressive conduction disturbances may require continued inpatient telemetry and outpatient monitoring for at least 14 days. The pathway identifies new AV block, new bundle branch block and progression of baseline conduction disease as important post-TAVR considerations.",
+            },
+            {
+              n: 2,
+              title: "Tian et al., 2019 — 30-day monitoring",
+              label: "Circ Cardiovasc Interv. PMID 31833417",
+              summary:
+                "In a prospective TAVR cohort, 30-day continuous ambulatory monitoring identified late symptomatic bradycardia and advanced AV block. Among monitored patients without a pacemaker at discharge, 8.6% required a pacemaker within 30 days; the authors concluded monitoring identified additional patients requiring permanent pacing.",
+            },
+            {
+              n: 3,
+              title: "Muntané-Carol et al., 2021 — 14-day monitoring",
+              label: "JACC Cardiovasc Interv. PMID 34949396",
+              summary:
+                "In 459 patients monitored for 14 days after TAVR, delayed high-grade AV block or complete heart block occurred in 4.6%, at a median of five days after the procedure; 81% of those patients received a permanent pacemaker.",
+            },
+            {
+              n: 4,
+              title: "REdireCT TAVI, 2022",
+              label: "Europace. PMID 35699482",
+              summary:
+                "Two-week remote monitoring before and after TAVI was feasible and generated notifications for AV block, pauses and ventricular tachycardia; monitoring frequently led to planned pacemaker implantation.",
+            },
+            {
+              n: 5,
+              title: "Systematic AECG monitoring study, 2026",
+              label: "PubMed PMID 42059075",
+              summary:
+                "A large observational analysis found systematic 14-day ambulatory ECG monitoring after TAVR was associated with earlier detection of severe arrhythmias and fewer life-threatening cardiovascular events at one year. Because the study was observational, this is reported as an association, not proof of causation.",
+            },
+          ]),
         ].join("\n")
       ),
       sec(
-        "tavr-home",
-        `Supporting the <span class="landing-h2__accent">Patient at Home</span>`,
-        [
-          p(
-            `Post-discharge patients need simple instructions: keep the phone charged and nearby, maintain electrode contact, record symptoms, answer monitoring calls, and seek emergency care for urgent symptoms.`
-          ),
-          `        <div class="landing-checklist" role="group" aria-label="Pre-discharge caregiver and patient checklist">
-          <p class="landing-note__title">Caregiver / patient checklist (review before discharge)</p>
-          <ul class="landing-list">
-            <li>Phone charged, powered on, and kept near the patient</li>
-            <li>Electrode contact checked per instructions</li>
-            <li>Symptom recording method understood</li>
-            <li>Support number saved and monitoring calls answered</li>
-            <li>Emergency plan understood: call 911 for urgent symptoms</li>
-          </ul>
-        </div>`,
-          emergencyBox(),
-        ].join("\n"),
+        "tavr-compare",
+        `Follow-Up Alone vs LIVE Ambulatory <span class="landing-h2__accent">Monitoring</span>`,
+        followUpCompareTable(),
         { muted: true }
       ),
-      secSplit(
-        "tavr-quality",
-        `Program Reporting and <span class="landing-h2__accent">Quality Improvement</span>`,
-        p(
-          `Reports can support physician review and internal program evaluation. Potential program metrics may include enrollment completion, wear duration, transmission continuity, notification documentation, final-report turnaround, and follow-up completion. Outcome improvements are not claimed unless measured and substantiated.`
-        ),
-        figureImg(
-          REPORT_IMG,
-          "De-identified post-TAVR ambulatory monitoring report example for physician review",
-          "De-identified post-TAVR report example."
-        )
+      sec(
+        "tavr-eeat",
+        `Author, Medical Review and <span class="landing-h2__accent">References</span>`,
+        [
+          eeatBlock(),
+          p(
+            `For the full Specialized Medical program overview, see <a href="cardiac-monitoring-services.html">cardiac monitoring services</a>. Practices evaluating operational fit can also review the <a href="cardiology-practice-cardiac-monitoring.html">cardiology practice monitoring workflow</a>.`
+          ),
+          emergencyBox(),
+        ].join("\n")
+      ),
+      sec(
+        "tavr-demo-band",
+        `Discuss a Post-TAVR Monitoring <span class="landing-h2__accent">Protocol</span>`,
+        [
+          p(
+            `Request a demonstration to review patient selection, notification protocols, LIVE STREAMING workflow, reporting and implementation requirements with Specialized Medical.`
+          ),
+          `        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form">Discuss a Post-TAVR Monitoring Protocol</a> <a class="figma-btn figma-btn--outline" href="#cta-form">Request a Demonstration</a></p>`,
+        ].join("\n"),
+        { muted: true }
       ),
     ].join("\n\n"),
     faqs: [
       {
-        q: "What is post-TAVR cardiac monitoring?",
-        a: `It is ambulatory rhythm monitoring prescribed after transcatheter aortic valve replacement to extend rhythm surveillance beyond the hospital stay.`,
+        q: "Why is cardiac monitoring considered after TAVR?",
+        a: `TAVR can affect the cardiac conduction system. Some conduction disturbances are recognized in the hospital, while others may develop after discharge. Ambulatory monitoring extends rhythm surveillance into the recovery period for patients selected by the treating heart team.`,
       },
       {
-        q: "Does every TAVR patient need ambulatory monitoring?",
-        a: `No. The treating team determines whether monitoring is appropriate based on the patient and the program protocol.`,
+        q: "Can heart block occur after a patient leaves the hospital?",
+        a: `Yes. Published studies have identified delayed high-grade AV block and complete heart block during ambulatory monitoring after discharge. In a multicenter 14-day study, delayed high-grade AV block or complete heart block occurred at a median of five days after TAVR.`,
       },
       {
-        q: "What type of monitor may be used after TAVR?",
-        a: `A physician may prescribe MCT or another ambulatory monitoring modality depending on the clinical objective.`,
+        q: "What types of heart block can monitoring identify?",
+        a: `Monitoring may record Mobitz II second-degree AV block, high-grade AV block, complete heart block, progressive bradycardia and significant pauses. The treating physician interprets the findings and determines diagnosis and treatment.`,
       },
       {
-        q: "How soon does monitoring begin?",
-        a: `The clinical team determines timing. Some programs initiate monitoring before or at discharge.`,
+        q: "How long should patients be monitored after TAVR?",
+        a: `Monitoring duration is determined by the treating physician and institutional protocol. ACC expert consensus recommends outpatient monitoring for at least 14 days in certain patients with new or progressive conduction disturbances. Some clinical studies have evaluated 14-day or 30-day strategies.`,
       },
       {
-        q: "What findings are communicated?",
-        a: `Communication follows the physician-defined notification criteria and contact protocol.`,
+        q: "Which post-TAVR patients may be considered for outpatient monitoring?",
+        a: `Patients with new or progressive conduction changes may be considered, including those with new bundle branch block, AV block, PR or QRS prolongation, transient heart block, baseline right bundle branch block, or concerning symptoms. Patient selection remains a physician decision.`,
       },
       {
-        q: "Is the monitor a substitute for emergency care?",
-        a: `No. Patients with urgent symptoms should call 911 or follow the discharge team&rsquo;s emergency instructions.`,
+        q: "Can monitoring identify atrial fibrillation after TAVR?",
+        a: `Yes. Ambulatory monitoring may identify new or recurrent atrial fibrillation or atrial flutter, including asymptomatic episodes, depending on the monitoring technology and prescribed protocol.`,
       },
       {
-        q: "Can caregivers help manage the monitor?",
-        a: `Yes. Caregivers can help keep the phone charged, maintain proximity, follow device-care instructions, and respond to support calls.`,
+        q: "What is the difference between Holter monitoring and Mobile Cardiac Telemetry after TAVR?",
+        a: `Holter monitoring provides continuous recording with findings generally presented after the final report. Mobile Cardiac Telemetry can support presentation of qualifying findings during the active monitoring period according to the physician&rsquo;s prescribed notification protocol.`,
       },
       {
-        q: "How long is monitoring continued?",
-        a: `The prescribing team determines the duration based on the patient and program protocol.`,
+        q: "Does Specialized Medical provide LIVE ECG streaming?",
+        a: `Yes. Specialized Medical&rsquo;s platform supports LIVE ECG transmission and continuous operational visibility, including device status, battery, electrodes, signal quality, connectivity and patient connection status.`,
       },
       {
-        q: "What happens at the end of the study?",
-        a: `The data are finalized and a report is prepared for physician review and interpretation.`,
+        q: "Can physicians receive alerts during the monitoring period?",
+        a: `Qualifying findings can be presented according to the physician&rsquo;s prescribed notification thresholds and escalation protocol. Notification does not replace physician interpretation or emergency clinical evaluation.`,
       },
       {
-        q: "Can Specialized Medical support a hospital-wide TAVR workflow?",
-        a: `The implementation can be configured around discharge, contact, notification, reporting, and follow-up responsibilities across the program.`,
+        q: "Can post-TAVR monitoring help identify patients who may require a pacemaker?",
+        a: `Ambulatory monitoring can identify advanced conduction abnormalities that may prompt physician evaluation for pacing. Published studies have reported permanent pacemaker implantation following detection of delayed high-grade AV block, complete heart block or symptomatic bradycardia.`,
+      },
+      {
+        q: "Does monitoring replace inpatient telemetry?",
+        a: `No. Outpatient monitoring complements, but does not replace, appropriate inpatient observation, telemetry, electrophysiology evaluation or pacemaker management. Discharge and monitoring decisions are made by the heart team.`,
+      },
+      {
+        q: "Can patients be monitored while recovering at home?",
+        a: `Yes. Ambulatory monitoring is designed for use during normal daily activities. Specialized Medical also monitors operational status and provides technical support during the prescribed study.`,
+      },
+      {
+        q: "How are reports delivered?",
+        a: `Specialized Medical prepares physician-ready reports for clinical review. Workflow options may include portal access, electronic signature and integration with the practice&rsquo;s reporting process.`,
+      },
+      {
+        q: "Is the system suitable for rural patients?",
+        a: `The platform uses multi-carrier connectivity to access available cellular pathways. Actual coverage varies by location, network availability, building conditions and other factors, so uninterrupted coverage is not guaranteed.`,
+      },
+      {
+        q: "How can a structural heart program evaluate Specialized Medical?",
+        a: `The program can request a demonstration and discuss patient selection, notification protocols, workflow, reporting and implementation requirements with Specialized Medical.`,
       },
     ],
-    links: [
-      { href: "mobile-cardiac-telemetry-mct.html", label: "Mobile Cardiac Telemetry (MCT)" },
-      { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
-      { href: "cardiac-monitoring-services.html", label: "Cardiac Monitoring Services" },
-      { href: "cardiology-practice-cardiac-monitoring.html", label: "Cardiac Monitoring for Cardiology Practices" },
-    ],
+    links: [],
   },
 
   /* ------------- 10. Cardiac Monitoring for Cardiology Practices ------------- */
