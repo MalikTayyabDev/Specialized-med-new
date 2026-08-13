@@ -330,7 +330,7 @@ ${items
 }
 
 function mctCompareTable() {
-  return `        <div class="landing-table-wrap" role="region" aria-label="How MCT differs from Holter and Event Monitoring" tabindex="0">
+  return `        <div class="landing-table-wrap landing-table-wrap--hint" role="region" aria-label="How MCT differs from Holter and Event Monitoring" tabindex="0">
           <table class="landing-table landing-table--mct-compare">
             <caption class="sr-only">Comparison of Holter, Extended Holter, Event Monitoring, and Mobile Cardiac Telemetry</caption>
             <thead>
