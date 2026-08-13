@@ -258,13 +258,46 @@ const TAVR_REFS = [
   },
 ]
 
-function cite(n) {
-  const r = TAVR_REFS.find((x) => x.n === n)
+function cite(n, refs = TAVR_REFS) {
+  const r = refs.find((x) => x.n === n)
   return `<sup class="landing-cite"><a href="${r.href}" target="_blank" rel="noopener noreferrer">[${n}]</a></sup>`
 }
 
-function trustStrip(items) {
-  return `        <ul class="landing-trust-strip" aria-label="Post-TAVR monitoring differentiators">
+const MCT_REFS = [
+  {
+    n: 1,
+    label:
+      "CMS Billing and Coding: Ambulatory Electrocardiograph (AECG) Monitoring, A59268; Temporary Nontherapeutic Ambulatory Cardiac Monitoring Devices, L40244",
+    href: "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268",
+  },
+  {
+    n: 2,
+    label:
+      "Steinberg JS, et al. 2017 ISHNE-HRS expert consensus statement on ambulatory ECG and external cardiac monitoring/telemetry. Ann Noninvasive Electrocardiol. 2017;22:e12447. PMCID: PMC6931745",
+    href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/",
+  },
+  {
+    n: 3,
+    label:
+      "Rothman SA, et al. The diagnosis of cardiac arrhythmias: a prospective multi-center randomized study comparing mobile cardiac outpatient telemetry versus standard loop event monitoring. J Cardiovasc Electrophysiol. 2007;18(3):241-247. PMID: 17318994",
+    href: "https://pubmed.ncbi.nlm.nih.gov/17318994/",
+  },
+  {
+    n: 4,
+    label:
+      "Olson JA, et al. Utility of mobile cardiac outpatient telemetry for the diagnosis of palpitations, presyncope, syncope, and the assessment of therapy efficacy. J Cardiovasc Electrophysiol. 2007;18(5):473-477. PMID: 17343724",
+    href: "https://pubmed.ncbi.nlm.nih.gov/17343724/",
+  },
+  {
+    n: 5,
+    label:
+      "Beccarino N, et al. The utility and impact of outpatient telemetry monitoring in post-transcatheter aortic valve replacement patients. Cardiovasc Revasc Med. 2024;64:15-20. PMID: 38388248",
+    href: "https://pubmed.ncbi.nlm.nih.gov/38388248/",
+  },
+]
+
+function trustStrip(items, ariaLabel = "Key monitoring differentiators") {
+  return `        <ul class="landing-trust-strip" aria-label="${ariaLabel}">
 ${items.map((it) => `          <li><strong>${it.t}</strong><span>${it.d}</span></li>`).join("\n")}
         </ul>`
 }
@@ -282,17 +315,95 @@ ${items
         </div>`
 }
 
-function evidenceCards(items) {
+function evidenceCards(items, refs = TAVR_REFS) {
   return `        <div class="landing-evidence" role="list">
 ${items
   .map(
     (it) => `          <article class="landing-evidence__card" role="listitem">
-            <h3 class="landing-h3">${it.title} ${cite(it.n)}</h3>
+            <h3 class="landing-h3">${it.title} ${cite(it.n, refs)}</h3>
             <p class="landing-p">${it.summary}</p>
             <p class="landing-evidence__label">${it.label}</p>
           </article>`
   )
   .join("\n")}
+        </div>`
+}
+
+function mctCompareTable() {
+  return `        <div class="landing-table-wrap" role="region" aria-label="How MCT differs from Holter and Event Monitoring" tabindex="0">
+          <table class="landing-table landing-table--mct-compare">
+            <caption class="sr-only">Comparison of Holter, Extended Holter, Event Monitoring, and Mobile Cardiac Telemetry</caption>
+            <thead>
+              <tr>
+                <th scope="col">Consideration</th>
+                <th scope="col">Holter</th>
+                <th scope="col">Extended Holter</th>
+                <th scope="col">Event</th>
+                <th scope="col">MCT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Typical duration</th>
+                <td>24-48 hours</td>
+                <td>3-14 days</td>
+                <td>Up to 30 days</td>
+                <td>Up to 30 days</td>
+              </tr>
+              <tr>
+                <th scope="row">Recording approach</th>
+                <td>Continuous ECG recording</td>
+                <td>Continuous ECG recording</td>
+                <td>Patient-triggered and/or auto-triggered event capture</td>
+                <td>Continuous computerized analysis with ECG-triggered and patient-selected events</td>
+              </tr>
+              <tr>
+                <th scope="row">When clinical findings are generally presented</th>
+                <td>After final report</td>
+                <td>After final report</td>
+                <td>During the test when qualifying findings meet the prescribed protocol</td>
+                <td>During the test when qualifying findings meet the prescribed protocol</td>
+              </tr>
+              <tr>
+                <th scope="row">Specialized Medical LIVE operational visibility</th>
+                <td>Yes for LIVE version</td>
+                <td>Yes for LIVE version</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Best-fit question</th>
+                <td>What occurred during a short, defined window?</td>
+                <td>What occurred during a longer continuous-recording window?</td>
+                <td>Can intermittent symptoms/events be captured over time?</td>
+                <td>Can intermittent and asymptomatic findings be actively surveilled and presented during the study?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>`
+}
+
+function mctEeatBlock() {
+  return `        <div class="landing-eeat">
+          <div class="landing-eeat__author">
+            <h3 class="landing-h3">Author</h3>
+            <p class="landing-p"><strong>Steven M. Burns</strong>, President &amp; CEO, Specialized Medical LLC. Mr. Burns leads Specialized Medical&rsquo;s ambulatory cardiac monitoring operations, including LIVE ECG workflows, practice implementation, Stay Connected multi-carrier technology support and physician-ready reporting for cardiology and structural heart programs.</p>
+          </div>
+          <div class="landing-eeat__review">
+            <h3 class="landing-h3">Clinical review</h3>
+            <p class="landing-p"><strong>Last medically reviewed:</strong> Pending authorized physician review &middot; <strong>Last updated:</strong> August 2026</p>
+            <p class="landing-p">A reviewing physician&rsquo;s name, credentials and specialty will be displayed after Specialized Medical completes clinical review and authorizes reviewer attribution. Until then, no reviewed-by field is published.</p>
+          </div>
+          <div class="landing-eeat__policy">
+            <h3 class="landing-h3">Editorial policy</h3>
+            <p class="landing-p">Specialized Medical publishes monitoring-service and technology information for healthcare professionals. Content is reviewed for clinical accuracy before publication. Corrections or questions may be directed to <a href="contact.html">Contact Specialized Medical</a> or 1-855-SPEC-MED (1-855-773-2633). Specialized Medical is a cardiac monitoring service and technology provider; it does not replace physician judgment, emergency care, payer policy or institutional protocols.</p>
+          </div>
+          <div class="landing-eeat__refs">
+            <h3 class="landing-h3">References</h3>
+            <ol class="landing-refs">
+${MCT_REFS.map((r) => `              <li id="mct-ref-${r.n}"><a href="${r.href}" target="_blank" rel="noopener noreferrer">${r.label}</a></li>`).join("\n")}
+            </ol>
+          </div>
         </div>`
 }
 
@@ -497,7 +608,7 @@ export const PDF_META = {
   "cardiac-monitoring-services":
     "Compare Holter, Extended Holter, Event and Mobile Cardiac Telemetry solutions with LIVE test-status visibility, proactive patient support and physician-ready reporting.",
   "mobile-cardiac-telemetry-mct":
-    "Mobile Cardiac Telemetry is an ambulatory ECG monitoring service designed to transmit rhythm data during the prescribed study rather than waiting until the monitor is returned.",
+    "Mobile Cardiac Telemetry (MCT) provides up to 30 days of LIVE ECG streaming, attended surveillance, prescribed notifications, and physician-ready reports.",
   "holter-monitoring-services":
     "Holter monitoring records the patient\u2019s ECG continuously for a defined short period, commonly 24 to 48 hours. It is often selected when symptoms occur frequently enough that a short recording window may capture the relevant rhythm.",
   "long-term-holter-monitoring":
@@ -873,165 +984,477 @@ export const PAGES = [
     links: [],
   },
 
-  /* --------------------- 2. Mobile Cardiac Telemetry --------------------- */
+  /* ---------------------- 2. Mobile Cardiac Telemetry (Aug 2026 Guide) ---------------------- */
   {
     id: "mct",
     slug: "mobile-cardiac-telemetry-mct",
     file: "mobile-cardiac-telemetry-mct.html",
-    title: "Mobile Cardiac Telemetry (MCT) | Specialized Medical",
+    title: "Mobile Cardiac Telemetry (MCT) With LIVE ECG | Specialized Medical",
     metaDescription: PDF_META["mobile-cardiac-telemetry-mct"],
+    ogTitle: "Mobile Cardiac Telemetry (MCT) With LIVE ECG Monitoring",
+    ogDescription:
+      "See how Specialized Medical supports up to 30 days of ambulatory ECG monitoring with automatic event detection, prescribed alerts, operational visibility and practice-ready workflow.",
     serviceName: "Mobile Cardiac Telemetry (MCT)",
-    pill: "Mobile Cardiac Telemetry",
-    h1Html: `Mobile Cardiac Telemetry <span class="landing-hero__title-accent">(MCT)</span>`,
+    pill: "LIVE ECG STREAMING. ATTENDED SURVEILLANCE. PHYSICIAN-READY INFORMATION.",
+    h1Html: `Mobile Cardiac Telemetry (MCT) With <span class="landing-hero__title-accent">LIVE ECG Monitoring</span>`,
     directAnswer:
-      "Mobile Cardiac Telemetry is an ambulatory ECG monitoring service designed to transmit rhythm data during the prescribed study rather than waiting until the monitor is returned. Specialized Medical’s MCT workflow uses a wearable monitor and connected smartphone to send ECG information to the monitoring platform. Rhythm events are reviewed and communicated according to the ordering physician’s notification protocol.",
-    ctaLabel: "Request an MCT Workflow Demonstration",
+      "Specialized Medical provides up to 30 days of ambulatory ECG monitoring with automatic and patient-triggered event capture, physician-prescribed notification protocols, continuous test-status visibility, Stay Connected multi-carrier technology and physician-ready reporting.",
+    ctaLabel: "Request an MCT Demonstration",
+    secondaryCtaLabel: "Start a No-Risk Pilot Program",
+    secondaryCtaHref: "#cta-form",
     interestDefault: "Mobile Cardiac Telemetry (MCT)",
-    schemaTypes: ["MedicalWebPage", "Service", "BreadcrumbList", "FAQPage"],
+    schemaTypes: ["MedicalWebPage", "Service", "BreadcrumbList"],
     emergency: true,
+    formVariant: "mctGuide",
+    breadcrumbParent: {
+      name: "Cardiac Monitoring Services",
+      href: "cardiac-monitoring-services.html",
+    },
+    robots: "index, follow, max-image-preview:large",
+    showRelated: true,
+    author: {
+      name: "Steven M. Burns",
+      jobTitle: "President & CEO",
+      worksFor: "Specialized Medical LLC",
+    },
+    dateModified: "2026-08-05",
     body: [
       sec(
+        "mct-trust",
+        `LIVE MCT Capabilities for <span class="landing-h2__accent">Physician Practices</span>`,
+        trustStrip(
+          [
+            { t: "1-30 Days of Monitoring", d: "Physician-directed ambulatory monitoring window" },
+            { t: "LIVE ECG Transmission", d: "ECG data transmitted during the prescribed study" },
+            { t: "Automatic + Patient-Triggered Events", d: "ECG-triggered and patient-selected capture" },
+            { t: "Prescribed Notifications", d: "Thresholds follow the ordering physician&rsquo;s protocol" },
+            { t: "Continuous Operational Visibility", d: "Battery, electrodes, signal and connectivity status" },
+            { t: "Physician-Ready Reports", d: "Organized findings for review and signature" },
+          ],
+          "Mobile Cardiac Telemetry proof points"
+        ),
+        { muted: true }
+      ),
+      sec(
         "mct-what",
-        `What Is Mobile <span class="landing-h2__accent">Cardiac Telemetry?</span>`,
+        `What Is Mobile Cardiac Telemetry <span class="landing-h2__accent">(MCT)?</span>`,
         [
           p(
-            `Mobile Cardiac Telemetry, commonly called MCT, is used when a physician wants an extended period of ambulatory rhythm monitoring with live remote data transmission. The patient wears the prescribed monitor during normal daily activities while the system sends ECG data through the connected phone. The monitoring service reviews incoming information and follows the physician-defined notification process for qualifying events.`
+            `Mobile Cardiac Telemetry is a temporary ambulatory ECG monitoring modality that combines ongoing computerized rhythm analysis with transmission of ECG-triggered and patient-selected events to an attended surveillance center. MCT may be worn for up to 30 days when the treating physician needs a longer monitoring window and the ability to review qualifying findings while the study is still active. MCT is also known as mobile cardiac outpatient telemetry (MCOT). MCT is not the same as inpatient telemetry and does not replace emergency evaluation.${cite(1, MCT_REFS)}${cite(2, MCT_REFS)}`
           ),
           p(
-            `MCT should be described accurately as a diagnostic monitoring service. It is not an emergency response system and it does not replace instructions to call 911 or seek emergency care when a patient experiences urgent symptoms.`
+            `Specialized Medical supports <a href="cardiac-monitoring-services.html">cardiac monitoring services</a> with <a href="live-ecg-monitoring.html">LIVE ECG monitoring</a>, prescribed notification protocols, continuous operational visibility and physician-ready reporting.`
           ),
         ].join("\n")
       ),
       sec(
-        "mct-how",
-        `How the Specialized Medical <span class="landing-h2__accent">MCT System Works</span>`,
+        "mct-why",
+        `Why Mobile Cardiac Telemetry Provides More Active <span class="landing-h2__accent">Rhythm Surveillance</span>`,
         [
           p(
-            `Wearable monitor to smartphone by Bluetooth, then smartphone to the monitoring platform through available cellular or network connectivity. The phone should remain near the patient and powered during the study. The system is designed to reconnect when temporary interruptions occur, but successful transmission still depends on device placement, phone status, network availability, and patient adherence.`
+            `Unlike a short-duration Holter study, MCT can extend ambulatory monitoring for up to 30 days. Unlike a patient-activated event monitor alone, MCT can analyze rhythm data and identify predefined events even when the patient does not recognize symptoms or press a button. Qualifying findings may be presented during the active study according to the physician&rsquo;s prescribed notification protocol, while patient-triggered symptoms can be matched to the corresponding ECG.${cite(1, MCT_REFS)}${cite(2, MCT_REFS)}`
           ),
-          flow(
-            [
-              { t: "Wearable monitor", d: "ECG acquired on the body" },
-              { t: "Bluetooth", d: "Monitor connects to the provided smartphone" },
-              { t: "Cellular / network", d: "Phone transmits ECG data to the monitoring platform" },
-              { t: "Monitoring platform", d: "Data reviewed; qualifying events communicated per protocol" },
-            ],
-            "Wearable to phone to cloud transmission path"
+          featureBlocks([
+            {
+              t: "Automatic event detection",
+              d: "Predefined rhythm events can be captured even when the patient is asymptomatic or unable to activate the monitor.",
+            },
+            {
+              t: "Patient-triggered symptoms",
+              d: "Patients can log symptoms so the physician can compare the reported experience with the ECG at that time.",
+            },
+            {
+              t: "Active-study information",
+              d: "Qualifying findings may be presented while monitoring is still underway, according to the prescribed protocol.",
+            },
+            {
+              t: "Longer monitoring window",
+              d: "A 1-30 day monitoring period increases the opportunity to capture intermittent rhythm disturbances that may not occur during a short test.",
+            },
+            {
+              t: "Attended surveillance",
+              d: "ECG-triggered and patient-selected events are transmitted to an attended monitoring environment for analysis and documentation.",
+            },
+          ]),
+        ].join("\n"),
+        { muted: true }
+      ),
+      sec(
+        "mct-evidence",
+        `Evidence Supporting Mobile Cardiac <span class="landing-h2__accent">Telemetry</span>`,
+        [
+          p(
+            `Published evidence supports the use of ambulatory ECG monitoring for intermittent symptoms, asymptomatic arrhythmia detection, treatment-response assessment and selected post-procedure populations. The page presents results as study-specific findings, not as guarantees that every patient or every MCT system will achieve the same result.`
           ),
           p(
-            `Every Specialized Medical test has LIVE operational visibility, including battery status, electrode contact / signal quality, device communication, and whether the patient appears connected. The MCT distinction is that qualifying clinical findings are also presented during the study according to the prescribed notification protocol. Do not imply that every beat is manually watched continuously by one person.`
+            `In a 17-center randomized study of 266 patients with syncope, presyncope or severe palpitations after a nondiagnostic 24-hour Holter study, a diagnosis was reached in 88% of patients assigned to MCOT compared with 75% assigned to a standard loop event monitor. Clinically significant arrhythmias were identified in 41% of the MCOT group compared with 15% of the loop-monitor group. These results apply to the studied population and should not be presented as a universal performance guarantee.${cite(3, MCT_REFS)}`
           ),
+          p(
+            `A separate clinical series evaluated MCOT for palpitations, presyncope, syncope and antiarrhythmic-therapy assessment. The investigators reported clinically significant asymptomatic arrhythmias and found that 7 of 21 patients monitored for medication titration had dosage adjustments during outpatient monitoring. The treating physician, not the monitoring service, determines whether medication should be started, changed or stopped.${cite(4, MCT_REFS)}`
+          ),
+          evidenceCards(
+            [
+              {
+                n: 1,
+                title: "CMS ambulatory ECG guidance",
+                label: "CMS A59268 / L40244",
+                summary:
+                  "Defines external mobile cardiovascular telemetry as concurrent computerized real-time analysis with ECG-triggered and patient-selected events transmitted to an attended surveillance center; may be worn up to 30 days.",
+              },
+              {
+                n: 2,
+                title: "ISHNE-HRS consensus",
+                label: "Heart Rhythm / Ann Noninvasive Electrocardiol, 2017",
+                summary:
+                  "AECG is used for palpitations, syncope, AF detection, therapy-response assessment and selected outpatient antiarrhythmic monitoring; technology selection should match symptom frequency and clinical need.",
+              },
+              {
+                n: 3,
+                title: "Rothman et al. randomized trial",
+                label: "PMID 17318994",
+                summary:
+                  "MCOT achieved higher diagnostic confirmation and higher clinically significant arrhythmia detection than a standard patient-activated loop recorder in the studied population.",
+              },
+              {
+                n: 4,
+                title: "Olson et al. clinical series",
+                label: "PMID 17343724",
+                summary:
+                  "MCOT identified asymptomatic arrhythmias and was used during outpatient medication titration; 7 of 21 medication-titration patients had dose adjustments.",
+              },
+              {
+                n: 5,
+                title: "Post-TAVR MCT study",
+                label: "PMID 38388248",
+                summary:
+                  "A standardized 30-day MCT program detected conduction abnormalities requiring pacemaker placement and new AF/flutter after TAVR.",
+              },
+            ],
+            MCT_REFS
+          ),
+        ].join("\n")
+      ),
+      sec(
+        "mct-compare",
+        `How MCT Differs From Holter and <span class="landing-h2__accent">Event Monitoring</span>`,
+        [
+          p(
+            `The correct monitoring test depends on the physician&rsquo;s clinical objective, symptom frequency, required monitoring duration and need for information during the active study. Longer duration alone does not make Extended Holter a substitute for MCT when attended surveillance and presentation of qualifying findings during the study are desired.`
+          ),
+          mctCompareTable(),
+          p(
+            `Operational visibility means Specialized Medical can monitor device and transmission status. Clinical surveillance means qualifying ECG findings may be presented during the test. All LIVE test types can have operational visibility, while MCT and <a href="cardiac-event-monitoring.html">Cardiac Event Monitoring</a> have active-study clinical notification workflows. Compare also with <a href="holter-monitoring-services.html">Holter monitoring</a> and <a href="long-term-holter-monitoring.html">Long-Term Holter monitoring</a>.`
+          ),
+          `        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form">Request an MCT Demonstration</a> <a class="figma-btn figma-btn--outline" href="#cta-form">Start a No-Risk Pilot Program</a></p>`,
         ].join("\n"),
         { muted: true }
       ),
       sec(
         "mct-who",
-        `Who May Be <span class="landing-h2__accent">Considered for MCT?</span>`,
+        `When Physicians May Consider Mobile Cardiac <span class="landing-h2__accent">Telemetry</span>`,
         [
           p(
-            `MCT may be considered when the ordering physician wants a longer monitoring period and live remote rhythm surveillance. Examples may include intermittent palpitations, dizziness, syncope or near-syncope evaluation, suspected paroxysmal arrhythmias, post-procedure monitoring, or other indications determined by the treating provider.`
+            `MCT may be considered when symptoms or suspected arrhythmias are intermittent, when a short monitoring period has been nondiagnostic, when automatic detection of asymptomatic events is important, or when the physician needs qualifying findings presented during an active ambulatory study. Patient selection, monitoring duration and notification parameters remain physician decisions and must follow payer and institutional requirements.${cite(1, MCT_REFS)}${cite(2, MCT_REFS)}`
           ),
-          p(
-            `Do not promise that MCT will detect every arrhythmia or prevent adverse outcomes. State that diagnostic yield depends on the patient&rsquo;s rhythm, recording quality, study duration, adherence, and other clinical factors.`
-          ),
+          `        <ul class="landing-list">
+          <li>Unexplained palpitations, dizziness, presyncope or syncope when an arrhythmic cause is suspected</li>
+          <li>Suspected paroxysmal atrial fibrillation or atrial flutter, including asymptomatic episodes</li>
+          <li>Intermittent bradycardia, pauses, atrioventricular block or tachyarrhythmia</li>
+          <li>Symptoms occurring less frequently than the useful window of a short Holter study</li>
+          <li>Evaluation of arrhythmia burden or symptom-rhythm correlation</li>
+          <li>Assessment of response to physician-directed medication changes or arrhythmia procedures</li>
+          <li>Selected patients after ablation, cardiac procedures or TAVR</li>
+          <li>Selected patients with embolic events or cryptogenic stroke when occult AF is suspected, subject to guideline and payer requirements</li>
+        </ul>`,
         ].join("\n")
       ),
-      secSplit(
-        "mct-notify",
-        `Physician Notification <span class="landing-h2__accent">and Reporting</span>`,
-        p(
-          `Notifications follow the physician&rsquo;s defined protocol and the practice&rsquo;s communication preferences. An interim notification communicates a qualifying finding while the study is in progress; the final diagnostic report organizes the monitoring findings for physician interpretation and clinical decision-making.`
-        ),
-        figureImg(
-          REPORT_IMG,
-          "De-identified MCT report sample showing event summary, rhythm strips, and physician interpretation area",
-          "De-identified MCT report layout: event summary, rhythm strips, and physician interpretation area. Electronic review and signature are supported in the portal."
-        ),
+      sec(
+        "mct-identify",
+        `Clinically Important Rhythm Findings MCT <span class="landing-h2__accent">May Capture</span>`,
+        [
+          p(
+            `Depending on the patient, device configuration, signal quality and physician-prescribed parameters, MCT may record and present findings such as atrial fibrillation or flutter, supraventricular tachycardia, ventricular tachycardia or wide-complex tachycardia, significant bradycardia, pauses, atrioventricular block, premature atrial or ventricular beats, and symptom-correlated sinus rhythm. The treating physician interprets the ECG and determines clinical significance.`
+          ),
+          featureBlocks([
+            {
+              t: "Atrial rhythms",
+              d: "Atrial fibrillation, atrial flutter, atrial tachycardia and other supraventricular rhythms.",
+            },
+            {
+              t: "Ventricular rhythms",
+              d: "Ventricular tachycardia, wide-complex tachycardia and ventricular ectopy.",
+            },
+            {
+              t: "Slow rhythms and conduction",
+              d: "Bradycardia, pauses, second-degree or high-grade AV block and complete heart block.",
+            },
+            {
+              t: "Symptom correlation",
+              d: "Palpitations, dizziness, shortness of breath, chest discomfort, presyncope or syncope correlated with ECG.",
+            },
+            {
+              t: "Asymptomatic findings",
+              d: "Automatically detected rhythm events that occur without a patient-reported symptom.",
+            },
+          ]),
+          noteBox(
+            "Compliance wording",
+            "Use records, detects, identifies ECG findings, captures, or presents qualifying findings. Do not state that the monitor independently diagnoses, treats, prevents or guarantees avoidance of hospitalization, stroke, sudden death or pacemaker implantation."
+          ),
+        ].join("\n"),
         { muted: true }
       ),
       sec(
-        "mct-compare",
-        `MCT Compared With <span class="landing-h2__accent">Event and Holter Monitoring</span>`,
+        "mct-treatment",
+        `Evaluating Treatment Response During an Active <span class="landing-h2__accent">MCT Study</span>`,
         [
-          comparisonTable("mobile-cardiac-telemetry-mct"),
           p(
-            `MCT is not automatically the best test for every patient. A short <a href="holter-monitoring-services.html">Holter study</a> may be appropriate when symptoms are frequent. <a href="long-term-holter-monitoring.html">Long-Term Holter</a> may be appropriate when extended full-disclosure recording is desired and clinical results can be presented after the final report. <a href="cardiac-event-monitoring.html">Event Monitoring</a> may be appropriate when episodic capture and in-progress presentation of qualifying findings are desired.`
+            `Because qualifying findings can be reviewed while monitoring is still underway, a treating physician may use MCT information when evaluating the response to a medication initiation, dosage change, discontinuation or other rhythm-management strategy. When clinically appropriate, the physician may change therapy during the monitoring period and observe subsequent ECG patterns. Published evidence and expert consensus support ambulatory ECG monitoring for treatment-response assessment and selected outpatient antiarrhythmic monitoring.${cite(2, MCT_REFS)}${cite(4, MCT_REFS)}`
+          ),
+          noteBox(
+            "Required safety statement",
+            "MCT does not replace a 12-lead ECG, laboratory testing, QT assessment, inpatient observation or any drug-specific monitoring required by labeling, guidelines or institutional protocol. Certain antiarrhythmic medications must be initiated in a monitored inpatient setting. All medication decisions belong to the treating clinician.",
+            "alert"
+          ),
+        ].join("\n")
+      ),
+      sec(
+        "mct-posttavr",
+        `MCT for Post-Procedure and Post-TAVR <span class="landing-h2__accent">Rhythm Surveillance</span>`,
+        [
+          p(
+            `MCT may be used in selected patients after arrhythmia procedures or transcatheter aortic valve replacement when the treating team wants extended ambulatory surveillance and active-study notification of qualifying findings. Specialized Medical&rsquo;s MCT system is especially well suited to post-TAVR care because it combines attended <a href="live-ecg-monitoring.html">LIVE ECG monitoring</a> streaming, rapid physician-prescribed notification of qualifying arrhythmias, proactive patient support and Stay Connected multi-carrier technology designed to help maintain transmission as patients recover at home, including in many rural areas. After TAVR, the system may identify delayed high-grade AV block, complete heart block, bradycardia, pauses and new atrial fibrillation or flutter. This provides a high level of post-discharge rhythm surveillance and an important added layer of protection during a clinically significant recovery period. Patient selection and monitoring duration remain under the direction of the structural heart team. See the dedicated <a href="post-tavr-cardiac-monitoring.html">post-TAVR cardiac monitoring</a> page for the full evidence and workflow.${cite(1, MCT_REFS)}${cite(5, MCT_REFS)}`
+          ),
+        ].join("\n"),
+        { muted: true }
+      ),
+      sec(
+        "mct-tech",
+        `LIVE MCT Monitoring Built Around the <span class="landing-h2__accent">S-Patch System</span>`,
+        [
+          p(
+            `Specialized Medical combines LIVE ECG transmission with attended clinical surveillance and continuous operational monitoring. The <a href="s-patch-cardiac-monitoring-system.html">S-Patch cardiac monitoring system</a> is designed for ambulatory wear while the monitoring team maintains visibility into battery status, electrode contact, ECG signal quality, Bluetooth communication, cellular connectivity, patient connection and successful data transmission. When an operational problem is detected, Specialized Medical can proactively contact the patient to help restore the study.`
+          ),
+          featureBlocks([
+            {
+              t: "LIVE ECG transmission",
+              d: "ECG data is transmitted throughout the prescribed monitoring period; qualifying findings may be reviewed while the study is active.",
+            },
+            {
+              t: "Prescribed notification protocol",
+              d: "Notification thresholds, recipients and escalation methods follow the ordering physician&rsquo;s selected protocol.",
+            },
+            {
+              t: "Operational visibility",
+              d: "Battery, electrodes, signal quality, Bluetooth, cellular connection, patient connection and transmission status are monitored.",
+            },
+            {
+              t: "Proactive patient outreach",
+              d: "When a technical or connection problem is identified, the patient can be contacted for troubleshooting and support.",
+            },
+            {
+              t: "Stay Connected multi-carrier technology",
+              d: "The platform can use available cellular pathways from major U.S. carriers to help maintain connection across urban, suburban and many rural environments. If transmission is interrupted, operational monitoring can identify the issue so the patient can be contacted. Uninterrupted coverage is not guaranteed.",
+            },
+            {
+              t: "Digital symptom logging",
+              d: "Patient-entered symptoms are time-linked to ECG data and displayed with symptomatic versus asymptomatic context.",
+            },
+            {
+              t: "Physician-ready reports",
+              d: "Reports organize relevant ECG findings for review, interpretation, dating and electronic signature.",
+            },
+            {
+              t: "Practice support",
+              d: "Specialized Medical supports enrollment, supplies, patient education, monitoring, technical support, reporting and billing templates.",
+            },
+          ]),
+          p(`Device specifications:`),
+          `        <ul class="landing-list">
+          <li>S-Patch weight: 0.6 oz</li>
+          <li>Minimum battery duration: 10 days</li>
+          <li>Water resistance: IP55</li>
+          <li>Supports monitoring periods up to 30 days</li>
+          <li>One monitoring platform supports Holter, Long-Term Holter, Event and MCT workflows</li>
+        </ul>`,
+          p(
+            `Compare <a href="services/equipment.html">cardiac monitoring equipment</a> options used across Specialized Medical services.`
           ),
         ].join("\n")
       ),
       sec(
         "mct-patient",
-        `Patient Responsibilities <span class="landing-h2__accent">During an MCT Study</span>`,
+        `Patient Symptom Logging and <span class="landing-h2__accent">Experience</span>`,
         [
-          `        <ul class="landing-list">
-          <li>Keep the phone charged, powered on, and near the body</li>
-          <li>Follow the device placement instructions</li>
-          <li>Record symptoms when directed</li>
-          <li>Avoid changing settings on the monitor or phone</li>
-          <li>Contact support when the system indicates a problem</li>
-        </ul>`,
           p(
-            `Follow the bathing instructions that match the prescribed equipment. The system should not be treated as waterproof unless the exact configuration is verified for that use.`
+            `Patients can enter symptoms digitally during the test. The symptom time is associated with the ECG timeline so the final report can clearly show whether a finding was symptomatic or asymptomatic. This removes reliance on a separate handwritten diary and supports more efficient physician review.`
+          ),
+          p(
+            `The S-Patch is designed for ambulatory wear during normal daily activities. Specialized Medical provides patient education and technical support so the study has the best opportunity to be completed successfully.`
+          ),
+          emergencyBox(),
+        ].join("\n"),
+        { muted: true }
+      ),
+      sec(
+        "mct-workflow",
+        `A Turnkey MCT Workflow for the <span class="landing-h2__accent">Physician Practice</span>`,
+        [
+          p(
+            `Specialized Medical supports the operational work after enrollment and hookup so the practice can focus on patient care and physician interpretation. Practices evaluating operational fit can also review the <a href="cardiology-practice-cardiac-monitoring.html">cardiology practice monitoring workflow</a>.`
+          ),
+          flow(
+            [
+              {
+                t: "Physician order and protocol",
+                d: "Select the indication, monitoring duration, notification thresholds, recipients and escalation instructions.",
+              },
+              {
+                t: "Patient enrollment",
+                d: "Enter patient, insurance and prescribing information in the secure portal.",
+              },
+              {
+                t: "Office hookup and education",
+                d: "Apply the monitor correctly, confirm connection and explain symptom logging and wear instructions.",
+              },
+              {
+                t: "LIVE monitoring and support",
+                d: "Specialized Medical monitors ECG events and operational status and provides patient support during the study.",
+              },
+              {
+                t: "Qualifying notifications",
+                d: "Present qualifying findings according to the prescribed email, text and/or phone protocol.",
+              },
+              {
+                t: "Final reporting",
+                d: "Provide the final physician-ready report for review, interpretation, signature and clinical filing.",
+              },
+            ],
+            "Six-step MCT practice workflow"
+          ),
+        ].join("\n")
+      ),
+      sec(
+        "mct-cpt",
+        `CPT Codes Commonly Associated With Mobile Cardiac <span class="landing-h2__accent">Telemetry</span>`,
+        [
+          p(
+            `Mobile Cardiac Telemetry is commonly reported with CPT 93228 and CPT 93229 for a monitoring episode of up to 30 consecutive days. Both codes are generally needed for execution of the complete MCT test under the practice&rsquo;s billing arrangement. Medicare guidance instructs providers to report one unit per episode and requires documentation supporting medical necessity. Commercial coverage, prior authorization and billing-frequency rules vary by payer and plan.${cite(1, MCT_REFS)}`
           ),
           noteBox(
-            "Phone proximity and charging",
-            "The connected phone is the transmission gateway. Keep it powered, charged, and within the operating range stated in the patient instructions &mdash; walls, distance, device placement, and interference can affect the connection."
+            "Billing note",
+            "This page does not guarantee payment, reimbursement or profitability. A correct ICD-10 code alone does not guarantee coverage. Confirm authorization, coverage, frequency and documentation requirements with each payer and plan. For billing questions, <a href=\"contact.html\">request an MCT demonstration</a> discussion with Specialized Medical."
           ),
-          phoneProximityDiagram(),
-          emergencyBox(),
+        ].join("\n"),
+        { muted: true }
+      ),
+      sec(
+        "mct-eeat",
+        `Author, Clinical Review and <span class="landing-h2__accent">References</span>`,
+        [
+          mctEeatBlock(),
+          p(
+            `For the full program overview, see <a href="cardiac-monitoring-services.html">cardiac monitoring services</a>.`
+          ),
+        ].join("\n")
+      ),
+      sec(
+        "mct-demo-band",
+        `Request an MCT Demonstration or <span class="landing-h2__accent">Pilot Program</span>`,
+        [
+          p(
+            `A physician practice can request a demonstration or begin a small no-risk pilot program. The evaluation should review patient enrollment, hookup, LIVE ECG transmission, notification protocols, operational support, symptom logging, reporting, physician interpretation workflow and billing support.`
+          ),
+          `        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form">Request an MCT Demonstration</a> <a class="figma-btn figma-btn--outline" href="#cta-form">Start a No-Risk Pilot Program</a></p>`,
         ].join("\n"),
         { muted: true }
       ),
     ].join("\n\n"),
     faqs: [
       {
-        q: "What is the difference between MCT and a Holter monitor?",
-        a: `Both MCT and Holter provide LIVE operational visibility during the study so Specialized Medical can monitor battery status, electrode contact / signal quality, device communication, and whether the patient appears connected. MCT can present qualifying clinical findings while the study is in progress according to protocol. Holter clinical results are presented after the final report is generated.`,
+        q: "What is Mobile Cardiac Telemetry (MCT)?",
+        a: `Mobile Cardiac Telemetry is an ambulatory ECG monitoring service that uses computerized rhythm analysis and transmits ECG-triggered and patient-selected events to an attended surveillance center. It can be prescribed for up to 30 days. Specialized Medical&rsquo;s workflow adds LIVE ECG transmission, physician-prescribed notifications, continuous operational visibility, patient support and physician-ready reporting.`,
       },
       {
-        q: "How long is MCT worn?",
-        a: `The ordering physician determines the prescribed duration, which may extend up to 30 days depending on the clinical need and program configuration.`,
+        q: "How long can a patient wear an MCT monitor?",
+        a: `MCT may be prescribed for a monitoring episode of up to 30 consecutive days. The treating physician selects the appropriate duration based on the clinical question, symptom frequency, patient risk and payer requirements. A longer period is not automatically necessary for every patient.`,
       },
       {
-        q: "Does the patient need to carry a phone?",
-        a: `Yes. In the Specialized Medical workflow, the connected phone serves as the gateway that transmits ECG information to the monitoring platform.`,
+        q: "What is the difference between MCT and Holter monitoring?",
+        a: `Holter monitoring records continuously for a shorter defined period, and clinical findings are generally presented after the final report. MCT can continue for up to 30 days and supports attended surveillance, automatic event detection and presentation of qualifying findings during the active study according to the physician&rsquo;s notification protocol.`,
       },
       {
-        q: "How close must the phone remain to the monitor?",
-        a: `The phone should remain near the patient and within the operating range specified in the patient instructions. Walls, distance, device placement, and interference can affect the connection.`,
+        q: "What is the difference between MCT and Cardiac Event Monitoring?",
+        a: `Event Monitoring focuses on patient-triggered and selected auto-triggered ECG events over an extended period. MCT adds concurrent computerized rhythm analysis and attended surveillance. That distinction can be important when asymptomatic arrhythmias are suspected or when the physician wants a more active clinical-notification workflow.`,
       },
       {
-        q: "Will the physician be called for every rhythm change?",
-        a: `No. Notifications are made according to the prescribed criteria and practice protocol, not for every normal variation or automatically detected event.`,
+        q: "Does MCT have a higher diagnostic yield than a standard loop event monitor?",
+        a: `In one 17-center randomized trial of patients with syncope, presyncope or severe palpitations after a nondiagnostic Holter study, MCOT produced a diagnosis in 88% compared with 75% for a standard loop monitor and identified clinically significant arrhythmias in 41% compared with 15%. Results should be understood as study-specific, not guaranteed for every patient.`,
       },
       {
-        q: "Is MCT an emergency service?",
-        a: `No. MCT is a diagnostic monitoring service and is not a substitute for calling 911 or seeking emergency care.`,
+        q: "Can MCT detect arrhythmias when the patient has no symptoms?",
+        a: `Yes. MCT can automatically capture predefined rhythm events even when the patient does not recognize symptoms or press a button. Published clinical experience has reported clinically important asymptomatic arrhythmias during MCOT monitoring. The treating physician interprets each ECG and determines its significance.`,
       },
       {
-        q: "Can MCT be used after a cardiac procedure?",
-        a: `A physician may prescribe MCT after a procedure when ongoing rhythm surveillance is clinically appropriate, including selected <a href="post-tavr-cardiac-monitoring.html">post-TAVR monitoring</a> pathways.`,
+        q: "What rhythm findings may be captured by MCT?",
+        a: `Depending on the prescribed parameters and the patient&rsquo;s rhythm, MCT may capture atrial fibrillation or flutter, supraventricular tachycardia, ventricular tachycardia, bradycardia, pauses, atrioventricular block, premature beats and symptom-correlated sinus rhythm. The system records and presents ECG findings; it does not independently diagnose the patient.`,
       },
       {
-        q: "What happens if the phone loses cellular service?",
-        a: `The system is designed to reconnect and transmit when service becomes available, but the exact result depends on the device, phone status, stored data, and network conditions.`,
+        q: "Can physicians receive notifications during an MCT study?",
+        a: `Qualifying findings may be presented during the active study according to the ordering physician&rsquo;s prescribed thresholds, recipients and escalation protocol. Notifications may be delivered through approved email, text and/or telephone pathways. The monitoring service does not replace physician interpretation, emergency care or the facility&rsquo;s clinical policies.`,
       },
       {
-        q: "Can patients shower while wearing the monitor?",
-        a: `Patients must follow the bathing instructions provided for the specific monitor and electrode configuration.`,
+        q: "Can MCT help evaluate a medication change?",
+        a: `A treating physician may use MCT information when evaluating rhythm response after starting, changing or stopping a medication. One published series reported medication dosage adjustments during outpatient MCOT monitoring. MCT does not replace required inpatient initiation, QT monitoring, laboratory testing or other drug-specific safeguards.`,
       },
       {
-        q: "What is included in the final MCT report?",
-        a: `The report may include rhythm summaries, event information, representative ECG strips, burden measurements where applicable, and a physician interpretation area.`,
+        q: "Can MCT be used after TAVR?",
+        a: `Yes, in selected patients. Specialized Medical&rsquo;s MCT system combines attended LIVE ECG streaming, rapid physician-prescribed notification of qualifying arrhythmias, proactive patient support and Stay Connected multi-carrier technology that helps maintain transmission in urban and many rural areas. It may identify delayed high-grade AV block, complete heart block, bradycardia, pauses and new atrial fibrillation or flutter after discharge, providing an important added layer of post-TAVR protection. Patient selection and monitoring duration are determined by the structural heart team. See the dedicated <a href="post-tavr-cardiac-monitoring.html">post-TAVR cardiac monitoring</a> page.`,
+      },
+      {
+        q: "Can MCT be used after an ablation or other arrhythmia procedure?",
+        a: `Ambulatory ECG monitoring may be used to assess rhythm recurrence, arrhythmia burden, symptoms or response to an intervention when ordered by the treating physician. The correct modality and duration depend on the procedure, clinical objective, institutional protocol and payer requirements.`,
+      },
+      {
+        q: "How does Specialized Medical monitor whether the test is working?",
+        a: `Specialized Medical maintains operational visibility into battery status, electrode contact, ECG signal quality, Bluetooth communication, cellular connectivity, patient connection and successful data transmission. When an operational problem is identified, the patient can be contacted proactively to help restore the study.`,
+      },
+      {
+        q: "How are patient symptoms documented?",
+        a: `Patients can enter symptoms digitally during the test. The symptom time is associated with the ECG timeline so the final report can clearly show whether a finding was symptomatic or asymptomatic. This removes reliance on a separate handwritten diary and supports more efficient physician review.`,
+      },
+      {
+        q: "Does the system work in rural areas?",
+        a: `Specialized Medical&rsquo;s Stay Connected multi-carrier technology uses available cellular pathways from major U.S. networks to help patients remain connected across urban, suburban and many rural areas. If a connection or transmission problem is detected, Specialized Medical can proactively contact the patient to help restore the study. Actual performance depends on available network coverage, building conditions and local factors, so uninterrupted coverage is not guaranteed.`,
+      },
+      {
+        q: "What CPT codes are commonly used for MCT?",
+        a: `Mobile Cardiac Telemetry is commonly reported with CPT 93228 and CPT 93229 for an episode of up to 30 consecutive days. Both codes are generally needed for execution of the complete MCT test under the practice&rsquo;s billing arrangement. Coverage, authorization, documentation and frequency requirements must be confirmed for each payer.`,
+      },
+      {
+        q: "Does MCT replace inpatient telemetry or emergency care?",
+        a: `No. MCT is an ambulatory monitoring service for appropriately selected patients. It is not intended to replace inpatient telemetry, emergency evaluation or immediate treatment for patients with unstable or potentially life-threatening conditions. The treating physician determines the appropriate care setting.`,
+      },
+      {
+        q: "Who interprets the MCT findings?",
+        a: `Specialized Medical records, analyzes and presents ECG findings and prepares physician-ready reports. The treating or interpreting physician reviews the ECG, determines the diagnosis and decides whether any medication, procedure, referral or follow-up is appropriate.`,
+      },
+      {
+        q: "How can a practice evaluate Specialized Medical&rsquo;s MCT service?",
+        a: `A physician practice can request a demonstration or begin a small no-risk pilot program. The evaluation should review patient enrollment, hookup, LIVE ECG transmission, notification protocols, operational support, symptom logging, reporting, physician interpretation workflow and billing support.`,
       },
     ],
     links: [
       { href: "cardiac-monitoring-services.html", label: "Cardiac Monitoring Services" },
-      { href: "live-ecg-monitoring.html", label: "Live ECG Monitoring" },
-      { href: "cardiac-event-monitoring.html", label: "Cardiac Event Monitoring" },
-      { href: "holter-monitoring-services.html", label: "Holter Monitoring Services" },
-      { href: "post-tavr-cardiac-monitoring.html", label: "LIVE post-TAVR Mobile Cardiac Telemetry" },
+      { href: "live-ecg-monitoring.html", label: "LIVE ECG Monitoring" },
       { href: "s-patch-cardiac-monitoring-system.html", label: "S-Patch Cardiac Monitoring System" },
+      { href: "cardiac-event-monitoring.html", label: "Cardiac Event Monitoring" },
+      { href: "holter-monitoring-services.html", label: "Holter Monitoring" },
+      { href: "long-term-holter-monitoring.html", label: "Long-Term Holter Monitoring" },
+      { href: "post-tavr-cardiac-monitoring.html", label: "Post-TAVR Cardiac Monitoring" },
+      { href: "cardiology-practice-cardiac-monitoring.html", label: "Cardiology Practice Monitoring Workflow" },
+      { href: "services/equipment.html", label: "Compare Cardiac Monitoring Equipment" },
+      { href: "contact.html", label: "Request an MCT Demonstration" },
     ],
   },
 

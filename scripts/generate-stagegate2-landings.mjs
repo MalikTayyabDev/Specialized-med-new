@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const SITE = "https://www.specialized-med.com"
 const PHONE_HREF = "tel:+18557732633"
-const CSS_VERSION = "20260807a"
+const CSS_VERSION = "20260813a"
 const WEB3FORMS_KEY = "8ec7a28a-1979-4c39-8791-18fbf60bba44"
 
 /** Must stay in sync with scripts/patch-html-for-subfolder-base.mjs leaf map. */
@@ -278,7 +278,7 @@ function schemasFor(page) {
   if (types.includes("Product")) out.push(productSchema(page))
   out.push(serviceSchema(page))
   out.push(breadcrumbSchema(page))
-  out.push(faqSchema(page.faqs))
+  if (types.includes("FAQPage") && page.faqs?.length) out.push(faqSchema(page.faqs))
   return out
 }
 
@@ -292,7 +292,7 @@ const BANNERS = {
   },
   "mobile-cardiac-telemetry-mct": {
     src: "images/landing/mobile-cardiac-telemetry-mct.jpg",
-    alt: "Mobile Cardiac Telemetry (MCT) with live ECG data transmitted during the prescribed ambulatory study",
+    alt: "Adult wearing an S-Patch cardiac monitor directly on the skin of the upper chest beside a LIVE ECG display for Mobile Cardiac Telemetry.",
   },
   "holter-monitoring-services": {
     src: "images/landing/holter-monitoring-services.jpg",
@@ -373,6 +373,7 @@ function ctaFormSection(page) {
     ? `\n            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>`
     : ""
   const isPostTavr = page.formVariant === "postTavr"
+  const isMctGuide = page.formVariant === "mctGuide"
   const formFields = isPostTavr
     ? `            <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
@@ -409,7 +410,49 @@ function ctaFormSection(page) {
                 </select>
               </label>
             </div>`
-    : `            <div class="landing-cta-form__row">
+    : isMctGuide
+      ? `            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Name</span>
+                <input name="name" type="text" autocomplete="name" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Organization</span>
+                <input name="organization" type="text" autocomplete="organization" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Role</span>
+                <input name="role" type="text" autocomplete="organization-title" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Email</span>
+                <input name="email" type="email" autocomplete="email" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Phone</span>
+                <input name="phone" type="tel" autocomplete="tel" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">State</span>
+                <input name="state" type="text" autocomplete="address-level1" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Preferred contact method</span>
+                <select name="preferred_contact" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Email">Email</option>
+                  <option value="Phone">Phone</option>
+                  <option value="Either">Either</option>
+                </select>
+              </label>
+            </div>`
+      : `            <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Name</span>
                 <input name="name" type="text" autocomplete="name" required>
@@ -445,7 +488,10 @@ ${options}
   const ctaCopy = isPostTavr
     ? `<p class="landing-p">Discuss patient selection, notification protocols, LIVE STREAMING workflow, reporting and implementation requirements for your structural heart program.</p>
             <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>${emergencyNote}`
-    : `<p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
+    : isMctGuide
+      ? `<p class="landing-p">Thank you. A Specialized Medical representative will contact you to discuss your practice, monitoring needs, notification protocol and next steps for an MCT demonstration or pilot program.</p>
+            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>${emergencyNote}`
+      : `<p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
             <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="${PHONE_HREF}">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>${emergencyNote}`
   return `    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="${page.id}-cta-heading">
       <div class="figma-container">

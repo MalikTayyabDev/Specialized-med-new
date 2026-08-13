@@ -25,8 +25,10 @@ const REQUIRED_LINKS = {
     "live-ecg-monitoring",
     "cardiac-event-monitoring",
     "holter-monitoring-services",
+    "long-term-holter-monitoring",
     "post-tavr-cardiac-monitoring",
     "s-patch-cardiac-monitoring-system",
+    "cardiology-practice-cardiac-monitoring",
   ],
   "holter-monitoring-services": [
     "cardiac-monitoring-services",
@@ -89,7 +91,7 @@ const REQUIRED_LINKS = {
 
 const REQUIRED_SCHEMA = {
   "cardiac-monitoring-services": ["WebPage", "Organization", "MedicalBusiness", "Service", "BreadcrumbList", "FAQPage"],
-  "mobile-cardiac-telemetry-mct": ["Service", "MedicalWebPage", "BreadcrumbList", "FAQPage"],
+  "mobile-cardiac-telemetry-mct": ["Service", "MedicalWebPage", "BreadcrumbList"],
   "holter-monitoring-services": ["Service", "MedicalWebPage", "BreadcrumbList", "FAQPage"],
   "long-term-holter-monitoring": ["Service", "MedicalWebPage", "BreadcrumbList", "FAQPage"],
   "cardiac-event-monitoring": ["Service", "MedicalWebPage", "BreadcrumbList", "FAQPage"],
@@ -103,7 +105,6 @@ const REQUIRED_SCHEMA = {
 /** Pages containing the standard comparison table per the manual. */
 const NEEDS_TABLE = [
   "cardiac-monitoring-services",
-  "mobile-cardiac-telemetry-mct",
   "holter-monitoring-services",
   "long-term-holter-monitoring",
   "cardiac-event-monitoring",
@@ -125,7 +126,7 @@ const NEEDS_EMERGENCY = [
 
 const EXPECT_TITLE = {
   "cardiac-monitoring-services": "Cardiac Monitoring Services | LIVE Streaming ECG | Specialized Medical",
-  "mobile-cardiac-telemetry-mct": "Mobile Cardiac Telemetry (MCT) | Specialized Medical",
+  "mobile-cardiac-telemetry-mct": "Mobile Cardiac Telemetry (MCT) With LIVE ECG | Specialized Medical",
   "holter-monitoring-services": "Holter Monitoring Services | Specialized Medical",
   "long-term-holter-monitoring": "Long-Term Holter Monitoring | Specialized Medical",
   "cardiac-event-monitoring": "Cardiac Event Monitoring | Specialized Medical",
@@ -138,7 +139,7 @@ const EXPECT_TITLE = {
 
 const CTA_LABEL = {
   "cardiac-monitoring-services": "Schedule a Cardiac Monitoring Demonstration",
-  "mobile-cardiac-telemetry-mct": "Request an MCT Workflow Demonstration",
+  "mobile-cardiac-telemetry-mct": "Request an MCT Demonstration",
   "holter-monitoring-services": "Request Holter Monitoring Information",
   "long-term-holter-monitoring": "Request Long-Term Holter Program Details",
   "cardiac-event-monitoring": "Request Event Monitoring Information",
@@ -186,7 +187,14 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
 
   // FAQs visible
   const faqCount = (html.match(/class="faq-item__trigger"/g) || []).length
-  const expectedFaqs = slug === "cardiac-monitoring-services" ? 17 : slug === "post-tavr-cardiac-monitoring" ? 15 : 10
+  const expectedFaqs =
+    slug === "cardiac-monitoring-services"
+      ? 17
+      : slug === "post-tavr-cardiac-monitoring"
+        ? 15
+        : slug === "mobile-cardiac-telemetry-mct"
+          ? 18
+          : 10
   check(slug, faqCount === expectedFaqs, `${expectedFaqs} visible FAQs (found ${faqCount})`)
 
   // Comparison table (client-approved LIVE STREAMING vs NOT LIVE STREAMING)
@@ -201,6 +209,11 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
       "Event/MCT findings wording"
     )
     check(slug, (html.match(/landing-table__no|>NO<|>NO<\/strong>/g) || []).length >= 2 || (html.match(/<strong>NO<\/strong>/g) || []).length >= 2, "NO visibility on non-live rows")
+  }
+  if (slug === "mobile-cardiac-telemetry-mct") {
+    check(slug, html.includes("How MCT Differs From Holter"), "MCT guide comparison heading")
+    check(slug, html.includes("landing-table--mct-compare"), "MCT guide comparison table")
+    check(slug, !html.includes('"@type": "FAQPage"'), "no FAQPage schema (guide)")
   }
 
   // Disclaimers
@@ -218,6 +231,10 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
   check(slug, /class="landing-cta-form"/.test(html), "CTA short form present")
   if (slug === "post-tavr-cardiac-monitoring") {
     for (const f of ["name", "organization", "role", "email", "phone", "preferred_contact"]) {
+      check(slug, new RegExp(`name="${f}"`).test(html), `form field: ${f}`)
+    }
+  } else if (slug === "mobile-cardiac-telemetry-mct") {
+    for (const f of ["name", "organization", "role", "email", "phone", "state", "preferred_contact"]) {
       check(slug, new RegExp(`name="${f}"`).test(html), `form field: ${f}`)
     }
   } else {
@@ -291,9 +308,6 @@ for (const slug of Object.keys(REQUIRED_LINKS)) {
     check(slug, /href="post-tavr-cardiac-monitoring\.html"/.test(html), "Post-TAVR dedicated link")
     check(slug, /Order and pre-enroll/.test(html) && /Deliver the final report/.test(html), "six-step workflow")
     check(slug, !/growth opportunity/i.test(html), "no internal strategy language")
-  }
-  if (slug === "mobile-cardiac-telemetry-mct") {
-    check(slug, /landing-diagram__phone-prox/.test(html), "phone proximity diagram")
   }
   if (slug === "cardiac-event-monitoring") {
     check(slug, /landing-diagram__symptom-btn/.test(html), "symptom button diagram")
