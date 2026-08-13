@@ -53,6 +53,17 @@ function figureImg(src, alt, caption) {
         </figure>`
 }
 
+/** Full-width visual band placed beneath the hero (no H2). */
+function overviewBand(src, alt) {
+  return `    <section class="landing-section landing-section--overview" aria-label="${alt}">
+      <div class="figma-container">
+        <figure class="landing-overview">
+          <img src="${src}" alt="${alt}" width="1600" height="900" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>`
+}
+
 /** Accessible HTML diagram when a dedicated image asset is not yet supplied. */
 function diagramFig(label, inner, caption) {
   return `        <figure class="landing-diagram" role="group" aria-label="${label}">
@@ -1019,6 +1030,10 @@ export const PAGES = [
     },
     dateModified: "2026-08-05",
     body: [
+      overviewBand(
+        "images/landing/mobile-cardiac-telemetry-mct-overview.png",
+        "Mobile Cardiac Telemetry overview graphic showing the S-Patch monitor, LIVE ECG smartphone display, and key MCT service features"
+      ),
       sec(
         "mct-trust",
         `LIVE MCT Capabilities for <span class="landing-h2__accent">Physician Practices</span>`,

@@ -139,6 +139,25 @@
   padding: clamp(3.25rem, 6.5vw, 5.5rem) 0;
 }
 
+.landing-section--overview {
+  padding-top: clamp(1.25rem, 2.5vw, 2rem);
+  padding-bottom: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.landing-overview {
+  margin: 0;
+  width: 100%;
+}
+
+.landing-overview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
 .landing-section--muted {
   background: #faf8f8;
   border-radius: 20px;
