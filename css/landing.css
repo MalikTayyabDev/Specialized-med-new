@@ -108,7 +108,7 @@
   font-family: var(--font-sans);
   font-size: clamp(1.75rem, 3.8vw, 2.85rem);
   font-weight: 400;
-  line-height: 1.08;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: #231f1e;
 }
@@ -122,7 +122,7 @@
 
 .landing-hero__lead {
   margin: 0 0 1.25rem;
-  max-width: 100%;
+  max-width: 38rem;
   font-size: 1rem;
   line-height: 1.5;
   color: rgba(35, 31, 30, 0.78);
@@ -144,6 +144,11 @@
   border-radius: 20px;
   margin-inline: var(--page-hero-gutter, 1.5rem);
   padding-inline: 0;
+}
+
+/* Keep muted plate inset, but align inner content with non-muted sections */
+.landing-section--muted > .figma-container {
+  padding-inline: max(0px, calc(var(--figma-inline, 1.5rem) - var(--page-hero-gutter, 1.5rem)));
 }
 
 /* Short post-hero CTA band: more top padding so the heading isn’t cramped */
@@ -1482,6 +1487,10 @@
     margin-inline: 1rem;
   }
 
+  .landing-section--muted > .figma-container {
+    padding-inline: max(0px, calc(var(--figma-inline, 1.5rem) - 1rem));
+  }
+
   .landing-cta-block {
     padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
   }
@@ -1658,14 +1667,6 @@
   margin-top: 0.45rem;
 }
 
-.landing-hero__lead {
-  max-width: 38rem;
-}
-
-.landing-hero__title {
-  line-height: 1.15;
-}
-
 @media (max-width: 720px) {
   .landing-hero__title {
     line-height: 1.2;
@@ -1710,26 +1711,16 @@
   }
 }
 
-/* ---------- MCT Implementation Guide components ---------- */
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-p {
-  max-width: 42rem;
-}
-
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-trust-strip {
-  gap: 0.85rem;
-  grid-auto-rows: 1fr;
-}
-
-@media (min-width: 560px) and (max-width: 1099px) {
-  [data-landing="mobile-cardiac-telemetry-mct"] .landing-trust-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
+/* ---------- MCT guide: only page-specific layout deltas ---------- */
+/* 6 proof points → 3×2 (system default is 4-up) */
 @media (min-width: 1100px) {
   [data-landing="mobile-cardiac-telemetry-mct"] .landing-trust-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+[data-landing="mobile-cardiac-telemetry-mct"] .landing-trust-strip {
+  grid-auto-rows: 1fr;
 }
 
 [data-landing="mobile-cardiac-telemetry-mct"] .landing-trust-strip li {
@@ -1738,34 +1729,7 @@
   min-height: 100%;
 }
 
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-h2 + .landing-feature-grid,
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-p + .landing-feature-grid,
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-h2 + .landing-evidence,
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-p + .landing-evidence,
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-h2 + .landing-trust-strip,
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-p + .landing-trust-strip {
-  margin-top: 1.65rem;
-}
-
-@media (min-width: 900px) {
-  [data-landing="mobile-cardiac-telemetry-mct"] .landing-feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  [data-landing="mobile-cardiac-telemetry-mct"] .landing-evidence {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-evidence__card .landing-p {
-  max-width: none;
-}
-
-[data-landing="mobile-cardiac-telemetry-mct"] .landing-evidence__label {
-  color: rgba(35, 31, 30, 0.72);
-  font-weight: 600;
-}
-
+/* 6 workflow steps → 3×2 instead of six skinny columns */
 @media (min-width: 800px) {
   [data-landing="mobile-cardiac-telemetry-mct"] .landing-flow {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1803,10 +1767,6 @@
 
 .landing-table--mct-compare tbody tr:nth-child(even) th[scope="row"] {
   background: #faf8f8;
-}
-
-.landing-table-wrap--hint {
-  position: relative;
 }
 
 .landing-table-wrap--hint::after {
