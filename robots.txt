@@ -1,6 +1,31 @@
 User-agent: *
 Allow: /
 
+# Explicit allow for common AI / answer-engine crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # Block admin or sensitive areas if they exist
 Disallow: /cgi-bin/
 Disallow: /admin/
@@ -12,5 +37,5 @@ Disallow: /*.jsp
 Allow: /*.css$
 Allow: /*.js$
 
-# Sitemap
+# Sitemap (Netlify build rewrites this to the deploy origin)
 Sitemap: https://www.specialized-med.com/sitemap.xml

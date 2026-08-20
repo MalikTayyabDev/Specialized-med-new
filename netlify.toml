@@ -1,13 +1,16 @@
 # Static site publish (repo root). _redirects handles pretty URLs on Netlify.
+# On Netlify only: rewrite canonicals/sitemap to this deploy so AI tools
+# that follow <link rel="canonical"> analyze staging instead of production.
 [build]
   publish = "."
-  command = "echo 'No build step — static HTML'"
+  command = "node scripts/netlify-prepare-staging.mjs"
 
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    # Allow embed/iframe-based review tools (DENY blocked many AI checkers)
     X-Content-Type-Options = "nosniff"
+    # Do not send X-Robots-Tag: noindex — tools must be allowed to fetch
 
 [[headers]]
   for = "/css/*"
