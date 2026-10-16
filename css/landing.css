@@ -43,7 +43,8 @@
   background-image: url("../images/landing/cardiac-monitoring-services.png");
 }
 .landing-hero__plate--mobile-cardiac-telemetry-mct {
-  background-image: url("../images/landing/mobile-cardiac-telemetry-mct.jpg");
+  /* Hero photo is painted by <picture>/<img> — do not also fetch the 232KB JPG as CSS bg */
+  background-image: none;
 }
 .landing-hero__plate--holter-monitoring-services {
   background-image: url("../images/landing/holter-monitoring-services.jpg");

@@ -42,13 +42,28 @@
   }
 
   function schedule() {
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(loadAnalytics, { timeout: 3500 });
-    } else {
-      window.setTimeout(loadAnalytics, 2000);
-    }
+    // Delay third-party tags until well after LCP (helps mobile TBT / PSI).
+    var start = function () {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 2500 });
+      } else {
+        loadAnalytics();
+      }
+    };
+    window.setTimeout(start, 4500);
   }
 
   if (document.readyState === "complete") schedule();
   else window.addEventListener("load", schedule);
+
+  // Still load on first interaction so early CTA clicks are tracked.
+  ["pointerdown", "keydown", "touchstart"].forEach(function (evt) {
+    window.addEventListener(
+      evt,
+      function () {
+        loadAnalytics();
+      },
+      { once: true, passive: true }
+    );
+  });
 })();
