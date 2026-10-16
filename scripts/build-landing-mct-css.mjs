@@ -21,13 +21,11 @@ css = css.replace(
 );
 
 css += `
-/* Mobile LCP: shorter hero plate */
+/* Mobile: fixed hero height to avoid CLS (absolute media needs explicit plate size) */
 @media (max-width: 900px) {
   .landing-hero__plate {
-    height: auto;
-    min-height: 420px;
-    max-height: none;
-    align-items: stretch;
+    height: 480px;
+    min-height: 480px;
   }
   .landing-hero__inner {
     padding-top: 2rem !important;

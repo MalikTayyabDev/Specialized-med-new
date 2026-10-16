@@ -42,28 +42,18 @@
   }
 
   function schedule() {
-    // Delay third-party tags until well after LCP (helps mobile TBT / PSI).
-    var start = function () {
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(loadAnalytics, { timeout: 2500 });
-      } else {
-        loadAnalytics();
-      }
-    };
-    window.setTimeout(start, 4500);
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(loadAnalytics, { timeout: 3000 });
+    } else {
+      window.setTimeout(loadAnalytics, 1800);
+    }
   }
 
   if (document.readyState === "complete") schedule();
   else window.addEventListener("load", schedule);
 
-  // Still load on first interaction so early CTA clicks are tracked.
+  // Load earlier on first interaction so CTA tracking still works.
   ["pointerdown", "keydown", "touchstart"].forEach(function (evt) {
-    window.addEventListener(
-      evt,
-      function () {
-        loadAnalytics();
-      },
-      { once: true, passive: true }
-    );
+    window.addEventListener(evt, loadAnalytics, { once: true, passive: true });
   });
 })();

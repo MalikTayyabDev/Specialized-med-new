@@ -320,9 +320,9 @@ ${jsonLdGraph()}
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
   <link rel="preload" as="image" href="images/landing/mobile-cardiac-telemetry-mct-hero-960.webp" type="image/webp" imagesrcset="images/landing/mobile-cardiac-telemetry-mct-hero-640.webp 640w, images/landing/mobile-cardiac-telemetry-mct-hero-960.webp 960w, images/landing/mobile-cardiac-telemetry-mct-hero-1280.webp 1280w, images/landing/mobile-cardiac-telemetry-mct-hero.webp 1430w" imagesizes="(max-width: 900px) 100vw, 1430px" fetchpriority="high">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/chrome.css">
   <link rel="stylesheet" href="css/landing-mct.css">
