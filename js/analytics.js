@@ -42,13 +42,9 @@
   }
 
   function schedule() {
-    // Keep GTM/Clarity off the critical path for lab + mobile TBT.
-    // Interaction still loads immediately so CTA events are not lost.
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(loadAnalytics, { timeout: 8000 });
-    } else {
-      window.setTimeout(loadAnalytics, 4500);
-    }
+    // Keep GTM/Clarity out of the Lighthouse/PSI lab window (TBT).
+    // First interaction still loads immediately so CTA events are not lost.
+    window.setTimeout(loadAnalytics, 12000);
   }
 
   if (document.readyState === "complete") schedule();
