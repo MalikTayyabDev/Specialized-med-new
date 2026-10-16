@@ -1803,3 +1803,71 @@
   }
 }
 
+/* Skip link + sticky-header offset for CTA form (Stages 2 / 5) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  background: #231f1e;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+  outline: 3px solid #c9222f;
+  outline-offset: 2px;
+}
+
+#cta-form {
+  scroll-margin-top: 96px;
+}
+
+.landing-cta-form__privacy {
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba(35, 31, 30, 0.75);
+}
+
+.landing-cta-form__optional {
+  font-weight: 500;
+  color: rgba(35, 31, 30, 0.55);
+}
+
+.landing-cta-form__field--full {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.landing-hero__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.landing-cta-form input:focus,
+.landing-cta-form select:focus,
+.landing-cta-form button:focus-visible,
+.landing-hero__actions a:focus-visible,
+.faq-item__trigger:focus-visible {
+  outline: 3px solid #c9222f;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .landing-cta-form__row {
+    flex-direction: column;
+  }
+
+  .landing-cta-block__box {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+

@@ -1,2 +1,5 @@
 # Local Netlify folder
 .netlify
+
+# Dependencies (optional local tools e.g. sharp for hero conversion)
+node_modules/

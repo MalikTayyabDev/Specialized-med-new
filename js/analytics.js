@@ -1,15 +1,6 @@
-// //GA4 code
-// var gaScript = document.createElement('script');
-// gaScript.async = true;
-// gaScript.src = "https://googletagmanager.com/gtag/js?id=G-CW12T1PCQC";
-// document.head.appendChild(gaScript);
-
-
-// window.dataLayer = window.dataLayer || [];
-// function gtag(){dataLayer.push(arguments);}
-// gtag('js', new Date());
-// gtag('config', 'G-CW12T1PCQC');
-
+// GTM dataLayer is the conversion bus for MCT landing events.
+// Event catalog: documents/mct-landing-analytics-events.md
+// Do not push names, emails, phones, organizations, or free-text form fields.
 
 //Micorosoft Clairty code
 (function(c,l,a,r,i,t,y){

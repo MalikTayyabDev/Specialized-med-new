@@ -37,5 +37,9 @@ Disallow: /*.jsp
 Allow: /*.css$
 Allow: /*.js$
 
-# Sitemap (Netlify build rewrites this to the deploy origin)
+# AI search crawler (ChatGPT search) — production discovery
+User-agent: OAI-SearchBot
+Allow: /
+
+# Sitemap
 Sitemap: https://www.specialized-med.com/sitemap.xml

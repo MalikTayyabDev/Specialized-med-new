@@ -650,7 +650,7 @@
     });
   }
 
-  /** CTA forms on the SEO landing pages (short form: name, organization, email, phone, locations, interest). */
+  /** Push GA4/GTM events without form PII (MCT landing + site CTAs). */
   function pushSmEvent(eventName, params) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(
@@ -668,32 +668,36 @@
     if (!landing) return;
     var slug = landing.getAttribute("data-landing") || "";
 
+    qsa("[data-mct-track]", landing).forEach(function (el) {
+      el.addEventListener("click", function () {
+        var name = el.getAttribute("data-mct-track") || "";
+        if (!name) return;
+        pushSmEvent(name, { landing_page: slug });
+      });
+    });
+
     qsa('a[href^="tel:"]', landing).forEach(function (a) {
+      if (a.getAttribute("data-mct-track")) return;
       a.addEventListener("click", function () {
-        pushSmEvent("landing_phone_click", {
-          landing_page: slug,
-          link_text: (a.textContent || "").trim(),
-        });
+        pushSmEvent("phone_click", { landing_page: slug });
       });
     });
 
-    qsa('.landing-hero__actions a[href="#cta-form"]', landing).forEach(function (a) {
+    qsa('a[href*="sft.specialized-med-business.com"]', landing).forEach(function (a) {
+      if (a.getAttribute("data-mct-track")) return;
       a.addEventListener("click", function () {
-        pushSmEvent("landing_cta_click", {
-          landing_page: slug,
-          cta_location: "hero",
-        });
+        pushSmEvent("portal_click", { landing_page: slug });
       });
     });
 
-    qsa(".landing-cta-form").forEach(function (form) {
+    qsa(".landing-cta-form", landing).forEach(function (form) {
       var started = false;
       form.addEventListener(
         "focusin",
         function () {
           if (started) return;
           started = true;
-          pushSmEvent("landing_form_start", { landing_page: slug });
+          pushSmEvent("mct_form_start", { landing_page: slug });
         },
         true
       );
@@ -716,11 +720,10 @@
         if (submitBtn && submitBtn.disabled) return;
 
         var fd = new FormData(form);
-        // Web3Forms requires an absolute redirect URL; set it at submit time.
         try {
           var redirectEl = form.querySelector('input[name="redirect"]');
           if (redirectEl && !redirectEl.value) {
-            redirectEl.value = String(new URL("thanks.html", siteBaseUrl()));
+            redirectEl.value = String(new URL("thanks/", siteBaseUrl()));
             fd.set("redirect", redirectEl.value);
           }
         } catch (_) {}
@@ -749,12 +752,12 @@
             setStatus("Success! Your request has been sent.", false);
             try {
               var landingEl = qs("[data-landing]");
-              pushSmEvent("landing_form_submit", {
+              pushSmEvent("mct_form_success", {
                 landing_page: landingEl ? landingEl.getAttribute("data-landing") || "" : "",
                 form_interest: String(fd.get("interest") || ""),
               });
             } catch (_) {}
-            var dest = String(new URL("thanks.html", siteBaseUrl()));
+            var dest = String(new URL("thanks/", siteBaseUrl()));
             try {
               var rEl = form.querySelector('input[name="redirect"]');
               if (rEl && rEl.value) dest = String(rEl.value);
@@ -785,6 +788,19 @@
     });
   }
 
+  function initCtaFormScrollOffset() {
+    if (!window.location.hash || window.location.hash.toLowerCase() !== "#cta-form") return;
+    var target = qs("#cta-form");
+    if (!target) return;
+    window.setTimeout(function () {
+      try {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        var first = qs("input, select, textarea, button", target);
+        if (first) first.focus({ preventScroll: true });
+      } catch (_) {}
+    }, 50);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     fixRelativeAnchorsToSiteRoot();
     initInternalRootLinks();
@@ -809,6 +825,7 @@
     initContactPage();
     initLandingCtaForms();
     initLandingAnalytics();
+    initCtaFormScrollOffset();
     initVideoPlayStub();
     initLazyVideos();
     initOverviewVideo();
