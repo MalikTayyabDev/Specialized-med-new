@@ -6,6 +6,7 @@
     "dev": "node scripts/local-dev-server.mjs",
     "build": "node scripts/prepare-netlify-publish-dir.mjs",
     "build:mct": "node scripts/build-mct-landing-html.mjs",
+    "build:chrome": "node scripts/build-chrome-css.mjs",
     "mct:index": "node scripts/flip-mct-indexability.mjs index",
     "mct:noindex": "node scripts/flip-mct-indexability.mjs noindex"
   }
