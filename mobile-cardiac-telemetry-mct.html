@@ -124,7 +124,7 @@
       "url": "https://www.specialized-med.com/",
       "telephone": "+1-855-773-2633",
       "email": "info@specialized-med.com",
-      "logo": "https://www.specialized-med.com/images/figma-assets/Group%201261157085.svg",
+      "logo": "https://www.specialized-med.com/images/figma-assets/brand-logo.webp",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "34145 Pacific Coast Highway, #700",
@@ -298,11 +298,14 @@
     Preloading only 640w caused a second fetch and dropped mobile score into the 70s.
   -->
   <link rel="preload" as="image" type="image/webp" href="images/landing/mobile-cardiac-telemetry-mct-hero-960.webp" imagesrcset="images/landing/mobile-cardiac-telemetry-mct-hero-750.webp 750w, images/landing/mobile-cardiac-telemetry-mct-hero-960.webp 960w, images/landing/mobile-cardiac-telemetry-mct-hero-1280.webp 1280w, images/landing/mobile-cardiac-telemetry-mct-hero.webp 1430w" imagesizes="(max-width: 900px) 100vw, min(1430px, 100vw)" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/chrome.css">
   <link rel="stylesheet" href="css/landing-mct.css">
-  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="css/faq.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/faq.css"></noscript>
   <link rel="canonical" href="https://www.specialized-med.com/mobile-cardiac-telemetry-mct/">
 </head>
 <body>
@@ -319,7 +322,7 @@
 <header class="site-header site-header--figma">
       <div class="figma-container figma-header__inner site-header__inner">
         <a href="./" class="figma-brand" aria-label="Specialized Medical home">
-          <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="" width="236" height="52" decoding="async">
+          <img class="figma-brand__mark" src="images/figma-assets/brand-logo-472.webp" alt="" width="236" height="52" decoding="async" fetchpriority="low">
         </a>
         <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
           <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -964,7 +967,7 @@
         <div class="figma-footer__main">
           <div class="figma-footer__brand">
             <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
-              <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="" width="412" height="90" decoding="async">
+              <img class="figma-brand__mark" src="images/figma-assets/brand-logo.webp" alt="" width="412" height="90" decoding="async" loading="lazy">
             </a>
             <p class="figma-footer__tagline">Turnkey cardiac monitoring. Live ECG data. S-Patch as the primary featured system.</p>
           </div>

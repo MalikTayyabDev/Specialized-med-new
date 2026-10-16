@@ -42,10 +42,12 @@
   }
 
   function schedule() {
+    // Keep GTM/Clarity off the critical path for lab + mobile TBT.
+    // Interaction still loads immediately so CTA events are not lost.
     if ("requestIdleCallback" in window) {
-      requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      requestIdleCallback(loadAnalytics, { timeout: 8000 });
     } else {
-      window.setTimeout(loadAnalytics, 1800);
+      window.setTimeout(loadAnalytics, 4500);
     }
   }
 

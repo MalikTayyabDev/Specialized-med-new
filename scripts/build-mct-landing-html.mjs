@@ -154,7 +154,7 @@ function jsonLdGraph() {
         url: PROD + "/",
         telephone: "+1-855-773-2633",
         email: "info@specialized-med.com",
-        logo: `${PROD}/images/figma-assets/Group%201261157085.svg`,
+        logo: `${PROD}/images/figma-assets/brand-logo.webp`,
         address: {
           "@type": "PostalAddress",
           streetAddress: "34145 Pacific Coast Highway, #700",
@@ -319,7 +319,7 @@ ${jsonLdGraph()}
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
-  <link rel="preload" as="image" href="images/landing/mobile-cardiac-telemetry-mct-hero-960.webp" type="image/webp" imagesrcset="images/landing/mobile-cardiac-telemetry-mct-hero-640.webp 640w, images/landing/mobile-cardiac-telemetry-mct-hero-960.webp 960w, images/landing/mobile-cardiac-telemetry-mct-hero-1280.webp 1280w, images/landing/mobile-cardiac-telemetry-mct-hero.webp 1430w" imagesizes="(max-width: 900px) 100vw, 1430px" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="images/landing/mobile-cardiac-telemetry-mct-hero-960.webp" imagesrcset="images/landing/mobile-cardiac-telemetry-mct-hero-750.webp 750w, images/landing/mobile-cardiac-telemetry-mct-hero-960.webp 960w, images/landing/mobile-cardiac-telemetry-mct-hero-1280.webp 1280w, images/landing/mobile-cardiac-telemetry-mct-hero.webp 1430w" imagesizes="(max-width: 900px) 100vw, min(1430px, 100vw)" fetchpriority="high">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>

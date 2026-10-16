@@ -3,6 +3,20 @@
 # Stage 0.2: X-Robots-Tag until production launch gate passes.
 # Managed by: npm run mct:index / npm run mct:noindex
 
+# Force Pretty-URL variants to rewrite (no 301). Netlify Pretty URLs otherwise
+# strips the trailing slash and costs ~1–1.5s on mobile lab tests.
+[[redirects]]
+  from = "/mobile-cardiac-telemetry-mct"
+  to = "/mobile-cardiac-telemetry-mct.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/mobile-cardiac-telemetry-mct/"
+  to = "/mobile-cardiac-telemetry-mct.html"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/mobile-cardiac-telemetry-mct"
   [headers.values]
