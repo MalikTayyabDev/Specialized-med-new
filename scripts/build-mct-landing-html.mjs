@@ -15,7 +15,7 @@ const stagingPath = path.join(
 const outPath = path.join(root, "mobile-cardiac-telemetry-mct.html");
 
 const PROD = "https://www.specialized-med.com";
-const PAGE_PATH = "/mobile-cardiac-telemetry-mct/";
+const PAGE_PATH = "/mobile-cardiac-telemetry-mct";
 const PAGE_URL = PROD + PAGE_PATH;
 const UPDATED = "2026-10-15";
 
@@ -224,7 +224,7 @@ function rewriteInternalLinks(html) {
     ["/long-term-holter-monitoring", "services/"],
     ["/post-tavr-cardiac-monitoring", "post-tavr-cardiac-monitoring/"],
     ["/cardiology-practice-cardiac-monitoring", "clinical-stories/"],
-    ["/mobile-cardiac-telemetry-mct", "mobile-cardiac-telemetry-mct/"],
+    ["/mobile-cardiac-telemetry-mct", "mobile-cardiac-telemetry-mct"],
     ["/contact", "contact/"],
     ["/about", "about/"],
     ["/services", "services/"],

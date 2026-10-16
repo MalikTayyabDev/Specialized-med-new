@@ -47,7 +47,7 @@ const netlifyContained = `# Netlify: MCT landing staging containment + pretty UR
     X-Robots-Tag = "noindex, nofollow"
 
 [[headers]]
-  for = "/mobile-cardiac-telemetry-mct/"
+  for = "/mobile-cardiac-telemetry-mct"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 
