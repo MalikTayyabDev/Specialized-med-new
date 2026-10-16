@@ -12,5 +12,9 @@ Disallow: /*.jsp
 Allow: /*.css$
 Allow: /*.js$
 
+# AI search crawler (ChatGPT search) — production discovery
+User-agent: OAI-SearchBot
+Allow: /
+
 # Sitemap
 Sitemap: https://www.specialized-med.com/sitemap.xml

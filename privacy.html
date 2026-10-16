@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function (w, d) {
+      function siteRootPathname() {
+        var segs = w.location.pathname.split("/").filter(Boolean)
+        var ph = segs.lastIndexOf("public_html")
+        if (ph !== -1) segs = segs.slice(ph + 1)
+        var leaf = {
+          about: 1,
+          services: 1,
+          faq: 1,
+          contact: 1,
+          "clinical-stories": 1,
+          thanks: 1,
+          "404": 1,
+          privacy: 1,
+          "mobile-cardiac-telemetry-mct": 1,
+          "post-tavr-cardiac-monitoring": 1
+        }
+        while (segs.length) {
+          var last = segs[segs.length - 1]
+          if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {
+            segs.length -= 2
+            break
+          }
+          if (/\.html$/i.test(last)) {
+            segs.pop()
+            continue
+          }
+          if (leaf[last]) {
+            segs.pop()
+            continue
+          }
+          break
+        }
+        return "/" + (segs.join("/") + (segs.length ? "/" : ""))
+      }
+      var p = siteRootPathname()
+      var h = w.location.origin + (p === "/" ? "/" : p)
+      var b = d.createElement("base")
+      b.href = h
+      var m = d.head.querySelector("meta[charset]")
+      if (m && typeof m.insertAdjacentElement === "function") {
+        m.insertAdjacentElement("afterend", b)
+      } else if (m && m.nextSibling) {
+        d.head.insertBefore(b, m.nextSibling)
+      } else {
+        d.head.insertBefore(b, d.head.firstChild)
+      }
+    })(window, document)
+  </script>
+  <script src="js/analytics.js"></script>
+  <!-- sm-site-base -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Specialized Medical</title>
+  <meta name="description" content="How Specialized Medical collects and uses website and practice-contact information. Do not submit patient PHI through website forms.">
+  <link rel="canonical" href="https://www.specialized-med.com/privacy/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/privacy.css">
+</head>
+<body>
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-T2JLQJ7R"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="site-root">
+    <header class="site-header site-header--figma">
+      <div class="figma-container figma-header__inner site-header__inner">
+        <a href="./" class="figma-brand" aria-label="Specialized Medical home">
+          <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="Specialized Medical – Cardiac Monitoring Services" width="236" height="52" decoding="async">
+        </a>
+        <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <button type="button" class="nav-overlay" aria-label="Close menu" hidden></button>
+        <nav id="primary-nav" class="figma-nav" aria-label="Primary">
+          <a class="figma-nav__link" href="./">Home</a>
+          <a class="figma-nav__link" href="about/">About Us</a>
+          <a class="figma-nav__link" href="services/">Services</a>
+          <a class="figma-nav__link" href="faq/">FAQs</a>
+          <a class="figma-nav__link" href="contact/">Contact</a>
+          <div class="figma-nav__mobile">
+            <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
+            <div class="figma-nav__actions">
+              <a class="figma-btn figma-btn--outline-dark" href="contact/">Request a Demo</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+            </div>
+          </div>
+        </nav>
+        <div class="figma-header__cta">
+          <a class="figma-phone" href="tel:+18557732633">
+            <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg" alt="" width="14" height="14" decoding="async">
+            <span class="figma-phone__num">1-855-773-2633</span>
+          </a>
+          <a class="figma-btn figma-btn--outline-dark" href="contact/">Request a Demo</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="privacy-page" tabindex="-1">
+      <section class="privacy-hero" aria-labelledby="privacy-heading">
+        <div class="figma-container">
+          <p class="figma-hero__pill">
+            <span class="figma-hero__pill-dot" aria-hidden="true"></span>
+            Legal
+          </p>
+          <h1 id="privacy-heading" class="privacy-hero__title">Privacy Policy</h1>
+          <p class="privacy-hero__lead">Last updated: October 16, 2026</p>
+        </div>
+      </section>
+
+      <section class="privacy-body">
+        <div class="figma-container privacy-body__inner">
+          <p>This Privacy Policy describes how Specialized Medical, LLC (“Specialized Medical,” “we,” “us,” or “our”) collects, uses, and shares information through our public website and practice-facing inquiry forms. It applies to website visitors and healthcare professionals who contact us about demonstrations, pilots, or services.</p>
+          <p><strong>Important:</strong> Please do not submit patient names, medical records, or other protected health information (PHI) through website forms. Patient monitoring data is handled through our secure clinical systems and contractual arrangements with ordering practices—not through public marketing forms.</p>
+
+          <h2>1. Who we are</h2>
+          <p>Specialized Medical, LLC<br>
+          34145 Pacific Coast Highway, #700<br>
+          Dana Point, CA 92629<br>
+          Phone: <a href="tel:+18557732633">1-855-SPEC-MED (1-855-773-2633)</a><br>
+          Email: <a href="mailto:info@specialized-med.com">info@specialized-med.com</a></p>
+
+          <h2>2. Information we collect</h2>
+          <p>Depending on how you use the site, we may collect:</p>
+          <ul>
+            <li><strong>Contact and practice details</strong> you submit on forms (for example name, practice/organization, role, business email, phone, state, interest type, preferred contact method, and optional approximate monitoring volume).</li>
+            <li><strong>Technical data</strong> such as browser type, device type, approximate location derived from IP address, referring URL, and pages viewed.</li>
+            <li><strong>Analytics and interaction events</strong> (for example CTA clicks or form-start events) that do not include the content of free-text form fields or identifiers you type into the form.</li>
+          </ul>
+
+          <h2>3. How we use information</h2>
+          <p>We use website and inquiry information to:</p>
+          <ul>
+            <li>Respond to demonstration, pilot, and support requests</li>
+            <li>Operate, secure, and improve the website</li>
+            <li>Measure engagement with pages and conversion actions</li>
+            <li>Comply with legal obligations and enforce our terms</li>
+          </ul>
+
+          <h2>4. How we share information</h2>
+          <p>We may share information with service providers who help us host the site, deliver form notifications, or provide analytics, under agreements that limit use to providing those services. We do not sell personal information collected from website forms. We may disclose information if required by law or to protect our rights, users, or the public.</p>
+
+          <h2>5. Cookies and analytics</h2>
+          <p>We may use cookies or similar technologies and third-party analytics (such as Google Tag Manager and Microsoft Clarity) to understand site usage. You can control cookies through your browser settings. Disabling cookies may affect some site features.</p>
+
+          <h2>6. Data retention</h2>
+          <p>We retain inquiry and related records for as long as needed to respond to your request, maintain our business relationship, meet legal or contractual requirements, and resolve disputes.</p>
+
+          <h2>7. Security</h2>
+          <p>We use administrative, technical, and physical safeguards appropriate to the nature of website inquiry data. No method of transmission over the internet is completely secure. For questions about HIPAA or clinical-system safeguards, contact us during onboarding or at the email above.</p>
+
+          <h2>8. Children’s privacy</h2>
+          <p>This website is intended for healthcare professionals and adult decision-makers. We do not knowingly collect personal information from children under 13 through the public website.</p>
+
+          <h2>9. Your choices</h2>
+          <p>You may request updates to or deletion of marketing-contact information you submitted through the website by emailing <a href="mailto:info@specialized-med.com">info@specialized-med.com</a> or calling <a href="tel:+18557732633">1-855-773-2633</a>. Certain operational or legal records may need to be retained.</p>
+
+          <h2>10. Changes to this policy</h2>
+          <p>We may update this Privacy Policy from time to time. The “Last updated” date at the top of this page will change when we do. Continued use of the website after an update means you acknowledge the revised policy.</p>
+
+          <h2>11. Contact</h2>
+          <p>Privacy questions: <a href="mailto:info@specialized-med.com">info@specialized-med.com</a> · <a href="contact/">Contact Specialized Medical</a></p>
+          <p class="privacy-note">This page is a website privacy notice for marketing and practice-contact use. It is not a substitute for a HIPAA Notice of Privacy Practices covering clinical monitoring services, which may be provided separately under applicable agreements.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--figma">
+      <div class="figma-container">
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__main">
+          <div class="figma-footer__brand">
+            <a href="./" class="figma-brand figma-brand--footer">
+              <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="Specialized Medical – Cardiac Monitoring Services" width="412" height="90" decoding="async">
+            </a>
+            <p class="figma-footer__tagline">Turnkey cardiac monitoring. Live ECG data. S-Patch as the primary featured system.</p>
+          </div>
+          <div class="figma-footer__contact">
+            <nav class="figma-footer__nav" aria-label="Footer">
+              <a href="./">Home</a>
+              <a href="about/">About Us</a>
+              <a href="services/">Services</a>
+              <a href="faq/">FAQs</a>
+              <a href="contact/">Contact</a>
+              <a href="privacy/">Privacy</a>
+              <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+            </nav>
+            <div class="figma-footer__line">
+              <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
+                <img src="icons/vector3527-jgyk.svg" alt="" width="20" height="20" decoding="async">
+              </span>
+              <a class="figma-footer__link" href="tel:+18557732633">
+                <span class="figma-footer__muted">1-855-SPEC-MED</span>
+                <span class="figma-footer__strong">(1-855-773-2633)</span>
+              </a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="icons/fi62447103527-gtjs.svg" alt="" width="20" height="20" decoding="async">
+              <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="images/figma-assets/location_icon.png" alt="" width="20" height="20" decoding="async">
+              <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
+            </div>
+          </div>
+        </div>
+        <div class="figma-footer__triple">
+          <span><a href="mobile-cardiac-telemetry-mct/">Mobile Cardiac Telemetry</a></span>
+          <span><a href="services/">Holter Monitoring</a></span>
+          <span><a href="services/">Event Monitoring</a></span>
+        </div>
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__bottom">
+          <p class="figma-footer__copy">© <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved. · <a href="privacy/">Privacy Policy</a></p>
+          <div class="figma-footer__social">
+            <img src="images/figma-assets/hipaa-badge.png" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
+              <img src="images/facebook-like.jpg" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

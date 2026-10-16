@@ -13,6 +13,9 @@
 /clinical-stories.html /clinical-stories/ 301
 /thanks.html /thanks/ 301
 /services/equipment.html /services/equipment/ 301
+/mobile-cardiac-telemetry-mct.html /mobile-cardiac-telemetry-mct/ 301
+/post-tavr-cardiac-monitoring.html /post-tavr-cardiac-monitoring/ 301
+/privacy.html /privacy/ 301
 
 # Pretty URLs → actual files (serve the flat *.html pages)
 /about /about.html 200
@@ -29,6 +32,12 @@
 /thanks/ /thanks.html 200
 /services/equipment /services/equipment.html 200
 /services/equipment/ /services/equipment.html 200
+/mobile-cardiac-telemetry-mct /mobile-cardiac-telemetry-mct.html 200
+/mobile-cardiac-telemetry-mct/ /mobile-cardiac-telemetry-mct.html 200
+/post-tavr-cardiac-monitoring /post-tavr-cardiac-monitoring.html 200
+/post-tavr-cardiac-monitoring/ /post-tavr-cardiac-monitoring.html 200
+/privacy /privacy.html 200
+/privacy/ /privacy.html 200
 
 # Catch-all: any other legacy .jsp paths → homepage (avoid duplicate crawl paths)
 /*.jsp / 301

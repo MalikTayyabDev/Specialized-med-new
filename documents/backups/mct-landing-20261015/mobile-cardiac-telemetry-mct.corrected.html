@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function (w, d) {
+      function siteRootPathname() {
+        var segs = w.location.pathname.split("/").filter(Boolean)
+        var ph = segs.lastIndexOf("public_html")
+        if (ph !== -1) segs = segs.slice(ph + 1)
+        var leaf = {
+          about: 1,
+          services: 1,
+          faq: 1,
+          contact: 1,
+          "clinical-stories": 1,
+          thanks: 1,
+          "404": 1,
+          "mobile-cardiac-telemetry-mct": 1,
+          "post-tavr-cardiac-monitoring": 1
+        }
+        while (segs.length) {
+          var last = segs[segs.length - 1]
+          if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {
+            segs.length -= 2
+            break
+          }
+          if (/\.html$/i.test(last)) {
+            segs.pop()
+            continue
+          }
+          if (leaf[last]) {
+            segs.pop()
+            continue
+          }
+          break
+        }
+        return "/" + (segs.join("/") + (segs.length ? "/" : ""))
+      }
+      var p = siteRootPathname()
+      var h = w.location.origin + (p === "/" ? "/" : p)
+      var b = d.createElement("base")
+      b.href = h
+      var m = d.head.querySelector("meta[charset]")
+      if (m && typeof m.insertAdjacentElement === "function") {
+        m.insertAdjacentElement("afterend", b)
+      } else if (m && m.nextSibling) {
+        d.head.insertBefore(b, m.nextSibling)
+      } else {
+        d.head.insertBefore(b, d.head.firstChild)
+      }
+    })(window, document)
+  </script>
+  <!-- sm-site-base -->
+  <script src="js/analytics.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/#webpage",
+      "name": "Mobile Cardiac Telemetry (MCT) | Live ECG Monitoring",
+      "headline": "Mobile Cardiac Telemetry Built for Modern Cardiology Practices",
+      "url": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/",
+      "description": "Specialized Medical provides up to 30 days of MCT with live ECG transmission, attended surveillance, prescribed notifications and physician-ready reporting.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://www.specialized-med.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "dateModified": "2026-10-15",
+      "author": {
+        "@type": "Person",
+        "name": "Steven M. Burns",
+        "jobTitle": "President & CEO",
+        "worksFor": {
+          "@id": "https://www.specialized-med.com/#organization"
+        }
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.specialized-med.com/images/landing/mobile-cardiac-telemetry-mct-hero.webp",
+        "width": 1430,
+        "height": 550
+      },
+      "mainEntity": {
+        "@id": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/#service"
+      },
+      "about": {
+        "@id": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/#breadcrumb"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".landing-hero__lead",
+          ".landing-answer"
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/#service",
+      "name": "Mobile Cardiac Telemetry (MCT)",
+      "serviceType": "Ambulatory Cardiac Monitoring",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": "United States",
+      "description": "Specialized Medical provides up to 30 days of MCT with live ECG transmission, attended surveillance, prescribed notifications and physician-ready reporting.",
+      "url": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.specialized-med.com/#organization",
+      "name": "Specialized Medical LLC",
+      "url": "https://www.specialized-med.com/",
+      "telephone": "+1-855-773-2633",
+      "email": "info@specialized-med.com",
+      "logo": "https://www.specialized-med.com/images/figma-assets/Group%201261157085.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34145 Pacific Coast Highway, #700",
+        "addressLocality": "Dana Point",
+        "addressRegion": "CA",
+        "postalCode": "92629",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.specialized-med.com/#website",
+      "name": "Specialized Medical",
+      "url": "https://www.specialized-med.com/",
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.specialized-med.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.specialized-med.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mobile Cardiac Telemetry (MCT)",
+          "item": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/#faq",
+      "url": "https://www.specialized-med.com/mobile-cardiac-telemetry-mct/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Mobile Cardiac Telemetry (MCT)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mobile Cardiac Telemetry is an ambulatory ECG monitoring service that uses computerized rhythm analysis and transmits ECG-triggered and patient-selected events to an attended surveillance center. It can be prescribed for up to 30 days. Specialized Medical’s workflow adds LIVE ECG transmission, physician-prescribed notifications, operational visibility while the study is active, patient support and physician-ready reporting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long can a patient wear an MCT monitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MCT may be prescribed for a monitoring episode of up to 30 consecutive days. The treating physician selects the appropriate duration based on the clinical question, symptom frequency, patient risk and payer requirements. A longer period is not automatically necessary for every patient."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between MCT and Holter monitoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Holter monitoring records continuously for a shorter defined period, and clinical findings are generally presented after the final report. MCT can continue for up to 30 days and supports attended surveillance, automatic event detection and presentation of qualifying findings during the active study according to the physician’s notification protocol."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between MCT and Cardiac Event Monitoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Event Monitoring focuses on patient-triggered and selected auto-triggered ECG events over an extended period. MCT adds concurrent computerized rhythm analysis and attended surveillance. That distinction can be important when asymptomatic arrhythmias are suspected or when the physician wants a more active clinical-notification workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do alerts and notifications work during an MCT study?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ECG data may be transmitted while the study is active and connectivity is available. Qualifying findings may be reviewed during the monitoring period, and notifications follow the ordering physician’s selected protocol. Mobile Cardiac Telemetry does not replace emergency medical services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the practice receive from Specialized Medical?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Practices receive operational support after enrollment and hookup, including LIVE monitoring support, qualifying notifications per protocol, proactive patient outreach when connection issues are detected, and physician-ready reports organized for review, interpretation, dating and electronic signature."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can MCT detect arrhythmias when the patient has no symptoms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. MCT can automatically capture predefined rhythm events even when the patient does not recognize symptoms or press a button. Published clinical experience has reported clinically important asymptomatic arrhythmias during MCOT monitoring. The treating physician interprets each ECG and determines its significance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What CPT codes are commonly used for MCT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mobile Cardiac Telemetry services may involve CPT 93228 for the professional component and CPT 93229 for the technical component. Which entity may report each component depends on the services performed, contractual arrangement, payer requirements, and applicable billing rules. Coverage, prior authorization, frequency, documentation, and reimbursement vary by payer and plan. This information does not guarantee coverage, payment, or profitability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MCT replace inpatient telemetry or emergency care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. MCT is an ambulatory monitoring service for appropriately selected patients. It is not intended to replace inpatient telemetry, emergency evaluation or immediate treatment for patients with unstable or potentially life-threatening conditions. The treating physician determines the appropriate care setting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can MCT be used after TAVR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in selected patients. Specialized Medical’s MCT workflow combines attended LIVE ECG transmission, physician-prescribed notification of qualifying arrhythmias, proactive patient support and Stay Connected multi-carrier technology that helps maintain transmission when connectivity is available. It may identify delayed high-grade AV block, complete heart block, bradycardia, pauses and new atrial fibrillation or flutter after discharge. Patient selection and monitoring duration are determined by the structural heart team."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the system work in rural areas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Specialized Medical’s Stay Connected multi-carrier technology uses available cellular pathways from major U.S. networks to help patients remain connected across urban, suburban and many rural areas. If a connection or transmission problem is detected, Specialized Medical can proactively contact the patient to help restore the study. Actual performance depends on available network coverage, building conditions and local factors, so uninterrupted coverage is not guaranteed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can a practice evaluate Specialized Medical’s MCT service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A physician practice can request a demonstration or begin a small no-risk pilot program. The evaluation should review patient enrollment, hookup, LIVE ECG transmission, notification protocols, operational support, symptom logging, reporting, physician interpretation workflow and billing support."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Cardiac Telemetry (MCT) | Live ECG Monitoring</title>
+  <meta name="description" content="Specialized Medical provides up to 30 days of MCT with live ECG transmission, attended surveillance, prescribed notifications and physician-ready reporting.">
+  <meta property="og:site_name" content="Specialized Medical">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mobile Cardiac Telemetry (MCT) | Live ECG Monitoring">
+  <meta property="og:description" content="Specialized Medical provides up to 30 days of MCT with live ECG transmission, attended surveillance, prescribed notifications and physician-ready reporting.">
+  <meta property="og:url" content="https://www.specialized-med.com/mobile-cardiac-telemetry-mct/">
+  <meta property="og:image" content="https://www.specialized-med.com/images/landing/mobile-cardiac-telemetry-mct-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mobile Cardiac Telemetry (MCT) | Live ECG Monitoring">
+  <meta name="twitter:description" content="Specialized Medical provides up to 30 days of MCT with live ECG transmission, attended surveillance, prescribed notifications and physician-ready reporting.">
+  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/mobile-cardiac-telemetry-mct-hero.jpg">
+  <!-- Staging / pre-gate: keep noindex until Stages 0–6 acceptance. Flip to index,follow for production launch. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="images/landing/mobile-cardiac-telemetry-mct-hero.webp" type="image/webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="canonical" href="https://www.specialized-med.com/mobile-cardiac-telemetry-mct/">
+</head>
+<body>
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-T2JLQJ7R"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<div class="site-root">
+<header class="site-header site-header--figma">
+      <div class="figma-container figma-header__inner site-header__inner">
+        <a href="./" class="figma-brand" aria-label="Specialized Medical home">
+          <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="" width="236" height="52" decoding="async">
+        </a>
+        <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <button type="button" class="nav-overlay" aria-label="Close menu" hidden></button>
+        <nav id="primary-nav" class="figma-nav" aria-label="Primary">
+          <a class="figma-nav__link" href="./">Home</a>
+          <a class='figma-nav__link' href='/about'>About Us</a>
+          <a class='figma-nav__link is-active' href='/services'>Services</a>
+          <a class='figma-nav__link' href='/faq'>FAQs</a>
+          <a class='figma-nav__link' href='contact/'>Contact</a>
+          <div class="figma-nav__mobile">
+            <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
+            <div class="figma-nav__actions">
+              <a class='figma-btn figma-btn--outline-dark' href='#cta-form' data-mct-track="mct_cta_demo">Request an MCT Demonstration</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+            </div>
+          </div>
+        </nav>
+        <div class="figma-header__cta">
+          <a class="figma-phone" href="tel:+18557732633">
+            <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg" alt="" width="14" height="14" decoding="async">
+            <span class="figma-phone__num">1-855-773-2633</span>
+          </a>
+          <a class='figma-btn figma-btn--outline-dark' href='contact/'>Request an MCT Demonstration</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+        </div>
+      </div>
+    </header>
+
+
+<main class="landing-page services-page services-page--figma" data-landing="mobile-cardiac-telemetry-mct" id="main-content" tabindex="-1">
+    <nav class="landing-breadcrumb" aria-label="Breadcrumb">
+      <div class="figma-container">
+        <ol class="landing-breadcrumb__list">
+          <li><a href="./">Home</a></li>
+          <li><a href="services/">Services</a></li>
+          <li><span aria-current="page">Mobile Cardiac Telemetry (MCT)</span></li>
+        </ol>
+      </div>
+    </nav>
+    <section class="landing-hero" aria-labelledby="mct-hero-heading">
+      <div class="landing-hero__plate landing-hero__plate--mobile-cardiac-telemetry-mct">
+        <picture>
+          <source type="image/webp" srcset="images/landing/mobile-cardiac-telemetry-mct-hero.webp">
+          <img class="landing-hero__media" src="images/landing/mobile-cardiac-telemetry-mct-hero.jpg" alt="Specialized Medical S-Patch mobile cardiac telemetry system with a connected phone displaying live ECG data." width="1430" height="550" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="landing-hero__gradient" aria-hidden="true"></div>
+        <div class="landing-hero__inner figma-container">
+          <p class="figma-hero__pill">
+            <span class="figma-hero__pill-dot" aria-hidden="true"></span>
+            LIVE ECG STREAMING | ATTENDED SURVEILLANCE | PHYSICIAN-READY INFORMATION
+          </p>
+          <h1 id="mct-hero-heading" class="landing-hero__title">
+            Mobile Cardiac Telemetry Built for <span class="landing-hero__title-accent">Modern Cardiology Practices</span>
+          </h1>
+          <p class="landing-hero__lead landing-answer">Specialized Medical provides up to 30 days of ambulatory ECG monitoring with live data transmission, automatic and patient-triggered event capture, physician-prescribed notification protocols, patient support, and physician-ready reporting.</p>
+          <div class="landing-hero__actions">
+            <a class="figma-btn figma-btn--solid" href="#cta-form" data-mct-track="mct_cta_pilot">Start a No-Risk MCT Pilot</a>
+            <a class="figma-btn figma-btn--outline-dark" href="#cta-form" data-mct-track="mct_cta_demo">Request an MCT Demonstration</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-trust-heading">
+      <div class="figma-container">
+        <h2 id="mct-trust-heading" class="landing-h2">LIVE MCT Capabilities for <span class="landing-h2__accent">Physician Practices</span></h2>
+        <ul class="landing-trust-strip" aria-label="Mobile Cardiac Telemetry proof points">
+          <li><strong>1-30 Days of Monitoring</strong><span>Physician-directed ambulatory monitoring window</span></li>
+          <li><strong>LIVE ECG Transmission</strong><span>ECG data transmitted during the prescribed study</span></li>
+          <li><strong>Automatic + Patient-Triggered Events</strong><span>ECG-triggered and patient-selected capture</span></li>
+          <li><strong>Prescribed Notifications</strong><span>Thresholds follow the ordering physician&rsquo;s protocol</span></li>
+          <li><strong>Operational Visibility</strong><span>Battery, electrodes, signal and connectivity status while the study is active</span></li>
+          <li><strong>Physician-Ready Reports</strong><span>Organized findings for review and signature</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-what-heading">
+      <div class="figma-container">
+        <h2 id="mct-what-heading" class="landing-h2">What Is Mobile Cardiac Telemetry <span class="landing-h2__accent">(MCT)?</span></h2>
+        <p class="landing-p landing-answer">Mobile Cardiac Telemetry is temporary ambulatory ECG monitoring with computerized rhythm analysis and transmission of ECG-triggered and patient-selected events to an attended surveillance center for up to 30 days when connectivity is available—supporting prescribed notifications, patient support, and physician-ready reporting without replacing emergency care.</p>
+        <p class="landing-p">Mobile Cardiac Telemetry is a temporary ambulatory ECG monitoring modality that combines ongoing computerized rhythm analysis with transmission of ECG-triggered and patient-selected events to an attended surveillance center. MCT may be worn for up to 30 days when the treating physician needs a longer monitoring window and the ability to review qualifying findings while the study is still active. MCT is also known as mobile cardiac outpatient telemetry (MCOT). MCT is not the same as inpatient telemetry and does not replace emergency evaluation.<sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[2]</a></sup></p>
+        <p class="landing-p">Specialized Medical supports <a href='services/'>cardiac monitoring services</a> with LIVE ECG monitoring, prescribed notification protocols, operational visibility while the study is active, and physician-ready reporting.</p>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-why-heading">
+      <div class="figma-container">
+        <h2 id="mct-why-heading" class="landing-h2">Why Mobile Cardiac Telemetry Provides More Active <span class="landing-h2__accent">Rhythm Surveillance</span></h2>
+        <p class="landing-p">Unlike a short-duration Holter study, MCT can extend ambulatory monitoring for up to 30 days. Unlike a patient-activated event monitor alone, MCT can analyze rhythm data and identify predefined events even when the patient does not recognize symptoms or press a button. Qualifying findings may be presented during the active study according to the physician&rsquo;s prescribed notification protocol, while patient-triggered symptoms can be matched to the corresponding ECG.<sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[2]</a></sup></p>
+        <div class="landing-feature-grid" role="list">
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Automatic event detection</h3>
+            <p class="landing-p">Predefined rhythm events can be captured even when the patient is asymptomatic or unable to activate the monitor.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Patient-triggered symptoms</h3>
+            <p class="landing-p">Patients can log symptoms so the physician can compare the reported experience with the ECG at that time.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Active-study information</h3>
+            <p class="landing-p">Qualifying findings may be presented while monitoring is still underway, according to the prescribed protocol.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Longer monitoring window</h3>
+            <p class="landing-p">A 1-30 day monitoring period increases the opportunity to capture intermittent rhythm disturbances that may not occur during a short test.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Attended surveillance</h3>
+            <p class="landing-p">ECG-triggered and patient-selected events are transmitted to an attended monitoring environment for analysis and documentation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-evidence-heading">
+      <div class="figma-container">
+        <h2 id="mct-evidence-heading" class="landing-h2">Evidence Supporting Mobile Cardiac <span class="landing-h2__accent">Telemetry</span></h2>
+        <p class="landing-p">Published evidence supports the use of ambulatory ECG monitoring for intermittent symptoms, asymptomatic arrhythmia detection, treatment-response assessment and selected post-procedure populations. The page presents results as study-specific findings, not as guarantees that every patient or every MCT system will achieve the same result.</p>
+        <p class="landing-p">In a 17-center randomized study of 266 patients with syncope, presyncope or severe palpitations after a nondiagnostic 24-hour Holter study, a diagnosis was reached in 88% of patients assigned to MCOT compared with 75% assigned to a standard loop event monitor. Clinically significant arrhythmias were identified in 41% of the MCOT group compared with 15% of the loop-monitor group. These results apply to the studied population and should not be presented as a universal performance guarantee.<sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/17318994/" target="_blank" rel="noopener noreferrer">[3]</a></sup></p>
+        <p class="landing-p">A separate clinical series evaluated MCOT for palpitations, presyncope, syncope and antiarrhythmic-therapy assessment. The investigators reported clinically significant asymptomatic arrhythmias and found that 7 of 21 patients monitored for medication titration had dosage adjustments during outpatient monitoring. The treating physician, not the monitoring service, determines whether medication should be started, changed or stopped.<sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/17343724/" target="_blank" rel="noopener noreferrer">[4]</a></sup></p>
+        <div class="landing-evidence" role="list">
+          <article class="landing-evidence__card" role="listitem">
+            <h3 class="landing-h3">CMS ambulatory ECG guidance <sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268" target="_blank" rel="noopener noreferrer">[1]</a></sup></h3>
+            <p class="landing-p">Defines external mobile cardiovascular telemetry as concurrent computerized real-time analysis with ECG-triggered and patient-selected events transmitted to an attended surveillance center; may be worn up to 30 days.</p>
+            <p class="landing-evidence__label">CMS A59268 / L40244</p>
+          </article>
+          <article class="landing-evidence__card" role="listitem">
+            <h3 class="landing-h3">ISHNE-HRS consensus <sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[2]</a></sup></h3>
+            <p class="landing-p">AECG is used for palpitations, syncope, AF detection, therapy-response assessment and selected outpatient antiarrhythmic monitoring; technology selection should match symptom frequency and clinical need.</p>
+            <p class="landing-evidence__label">Heart Rhythm / Ann Noninvasive Electrocardiol, 2017</p>
+          </article>
+          <article class="landing-evidence__card" role="listitem">
+            <h3 class="landing-h3">Rothman et al. randomized trial <sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/17318994/" target="_blank" rel="noopener noreferrer">[3]</a></sup></h3>
+            <p class="landing-p">MCOT achieved higher diagnostic confirmation and higher clinically significant arrhythmia detection than a standard patient-activated loop recorder in the studied population.</p>
+            <p class="landing-evidence__label">PMID 17318994</p>
+          </article>
+          <article class="landing-evidence__card" role="listitem">
+            <h3 class="landing-h3">Olson et al. clinical series <sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/17343724/" target="_blank" rel="noopener noreferrer">[4]</a></sup></h3>
+            <p class="landing-p">MCOT identified asymptomatic arrhythmias and was used during outpatient medication titration; 7 of 21 medication-titration patients had dose adjustments.</p>
+            <p class="landing-evidence__label">PMID 17343724</p>
+          </article>
+          <article class="landing-evidence__card" role="listitem">
+            <h3 class="landing-h3">Post-TAVR MCT study <sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/38388248/" target="_blank" rel="noopener noreferrer">[5]</a></sup></h3>
+            <p class="landing-p">A standardized 30-day MCT program detected conduction abnormalities requiring pacemaker placement and new AF/flutter after TAVR.</p>
+            <p class="landing-evidence__label">PMID 38388248</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-compare-heading">
+      <div class="figma-container">
+        <h2 id="mct-compare-heading" class="landing-h2">How MCT Differs From Holter and <span class="landing-h2__accent">Event Monitoring</span></h2>
+        <p class="landing-p">The correct monitoring test depends on the physician&rsquo;s clinical objective, symptom frequency, required monitoring duration and need for information during the active study. Longer duration alone does not make Extended Holter a substitute for MCT when attended surveillance and presentation of qualifying findings during the study are desired.</p>
+        <div class="landing-table-wrap landing-table-wrap--hint" role="region" aria-label="How MCT differs from Holter and Event Monitoring" tabindex="0">
+          <table class="landing-table landing-table--mct-compare">
+            <caption class="sr-only">Comparison of Holter, Extended Holter, Event Monitoring, and Mobile Cardiac Telemetry</caption>
+            <thead>
+              <tr>
+                <th scope="col">Consideration</th>
+                <th scope="col">Holter</th>
+                <th scope="col">Extended Holter</th>
+                <th scope="col">Event</th>
+                <th scope="col">MCT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Typical duration</th>
+                <td>24-48 hours</td>
+                <td>3-14 days</td>
+                <td>Up to 30 days</td>
+                <td>Up to 30 days</td>
+              </tr>
+              <tr>
+                <th scope="row">Recording approach</th>
+                <td>Continuous ECG recording</td>
+                <td>Continuous ECG recording</td>
+                <td>Patient-triggered and/or auto-triggered event capture</td>
+                <td>Continuous computerized analysis with ECG-triggered and patient-selected events</td>
+              </tr>
+              <tr>
+                <th scope="row">When clinical findings are generally presented</th>
+                <td>After final report</td>
+                <td>After final report</td>
+                <td>During the test when qualifying findings meet the prescribed protocol</td>
+                <td>During the test when qualifying findings meet the prescribed protocol</td>
+              </tr>
+              <tr>
+                <th scope="row">Specialized Medical LIVE operational visibility</th>
+                <td>Yes for LIVE version</td>
+                <td>Yes for LIVE version</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Best-fit question</th>
+                <td>What occurred during a short, defined window?</td>
+                <td>What occurred during a longer continuous-recording window?</td>
+                <td>Can intermittent symptoms/events be captured over time?</td>
+                <td>Can intermittent and asymptomatic findings be actively surveilled and presented during the study?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="landing-p">Operational visibility means Specialized Medical can monitor device and transmission status. Clinical surveillance means qualifying ECG findings may be presented during the test. All LIVE test types can have operational visibility, while MCT and <a href='services/'>Cardiac Event Monitoring</a> have active-study clinical notification workflows. Compare also with <a href='services/'>Holter monitoring</a> and <a href='services/'>Long-Term Holter monitoring</a>.</p>
+        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form" data-mct-track="mct_cta_pilot">Start a No-Risk MCT Pilot</a> <a class="figma-btn figma-btn--outline-dark" href="#cta-form" data-mct-track="mct_cta_demo">Request an MCT Demonstration</a></p>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-who-heading">
+      <div class="figma-container">
+        <h2 id="mct-who-heading" class="landing-h2">When Physicians May Consider Mobile Cardiac <span class="landing-h2__accent">Telemetry</span></h2>
+        <p class="landing-p">MCT may be considered when symptoms or suspected arrhythmias are intermittent, when a short monitoring period has been nondiagnostic, when automatic detection of asymptomatic events is important, or when the physician needs qualifying findings presented during an active ambulatory study. Patient selection, monitoring duration and notification parameters remain physician decisions and must follow payer and institutional requirements.<sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[2]</a></sup></p>
+        <ul class="landing-list">
+          <li>Unexplained palpitations, dizziness, presyncope or syncope when an arrhythmic cause is suspected</li>
+          <li>Suspected paroxysmal atrial fibrillation or atrial flutter, including asymptomatic episodes</li>
+          <li>Intermittent bradycardia, pauses, atrioventricular block or tachyarrhythmia</li>
+          <li>Symptoms occurring less frequently than the useful window of a short Holter study</li>
+          <li>Evaluation of arrhythmia burden or symptom-rhythm correlation</li>
+          <li>Assessment of response to physician-directed medication changes or arrhythmia procedures</li>
+          <li>Selected patients after ablation, cardiac procedures or TAVR</li>
+          <li>Selected patients with embolic events or cryptogenic stroke when occult AF is suspected, subject to guideline and payer requirements</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-identify-heading">
+      <div class="figma-container">
+        <h2 id="mct-identify-heading" class="landing-h2">Clinically Important Rhythm Findings MCT <span class="landing-h2__accent">May Capture</span></h2>
+        <p class="landing-p">Depending on the patient, device configuration, signal quality and physician-prescribed parameters, MCT may record and present findings such as atrial fibrillation or flutter, supraventricular tachycardia, ventricular tachycardia or wide-complex tachycardia, significant bradycardia, pauses, atrioventricular block, premature atrial or ventricular beats, and symptom-correlated sinus rhythm. The treating physician interprets the ECG and determines clinical significance.</p>
+        <div class="landing-feature-grid" role="list">
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Atrial rhythms</h3>
+            <p class="landing-p">Atrial fibrillation, atrial flutter, atrial tachycardia and other supraventricular rhythms.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Ventricular rhythms</h3>
+            <p class="landing-p">Ventricular tachycardia, wide-complex tachycardia and ventricular ectopy.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Slow rhythms and conduction</h3>
+            <p class="landing-p">Bradycardia, pauses, second-degree or high-grade AV block and complete heart block.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Symptom correlation</h3>
+            <p class="landing-p">Palpitations, dizziness, shortness of breath, chest discomfort, presyncope or syncope correlated with ECG.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Asymptomatic findings</h3>
+            <p class="landing-p">Automatically detected rhythm events that occur without a patient-reported symptom.</p>
+          </article>
+        </div>
+        <div class="landing-note landing-note--info" role="note">
+          <p class="landing-note__body">Specialized Medical records, detects, identifies, captures, and presents qualifying ECG findings for physician review. The monitoring system does not independently diagnose, treat, prevent, or guarantee avoidance of hospitalization, stroke, sudden death, or pacemaker implantation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-treatment-heading">
+      <div class="figma-container">
+        <h2 id="mct-treatment-heading" class="landing-h2">Evaluating Treatment Response During an Active <span class="landing-h2__accent">MCT Study</span></h2>
+        <p class="landing-p">Because qualifying findings can be reviewed while monitoring is still underway, a treating physician may use MCT information when evaluating the response to a medication initiation, dosage change, discontinuation or other rhythm-management strategy. When clinically appropriate, the physician may change therapy during the monitoring period and observe subsequent ECG patterns. Published evidence and expert consensus support ambulatory ECG monitoring for treatment-response assessment and selected outpatient antiarrhythmic monitoring.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[2]</a></sup><sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/17343724/" target="_blank" rel="noopener noreferrer">[4]</a></sup></p>
+        <div class="landing-note landing-note--alert" role="note">
+          <p class="landing-note__body">MCT does not replace a 12-lead ECG, laboratory testing, QT assessment, inpatient observation or any drug-specific monitoring required by labeling, guidelines or institutional protocol. Certain antiarrhythmic medications must be initiated in a monitored inpatient setting. All medication decisions belong to the treating clinician.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-posttavr-heading">
+      <div class="figma-container">
+        <h2 id="mct-posttavr-heading" class="landing-h2">MCT for Post-Procedure and Post-TAVR <span class="landing-h2__accent">Rhythm Surveillance</span></h2>
+        <p class="landing-p">MCT may be used in selected patients after arrhythmia procedures or transcatheter aortic valve replacement when the treating team wants extended ambulatory surveillance and active-study notification of qualifying findings. Specialized Medical&rsquo;s MCT system is especially well suited to post-TAVR care because it combines attended <a href='services/'>LIVE ECG monitoring</a> streaming, physician-prescribed notification of qualifying arrhythmias, proactive patient support and Stay Connected multi-carrier technology designed to help maintain transmission as patients recover at home, including in many rural areas. After TAVR, the system may identify delayed high-grade AV block, complete heart block, bradycardia, pauses and new atrial fibrillation or flutter. This supports post-discharge rhythm surveillance during a clinically significant recovery period when ordered by the structural heart team. Patient selection and monitoring duration remain under the direction of the structural heart team. See the dedicated <a href='post-tavr-cardiac-monitoring/'>post-TAVR cardiac monitoring</a> page for the full evidence and workflow.<sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/38388248/" target="_blank" rel="noopener noreferrer">[5]</a></sup></p>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-tech-heading">
+      <div class="figma-container">
+        <h2 id="mct-tech-heading" class="landing-h2">LIVE MCT Monitoring Built Around the <span class="landing-h2__accent">S-Patch System</span></h2>
+        <p class="landing-p">Specialized Medical combines LIVE ECG transmission with attended clinical surveillance and operational monitoring while the study is active and connectivity is available. The <a href='services/equipment/'>S-Patch cardiac monitoring system</a> is designed for ambulatory wear while the monitoring team maintains visibility into battery status, electrode contact, ECG signal quality, Bluetooth communication, cellular connectivity, patient connection and successful data transmission. When an operational problem is detected, Specialized Medical can proactively contact the patient to help restore the study.</p>
+        <div class="landing-feature-grid" role="list">
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">LIVE ECG transmission</h3>
+            <p class="landing-p landing-answer">ECG data may be transmitted while the study is active and connectivity is available. Qualifying findings may be reviewed during the monitoring period, and notifications follow the ordering physician’s selected protocol. Mobile Cardiac Telemetry does not replace emergency medical services.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Prescribed notification protocol</h3>
+            <p class="landing-p">Notification thresholds, recipients and escalation methods follow the ordering physician&rsquo;s selected protocol.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Operational visibility</h3>
+            <p class="landing-p">Battery, electrodes, signal quality, Bluetooth, cellular connection, patient connection and transmission status are monitored.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Proactive patient outreach</h3>
+            <p class="landing-p">When a technical or connection problem is identified, the patient can be contacted for troubleshooting and support.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Stay Connected multi-carrier technology</h3>
+            <p class="landing-p">The platform can use available cellular pathways from major U.S. carriers to help maintain connection across urban, suburban and many rural environments. If transmission is interrupted, operational monitoring can identify the issue so the patient can be contacted. Uninterrupted coverage is not guaranteed.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Digital symptom logging</h3>
+            <p class="landing-p">Patient-entered symptoms are time-linked to ECG data and displayed with symptomatic versus asymptomatic context.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Physician-ready reports</h3>
+            <p class="landing-p">Reports organize relevant ECG findings for review, interpretation, dating and electronic signature.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Practice support</h3>
+            <p class="landing-p">Specialized Medical supports enrollment, supplies, patient education, monitoring, technical support, reporting and billing templates.</p>
+          </article>
+        </div>
+        <p class="landing-p">Device specifications:</p>
+        <ul class="landing-list">
+          <li>S-Patch weight: 0.6 oz</li>
+          <li>Minimum battery duration: 10 days</li>
+          <li>Water resistance: IP55</li>
+          <li>Supports monitoring periods up to 30 days</li>
+          <li>One monitoring platform supports Holter, Long-Term Holter, Event and MCT workflows</li>
+        </ul>
+        <p class="landing-p">Compare <a href='/services/equipment'>cardiac monitoring equipment</a> options used across Specialized Medical services.</p>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-patient-heading">
+      <div class="figma-container">
+        <h2 id="mct-patient-heading" class="landing-h2">Patient Symptom Logging and <span class="landing-h2__accent">Experience</span></h2>
+        <p class="landing-p">Patients can enter symptoms digitally during the test. The symptom time is associated with the ECG timeline so the final report can clearly show whether a finding was symptomatic or asymptomatic. This removes reliance on a separate handwritten diary and supports more efficient physician review.</p>
+        <p class="landing-p">The S-Patch is designed for ambulatory wear during normal daily activities. Specialized Medical provides patient education and technical support so the study has the best opportunity to be completed successfully.</p>
+        <div class="landing-note landing-note--alert" role="note">
+          <p class="landing-note__title">Emergency symptoms</p>
+          <p class="landing-note__body">Patients with chest pain, severe shortness of breath, fainting, stroke symptoms, or other urgent symptoms should follow their physician&rsquo;s instructions and seek emergency assistance &mdash; call 911 &mdash; rather than waiting for a monitoring call.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-workflow-heading">
+      <div class="figma-container">
+        <h2 id="mct-workflow-heading" class="landing-h2">A Turnkey MCT Workflow for the <span class="landing-h2__accent">Physician Practice</span></h2>
+        <p class="landing-p">Specialized Medical supports the operational work after enrollment and hookup so the practice can focus on patient care and physician interpretation. Practices evaluating operational fit can also review the <a href='clinical-stories/'>cardiology practice monitoring workflow</a>.</p>
+        <ol class="landing-flow" aria-label="Six-step MCT practice workflow">
+          <li class="landing-flow__step"><strong>Physician order and protocol</strong><span>Select the indication, monitoring duration, notification thresholds, recipients and escalation instructions.</span></li>
+          <li class="landing-flow__step"><strong>Patient enrollment</strong><span>Enter patient, insurance and prescribing information in the secure portal.</span></li>
+          <li class="landing-flow__step"><strong>Office hookup and education</strong><span>Apply the monitor correctly, confirm connection and explain symptom logging and wear instructions.</span></li>
+          <li class="landing-flow__step"><strong>LIVE monitoring and support</strong><span>Specialized Medical monitors ECG events and operational status and provides patient support during the study.</span></li>
+          <li class="landing-flow__step"><strong>Qualifying notifications</strong><span>Present qualifying findings according to the prescribed email, text and/or phone protocol.</span></li>
+          <li class="landing-flow__step"><strong>Final reporting</strong><span>Provide the final physician-ready report for review, interpretation, signature and clinical filing.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-cpt-heading">
+      <div class="figma-container">
+        <h2 id="mct-cpt-heading" class="landing-h2">CPT Codes Commonly Associated With Mobile Cardiac <span class="landing-h2__accent">Telemetry</span></h2>
+        <p class="landing-p landing-answer">Mobile Cardiac Telemetry services may involve CPT 93228 for the professional component and CPT 93229 for the technical component. Which entity may report each component depends on the services performed, contractual arrangement, payer requirements, and applicable billing rules. Coverage, prior authorization, frequency, documentation, and reimbursement vary by payer and plan. This information does not guarantee coverage, payment, or profitability.<sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268" target="_blank" rel="noopener noreferrer">[1]</a></sup></p>
+        <div class="landing-note landing-note--info" role="note">
+          <p class="landing-note__body">A Local Coverage Determination or billing article is not a universal national rule. Medical necessity, prior authorization, frequency, and documentation requirements vary by payer, plan, and Medicare Administrative Contractor jurisdiction. Confirm requirements with each payer before ordering.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-eeat-heading">
+      <div class="figma-container">
+        <h2 id="mct-eeat-heading" class="landing-h2">Author, Clinical Review and <span class="landing-h2__accent">References</span></h2>
+        <div class="landing-eeat">
+          <div class="landing-eeat__author">
+            <h3 class="landing-h3">Author</h3>
+            <p class="landing-p"><strong>Steven M. Burns</strong>, President &amp; CEO, Specialized Medical LLC. Mr. Burns leads Specialized Medical&rsquo;s ambulatory cardiac monitoring operations, including LIVE ECG workflows, practice implementation, Stay Connected multi-carrier technology support and physician-ready reporting for cardiology and structural heart programs.</p>
+          </div>
+          <div class="landing-eeat__review">
+            <h3 class="landing-h3">Editorial review</h3>
+            <p class="landing-p"><strong>Last updated:</strong> October 15, 2026</p>
+            <p class="landing-p">Reviewed by Specialized Medical for service, workflow, and technical accuracy. This page provides general information for healthcare professionals and does not replace clinical judgment, payer requirements, emergency services, or institutional protocols.</p>
+          </div>
+          <div class="landing-eeat__policy">
+            <h3 class="landing-h3">Editorial policy</h3>
+            <p class="landing-p">Specialized Medical publishes monitoring-service and technology information for healthcare professionals. Content is reviewed for clinical accuracy before publication. Corrections or questions may be directed to <a href='contact/'>Contact Specialized Medical</a> or 1-855-SPEC-MED (1-855-773-2633). Specialized Medical is a cardiac monitoring service and technology provider; it does not replace physician judgment, emergency care, payer policy or institutional protocols.</p>
+          </div>
+          <div class="landing-eeat__refs">
+            <h3 class="landing-h3">References</h3>
+            <ol class="landing-refs">
+              <li id="mct-ref-1"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=59268" target="_blank" rel="noopener noreferrer">CMS Billing and Coding: Ambulatory Electrocardiograph (AECG) Monitoring, A59268; Temporary Nontherapeutic Ambulatory Cardiac Monitoring Devices, L40244</a></li>
+              <li id="mct-ref-2"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">Steinberg JS, et al. 2017 ISHNE-HRS expert consensus statement on ambulatory ECG and external cardiac monitoring/telemetry. Ann Noninvasive Electrocardiol. 2017;22:e12447. PMCID: PMC6931745</a></li>
+              <li id="mct-ref-3"><a href="https://pubmed.ncbi.nlm.nih.gov/17318994/" target="_blank" rel="noopener noreferrer">Rothman SA, et al. The diagnosis of cardiac arrhythmias: a prospective multi-center randomized study comparing mobile cardiac outpatient telemetry versus standard loop event monitoring. J Cardiovasc Electrophysiol. 2007;18(3):241-247. PMID: 17318994</a></li>
+              <li id="mct-ref-4"><a href="https://pubmed.ncbi.nlm.nih.gov/17343724/" target="_blank" rel="noopener noreferrer">Olson JA, et al. Utility of mobile cardiac outpatient telemetry for the diagnosis of palpitations, presyncope, syncope, and the assessment of therapy efficacy. J Cardiovasc Electrophysiol. 2007;18(5):473-477. PMID: 17343724</a></li>
+              <li id="mct-ref-5"><a href="https://pubmed.ncbi.nlm.nih.gov/38388248/" target="_blank" rel="noopener noreferrer">Beccarino N, et al. The utility and impact of outpatient telemetry monitoring in post-transcatheter aortic valve replacement patients. Cardiovasc Revasc Med. 2024;64:15-20. PMID: 38388248</a></li>
+            </ol>
+          </div>
+        </div>
+        <p class="landing-p">For the full program overview, see <a href='services/'>cardiac monitoring services</a>.</p>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="mct-demo-band-heading">
+      <div class="figma-container">
+        <h2 id="mct-demo-band-heading" class="landing-h2">Start a No-Risk MCT <span class="landing-h2__accent">Pilot</span></h2>
+        <p class="landing-p">A physician practice can request a demonstration or begin a small no-risk pilot program. The evaluation should review patient enrollment, hookup, LIVE ECG transmission, notification protocols, operational support, symptom logging, reporting, physician interpretation workflow and billing support.</p>
+        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form" data-mct-track="mct_cta_pilot">Start a No-Risk MCT Pilot</a> <a class="figma-btn figma-btn--outline-dark" href="#cta-form" data-mct-track="mct_cta_demo">Request an MCT Demonstration</a></p>
+      </div>
+    </section>
+
+<section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="mct-faq-heading">
+      <div class="figma-container faq-accordion__inner">
+        <h2 id="mct-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
+        <div class="faq-category">
+          <div class="faq-category__list">
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-mct-0">
+        <span class="faq-item__q">What is Mobile Cardiac Telemetry (MCT)?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-0" role="region" aria-labelledby="faq-trigger-mct-0" class="faq-item__panel">
+        <p>Mobile Cardiac Telemetry is an ambulatory ECG monitoring service that uses computerized rhythm analysis and transmits ECG-triggered and patient-selected events to an attended surveillance center. It can be prescribed for up to 30 days. Specialized Medical’s workflow adds LIVE ECG transmission, physician-prescribed notifications, operational visibility while the study is active, patient support and physician-ready reporting.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-1">
+        <span class="faq-item__q">How long can a patient wear an MCT monitor?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-1" role="region" aria-labelledby="faq-trigger-mct-1" class="faq-item__panel" hidden>
+        <p>MCT may be prescribed for a monitoring episode of up to 30 consecutive days. The treating physician selects the appropriate duration based on the clinical question, symptom frequency, patient risk and payer requirements. A longer period is not automatically necessary for every patient.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-2">
+        <span class="faq-item__q">What is the difference between MCT and Holter monitoring?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-2" role="region" aria-labelledby="faq-trigger-mct-2" class="faq-item__panel" hidden>
+        <p>Holter monitoring records continuously for a shorter defined period, and clinical findings are generally presented after the final report. MCT can continue for up to 30 days and supports attended surveillance, automatic event detection and presentation of qualifying findings during the active study according to the physician’s notification protocol.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-3">
+        <span class="faq-item__q">What is the difference between MCT and Cardiac Event Monitoring?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-3" role="region" aria-labelledby="faq-trigger-mct-3" class="faq-item__panel" hidden>
+        <p>Event Monitoring focuses on patient-triggered and selected auto-triggered ECG events over an extended period. MCT adds concurrent computerized rhythm analysis and attended surveillance. That distinction can be important when asymptomatic arrhythmias are suspected or when the physician wants a more active clinical-notification workflow.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-4">
+        <span class="faq-item__q">How do alerts and notifications work during an MCT study?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-4" role="region" aria-labelledby="faq-trigger-mct-4" class="faq-item__panel" hidden>
+        <p>ECG data may be transmitted while the study is active and connectivity is available. Qualifying findings may be reviewed during the monitoring period, and notifications follow the ordering physician’s selected protocol. Mobile Cardiac Telemetry does not replace emergency medical services.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-5">
+        <span class="faq-item__q">What does the practice receive from Specialized Medical?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-5" role="region" aria-labelledby="faq-trigger-mct-5" class="faq-item__panel" hidden>
+        <p>Practices receive operational support after enrollment and hookup, including LIVE monitoring support, qualifying notifications per protocol, proactive patient outreach when connection issues are detected, and physician-ready reports organized for review, interpretation, dating and electronic signature.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-6">
+        <span class="faq-item__q">Can MCT detect arrhythmias when the patient has no symptoms?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-6" role="region" aria-labelledby="faq-trigger-mct-6" class="faq-item__panel" hidden>
+        <p>Yes. MCT can automatically capture predefined rhythm events even when the patient does not recognize symptoms or press a button. Published clinical experience has reported clinically important asymptomatic arrhythmias during MCOT monitoring. The treating physician interprets each ECG and determines its significance.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-7">
+        <span class="faq-item__q">What CPT codes are commonly used for MCT?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-7" role="region" aria-labelledby="faq-trigger-mct-7" class="faq-item__panel" hidden>
+        <p>Mobile Cardiac Telemetry services may involve CPT 93228 for the professional component and CPT 93229 for the technical component. Which entity may report each component depends on the services performed, contractual arrangement, payer requirements, and applicable billing rules. Coverage, prior authorization, frequency, documentation, and reimbursement vary by payer and plan. This information does not guarantee coverage, payment, or profitability.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-8">
+        <span class="faq-item__q">Does MCT replace inpatient telemetry or emergency care?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-8" role="region" aria-labelledby="faq-trigger-mct-8" class="faq-item__panel" hidden>
+        <p>No. MCT is an ambulatory monitoring service for appropriately selected patients. It is not intended to replace inpatient telemetry, emergency evaluation or immediate treatment for patients with unstable or potentially life-threatening conditions. The treating physician determines the appropriate care setting.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-9">
+        <span class="faq-item__q">Can MCT be used after TAVR?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-9" role="region" aria-labelledby="faq-trigger-mct-9" class="faq-item__panel" hidden>
+        <p>Yes, in selected patients. Specialized Medical’s MCT workflow combines attended LIVE ECG transmission, physician-prescribed notification of qualifying arrhythmias, proactive patient support and Stay Connected multi-carrier technology that helps maintain transmission when connectivity is available. It may identify delayed high-grade AV block, complete heart block, bradycardia, pauses and new atrial fibrillation or flutter after discharge. Patient selection and monitoring duration are determined by the structural heart team.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-10" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-10">
+        <span class="faq-item__q">Does the system work in rural areas?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-10" role="region" aria-labelledby="faq-trigger-mct-10" class="faq-item__panel" hidden>
+        <p>Specialized Medical’s Stay Connected multi-carrier technology uses available cellular pathways from major U.S. networks to help patients remain connected across urban, suburban and many rural areas. If a connection or transmission problem is detected, Specialized Medical can proactively contact the patient to help restore the study. Actual performance depends on available network coverage, building conditions and local factors, so uninterrupted coverage is not guaranteed.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-mct-11" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-mct-11">
+        <span class="faq-item__q">How can a practice evaluate Specialized Medical’s MCT service?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-mct-11" role="region" aria-labelledby="faq-trigger-mct-11" class="faq-item__panel" hidden>
+        <p>A physician practice can request a demonstration or begin a small no-risk pilot program. The evaluation should review patient enrollment, hookup, LIVE ECG transmission, notification protocols, operational support, symptom logging, reporting, physician interpretation workflow and billing support.</p>
+      </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="mct-cta-heading">
+      <div class="figma-container">
+        <div class="landing-cta-block__box">
+          <div class="landing-cta-block__copy">
+            <h2 id="mct-cta-heading" class="landing-h2">Start a No-Risk MCT Pilot</h2>
+            <p class="landing-p">Tell us about your practice, and a Specialized Medical representative will contact you regarding an MCT demonstration or pilot program.</p>
+            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633" data-mct-track="phone_click">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
+            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>
+            <p class="landing-cta-form__privacy" role="note"><strong>Privacy notice:</strong> Please do not submit patient names, medical records, or other protected health information through this form. See our <a href="contact/">contact page</a> for practice support pathways.</p>
+          </div>
+          <form class="landing-cta-form contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
+            <input type="hidden" name="subject" value="MCT Pilot / Demonstration Request — Specialized Medical">
+            <input type="hidden" name="from_page" value="mobile-cardiac-telemetry-mct">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Name <abbr title="required">*</abbr></span>
+                <input name="name" type="text" autocomplete="name" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Practice / Organization <abbr title="required">*</abbr></span>
+                <input name="organization" type="text" autocomplete="organization" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Role <abbr title="required">*</abbr></span>
+                <input name="role" type="text" autocomplete="organization-title" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Business Email <abbr title="required">*</abbr></span>
+                <input name="email" type="email" autocomplete="email" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Phone <abbr title="required">*</abbr></span>
+                <input name="phone" type="tel" autocomplete="tel" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">State <abbr title="required">*</abbr></span>
+                <input name="state" type="text" autocomplete="address-level1" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Interest <abbr title="required">*</abbr></span>
+                <select name="interest" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Pilot">Start a No-Risk MCT Pilot</option>
+                  <option value="Demonstration">Request an MCT Demonstration</option>
+                  <option value="Both">Both</option>
+                </select>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Preferred contact method <abbr title="required">*</abbr></span>
+                <select name="preferred_contact" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Email">Email</option>
+                  <option value="Phone">Phone</option>
+                  <option value="Either">Either</option>
+                </select>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Approximate monthly monitoring volume <span class="landing-cta-form__optional">(optional)</span></span>
+                <input name="monthly_volume" type="text" autocomplete="off" inputmode="numeric" placeholder="e.g. 10–20 studies">
+              </label>
+            </div>
+            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Start a No-Risk MCT Pilot</button>
+            <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="mct-related-heading">
+      <div class="figma-container">
+        <h2 id="mct-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>
+        <ul class="landing-related">
+          <li><a href="services/">Cardiac Monitoring Services</a></li>
+          <li><a href="services/equipment/">S-Patch Cardiac Monitoring Equipment</a></li>
+          <li><a href="services/">Holter Monitoring</a></li>
+          <li><a href="services/">Long-Term Holter Monitoring</a></li>
+          <li><a href="services/">Cardiac Event Monitoring</a></li>
+          <li><a href="post-tavr-cardiac-monitoring/">Post-TAVR Cardiac Monitoring</a></li>
+          <li><a href="clinical-stories/">Clinical Stories</a></li>
+          <li><a href="faq/">FAQs</a></li>
+          <li><a href="contact/">Contact / Request a Pilot</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="landing-disclaimer" aria-label="Diagnostic service disclaimer">
+      <div class="figma-container">
+        <p class="landing-disclaimer__text"><strong>Diagnostic Service Disclaimer:</strong> Specialized Medical provides ambulatory cardiac monitoring services and diagnostic information for review by qualified healthcare providers. The service does not replace physician judgment, emergency medical services, or instructions to call 911 when urgent symptoms occur.</p>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer site-footer--figma">
+      <div class="figma-container">
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__main">
+          <div class="figma-footer__brand">
+            <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
+              <img class="figma-brand__mark" src="images/figma-assets/Group 1261157085.svg" alt="" width="412" height="90" decoding="async">
+            </a>
+            <p class="figma-footer__tagline">Turnkey cardiac monitoring. Live ECG data. S-Patch as the primary featured system.</p>
+          </div>
+          <div class="figma-footer__contact">
+            <nav class="figma-footer__nav" aria-label="Footer">
+              <a href="./">Home</a>
+              <a href='about/'>About Us</a>
+              <a href='services/'>Services</a>
+              <a href='faq/'>FAQs</a>
+              <a href='contact/'>Contact</a>
+              <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+            </nav>
+            <div class="figma-footer__line">
+              <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
+                <img src="icons/vector3527-jgyk.svg" alt="Phone Icon" width="20" height="20" decoding="async">
+              </span>
+              <a class="figma-footer__link" href="tel:+18557732633">
+                <span class="figma-footer__muted">1-855-SPEC-MED</span> 
+                <span class="figma-footer__strong">(1-855-773-2633)</span>
+              </a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="icons/fi62447103527-gtjs.svg" alt="" width="20" height="20" decoding="async">
+              <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="images/figma-assets/location_icon.png" alt="" width="20" height="20" decoding="async">
+              <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
+            </div>
+          </div>
+        </div>
+        <div class="figma-footer__triple">
+          <span><a href='mobile-cardiac-telemetry-mct/'>Mobile Cardiac Telemetry</a></span>
+          <span><a href="services/">Holter Monitoring</a></span>
+          <span><a href='services/'>Event Monitoring</a></span>
+        </div>
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__bottom">
+          <p class="figma-footer__copy">© <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
+          <div class="figma-footer__social">
+            <img src="images/figma-assets/hipaa-badge.png" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
+              <img src="images/facebook-like.jpg" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

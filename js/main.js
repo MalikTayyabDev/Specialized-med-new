@@ -581,6 +581,157 @@
     });
   }
 
+  /** Push GA4/GTM events without form PII (MCT landing + site CTAs). */
+  function pushSmEvent(eventName, params) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(
+      Object.assign(
+        {
+          event: eventName,
+        },
+        params || {}
+      )
+    );
+  }
+
+  function initLandingAnalytics() {
+    var landing = qs("[data-landing]");
+    if (!landing) return;
+    var slug = landing.getAttribute("data-landing") || "";
+
+    qsa("[data-mct-track]", landing).forEach(function (el) {
+      el.addEventListener("click", function () {
+        var name = el.getAttribute("data-mct-track") || "";
+        if (!name) return;
+        pushSmEvent(name, { landing_page: slug });
+      });
+    });
+
+    qsa('a[href^="tel:"]', landing).forEach(function (a) {
+      if (a.getAttribute("data-mct-track")) return;
+      a.addEventListener("click", function () {
+        pushSmEvent("phone_click", { landing_page: slug });
+      });
+    });
+
+    qsa('a[href*="sft.specialized-med-business.com"]', landing).forEach(function (a) {
+      if (a.getAttribute("data-mct-track")) return;
+      a.addEventListener("click", function () {
+        pushSmEvent("portal_click", { landing_page: slug });
+      });
+    });
+
+    qsa(".landing-cta-form", landing).forEach(function (form) {
+      var started = false;
+      form.addEventListener(
+        "focusin",
+        function () {
+          if (started) return;
+          started = true;
+          pushSmEvent("mct_form_start", { landing_page: slug });
+        },
+        true
+      );
+    });
+  }
+
+  function initLandingCtaForms() {
+    qsa(".landing-cta-form").forEach(function (form) {
+      var submitBtn = qs('button[type="submit"]', form);
+      var statusEl = qs(".landing-cta-form__status", form);
+
+      function setStatus(msg, isError) {
+        if (!statusEl) return;
+        statusEl.textContent = msg || "";
+        statusEl.style.color = isError ? "#c9222f" : "rgba(35,31,30,0.7)";
+      }
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        if (submitBtn && submitBtn.disabled) return;
+
+        var fd = new FormData(form);
+        try {
+          var redirectEl = form.querySelector('input[name="redirect"]');
+          if (redirectEl && !redirectEl.value) {
+            redirectEl.value = String(new URL("thanks/", siteBaseUrl()));
+            fd.set("redirect", redirectEl.value);
+          }
+        } catch (_) {}
+        if (!fd.get("access_key")) {
+          fd.append("access_key", "8ec7a28a-1979-4c39-8791-18fbf60bba44");
+        }
+
+        var originalText = submitBtn ? submitBtn.textContent : "";
+        if (submitBtn) {
+          submitBtn.textContent = "Sending...";
+          submitBtn.disabled = true;
+        }
+        setStatus("Sending…", false);
+
+        try {
+          var response = await fetch(form.getAttribute("action") || "https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: fd,
+          });
+          var data = await response.json().catch(function () {
+            return null;
+          });
+
+          if (response.ok && data && data.success === true) {
+            setStatus("Success! Your request has been sent.", false);
+            try {
+              var landingEl = qs("[data-landing]");
+              pushSmEvent("mct_form_success", {
+                landing_page: landingEl ? landingEl.getAttribute("data-landing") || "" : "",
+                form_interest: String(fd.get("interest") || ""),
+              });
+            } catch (_) {}
+            var dest = String(new URL("thanks/", siteBaseUrl()));
+            try {
+              var rEl = form.querySelector('input[name="redirect"]');
+              if (rEl && rEl.value) dest = String(rEl.value);
+            } catch (_) {}
+            try {
+              window.sessionStorage.setItem("sm_form_submitted", "1");
+              window.sessionStorage.setItem("sm_form_submitted_at", String(Date.now()));
+            } catch (_) {}
+            window.setTimeout(function () {
+              window.location.assign(dest);
+            }, 50);
+            return;
+          }
+          setStatus("Error: " + ((data && data.message) || "Unable to send. Please try again."), true);
+        } catch (error) {
+          try {
+            form.submit();
+            return;
+          } catch (_) {}
+          setStatus("Something went wrong. Please try again.", true);
+        } finally {
+          if (submitBtn) {
+            submitBtn.textContent = originalText || "Submit";
+            submitBtn.disabled = false;
+          }
+        }
+      });
+    });
+  }
+
+  function initCtaFormScrollOffset() {
+    if (!window.location.hash || window.location.hash.toLowerCase() !== "#cta-form") return;
+    var target = qs("#cta-form");
+    if (!target) return;
+    window.setTimeout(function () {
+      try {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        var first = qs("input, select, textarea, button", target);
+        if (first) first.focus({ preventScroll: true });
+      } catch (_) {}
+    }, 50);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     fixRelativeAnchorsToSiteRoot();
     initInternalRootLinks();
@@ -603,6 +754,9 @@
     initFaqAccordion();
     initFaqTestimonialsCarousel();
     initContactPage();
+    initLandingCtaForms();
+    initLandingAnalytics();
+    initCtaFormScrollOffset();
     initVideoPlayStub();
     initOverviewVideo();
     initEcgVideoEndTrim();

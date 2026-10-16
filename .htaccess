@@ -10,6 +10,14 @@ RewriteRule ^services\.jsp$ /services.html [R=301,L]
 RewriteRule ^faq\.jsp$      /faq.html [R=301,L]
 RewriteRule ^contact\.jsp$  /contact.html [R=301,L]
 
+# Pretty URL: MCT landing
+RewriteRule ^mobile-cardiac-telemetry-mct\.html$ /mobile-cardiac-telemetry-mct/ [R=301,L]
+RewriteRule ^mobile-cardiac-telemetry-mct/?$ /mobile-cardiac-telemetry-mct.html [L]
+RewriteRule ^post-tavr-cardiac-monitoring\.html$ /post-tavr-cardiac-monitoring/ [R=301,L]
+RewriteRule ^post-tavr-cardiac-monitoring/?$ /post-tavr-cardiac-monitoring.html [L]
+RewriteRule ^privacy\.html$ /privacy/ [R=301,L]
+RewriteRule ^privacy/?$ /privacy.html [L]
+
 # Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -17,5 +25,13 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Force www
 RewriteCond %{HTTP_HOST} ^specialized-med\.com [NC]
 RewriteRule ^(.*)$ https://www.specialized-med.com/$1 [L,R=301]
+
+
+# Staging / pre-launch: noindex MCT until Stage 7 gate (managed by flip-mct-indexability.mjs)
+<IfModule mod_headers.c>
+  <Files "mobile-cardiac-telemetry-mct.html">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </Files>
+</IfModule>
 
 ErrorDocument 404 /404.html
