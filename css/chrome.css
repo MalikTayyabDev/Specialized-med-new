@@ -68,7 +68,7 @@
 }
 
 
-/* --- home.css L2003-2435 --- */
+/* --- home.css L2003-2467 --- */
 .figma-container {
   width: 100%;
   max-width: 1440px;
@@ -502,6 +502,38 @@ main .figma-container {
     font-size: 14px;
   }
 
+  .site-header--figma .figma-btn--outline-dark {
+    min-width: min(180px, 42vw);
+  }
+
+  .site-header--figma .figma-phone {
+    font-size: 13px;
+  }
+
+  .site-header--figma .figma-header__portal {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+  .site-header--figma .figma-nav {
+    transition-duration: 0.01ms;
+  }
+
+  .site-header--figma .site-header__inner.nav-open .figma-nav {
+    transition-duration: 0.01ms;
+  }
+
+  .site-header--figma .figma-nav__link {
+    transition-duration: 0.01ms;
+    opacity: 1;
+    transform: none;
+  }
+
+  .site-header--figma .site-header__inner.nav-open .figma-nav__link {
+    transition-delay: 0s !important;
+  }
+}
 
 /* --- home.css L2642-2663 --- */
 .figma-hero__pill {

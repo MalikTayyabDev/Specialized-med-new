@@ -13,7 +13,9 @@ const home = fs.readFileSync(path.join(root, "css/home.css"), "utf8").split(/\r?
 const ranges = [
   [1, 50], // tokens + site-root
   [414, 426], // .nav-toggle base
-  [2003, 2435], // figma container + header + hamburger bars
+  // Include full @media (max-width: 900px) header block through its closing brace
+  // (previously truncated at 2435, leaving an unclosed media query that broke desktop layout).
+  [2003, 2467], // figma container + header + hamburger + reduced-motion
   [2642, 2663], // figma-hero__pill
   [4274, 4643], // figma footer + mobile nav extras
 ];
