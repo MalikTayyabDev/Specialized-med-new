@@ -11,7 +11,7 @@ css = css.replace(
   ""
 );
 
-// Critical: do not CSS-background the 232KB MCT JPG when <picture> already paints the hero.
+// Critical: do not CSS-background the large MCT JPG when <picture> already paints the hero.
 css = css.replace(
   /\.landing-hero__plate--mobile-cardiac-telemetry-mct\s*\{[\s\S]*?\}/i,
   `.landing-hero__plate--mobile-cardiac-telemetry-mct {
@@ -21,18 +21,29 @@ css = css.replace(
 );
 
 css += `
-/* Mobile: fixed hero height to avoid CLS (absolute media needs explicit plate size) */
+/* Mobile: fixed hero plate height so absolute media does not collapse the banner */
 @media (max-width: 900px) {
   .landing-hero__plate {
-    height: 480px;
-    min-height: 480px;
+    height: 520px;
+    min-height: 520px;
   }
   .landing-hero__inner {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
   }
   .landing-hero__title {
-    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+    font-size: clamp(1.55rem, 6.5vw, 2.05rem) !important;
+    line-height: 1.2 !important;
+  }
+  .landing-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 22rem;
+  }
+  .landing-hero__actions .figma-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 `;
