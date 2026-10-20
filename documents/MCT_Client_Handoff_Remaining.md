@@ -1,6 +1,6 @@
 # MCT Landing — Remaining Client / Stakeholder Feedback
 
-Share this with the client. Developer-side SEO/AEO work for the MCT landing page is complete in the repo. The items below need Specialized Medical / Netlify / clinical-billing owners.
+Share this with the client. Developer-side SEO/AEO work for the MCT landing page is complete in the repo (including the Oct 20 development pass). The items below need Specialized Medical / Netlify / clinical-billing owners.
 
 ## Blockers before production indexability
 
@@ -36,7 +36,9 @@ To re-contain the page: `npm run mct:noindex`
 
 - MCT landing page with brand/trust/form/SEO/AEO/schema corrections  
 - Privacy Policy page + form link  
-- Pretty-URL sitemap  
-- Hero WebP (~22 KB)  
-- Launch flip scripts  
+- Pretty-URL sitemap + modality landing redirects  
+- Hero WebP + performance passes  
+- Internal link cluster to Holter / LTH / Event / Live ECG / S-Patch / Post-TAVR  
+- Security headers on Netlify  
+- Launch flip scripts + automated QA: `npm run qa:mct`  
 - Implementation checklist: `documents/MCT_Landing_Implementation_Checklist.md`

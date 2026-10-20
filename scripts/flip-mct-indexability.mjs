@@ -36,18 +36,15 @@ if (mode === "index") {
 }
 fs.writeFileSync(htmlPath, html, "utf8");
 
-const netlifyContained = `# Netlify: MCT landing staging containment + pretty URLs.
-# Stage 0.1: also enable Site settings → Access control (password) on staging deploys.
-# Stage 0.2: X-Robots-Tag until production launch gate passes.
-# Managed by: npm run mct:index / npm run mct:noindex
-
-[[headers]]
+// Surgically toggle X-Robots-Tag blocks without wiping security / cache headers.
+let netlify = fs.readFileSync(netlifyPath, "utf8");
+const robotsHeaderBlock = `[[headers]]
   for = "/mobile-cardiac-telemetry-mct"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 
 [[headers]]
-  for = "/mobile-cardiac-telemetry-mct"
+  for = "/mobile-cardiac-telemetry-mct/"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 
@@ -57,16 +54,21 @@ const netlifyContained = `# Netlify: MCT landing staging containment + pretty UR
     X-Robots-Tag = "noindex, nofollow"
 `;
 
-const netlifyLive = `# Netlify: MCT landing is indexable on production.
-# Re-contain with: npm run mct:noindex
-# Managed by: scripts/flip-mct-indexability.mjs
-`;
-
-fs.writeFileSync(
-  netlifyPath,
-  mode === "noindex" ? netlifyContained : netlifyLive,
-  "utf8"
+// Remove any existing MCT robots header blocks
+netlify = netlify.replace(
+  /\[\[headers\]\]\s*\n\s*for = "\/mobile-cardiac-telemetry-mct(?:\.html|\/)?"\s*\n\s*\[headers\.values\]\s*\n\s*X-Robots-Tag = "noindex, nofollow"\s*\n*/g,
+  ""
 );
+
+if (mode === "noindex") {
+  // Insert after the opening comments / first blank line region
+  if (/\[\[headers\]\]/.test(netlify)) {
+    netlify = netlify.replace(/(\[\[headers\]\])/, `${robotsHeaderBlock}\n$1`);
+  } else {
+    netlify = netlify.trimEnd() + "\n\n" + robotsHeaderBlock;
+  }
+}
+fs.writeFileSync(netlifyPath, netlify.replace(/\n{3,}/g, "\n\n").trimEnd() + "\n", "utf8");
 
 let ht = fs.readFileSync(htaccessPath, "utf8");
 ht = ht.replace(

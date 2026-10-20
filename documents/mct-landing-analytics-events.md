@@ -12,4 +12,4 @@ Documented GTM/`dataLayer` event names for `/mobile-cardiac-telemetry-mct/`.
 | `phone_click` | Click on `tel:` links on the landing page | `landing_page` |
 | `portal_click` | Physician Portal outbound click | `landing_page` |
 
-Implementation: `js/main.js` (`initLandingAnalytics`, `initLandingCtaForms`).
+Implementation: `js/landing-lite.js` on the MCT page (`initLandingAnalytics`, `initLandingCtaForms`). Shared site pages may also use `js/main.js`.

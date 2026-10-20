@@ -129,18 +129,27 @@
     var landing = qs("[data-landing]");
     if (!landing) return;
     var slug = landing.getAttribute("data-landing") || "";
+    // Scope includes header/footer chrome so CTA/portal/phone events still fire.
+    var root = qs(".site-root") || document;
 
-    qsa("[data-mct-track]", landing).forEach(function (el) {
+    qsa("[data-mct-track]", root).forEach(function (el) {
       el.addEventListener("click", function () {
         var name = el.getAttribute("data-mct-track") || "";
         if (name) pushSmEvent(name, { landing_page: slug });
       });
     });
 
-    qsa('a[href^="tel:"]', landing).forEach(function (a) {
+    qsa('a[href^="tel:"]', root).forEach(function (a) {
       if (a.getAttribute("data-mct-track")) return;
       a.addEventListener("click", function () {
         pushSmEvent("phone_click", { landing_page: slug });
+      });
+    });
+
+    qsa('a[href*="specialized-med-business.com"]', root).forEach(function (a) {
+      if (a.getAttribute("data-mct-track")) return;
+      a.addEventListener("click", function () {
+        pushSmEvent("portal_click", { landing_page: slug });
       });
     });
 

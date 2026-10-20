@@ -15,7 +15,7 @@ const stagingPath = path.join(
 const outPath = path.join(root, "mobile-cardiac-telemetry-mct.html");
 
 const PROD = "https://www.specialized-med.com";
-const PAGE_PATH = "/mobile-cardiac-telemetry-mct";
+const PAGE_PATH = "/mobile-cardiac-telemetry-mct/";
 const PAGE_URL = PROD + PAGE_PATH;
 const UPDATED = "2026-10-15";
 
@@ -217,14 +217,14 @@ function jsonLdGraph() {
 function rewriteInternalLinks(html) {
   const map = [
     ["/cardiac-monitoring-services", "services/"],
-    ["/live-ecg-monitoring", "services/"],
-    ["/s-patch-cardiac-monitoring-system", "services/equipment/"],
-    ["/cardiac-event-monitoring", "services/"],
-    ["/holter-monitoring-services", "services/"],
-    ["/long-term-holter-monitoring", "services/"],
+    ["/live-ecg-monitoring", "live-ecg-monitoring/"],
+    ["/s-patch-cardiac-monitoring-system", "s-patch-cardiac-monitoring-system/"],
+    ["/cardiac-event-monitoring", "cardiac-event-monitoring/"],
+    ["/holter-monitoring-services", "holter-monitoring-services/"],
+    ["/long-term-holter-monitoring", "long-term-holter-monitoring/"],
     ["/post-tavr-cardiac-monitoring", "post-tavr-cardiac-monitoring/"],
     ["/cardiology-practice-cardiac-monitoring", "clinical-stories/"],
-    ["/mobile-cardiac-telemetry-mct", "mobile-cardiac-telemetry-mct"],
+    ["/mobile-cardiac-telemetry-mct", "mobile-cardiac-telemetry-mct/"],
     ["/contact", "contact/"],
     ["/about", "about/"],
     ["/services", "services/"],
@@ -419,10 +419,11 @@ function relatedBlock() {
         <h2 id="mct-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>
         <ul class="landing-related">
           <li><a href="services/">Cardiac Monitoring Services</a></li>
-          <li><a href="services/equipment/">S-Patch Cardiac Monitoring Equipment</a></li>
-          <li><a href="services/">Holter Monitoring</a></li>
-          <li><a href="services/">Long-Term Holter Monitoring</a></li>
-          <li><a href="services/">Cardiac Event Monitoring</a></li>
+          <li><a href="s-patch-cardiac-monitoring-system/">S-Patch Cardiac Monitoring System</a></li>
+          <li><a href="live-ecg-monitoring/">Live ECG Monitoring</a></li>
+          <li><a href="holter-monitoring-services/">Holter Monitoring</a></li>
+          <li><a href="long-term-holter-monitoring/">Long-Term Holter Monitoring</a></li>
+          <li><a href="cardiac-event-monitoring/">Cardiac Event Monitoring</a></li>
           <li><a href="post-tavr-cardiac-monitoring/">Post-TAVR Cardiac Monitoring</a></li>
           <li><a href="clinical-stories/">Clinical Stories</a></li>
           <li><a href="faq/">FAQs</a></li>

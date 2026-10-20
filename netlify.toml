@@ -3,8 +3,16 @@
 # Stage 0.2: X-Robots-Tag until production launch gate passes.
 # Managed by: npm run mct:index / npm run mct:noindex
 #
-# Pretty URLs serve /mobile-cardiac-telemetry-mct (no trailing slash).
-# Canonicals/sitemap use that form so lab tests avoid a 301 hop.
+# Production canonical (PDF Stage 3.1): /mobile-cardiac-telemetry-mct/
+# Netlify Pretty URLs may strip the trailing slash on staging; production Apache (.htaccess) keeps it.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    X-Frame-Options = "SAMEORIGIN"
 
 [[headers]]
   for = "/mobile-cardiac-telemetry-mct"

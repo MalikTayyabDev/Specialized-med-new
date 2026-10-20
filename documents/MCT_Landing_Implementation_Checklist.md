@@ -157,6 +157,16 @@ Legend: **Done** = implemented in this repo · **Handoff** = needs stakeholder /
 - [x] Launch flip helpers: `npm run mct:index` / `npm run mct:noindex`  
 - [x] Client handoff remaining list: `documents/MCT_Client_Handoff_Remaining.md`
 
+## Follow-up developer items completed (Oct 20, 2026)
+
+- [x] Restored PDF Stage 3.1 trailing-slash canonical (`/mobile-cardiac-telemetry-mct/`) + matching `.htaccess` / `_redirects`  
+- [x] Stage 3.6 link cluster: Holter / LTH / Event / Live ECG / S-Patch pretty URLs + sitemap entries  
+- [x] Inbound MCT links normalized across satellite pages  
+- [x] Netlify security headers (nosniff, referrer, frame, permissions)  
+- [x] Portal/phone analytics scoped to full chrome; footer `portal_click`  
+- [x] Flip script no longer wipes `netlify.toml`  
+- [x] Automated PDF acceptance QA: `npm run qa:mct` (**72/72 pass**)
+
 ## Remaining before go-live (client / stakeholder)
 
 1. Password-protect Netlify staging  

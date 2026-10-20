@@ -9,7 +9,8 @@
     "build:chrome": "node scripts/build-chrome-css.mjs",
     "build:landing-mct": "node scripts/build-landing-mct-css.mjs",
     "mct:index": "node scripts/flip-mct-indexability.mjs index",
-    "mct:noindex": "node scripts/flip-mct-indexability.mjs noindex"
+    "mct:noindex": "node scripts/flip-mct-indexability.mjs noindex",
+    "qa:mct": "node scripts/qa-mct-pdf.mjs"
   }
 }
 

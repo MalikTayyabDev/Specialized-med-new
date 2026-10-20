@@ -10,13 +10,26 @@ RewriteRule ^services\.jsp$ /services.html [R=301,L]
 RewriteRule ^faq\.jsp$      /faq.html [R=301,L]
 RewriteRule ^contact\.jsp$  /contact.html [R=301,L]
 
-# Pretty URL: MCT landing
+# Pretty URL: MCT landing (canonical with trailing slash per PDF Stage 3.1)
 RewriteRule ^mobile-cardiac-telemetry-mct\.html$ /mobile-cardiac-telemetry-mct/ [R=301,L]
-RewriteRule ^mobile-cardiac-telemetry-mct/?$ /mobile-cardiac-telemetry-mct.html [L]
+RewriteRule ^mobile-cardiac-telemetry-mct$ /mobile-cardiac-telemetry-mct/ [R=301,L]
+RewriteRule ^mobile-cardiac-telemetry-mct/$ /mobile-cardiac-telemetry-mct.html [L]
 RewriteRule ^post-tavr-cardiac-monitoring\.html$ /post-tavr-cardiac-monitoring/ [R=301,L]
 RewriteRule ^post-tavr-cardiac-monitoring/?$ /post-tavr-cardiac-monitoring.html [L]
 RewriteRule ^privacy\.html$ /privacy/ [R=301,L]
 RewriteRule ^privacy/?$ /privacy.html [L]
+
+# Pretty URLs: related modality landings (PDF Stage 3.6 link cluster)
+RewriteRule ^holter-monitoring-services\.html$ /holter-monitoring-services/ [R=301,L]
+RewriteRule ^holter-monitoring-services/?$ /holter-monitoring-services.html [L]
+RewriteRule ^long-term-holter-monitoring\.html$ /long-term-holter-monitoring/ [R=301,L]
+RewriteRule ^long-term-holter-monitoring/?$ /long-term-holter-monitoring.html [L]
+RewriteRule ^cardiac-event-monitoring\.html$ /cardiac-event-monitoring/ [R=301,L]
+RewriteRule ^cardiac-event-monitoring/?$ /cardiac-event-monitoring.html [L]
+RewriteRule ^live-ecg-monitoring\.html$ /live-ecg-monitoring/ [R=301,L]
+RewriteRule ^live-ecg-monitoring/?$ /live-ecg-monitoring.html [L]
+RewriteRule ^s-patch-cardiac-monitoring-system\.html$ /s-patch-cardiac-monitoring-system/ [R=301,L]
+RewriteRule ^s-patch-cardiac-monitoring-system/?$ /s-patch-cardiac-monitoring-system.html [L]
 
 # Force HTTPS
 RewriteCond %{HTTPS} off
