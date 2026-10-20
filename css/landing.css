@@ -480,13 +480,19 @@
 }
 
 .landing-faq .faq-category__list {
-  max-width: none;
   width: 100%;
 }
 
-.landing-faq .faq-accordion__inner {
-  max-width: none;
+/* Keep FAQ on the same .figma-container grid as other muted sections */
+.landing-faq .faq-accordion__inner.figma-container,
+.landing-faq > .figma-container {
+  max-width: 1440px;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--figma-inline, 1.5rem);
+  padding-right: var(--figma-inline, 1.5rem);
+  box-sizing: border-box;
 }
 
 /* ------------------------- Manual v2 components ------------------------- */
@@ -503,7 +509,7 @@
   border: 0;
 }
 
-/* Breadcrumb */
+/* Breadcrumb — same centered .figma-container as page sections */
 .landing-breadcrumb {
   padding: 0.85rem 0 0;
 }
@@ -511,6 +517,7 @@
 .landing-breadcrumb__list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.35rem;
   margin: 0;
   padding: 0;
@@ -520,8 +527,14 @@
   text-align: left;
 }
 
-.landing-breadcrumb .figma-container {
-  margin-left: 0;
+.landing-breadcrumb > .figma-container {
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--figma-inline, 1.5rem);
+  padding-right: var(--figma-inline, 1.5rem);
+  box-sizing: border-box;
   text-align: left;
 }
 

@@ -324,8 +324,8 @@ ${jsonLdGraph()}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="/css/global.css?v=20261020">
-  <link rel="stylesheet" href="/css/chrome.css?v=20261020">
-  <link rel="stylesheet" href="/css/landing-mct.css?v=20261020b">
+  <link rel="stylesheet" href="/css/chrome.css?v=20261020d">
+  <link rel="stylesheet" href="/css/landing-mct.css?v=20261020d">
   <link rel="stylesheet" href="/css/faq.css?v=20261020">
   <link rel="canonical" href="${PAGE_URL}">
 </head>`;
