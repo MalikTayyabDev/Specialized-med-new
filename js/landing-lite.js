@@ -60,7 +60,15 @@
     var root = siteBaseUrl();
     qsa("a[href]").forEach(function (a) {
       var h = a.getAttribute("href") || "";
-      if (!h || /^(https?:|mailto:|tel:|#)/i.test(h) || h.startsWith("//") || h.startsWith("/") || h.startsWith("../")) return;
+      if (!h || /^(https?:|mailto:|tel:)/i.test(h) || h.startsWith("//") || h.startsWith("/") || h.startsWith("../")) return;
+      // Keep same-page hash links on the current document. A <base href="/"> would
+      // otherwise send #cta-form / #main-content to the homepage.
+      if (h.charAt(0) === "#") {
+        try {
+          a.setAttribute("href", String(window.location.pathname || "") + String(window.location.search || "") + h);
+        } catch (_) {}
+        return;
+      }
       try {
         a.setAttribute("href", String(new URL(h, root)));
       } catch (_) {}
