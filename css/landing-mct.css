@@ -118,7 +118,12 @@
 }
 
 .landing-section {
-  padding: clamp(3.25rem, 6.5vw, 5.5rem) 0;
+  padding: clamp(3.75rem, 7vw, 6.25rem) 0;
+}
+
+/* Visible gap between stacked sections (especially muted plates vs white bands) */
+.landing-section + .landing-section {
+  margin-top: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .landing-section--overview {
@@ -144,6 +149,7 @@
   background: #faf8f8;
   border-radius: 20px;
   margin-inline: var(--page-hero-gutter, 1.5rem);
+  margin-block: clamp(0.75rem, 2vw, 1.5rem);
   padding-inline: 0;
 }
 
@@ -1701,41 +1707,40 @@
   }
 }
 
-/* Stronger left scrim for connected-home ECG hero (patient left, monitoring desk right) */
+/* New hero already includes a left white fade; keep a light scrim and show patient + inset on the right */
 .landing-hero__plate--mobile-cardiac-telemetry-mct .landing-hero__media {
-  object-position: 22% center;
+  object-position: 68% center;
 }
 
 .landing-hero__plate--mobile-cardiac-telemetry-mct .landing-hero__gradient {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0.92) 26%,
-    rgba(255, 255, 255, 0.52) 46%,
-    rgba(255, 255, 255, 0.12) 64%,
-    rgba(255, 255, 255, 0) 76%
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.28) 22%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0) 58%
   );
 }
 
 @media (max-width: 900px) {
   .landing-hero__plate--mobile-cardiac-telemetry-mct .landing-hero__media {
-    object-position: 18% center;
-    opacity: 0.5;
+    object-position: 72% center;
+    opacity: 0.58;
   }
 
   .landing-hero__plate--mobile-cardiac-telemetry-mct .landing-hero__gradient {
     background:
       linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0.97) 0%,
-        rgba(255, 255, 255, 0.94) 48%,
-        rgba(255, 255, 255, 0.88) 100%
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(255, 255, 255, 0.9) 42%,
+        rgba(255, 255, 255, 0.82) 100%
       ),
       linear-gradient(
         90deg,
         #ffffff 0%,
-        rgba(255, 255, 255, 0.92) 55%,
-        rgba(255, 255, 255, 0.55) 100%
+        rgba(255, 255, 255, 0.88) 48%,
+        rgba(255, 255, 255, 0.4) 100%
       );
   }
 
