@@ -1,0 +1,212 @@
+{
+  "generated": "2026-10-29T12:48:45.331Z",
+  "passed": 41,
+  "failed": 0,
+  "results": [
+    {
+      "id": "mobile-overflow-hidden",
+      "pass": true,
+      "detail": "landing-page overflow-x:hidden"
+    },
+    {
+      "id": "table-scroll-wrap",
+      "pass": true,
+      "detail": "comparison table overflow-x:auto"
+    },
+    {
+      "id": "swipe-hint-mobile",
+      "pass": true,
+      "detail": "swipe hint shown under 900px"
+    },
+    {
+      "id": "table-has-hint-class",
+      "pass": true,
+      "detail": "MCT table wrap uses --hint class"
+    },
+    {
+      "id": "mobile-hero-opacity-full",
+      "pass": true,
+      "detail": "mobile MCT hero opacity=1"
+    },
+    {
+      "id": "mobile-hero-not-washed",
+      "pass": true,
+      "detail": "mobile gradient should not be near-opaque white over image"
+    },
+    {
+      "id": "hero-img-present",
+      "pass": true,
+      "detail": "hero picture + matching alt present"
+    },
+    {
+      "id": "json-ld-parses",
+      "pass": true,
+      "detail": "1 blocks"
+    },
+    {
+      "id": "faq-schema-html-match",
+      "pass": true,
+      "detail": "12/12 match; mismatches=0"
+    },
+    {
+      "id": "no-clinical-stories-link",
+      "pass": true,
+      "detail": "no clinical-stories href on MCT"
+    },
+    {
+      "id": "workflow-anchor-link",
+      "pass": true,
+      "detail": "practice workflow section + link"
+    },
+    {
+      "id": "tavr-no-expansion-notice",
+      "pass": true,
+      "detail": "no expansion/pending reviewer copy"
+    },
+    {
+      "id": "tavr-no-nested-mct",
+      "pass": true,
+      "detail": "no relative nested MCT links"
+    },
+    {
+      "id": "tavr-absolute-mct",
+      "pass": true,
+      "detail": "absolute /mobile-cardiac-telemetry-mct/ links present"
+    },
+    {
+      "id": "tavr-single-footer",
+      "pass": true,
+      "detail": "exactly one footer"
+    },
+    {
+      "id": "tavr-noindex",
+      "pass": true,
+      "detail": "post-tavr robots noindex"
+    },
+    {
+      "id": "tavr-faq-answers",
+      "pass": true,
+      "detail": "most TAVR FAQs have answer paragraphs"
+    },
+    {
+      "id": "has-24-7",
+      "pass": true,
+      "detail": "24/7 count=6"
+    },
+    {
+      "id": "alert-faq-channels",
+      "pass": true,
+      "detail": "alert FAQ names channels + protocol"
+    },
+    {
+      "id": "direct-answer-opening",
+      "pass": true,
+      "detail": "hero direct-answer opening"
+    },
+    {
+      "id": "enroll-hookup-disconnect",
+      "pass": true,
+      "detail": "3-step workflow summary"
+    },
+    {
+      "id": "no-manual-upload",
+      "pass": true,
+      "detail": "no manual upload wording"
+    },
+    {
+      "id": "device-return",
+      "pass": true,
+      "detail": "device return/reuse"
+    },
+    {
+      "id": "no-internal-notes",
+      "pass": true,
+      "detail": "no staging/internal notes"
+    },
+    {
+      "id": "long-term-holter-primary",
+      "pass": true,
+      "detail": "Long-Term Holter primary; no Extended Holter"
+    },
+    {
+      "id": "extended-as-synonym",
+      "pass": true,
+      "detail": "extended Holter only as synonym"
+    },
+    {
+      "id": "cta-path-absolute",
+      "pass": true,
+      "detail": "CTAs path-absolute, no bare #cta-form"
+    },
+    {
+      "id": "skip-path-absolute",
+      "pass": true,
+      "detail": "skip + main-content"
+    },
+    {
+      "id": "js-hash-fix",
+      "pass": true,
+      "detail": "landing-lite keeps hash links on current path"
+    },
+    {
+      "id": "mct-noindex",
+      "pass": true,
+      "detail": "MCT still noindex for staging"
+    },
+    {
+      "id": "no-especially-well-suited",
+      "pass": true,
+      "detail": "superlative softened"
+    },
+    {
+      "id": "battery-30-day-note",
+      "pass": true,
+      "detail": "30-day vs battery explanation"
+    },
+    {
+      "id": "footer-visitor-tagline",
+      "pass": true,
+      "detail": "visitor-facing footer tagline"
+    },
+    {
+      "id": "last-updated-current",
+      "pass": true,
+      "detail": "last updated date"
+    },
+    {
+      "id": "logo-alts",
+      "pass": true,
+      "detail": "logo alts named"
+    },
+    {
+      "id": "header-trailing-slash",
+      "pass": true,
+      "detail": "header nav trailing slashes"
+    },
+    {
+      "id": "asset-mobile-cardiac-telemetry-mct-hero.webp",
+      "pass": true,
+      "detail": "images/landing/mobile-cardiac-telemetry-mct-hero.webp"
+    },
+    {
+      "id": "asset-mobile-cardiac-telemetry-mct-hero.jpg",
+      "pass": true,
+      "detail": "images/landing/mobile-cardiac-telemetry-mct-hero.jpg"
+    },
+    {
+      "id": "asset-mobile-cardiac-telemetry-mct-hero-960.webp",
+      "pass": true,
+      "detail": "images/landing/mobile-cardiac-telemetry-mct-hero-960.webp"
+    },
+    {
+      "id": "asset-mobile-cardiac-telemetry-mct-hero-750.webp",
+      "pass": true,
+      "detail": "images/landing/mobile-cardiac-telemetry-mct-hero-750.webp"
+    },
+    {
+      "id": "asset-mobile-cardiac-telemetry-mct-hero-1280.webp",
+      "pass": true,
+      "detail": "images/landing/mobile-cardiac-telemetry-mct-hero-1280.webp"
+    }
+  ]
+}
