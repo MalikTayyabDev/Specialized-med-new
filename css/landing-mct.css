@@ -713,6 +713,10 @@
   max-width: 640px;
 }
 
+.landing-figure--wide {
+  max-width: min(1100px, 100%);
+}
+
 .landing-figure:last-child {
   margin-bottom: 0;
 }
