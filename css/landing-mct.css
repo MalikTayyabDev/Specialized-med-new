@@ -715,6 +715,8 @@
 
 .landing-figure--wide {
   max-width: min(1100px, 100%);
+  margin-top: 1.15rem;
+  margin-bottom: 0;
 }
 
 .landing-figure:last-child {
@@ -730,9 +732,28 @@
 }
 
 .landing-figure__cap {
-  margin-top: 0.5rem;
+  margin: 0.45rem 0 0;
   font-size: 0.85rem;
+  line-height: 1.4;
   color: rgba(35, 31, 30, 0.6);
+}
+
+/* Equipment/media band: less empty pad under wide figure */
+.landing-section--media-tight {
+  padding-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.landing-section--media-tight .landing-list {
+  margin-bottom: 0.35rem;
+}
+
+.landing-section--media-tight + .landing-section {
+  margin-top: clamp(0.75rem, 2vw, 1.35rem);
+}
+
+.landing-p--after-media {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
 }
 
 .landing-media-pair {
