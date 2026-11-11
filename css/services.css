@@ -150,6 +150,26 @@
   gap: 0.35rem;
 }
 
+a.svc-breakdown-card {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+a.svc-breakdown-card:hover,
+a.svc-breakdown-card:focus-visible {
+  border-color: rgba(201, 34, 47, 0.45);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(35, 31, 30, 0.08);
+  outline: none;
+}
+
+a.svc-breakdown-card:hover .svc-breakdown-card__title,
+a.svc-breakdown-card:focus-visible .svc-breakdown-card__title {
+  color: var(--color-red, #c9222f);
+}
+
 .svc-breakdown-card__title {
   margin: 0;
   font-size: clamp(1.1rem, 1.5vw, 1.5rem);
