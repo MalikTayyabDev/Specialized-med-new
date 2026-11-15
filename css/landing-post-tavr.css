@@ -1,0 +1,184 @@
+/* Post-TAVR MCT landing: page-specific deltas on top of landing-mct.css.
+   Hand-maintained (not produced by scripts/build-landing-mct-css.mjs). */
+
+/* ---------- Hero: supplied banner has a dark-blue copy side, so copy is light ---------- */
+.landing-hero__plate--post-tavr-cardiac-monitoring {
+  background-color: #0a2c66;
+  background-image: none;
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__media {
+  object-position: right 22%;
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(6, 30, 78, 0.94) 0%,
+    rgba(6, 30, 78, 0.9) 24%,
+    rgba(6, 30, 78, 0.68) 40%,
+    rgba(6, 30, 78, 0.22) 56%,
+    rgba(6, 30, 78, 0) 68%
+  );
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__inner {
+  max-width: min(640px, 52%);
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__title {
+  color: #fff;
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__title-accent {
+  color: #8fe3f2;
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__lead {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .figma-hero__pill {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .figma-btn--outline-dark {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .figma-btn--outline-dark:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+.landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__actions a:focus-visible {
+  outline-color: #fff;
+}
+
+@media (max-width: 900px) {
+  /* Photo on top, copy on a solid navy panel below it */
+  .landing-hero__plate--post-tavr-cardiac-monitoring {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding-block: 0;
+  }
+
+  .landing-hero__plate--post-tavr-cardiac-monitoring picture {
+    display: block;
+  }
+
+  .landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__media {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-position: 82% center;
+  }
+
+  .landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__gradient {
+    display: none;
+  }
+
+  .landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__inner {
+    max-width: 100%;
+  }
+
+  .landing-hero__plate--post-tavr-cardiac-monitoring .landing-hero__actions {
+    max-width: none;
+  }
+}
+
+/* ---------- Benefit blocks directly below the hero ---------- */
+[data-landing="post-tavr-cardiac-monitoring"] .landing-benefits {
+  margin-top: 0;
+}
+
+[data-landing="post-tavr-cardiac-monitoring"] .landing-benefits .landing-feature-card {
+  border-top: 3px solid var(--color-red, #c9222f);
+}
+
+/* ---------- Process diagram: five connected steps ---------- */
+@media (min-width: 1100px) {
+  [data-landing="post-tavr-cardiac-monitoring"] .landing-flow--process {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+
+  [data-landing="post-tavr-cardiac-monitoring"] .landing-flow--process .landing-flow__step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1.15rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-top: 2px solid var(--color-red, #c9222f);
+    border-right: 2px solid var(--color-red, #c9222f);
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1099px) {
+  [data-landing="post-tavr-cardiac-monitoring"] .landing-flow--process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Device photo ---------- */
+[data-landing="post-tavr-cardiac-monitoring"] .landing-split {
+  align-items: flex-start;
+}
+
+[data-landing="post-tavr-cardiac-monitoring"] .landing-figure--device img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 62%;
+}
+
+@media (max-width: 899px) {
+  [data-landing="post-tavr-cardiac-monitoring"] .landing-split__media {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* ---------- Evidence cards: three across on wide screens ---------- */
+@media (min-width: 1000px) {
+  [data-landing="post-tavr-cardiac-monitoring"] .landing-evidence {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+[data-landing="post-tavr-cardiac-monitoring"] .landing-evidence__card {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-landing="post-tavr-cardiac-monitoring"] .landing-evidence__label {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+/* ---------- Header: longer CTA label must not crowd the nav ---------- */
+@media (max-width: 1440px) and (min-width: 901px) {
+  .site-header .figma-header__cta .figma-btn--tavr-demo {
+    min-width: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Lead form: privacy notice sits on the dark CTA panel ---------- */
+[data-landing="post-tavr-cardiac-monitoring"] .landing-cta-block__copy .landing-cta-form__privacy {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+[data-landing="post-tavr-cardiac-monitoring"] .landing-cta-block__copy .landing-cta-form__privacy a {
+  color: #fff;
+  text-decoration: underline;
+}
