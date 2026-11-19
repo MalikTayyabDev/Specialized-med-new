@@ -1,0 +1,268 @@
+/* Holter landing pages (24–48 h, through 7 days, 8–14 days): page-specific
+   deltas on top of landing-mct.css. Hand-maintained. */
+
+/* ---------- Hero: shared ---------- */
+.landing-hero__plate--holter {
+  background-image: none;
+}
+
+.landing-hero__plate--holter .landing-hero__inner {
+  max-width: min(600px, 48%);
+}
+
+.landing-hero__plate--holter .landing-hero__media {
+  object-position: var(--hero-focus, 70% 48%);
+}
+
+/* Light heroes (24–48 h, through 7 days): dark text on a light copy panel */
+.landing-hero__plate--holter-light {
+  background-color: #f1eeea;
+}
+
+.landing-hero__plate--holter-light .landing-hero__gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.86) 30%,
+    rgba(255, 255, 255, 0.55) 44%,
+    rgba(255, 255, 255, 0) 58%
+  );
+}
+
+.landing-hero__plate--holter-light .landing-hero__lead {
+  color: rgba(35, 31, 30, 0.85);
+}
+
+/* Navy hero (8–14 days): white text on navy */
+.landing-hero__plate--holter-navy {
+  background-color: #2c4366;
+}
+
+.landing-hero__plate--holter-navy .landing-hero__gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(28, 46, 76, 0.9) 0%,
+    rgba(28, 46, 76, 0.78) 30%,
+    rgba(28, 46, 76, 0.4) 46%,
+    rgba(28, 46, 76, 0) 60%
+  );
+}
+
+.landing-hero__plate--holter-navy .landing-hero__title {
+  color: #fff;
+}
+
+.landing-hero__plate--holter-navy .landing-hero__title-accent {
+  color: #9fd8ff;
+}
+
+.landing-hero__plate--holter-navy .landing-hero__lead {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.landing-hero__plate--holter-navy .figma-hero__pill {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.landing-hero__plate--holter-navy .figma-btn--outline-dark {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.landing-hero__plate--holter-navy .figma-btn--outline-dark:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+.landing-hero__plate--holter-navy .landing-hero__actions a:focus-visible {
+  outline-color: #fff;
+}
+
+/* Mobile: photo on top (cropped to the face and both electrodes), copy below */
+@media (max-width: 900px) {
+  .landing-hero__plate--holter {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding-block: 0;
+  }
+
+  .landing-hero__plate--holter picture {
+    display: block;
+  }
+
+  .landing-hero__plate--holter .landing-hero__media {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-position: var(--hero-focus-mobile, var(--hero-focus, 70% 48%));
+  }
+
+  .landing-hero__plate--holter .landing-hero__gradient {
+    display: none;
+  }
+
+  .landing-hero__plate--holter .landing-hero__inner {
+    max-width: 100%;
+  }
+
+  .landing-hero__plate--holter .landing-hero__actions {
+    max-width: none;
+  }
+
+  .landing-hero__plate--holter-light {
+    background-color: #f7f5f2;
+  }
+
+  .landing-hero__plate--holter-navy {
+    background-color: #24395a;
+  }
+}
+
+/* ---------- Page modules ---------- */
+.landing-page--holter .landing-live-status {
+  border-left: 4px solid var(--color-red, #c9222f);
+  padding-left: 1.25rem;
+}
+
+.landing-page--holter .landing-live-status .landing-p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .landing-page--holter .landing-flow--holter {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.landing-page--holter .landing-table tbody tr[aria-current="page"] th,
+.landing-page--holter .landing-table tbody tr[aria-current="page"] td {
+  background: #fdf3f3;
+}
+
+.landing-page--holter .landing-table__current {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-red, #c9222f);
+}
+
+.landing-page--holter .landing-table--codes th,
+.landing-page--holter .landing-table--codes td {
+  white-space: nowrap;
+}
+
+.landing-page--holter .landing-split {
+  align-items: flex-start;
+}
+
+.landing-page--holter .landing-figure--report img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 899px) {
+  .landing-page--holter .landing-split__media {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+.landing-page--holter .landing-cta-form__note {
+  margin: 0.75rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(35, 31, 30, 0.7);
+}
+
+.landing-page--holter .landing-cta-block__copy .landing-cta-form__privacy,
+.landing-page--holter .landing-cta-block__copy .landing-cta-block__support {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.landing-page--holter .landing-cta-block__copy a {
+  color: #fff;
+}
+
+/* Header: shorter demo label */
+@media (max-width: 1440px) and (min-width: 901px) {
+  .site-header .figma-header__cta .figma-btn--holter-demo {
+    min-width: 0;
+    white-space: nowrap;
+  }
+}
+
+.landing-page--holter .landing-table__caption {
+  caption-side: top;
+  padding: 0 0 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+  color: rgba(35, 31, 30, 0.7);
+}
+
+/* Phones: each table row becomes a labelled card, so every column stays readable without sideways scrolling */
+@media (max-width: 720px) {
+  .landing-page--holter .landing-table-wrap:has(.landing-table--stack) {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .landing-page--holter .landing-table--stack,
+  .landing-page--holter .landing-table--stack tbody,
+  .landing-page--holter .landing-table--stack tr,
+  .landing-page--holter .landing-table--stack th,
+  .landing-page--holter .landing-table--stack td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .landing-page--holter .landing-table--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .landing-page--holter .landing-table--stack caption {
+    display: block;
+  }
+
+  .landing-page--holter .landing-table--stack tr {
+    margin: 0 0 0.85rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .landing-page--holter .landing-table--stack th[scope="row"] {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+  }
+
+  .landing-page--holter .landing-table--stack td {
+    padding: 0.55rem 1rem;
+    border: 0;
+  }
+
+  .landing-page--holter .landing-table--stack td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgba(35, 31, 30, 0.55);
+  }
+}

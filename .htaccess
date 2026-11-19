@@ -33,6 +33,7 @@ RewriteRule ^mobile-cardiac-telemetry-mct/?$           https://www.specialized-m
 RewriteRule ^post-tavr-cardiac-monitoring/?$           https://www.specialized-med.com/post-tavr-cardiac-monitoring.html [R=301,L]
 RewriteRule ^holter-monitoring-services/?$             https://www.specialized-med.com/holter-monitoring-services.html [R=301,L]
 RewriteRule ^long-term-holter-monitoring/?$            https://www.specialized-med.com/long-term-holter-monitoring.html [R=301,L]
+RewriteRule ^extended-holter-monitoring-8-14-days/?$   https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html [R=301,L]
 RewriteRule ^cardiac-event-monitoring/?$               https://www.specialized-med.com/cardiac-event-monitoring.html [R=301,L]
 RewriteRule ^live-ecg-monitoring/?$                    https://www.specialized-med.com/live-ecg-monitoring.html [R=301,L]
 RewriteRule ^s-patch-cardiac-monitoring-system/?$      https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html [R=301,L]

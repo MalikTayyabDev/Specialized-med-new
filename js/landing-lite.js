@@ -137,13 +137,21 @@
     var landing = qs("[data-landing]");
     if (!landing) return;
     var slug = landing.getAttribute("data-landing") || "";
+    var serviceId = landing.getAttribute("data-service-id") || "";
+    function params(el) {
+      var p = { landing_page: slug };
+      if (serviceId) p.service_id = serviceId;
+      var placement = el && el.getAttribute("data-track-placement");
+      if (placement) p.cta_placement = placement;
+      return p;
+    }
     // Scope includes header/footer chrome so CTA/portal/phone events still fire.
     var root = qs(".site-root") || document;
 
     qsa("[data-mct-track]", root).forEach(function (el) {
       el.addEventListener("click", function () {
         var name = el.getAttribute("data-mct-track") || "";
-        if (name) pushSmEvent(name, { landing_page: slug });
+        if (name) pushSmEvent(name, params(el));
       });
     });
 
@@ -168,7 +176,7 @@
         function () {
           if (started) return;
           started = true;
-          pushSmEvent("mct_form_start", { landing_page: slug });
+          pushSmEvent(form.getAttribute("data-track-start") || "mct_form_start", params(form));
         },
         true
       );
@@ -185,6 +193,9 @@
         statusEl.textContent = msg || "";
         statusEl.style.color = isError ? "#c9222f" : "rgba(35,31,30,0.7)";
       }
+
+      var successMessage = form.getAttribute("data-success-message") || "Success! Your request has been sent.";
+      var errorMessage = form.getAttribute("data-error-message") || "";
 
       form.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -218,13 +229,17 @@
             return null;
           });
           if (response.ok && data && data.success === true) {
-            setStatus("Success! Your request has been sent.", false);
+            setStatus(successMessage, false);
             try {
               var landingEl = qs("[data-landing]");
-              pushSmEvent("mct_form_success", {
+              var successParams = {
                 landing_page: landingEl ? landingEl.getAttribute("data-landing") || "" : "",
                 form_interest: String(fd.get("interest") || ""),
-              });
+                event_id: String(Date.now()) + "-" + Math.random().toString(36).slice(2, 10),
+              };
+              var sid = landingEl ? landingEl.getAttribute("data-service-id") : "";
+              if (sid) successParams.service_id = sid;
+              pushSmEvent(form.getAttribute("data-track-success") || "mct_form_success", successParams);
             } catch (_) {}
             var dest = String(new URL("thanks/", siteBaseUrl()));
             try {
@@ -239,13 +254,13 @@
             }, 50);
             return;
           }
-          setStatus("Error: " + ((data && data.message) || "Unable to send. Please try again."), true);
+          setStatus(errorMessage || "Error: " + ((data && data.message) || "Unable to send. Please try again."), true);
         } catch (error) {
           try {
             form.submit();
             return;
           } catch (_) {}
-          setStatus("Something went wrong. Please try again.", true);
+          setStatus(errorMessage || "Something went wrong. Please try again.", true);
         } finally {
           if (submitBtn) {
             submitBtn.textContent = originalText || "Submit";

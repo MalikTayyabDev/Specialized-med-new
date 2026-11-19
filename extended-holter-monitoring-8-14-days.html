@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function (w, d) {
+      function siteRootPathname() {
+        var segs = w.location.pathname.split("/").filter(Boolean)
+        var ph = segs.lastIndexOf("public_html")
+        if (ph !== -1) segs = segs.slice(ph + 1)
+        var leaf = {
+          about: 1,
+          services: 1,
+          faq: 1,
+          contact: 1,
+          "clinical-stories": 1,
+          thanks: 1,
+          "404": 1,
+          "cardiac-monitoring-services": 1,
+          "mobile-cardiac-telemetry-mct": 1,
+          "holter-monitoring-services": 1,
+          "long-term-holter-monitoring": 1,
+          "cardiac-event-monitoring": 1,
+          "ambulatory-cardiac-monitoring": 1,
+          "s-patch-cardiac-monitoring-system": 1,
+          "live-ecg-monitoring": 1,
+          "post-tavr-cardiac-monitoring": 1,
+          "extended-holter-monitoring-8-14-days": 1,
+          "cardiology-practice-cardiac-monitoring": 1
+        }
+        while (segs.length) {
+          var last = segs[segs.length - 1]
+          if (last === "equipment" && segs.length >= 2 && segs[segs.length - 2] === "services") {
+            segs.length -= 2
+            break
+          }
+          if (/\.html$/i.test(last)) {
+            segs.pop()
+            continue
+          }
+          if (leaf[last]) {
+            segs.pop()
+            continue
+          }
+          break
+        }
+        return "/" + (segs.join("/") + (segs.length ? "/" : ""))
+      }
+      var p = siteRootPathname()
+      var h = w.location.origin + (p === "/" ? "/" : p)
+      var b = d.createElement("base")
+      b.href = h
+      var m = d.head.querySelector("meta[charset]")
+      if (m && typeof m.insertAdjacentElement === "function") {
+        m.insertAdjacentElement("afterend", b)
+      } else if (m && m.nextSibling) {
+        d.head.insertBefore(b, m.nextSibling)
+      } else {
+        d.head.insertBefore(b, d.head.firstChild)
+      }
+    })(window, document)
+  </script>
+  <!-- sm-site-base -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html#webpage",
+      "url": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html",
+      "name": "8–14 Day Extended Holter Monitoring",
+      "description": "8–14 day extended Holter with continuous ECG recording, LIVE TEST STATUS VISIBILITY on connected studies, and clinical findings in the final report.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://www.specialized-med.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https://www.specialized-med.com/images/landing/holter-8-14-days-hero.jpg",
+        "width": 1817,
+        "height": 866
+      },
+      "dateModified": "2026-11-19",
+      "author": {
+        "@type": "Person",
+        "name": "Steven M. Burns",
+        "jobTitle": "President & CEO",
+        "worksFor": {
+          "@id": "https://www.specialized-med.com/#organization"
+        }
+      },
+      "citation": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/",
+        "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=60292",
+        "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?NCDId=179",
+        "https://pubmed.ncbi.nlm.nih.gov/24384108/"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html#service",
+      "url": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html",
+      "name": "8–14 Day Extended Holter Monitoring",
+      "serviceType": "Continuous external ambulatory electrocardiographic monitoring",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "image": "https://www.specialized-med.com/images/landing/holter-8-14-days-hero.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.specialized-med.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cardiac Monitoring Services",
+          "item": "https://www.specialized-med.com/cardiac-monitoring-services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "8–14 Day Extended Holter",
+          "item": "https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.specialized-med.com/#organization",
+      "name": "Specialized Medical LLC",
+      "url": "https://www.specialized-med.com/",
+      "telephone": "+1-855-773-2633",
+      "email": "info@specialized-med.com",
+      "logo": "https://www.specialized-med.com/images/figma-assets/brand-logo.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34145 Pacific Coast Highway, #700",
+        "addressLocality": "Dana Point",
+        "addressRegion": "CA",
+        "postalCode": "92629",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.specialized-med.com/#website",
+      "name": "Specialized Medical",
+      "url": "https://www.specialized-med.com/",
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      }
+    }
+  ]
+}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>8–14 Day Extended Holter Monitoring | Specialized Medical</title>
+  <meta name="description" content="8–14 day extended Holter with continuous ECG recording, LIVE TEST STATUS VISIBILITY on connected studies, and clinical findings in the final report.">
+  <meta property="og:site_name" content="Specialized Medical">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="8–14 Day Extended Holter Monitoring | Specialized Medical">
+  <meta property="og:description" content="8–14 day extended Holter with continuous ECG recording, LIVE TEST STATUS VISIBILITY on connected studies, and clinical findings in the final report.">
+  <meta property="og:url" content="https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html">
+  <meta property="og:image" content="https://www.specialized-med.com/images/landing/holter-8-14-days-hero.jpg">
+  <meta property="og:image:width" content="1817">
+  <meta property="og:image:height" content="866">
+  <meta property="og:image:alt" content="Patient reading at home while wearing a two-disc S-Patch ECG monitor.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="8–14 Day Extended Holter Monitoring | Specialized Medical">
+  <meta name="twitter:description" content="8–14 day extended Holter with continuous ECG recording, LIVE TEST STATUS VISIBILITY on connected studies, and clinical findings in the final report.">
+  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/holter-8-14-days-hero.jpg">
+  <meta name="twitter:image:alt" content="Patient reading at home while wearing a two-disc S-Patch ECG monitor.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="icon" href="/favicon.svg?v=ea9bbc50ae">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preload" as="image" type="image/webp" href="/images/landing/holter-8-14-days-hero-960.webp?v=1da663f633" imagesrcset="/images/landing/holter-8-14-days-hero-750.webp?v=c033e8f148 750w, /images/landing/holter-8-14-days-hero-960.webp?v=1da663f633 960w, /images/landing/holter-8-14-days-hero-1280.webp?v=d336eaa13a 1280w, /images/landing/holter-8-14-days-hero.webp?v=5e4de64ad8 1817w" imagesizes="(max-width: 900px) 100vw, min(1430px, 100vw)" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/global.css?v=1bad96baac">
+  <link rel="stylesheet" href="/css/chrome.css?v=21dc8e5542">
+  <link rel="stylesheet" href="/css/landing-mct.css?v=6e8799d245">
+  <link rel="stylesheet" href="/css/faq.css?v=c9b924a842">
+  <link rel="stylesheet" href="/css/landing-holter.css?v=71ff582dec">
+  <link rel="canonical" href="https://www.specialized-med.com/extended-holter-monitoring-8-14-days.html">
+</head>
+<body>
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-T2JLQJ7R"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <a class="skip-link" href="extended-holter-monitoring-8-14-days.html#main-content">Skip to content</a>
+  <div class="site-root">
+    <header class="site-header site-header--figma">
+      <div class="figma-container figma-header__inner site-header__inner">
+        <a href="./" class="figma-brand" aria-label="Specialized Medical home">
+          <img class="figma-brand__mark" src="/images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="Specialized Medical" width="236" fetchpriority="low" height="52" decoding="async">
+        </a>
+        <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <button type="button" class="nav-overlay" aria-label="Close menu" hidden></button>
+        <nav id="primary-nav" class="figma-nav" aria-label="Primary">
+          <a class="figma-nav__link" href="./">Home</a>
+          <a class="figma-nav__link" href="about.html">About Us</a>
+          <a class="figma-nav__link is-active" href="services.html">Services</a>
+          <a class="figma-nav__link" href="faq.html">FAQs</a>
+          <a class="figma-nav__link" href="contact.html">Contact</a>
+          <div class="figma-nav__mobile">
+            <a class="figma-nav__phone" href="tel:+18557732633" data-mct-track="specialist_phone_click" data-track-placement="mobile_nav">Call: 1-855-773-2633</a>
+            <div class="figma-nav__actions">
+              <a class="figma-btn figma-btn--outline-dark" href="extended-holter-monitoring-8-14-days.html#cta-form" data-mct-track="demo_cta_click" data-track-placement="mobile_nav">Request a Holter Demo</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+            </div>
+          </div>
+        </nav>
+        <div class="figma-header__cta">
+          <a class="figma-phone" href="tel:+18557732633" data-mct-track="specialist_phone_click" data-track-placement="header">
+            <img class="figma-phone__icon" src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
+            <span class="figma-phone__num">1-855-773-2633</span>
+          </a>
+          <a class="figma-btn figma-btn--outline-dark figma-btn--holter-demo" href="extended-holter-monitoring-8-14-days.html#cta-form" data-mct-track="demo_cta_click" data-track-placement="header">Request a Holter Demo</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="landing-page landing-page--holter services-page services-page--figma" data-landing="extended-holter-monitoring-8-14-days" data-service-id="holter_8_14d" id="main-content" tabindex="-1">
+    <nav class="landing-breadcrumb" aria-label="Breadcrumb">
+      <div class="figma-container">
+        <ol class="landing-breadcrumb__list">
+          <li><a href="./">Home</a></li>
+          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
+          <li><span aria-current="page">8–14 Day Extended Holter</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="landing-hero" aria-labelledby="holter_8_14d-hero-heading">
+      <div class="landing-hero__plate landing-hero__plate--holter landing-hero__plate--holter-navy" style="--hero-focus: 74% 47%; --hero-focus-mobile: 72% 45%;">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/images/landing/holter-8-14-days-hero-750.webp?v=c033e8f148 750w, /images/landing/holter-8-14-days-hero-960.webp?v=1da663f633 960w, /images/landing/holter-8-14-days-hero-1280.webp?v=d336eaa13a 1280w, /images/landing/holter-8-14-days-hero.webp?v=5e4de64ad8 1817w"
+            sizes="(max-width: 900px) 100vw, min(1430px, 100vw)">
+          <img
+            class="landing-hero__media"
+            src="/images/landing/holter-8-14-days-hero-960.jpg?v=738e8aa12a"
+            srcset="/images/landing/holter-8-14-days-hero-960.jpg?v=738e8aa12a 960w, /images/landing/holter-8-14-days-hero-1280.jpg?v=f774019cd2 1280w, /images/landing/holter-8-14-days-hero.jpg?v=b23869fdc0 1817w"
+            sizes="(max-width: 900px) 100vw, min(1430px, 100vw)"
+            alt="Patient reading at home while wearing a two-disc S-Patch ECG monitor."
+            width="1817"
+            height="866"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async">
+        </picture>
+        <div class="landing-hero__gradient" aria-hidden="true"></div>
+        <div class="landing-hero__inner figma-container">
+          <p class="figma-hero__pill">
+            <span class="figma-hero__pill-dot" aria-hidden="true"></span>
+            CONTINUOUS ECG RECORDING | LIVE TEST STATUS VISIBILITY | FINAL REPORT
+          </p>
+          <h1 id="holter_8_14d-hero-heading" class="landing-hero__title">8–14 Day Extended <span class="landing-hero__title-accent">Holter Monitoring</span></h1>
+          <p class="landing-hero__lead landing-answer">An 8–14-day extended Holter continuously records the patient’s ECG across a longer prescribed window. With LIVE TEST STATUS VISIBILITY on connected studies, Specialized Medical can help keep a longer recording on track by spotting and addressing technical problems as they arise. Clinical findings are presented in the final report after the study and analysis are complete.</p>
+          <div class="landing-hero__actions">
+            <a class="figma-btn figma-btn--solid" href="extended-holter-monitoring-8-14-days.html#cta-form" data-mct-track="demo_cta_click" data-track-placement="hero">Request an 8–14 Day Holter Demo</a>
+            <a class="figma-btn figma-btn--outline-dark" href="extended-holter-monitoring-8-14-days.html#compare-holter">Compare Holter durations</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="holter_8_14d-live-heading">
+      <div class="figma-container">
+        <h2 id="holter_8_14d-live-heading" class="landing-h2">How LIVE TEST STATUS VISIBILITY Helps Keep a Holter Study <span class="landing-h2__accent">on Track</span></h2>
+        <div class="landing-live-status">
+          <p class="landing-p landing-answer">During a connected Holter study, Specialized Medical can see whether the battery, electrodes and connection are working as expected and whether ECG data is being received. If the team identifies an issue, it can contact the patient and help correct it during wear. Addressing these issues while the study is active helps preserve usable ECG data and improves the likelihood of completing the prescribed recording. Clinical findings are presented to the ordering clinician in the final report after the study and analysis are complete.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="holter-8-14-when-heading">
+      <div class="figma-container">
+        <h2 id="holter-8-14-when-heading" class="landing-h2">When More Than Seven Days of Recording <span class="landing-h2__accent">May Help</span></h2>
+        <p class="landing-p">The ordering clinician may want a longer continuous recording to review rhythm patterns across more days, compare symptoms with the recorded rhythm or estimate how often certain rhythms occurred during the study. The choice depends on the clinical question, symptom frequency, and whether the clinician needs to receive qualifying findings while monitoring is underway. Very infrequent symptoms may warrant a different monitoring strategy.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup></p>
+        <p class="landing-p">When qualifying findings need to be communicated during the study, the clinician may consider <a href="mobile-cardiac-telemetry-mct.html">mobile cardiac telemetry</a> instead.</p>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="holter-8-14-workflow-heading">
+      <div class="figma-container">
+        <h2 id="holter-8-14-workflow-heading" class="landing-h2">What to Plan for During a <span class="landing-h2__accent">Longer Study</span></h2>
+        <p class="landing-p">At enrollment, the practice can review how to wear the S-Patch, keep the assigned phone available, log symptoms, and contact technical support. On connected studies, LIVE TEST STATUS VISIBILITY lets Specialized Medical check electrode contact, battery status, connectivity and ECG data receipt during wear. The team can contact the patient to help address an issue and keep the longer study on track. Follow the instructions supplied for the specific monitor, including any prescribed electrode or battery changes and return steps.</p>
+        <ol class="landing-flow landing-flow--holter" aria-label="Holter study steps">
+          <li class="landing-flow__step"><strong>Enroll and prescribe</strong><span>The practice enrolls the patient and confirms the prescribed recording window.</span></li>
+          <li class="landing-flow__step"><strong>Apply and instruct</strong><span>The S-Patch is applied, and the patient learns how to log symptoms and whom to call.</span></li>
+          <li class="landing-flow__step"><strong>Wear with LIVE TEST STATUS VISIBILITY</strong><span>On connected studies, Specialized Medical follows battery, electrode contact, connectivity and data receipt.</span></li>
+          <li class="landing-flow__step"><strong>Final report</strong><span>After the study and analysis are complete, the ordering clinician receives the final report.</span></li>
+        </ol>
+        <p class="landing-p">Equipment details and wear instructions are on the <a href="s-patch-cardiac-monitoring-system.html">S-Patch cardiac monitoring system</a> and <a href="services/equipment.html">cardiac monitoring equipment</a> pages.</p>
+        <div class="landing-note landing-note--alert" role="note">
+          <p class="landing-note__title">Urgent symptoms</p>
+          <p class="landing-note__body">For urgent symptoms such as chest pain, severe shortness of breath or stroke symptoms, call 911. For device or setup questions, use the support number supplied with your study.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="holter-8-14-report-heading">
+      <div class="figma-container">
+        <h2 id="holter-8-14-report-heading" class="landing-h2">Reviewing the <span class="landing-h2__accent">Longer Recording</span></h2>
+        <p class="landing-p">The final report may summarize rate and rhythm patterns across the interpretable recording, the frequency or burden of selected rhythms when available, recorded symptom times, and representative ECG strips. The ordering clinician interprets the report alongside other clinical information.</p>
+        <!-- TODO before launch (guide p.14): add a de-identified, authorized Holter final-report excerpt here. -->
+        <aside class="landing-callout" role="note">
+          <p class="landing-callout__title">CLINICAL EVIDENCE</p>
+          <p class="landing-callout__body">In a study of 146 referred patients, a separate adhesive ECG patch worn for up to 14 days detected more prespecified arrhythmia events over total wear time than a 24-hour Holter. The study compared different devices and recording windows. It did not evaluate Specialized Medical’s S-Patch.<sup class="landing-cite"><a href="https://pubmed.ncbi.nlm.nih.gov/24384108/" target="_blank" rel="noopener noreferrer">[4]</a></sup></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" id="compare-holter" aria-labelledby="holter_8_14d-compare-heading">
+      <div class="figma-container">
+        <h2 id="holter_8_14d-compare-heading" class="landing-h2">Compare Holter Durations and <span class="landing-h2__accent">MCT</span></h2>
+        <div class="landing-table-wrap" role="region" aria-label="Holter durations compared with mobile cardiac telemetry" tabindex="0">
+          <table class="landing-table landing-table--stack">
+            <caption class="landing-table__caption">Holter monitoring options compared with mobile cardiac telemetry. Durations are prescribed windows.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Monitoring option</th>
+                <th scope="col">Prescribed duration</th>
+                <th scope="col">During the study</th>
+                <th scope="col">When clinical findings are presented</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><a href="holter-monitoring-services.html">24–48 Hour Holter</a></th>
+                <td data-label="Prescribed duration">24–48 hours</td>
+                <td data-label="During the study">LIVE TEST STATUS VISIBILITY on connected studies</td>
+                <td data-label="When clinical findings are presented">In the final report after the study and analysis are complete</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days</a></th>
+                <td data-label="Prescribed duration">More than 48 hours through 7 days</td>
+                <td data-label="During the study">LIVE TEST STATUS VISIBILITY on connected studies</td>
+                <td data-label="When clinical findings are presented">In the final report after the study and analysis are complete</td>
+              </tr>
+              <tr aria-current="page">
+                <th scope="row" aria-current="page">8–14 Day Extended Holter<span class="landing-table__current">(this page)</span></th>
+                <td data-label="Prescribed duration">8–14 days</td>
+                <td data-label="During the study">LIVE TEST STATUS VISIBILITY on connected studies</td>
+                <td data-label="When clinical findings are presented">In the final report after the study and analysis are complete</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></th>
+                <td data-label="Prescribed duration">Up to 30 days, as prescribed</td>
+                <td data-label="During the study">Attended surveillance and LIVE technical status when connected</td>
+                <td data-label="When clinical findings are presented">Qualifying findings during study per notification protocol, plus a final report</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="landing-p">Holter studies record ECG continuously for the prescribed window. <a href="cardiac-event-monitoring.html">Cardiac event monitoring</a> instead captures patient-triggered and auto-triggered events over a longer period, with qualifying findings communicated under the prescribed protocol. The full program is described on <a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a>.</p>
+        <p class="landing-p landing-p--actions"><a class="figma-btn figma-btn--solid" href="extended-holter-monitoring-8-14-days.html#cta-form" data-mct-track="demo_cta_click" data-track-placement="mid_page">Request an 8–14 Day Holter Demo</a></p>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="holter_8_14d-coding-heading">
+      <div class="figma-container">
+        <h2 id="holter_8_14d-coding-heading" class="landing-h2">CPT Codes for This <span class="landing-h2__accent">Holter Window</span></h2>
+        <div class="landing-table-wrap" role="region" aria-label="CPT codes for this Holter duration" tabindex="0">
+          <table class="landing-table landing-table--codes landing-table--stack">
+            <caption class="landing-table__caption">Continuous external ECG recording codes for this duration</caption>
+            <thead>
+              <tr>
+                <th scope="col">CPT recording threshold</th>
+                <th scope="col">Global</th>
+                <th scope="col">Recording component</th>
+                <th scope="col">Scanning analysis and report</th>
+                <th scope="col">Professional review and interpretation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">More than 7 days through 15 days</th>
+                <td data-label="Global">93245</td>
+                <td data-label="Recording component">93246</td>
+                <td data-label="Scanning analysis and report">93247</td>
+                <td data-label="Professional review and interpretation">93248</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="landing-p"><strong>Note:</strong> Specialized Medical’s service window on this page is 8–14 days. The corresponding CPT family extends through 15 days.</p>
+        <div class="landing-note landing-note--info" role="note">
+          <p class="landing-note__body">The codes above describe continuous external ECG recording and related service components. Verify the documented recording duration, components furnished, medical necessity, documentation, and current payer or Medicare contractor rules before submitting a claim. Coverage and payment depend on the payer and circumstances.<sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=60292" target="_blank" rel="noopener noreferrer">[2]</a></sup><sup class="landing-cite"><a href="https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?NCDId=179" target="_blank" rel="noopener noreferrer">[3]</a></sup></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="holter_8_14d-faq-heading">
+      <div class="figma-container faq-accordion__inner">
+        <h2 id="holter_8_14d-faq-heading" class="landing-h2">Questions About 8–14 Day Extended <span class="landing-h2__accent">Holter Monitoring</span></h2>
+        <div class="faq-category">
+          <div class="faq-category__list">
+<div class="faq-item is-open">
+      <button type="button" id="faq-trigger-holter_8_14d-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-holter_8_14d-0">
+        <span class="faq-item__q">Does an 8–14-day Holter record only when I feel a symptom?</span>
+        <svg class="faq-item__chevron is-open" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-holter_8_14d-0" role="region" aria-labelledby="faq-trigger-holter_8_14d-0" class="faq-item__panel">
+        <p>No. It is designed for continuous ECG recording during prescribed wear. Symptom entries add timing and context to the ECG data available for review.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-holter_8_14d-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-holter_8_14d-1">
+        <span class="faq-item__q">Does 14 days mean I will have to change the battery or electrodes?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-holter_8_14d-1" role="region" aria-labelledby="faq-trigger-holter_8_14d-1" class="faq-item__panel" hidden>
+        <p>Follow the instructions provided with the specific device and supplies. The practice or support team can explain what to do during your study.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-holter_8_14d-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-holter_8_14d-2">
+        <span class="faq-item__q">When does the clinician receive the findings from a 14-day Holter?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-holter_8_14d-2" role="region" aria-labelledby="faq-trigger-holter_8_14d-2" class="faq-item__panel" hidden>
+        <p>Specialized Medical presents clinical findings in the final report after the study and analysis are complete. The ordering clinician reviews the report and determines the next steps.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-holter_8_14d-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-holter_8_14d-3">
+        <span class="faq-item__q">What if the assigned phone loses its connection?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-holter_8_14d-3" role="region" aria-labelledby="faq-trigger-holter_8_14d-3" class="faq-item__panel" hidden>
+        <p>Follow the instructions supplied at setup and contact study support if the connection problem persists or the equipment displays a problem. The support team can explain which data are available for the study.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-holter_8_14d-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-holter_8_14d-4">
+        <span class="faq-item__q">What does rhythm burden mean in an extended Holter report?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-holter_8_14d-4" role="region" aria-labelledby="faq-trigger-holter_8_14d-4" class="faq-item__panel" hidden>
+        <p>Rhythm burden describes how much of the interpretable recording a specified rhythm occupied, typically expressed as a percentage. The clinician interprets it together with other findings and the clinical history.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-holter_8_14d-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-holter_8_14d-5">
+        <span class="faq-item__q">Can the study continue beyond 14 days?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-holter_8_14d-5" role="region" aria-labelledby="faq-trigger-holter_8_14d-5" class="faq-item__panel" hidden>
+        <p>The service described on this page covers 8–14 days. Contact the ordering clinician if a different monitoring duration is needed.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-holter_8_14d-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-holter_8_14d-6">
+        <span class="faq-item__q">What does LIVE TEST STATUS VISIBILITY mean during a Holter study?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-holter_8_14d-6" role="region" aria-labelledby="faq-trigger-holter_8_14d-6" class="faq-item__panel" hidden>
+        <p>It lets Specialized Medical check how a connected study is running and help the patient resolve technical issues during wear. The ordering clinician receives clinical findings in the final report after the study and analysis are complete.</p>
+      </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="holter_8_14d-eeat-heading">
+      <div class="figma-container">
+        <h2 id="holter_8_14d-eeat-heading" class="landing-h2">Author, Clinical Review and <span class="landing-h2__accent">References</span></h2>
+        <div class="landing-eeat">
+          <div class="landing-eeat__author">
+            <h3 class="landing-h3">Author</h3>
+            <p class="landing-p"><strong>Steven M. Burns</strong>, President &amp; CEO, Specialized Medical LLC. Mr. Burns leads Specialized Medical&rsquo;s ambulatory cardiac monitoring operations, including LIVE STREAMING Holter workflows, practice implementation and final-report delivery for cardiology practices.</p>
+          </div>
+          <div class="landing-eeat__review">
+            <h3 class="landing-h3">Clinical review</h3>
+            <p class="landing-p"><strong>Last updated:</strong> November 19, 2026</p>
+            <!-- TODO before launch (guide p.8): add the named clinical reviewer, credentials and actual review date; route coding copy through billing. -->
+            <p class="landing-p">Reviewed by Specialized Medical for service, workflow, and technical accuracy. This page provides general information for healthcare professionals and patients and does not replace clinical judgment, payer requirements, emergency services, or institutional protocols.</p>
+          </div>
+          <div class="landing-eeat__policy">
+            <h3 class="landing-h3">Editorial policy</h3>
+            <p class="landing-p">Specialized Medical publishes monitoring-service and technology information. Content is reviewed for clinical accuracy before publication. Corrections or questions may be directed to <a href="contact.html">Contact Specialized Medical</a> or 1-855-SPEC-MED (1-855-773-2633).</p>
+          </div>
+          <div class="landing-eeat__refs">
+            <h3 class="landing-h3">References</h3>
+            <ol class="landing-refs">
+              <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">Steinberg JS, et al. 2017 ISHNE-HRS expert consensus statement on ambulatory ECG and external cardiac monitoring/telemetry. Ann Noninvasive Electrocardiol. 2017;22:e12447. PMCID: PMC6931745</a></li>
+              <li><a href="https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=60292" target="_blank" rel="noopener noreferrer">CMS Billing and Coding: External Ambulatory Electrocardiographic Monitoring, Article A60292</a></li>
+              <li><a href="https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?NCDId=179" target="_blank" rel="noopener noreferrer">CMS National Coverage Determination 20.15: Electrocardiographic Services</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/24384108/" target="_blank" rel="noopener noreferrer">Barrett PM, et al. Comparison of 24-hour Holter monitoring with 14-day novel adhesive patch electrocardiographic monitoring. Am J Med. 2014;127(1):95.e11-7. PMID: 24384108</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="holter_8_14d-cta-heading">
+      <div class="figma-container">
+        <div class="landing-cta-block__box">
+          <div class="landing-cta-block__copy">
+            <h2 id="holter_8_14d-cta-heading" class="landing-h2">Request an 8–14 Day Holter Demo</h2>
+            <p class="landing-p">See how to set up longer continuous ECG studies and review their final reports in your practice.</p>
+            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633" data-mct-track="specialist_phone_click" data-track-placement="form">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
+            <p class="landing-p">See how practices run Holter studies in the <a href="cardiology-practice-cardiac-monitoring.html">cardiology practice monitoring workflow</a>.</p>
+            <p class="landing-p landing-cta-block__support"><strong>Patients:</strong> for device or setup questions, use the support number supplied with your study. For urgent symptoms, call 911.</p>
+          </div>
+          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST" data-track-start="demo_form_start" data-track-success="generate_lead" data-success-message="Thank you. Your request was sent to the Specialized Medical team." data-error-message="Your request could not be sent. Please try again or call 1-855-773-2633.">
+            <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
+            <input type="hidden" name="subject" value="Request an 8–14 Day Holter Demo — Specialized Medical">
+            <input type="hidden" name="from_page" value="extended-holter-monitoring-8-14-days">
+            <input type="hidden" name="originating_service" value="holter_8_14d">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Full name <abbr title="required">*</abbr></span>
+                <input name="name" type="text" autocomplete="name" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Organization <abbr title="required">*</abbr></span>
+                <input name="organization" type="text" autocomplete="organization" required>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Work email <abbr title="required">*</abbr></span>
+                <input name="email" type="email" autocomplete="work email" inputmode="email" required>
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Phone <span class="landing-cta-form__optional">(optional)</span></span>
+                <input name="phone" type="tel" autocomplete="work tel" inputmode="tel">
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Number of locations <span class="landing-cta-form__optional">(optional)</span></span>
+                <input name="locations" type="number" min="1" inputmode="numeric">
+              </label>
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Primary monitoring interest</span>
+                <select name="interest">
+                  <option value="24–48 Hour Holter">24–48 Hour Holter</option>
+                  <option value="Extended Holter Through 7 Days">Extended Holter Through 7 Days</option>
+                  <option value="8–14 Day Extended Holter" selected>8–14 Day Extended Holter</option>
+                  <option value="Mobile Cardiac Telemetry (MCT)">Mobile Cardiac Telemetry (MCT)</option>
+                  <option value="Cardiac Event Monitoring">Cardiac Event Monitoring</option>
+                  <option value="Multiple test types / full program">Multiple test types / full program</option>
+                </select>
+              </label>
+            </div>
+            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request an 8–14 Day Holter Demo</button>
+            <p class="landing-cta-form__note">For practice inquiries. Please keep patient names, medical information, and records out of this form. See our <a href="privacy.html">Privacy Policy</a>.</p>
+            <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted" aria-labelledby="holter_8_14d-related-heading">
+      <div class="figma-container">
+        <h2 id="holter_8_14d-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>
+        <ul class="landing-related">
+          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
+          <li><a href="holter-monitoring-services.html">24–48 Hour Holter</a></li>
+          <li><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days</a></li>
+          <li><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></li>
+          <li><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring</a></li>
+          <li><a href="s-patch-cardiac-monitoring-system.html">S-Patch Cardiac Monitoring System</a></li>
+          <li><a href="cardiology-practice-cardiac-monitoring.html">Cardiology Practice Monitoring</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="landing-disclaimer" aria-label="Diagnostic service disclaimer">
+      <div class="figma-container">
+        <p class="landing-disclaimer__text"><strong>Diagnostic Service Disclaimer:</strong> Specialized Medical provides ambulatory cardiac monitoring services and diagnostic information for review by qualified healthcare providers. The service does not replace physician judgment, emergency medical services, or instructions to call 911 when urgent symptoms occur.</p>
+      </div>
+    </section>
+  </main>
+    <footer class="site-footer site-footer--figma">
+      <div class="figma-container">
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__main">
+          <div class="figma-footer__brand">
+            <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
+              <img class="figma-brand__mark" src="/images/figma-assets/brand-logo.webp?v=f8509ae975" alt="Specialized Medical" width="412" height="90" decoding="async" loading="lazy">
+            </a>
+            <p class="figma-footer__tagline">Turnkey cardiac monitoring with LIVE ECG data.</p>
+          </div>
+          <div class="figma-footer__contact">
+            <nav class="figma-footer__nav" aria-label="Footer">
+              <a href="./">Home</a>
+              <a href="about.html">About Us</a>
+              <a href="services.html">Services</a>
+              <a href="faq.html">FAQs</a>
+              <a href="contact.html">Contact</a>
+              <a href="privacy.html">Privacy</a>
+              <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+            </nav>
+            <div class="figma-footer__line">
+              <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
+                <img src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="20" height="20" decoding="async">
+              </span>
+              <a class="figma-footer__link" href="tel:+18557732633">
+                <span class="figma-footer__muted">1-855-SPEC-MED</span>
+                <span class="figma-footer__strong">(1-855-773-2633)</span>
+              </a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="/icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
+              <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
+            </div>
+            <div class="figma-footer__line">
+              <img src="/images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
+              <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
+            </div>
+          </div>
+        </div>
+        <div class="figma-footer__triple">
+          <span><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry</a></span>
+          <span><a href="holter-monitoring-services.html">Holter Monitoring</a></span>
+          <span><a href="cardiac-event-monitoring.html">Event Monitoring</a></span>
+        </div>
+        <div class="figma-footer__hr" aria-hidden="true"></div>
+        <div class="figma-footer__bottom">
+          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></p>
+          <div class="figma-footer__social">
+            <img src="/images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
+              <img src="/images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="/js/landing-lite.js?v=6a91e6e190" defer></script>
+  <script src="/js/analytics.js?v=329dbec6d8" defer></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6af114012dcf7b3c3f4a9c02/1k6urca2o';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
