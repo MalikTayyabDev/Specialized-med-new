@@ -25,7 +25,7 @@
 .faq-figma-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url("../images/figma-faq/faq-hero.jpg");
+  background-image: url("../images/figma-faq/faq-hero.jpg?v=4177957407");
   background-size: cover;
   background-position: center 35%;
   pointer-events: none;

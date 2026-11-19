@@ -61,7 +61,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../images/figma-home-reference.png");
+  background-image: url("../images/figma-home-reference.png?v=059cec331e");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -1705,8 +1705,8 @@ p.hero__pill {
   border-image: none;
   background-color: #f5f5f5;
   background-image:
-    url("../images/hero-panel-bg.png"),
-    url("../images/hero-banner.jpg");
+    url("../images/hero-panel-bg.png?v=9a37cd52d0"),
+    url("../images/hero-banner.jpg?v=c3b73acbb1");
   background-size: cover, cover;
   background-position: 70% center;
   background-repeat: no-repeat;

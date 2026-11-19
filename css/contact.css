@@ -25,7 +25,7 @@
 .contact-figma-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url("../images/figma-contact/contact-hero.jpg");
+  background-image: url("../images/figma-contact/contact-hero.jpg?v=f884d3fc69");
   background-size: cover;
   background-position: center 22%;
   pointer-events: none;

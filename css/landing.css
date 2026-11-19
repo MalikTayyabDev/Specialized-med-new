@@ -32,39 +32,39 @@
 
 /* True banner background on the plate (same pattern as /services hero plate) */
 .landing-hero__plate--cardiac-monitoring-services {
-  background-image: url("../images/landing/cardiac-monitoring-services.png");
+  background-image: url("../images/landing/cardiac-monitoring-services.png?v=9486228245");
 }
 .landing-hero__plate--mobile-cardiac-telemetry-mct {
   /* Hero photo is painted by <picture>/<img> — do not also fetch the 232KB JPG as CSS bg */
   background-image: none;
 }
 .landing-hero__plate--holter-monitoring-services {
-  background-image: url("../images/landing/holter-monitoring-services.jpg");
+  background-image: url("../images/landing/holter-monitoring-services.jpg?v=b61d2ed945");
 }
 .landing-hero__plate--long-term-holter-monitoring {
-  background-image: url("../images/landing/long-term-holter-monitoring.jpg");
+  background-image: url("../images/landing/long-term-holter-monitoring.jpg?v=43dd7bacb1");
   background-position: center center;
 }
 .landing-hero__plate--long-term-holter-monitoring .landing-hero__media {
   object-position: center center;
 }
 .landing-hero__plate--cardiac-event-monitoring {
-  background-image: url("../images/landing/cardiac-event-monitoring.webp");
+  background-image: url("../images/landing/cardiac-event-monitoring.webp?v=245b83b8ee");
 }
 .landing-hero__plate--ambulatory-cardiac-monitoring {
-  background-image: url("../images/landing/ambulatory-cardiac-monitoring.jpg");
+  background-image: url("../images/landing/ambulatory-cardiac-monitoring.jpg?v=a8e86e9f93");
 }
 .landing-hero__plate--s-patch-cardiac-monitoring-system {
-  background-image: url("../images/landing/s-patch-cardiac-monitoring-system.webp");
+  background-image: url("../images/landing/s-patch-cardiac-monitoring-system.webp?v=6691979f1b");
 }
 .landing-hero__plate--live-ecg-monitoring {
-  background-image: url("../images/landing/live-ecg-monitoring.jpg");
+  background-image: url("../images/landing/live-ecg-monitoring.jpg?v=e965f172f8");
 }
 .landing-hero__plate--post-tavr-cardiac-monitoring {
-  background-image: url("../images/landing/post-tavr-cardiac-monitoring.jpg");
+  background-image: url("../images/landing/post-tavr-cardiac-monitoring.jpg?v=8adbed3956");
 }
 .landing-hero__plate--cardiology-practice-cardiac-monitoring {
-  background-image: url("../images/landing/cardiology-practice-cardiac-monitoring.jpg");
+  background-image: url("../images/landing/cardiology-practice-cardiac-monitoring.jpg?v=52bd843d7f");
 }
 
 /* Media layer: absolute fill inside the plate */

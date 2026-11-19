@@ -25,7 +25,7 @@
 .svc-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url("../images/figma-services/Group%201261157514.png");
+  background-image: url("../images/figma-services/Group%201261157514.png?v=70f408601a");
   background-size: cover;
   /* Keep subjects (two people) visible: bias to top-right */
   background-position: right center;
@@ -34,7 +34,7 @@
 
 /* Clinical Stories page uses a different hero banner */
 .services-page[data-page="clinical-stories"] .svc-hero__bg {
-  background-image: url("../images/figma-services/Group%201261157514.png");
+  background-image: url("../images/figma-services/Group%201261157514.png?v=70f408601a");
   background-position: right center;
 }
 
