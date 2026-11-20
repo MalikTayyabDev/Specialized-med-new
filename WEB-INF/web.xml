@@ -3,12 +3,30 @@
   Specialized Medical web application descriptor (Tomcat 9, Servlet 4.0).
 
   If the production server already has a WEB-INF/web.xml, copy the <filter>
-  and <filter-mapping> blocks below into it instead of replacing the file.
+  and <filter-mapping> blocks below into it (in the same order) instead of
+  replacing the file.
 -->
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <!-- Must be listed before HtmlCacheFilter so redirects happen first. -->
+    <filter>
+        <filter-name>LegacyUrlRedirectFilter</filter-name>
+        <filter-class>com.specializedmedical.web.LegacyUrlRedirectFilter</filter-class>
+        <!-- Optional: send every redirect straight to the production origin.
+        <init-param>
+            <param-name>canonicalOrigin</param-name>
+            <param-value>https://www.specialized-med.com</param-value>
+        </init-param>
+        -->
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LegacyUrlRedirectFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <filter>
         <filter-name>HtmlCacheFilter</filter-name>

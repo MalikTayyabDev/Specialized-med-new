@@ -13,6 +13,6 @@
     "qa:mct": "node scripts/qa-mct-pdf.mjs",
     "cache-bust": "node scripts/cache-bust.mjs",
     "cache-bust:check": "node scripts/cache-bust.mjs --check",
-    "build:tomcat-filter": "javac --release 8 -cp \"$SERVLET_API_JAR\" -d WEB-INF/classes WEB-INF/src/com/specializedmedical/web/HtmlCacheFilter.java"
+    "build:tomcat-filter": "javac --release 8 -cp \"$SERVLET_API_JAR\" -d WEB-INF/classes WEB-INF/src/com/specializedmedical/web/*.java"
   }
 }
