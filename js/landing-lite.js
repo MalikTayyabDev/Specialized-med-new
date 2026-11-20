@@ -204,7 +204,7 @@
         try {
           var redirectEl = form.querySelector('input[name="redirect"]');
           if (redirectEl && !redirectEl.value) {
-            redirectEl.value = String(new URL("thanks/", siteBaseUrl()));
+            redirectEl.value = String(new URL("thanks.html", siteBaseUrl()));
             fd.set("redirect", redirectEl.value);
           }
         } catch (_) {}
@@ -241,7 +241,7 @@
               if (sid) successParams.service_id = sid;
               pushSmEvent(form.getAttribute("data-track-success") || "mct_form_success", successParams);
             } catch (_) {}
-            var dest = String(new URL("thanks/", siteBaseUrl()));
+            var dest = String(new URL("thanks.html", siteBaseUrl()));
             try {
               var rEl = form.querySelector('input[name="redirect"]');
               if (rEl && rEl.value) dest = String(rEl.value);
