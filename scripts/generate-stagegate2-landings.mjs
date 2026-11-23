@@ -263,7 +263,7 @@ function productSchema(page) {
     name: "S-Patch Cardiac Monitoring System",
     brand: { "@type": "Organization", name: "Specialized Medical" },
     description: page.metaDescription,
-    image: `${SITE}/images/landing/s-patch-cardiac-monitoring-system.webp`,
+    image: `${SITE}/images/specialized-medical-spatch-hero.jpg`,
     url: `${SITE}/${page.slug}.html`,
   }
 }
@@ -311,7 +311,7 @@ const BANNERS = {
     alt: "Ambulatory cardiac monitoring category covering Holter, Long-Term Holter, Event Monitoring, and MCT",
   },
   "s-patch-cardiac-monitoring-system": {
-    src: "images/landing/s-patch-cardiac-monitoring-system.webp",
+    src: "images/specialized-medical-spatch-hero.jpg",
     alt: "S-Patch cardiac monitoring system, Specialized Medical's primary compact two-component wearable ECG platform",
   },
   "live-ecg-monitoring": {

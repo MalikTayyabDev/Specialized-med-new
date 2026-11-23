@@ -2132,7 +2132,7 @@ ${figureImg(LEADWIRE_IMG, "Lead-wire Holter monitor configuration with electrode
         ].join("\n"),
         `        <div class="landing-media-pair">
 ${figureImg(SPATCH_IMG, "S-Patch two-disk wearable cardiac monitor, front product view", "S-Patch product view.")}
-${figureImg("images/landing/s-patch-cardiac-monitoring-system.webp", "S-Patch wearable cardiac monitor worn on a patient&rsquo;s chest", "S-Patch as worn on the chest.")}
+${figureImg("images/specialized-medical-spatch-hero.jpg", "S-Patch wearable cardiac monitor worn on a patient&rsquo;s chest", "S-Patch as worn on the chest.")}
         </div>`
       ),
       sec(

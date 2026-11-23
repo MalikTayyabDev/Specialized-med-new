@@ -55,7 +55,61 @@
   background-image: url("../images/landing/ambulatory-cardiac-monitoring.jpg?v=a8e86e9f93");
 }
 .landing-hero__plate--s-patch-cardiac-monitoring-system {
-  background-image: url("../images/landing/s-patch-cardiac-monitoring-system.webp?v=6691979f1b");
+  background-image: none;
+  background-color: #f3f1f0;
+}
+
+/* Photo sits in the right part of the plate so the patient and S-Patch are not under the copy */
+@media (min-width: 901px) {
+  .landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__media {
+    left: auto;
+    right: 0;
+    width: 58%;
+    object-position: 30% 35%;
+  }
+
+  .landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__gradient {
+    background: linear-gradient(90deg, #f3f1f0 0%, #f3f1f0 42%, rgba(243, 241, 240, 0) 56%);
+  }
+
+  .landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__inner {
+    max-width: min(600px, 43%);
+  }
+}
+
+/* Phones/tablets: photo on top (patient and S-Patch in view), copy below */
+@media (max-width: 900px) {
+  .landing-hero__plate--s-patch-cardiac-monitoring-system {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding-block: 0;
+  }
+
+  .landing-hero__plate--s-patch-cardiac-monitoring-system picture {
+    display: block;
+  }
+
+  .landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__media {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-position: 45% 45%;
+  }
+
+  .landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__gradient {
+    display: none;
+  }
+
+  .landing-hero .landing-hero__plate.landing-hero__plate--s-patch-cardiac-monitoring-system {
+    padding: 0;
+  }
+
+  .landing-hero .landing-hero__plate--s-patch-cardiac-monitoring-system .landing-hero__inner {
+    padding-top: 1.5rem;
+    padding-bottom: 1.75rem;
+  }
 }
 .landing-hero__plate--live-ecg-monitoring {
   background-image: url("../images/landing/live-ecg-monitoring.jpg?v=e965f172f8");
