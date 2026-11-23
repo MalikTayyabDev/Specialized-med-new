@@ -1,0 +1,275 @@
+/* Cardiac Event Monitoring landing page: page-specific deltas on top of
+   landing-mct.css. Hand-maintained. */
+
+#request-event-demo {
+  scroll-margin-top: 96px;
+}
+
+/* ---------- Hero: navy/teal left side carries white live text ---------- */
+.landing-hero__plate--event {
+  background-color: #0b3f7a;
+  background-image: none;
+}
+
+.landing-hero__plate--event .landing-hero__media {
+  object-position: 72% 40%;
+}
+
+.landing-hero__plate--event .landing-hero__gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(6, 34, 78, 0.55) 0%,
+    rgba(6, 34, 78, 0.38) 34%,
+    rgba(6, 34, 78, 0) 52%
+  );
+}
+
+.landing-hero__plate--event .landing-hero__inner {
+  max-width: min(620px, 48%);
+}
+
+/* Two hero paragraphs: let the plate grow with its copy instead of clipping it */
+@media (min-width: 901px) {
+  .landing-hero__plate--event {
+    height: auto;
+    min-height: 600px;
+    padding-block: 2.75rem;
+  }
+}
+
+.landing-hero__plate--event .landing-hero__title {
+  color: #fff;
+}
+
+.landing-hero__plate--event .landing-hero__title-accent {
+  color: #8fe9f2;
+}
+
+.landing-hero__plate--event .landing-hero__lead {
+  color: rgba(255, 255, 255, 0.93);
+}
+
+.landing-hero__plate--event .landing-hero__lead + .landing-hero__lead {
+  margin-top: -0.5rem;
+}
+
+.landing-hero__plate--event .figma-hero__pill {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.landing-hero__plate--event .landing-cite a {
+  color: #8fe9f2;
+}
+
+.landing-hero__plate--event .figma-btn--outline-dark {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.landing-hero__plate--event .figma-btn--outline-dark:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+.landing-hero__plate--event .landing-hero__actions a:focus-visible {
+  outline-color: #fff;
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .landing-hero__plate--event .landing-hero__lead + .landing-hero__lead {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .landing-hero__plate--event {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding-block: 0;
+    background-color: #0b3a72;
+  }
+
+  .landing-hero__plate--event picture {
+    display: block;
+  }
+
+  .landing-hero__plate--event .landing-hero__media {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-position: 74% 30%;
+  }
+
+  .landing-hero__plate--event .landing-hero__gradient {
+    display: none;
+  }
+
+  .landing-hero__plate--event .landing-hero__inner {
+    max-width: 100%;
+  }
+
+  .landing-hero__plate--event .landing-hero__lead + .landing-hero__lead {
+    margin-top: 0;
+  }
+
+  .landing-hero__plate--event .landing-hero__actions {
+    max-width: none;
+  }
+}
+
+/* ---------- Benefits ---------- */
+.landing-page--event .landing-benefits .landing-feature-card {
+  border-top: 3px solid var(--color-red, #c9222f);
+}
+
+/* ---------- Four-step process strip ---------- */
+@media (min-width: 1000px) {
+  .landing-page--event .landing-flow--event {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+
+  .landing-page--event .landing-flow--event .landing-flow__step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1.15rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-top: 2px solid var(--color-red, #c9222f);
+    border-right: 2px solid var(--color-red, #c9222f);
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+  .landing-page--event .landing-flow--event {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Phone screens list ---------- */
+.landing-page--event .landing-phone-screens {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+@media (min-width: 720px) {
+  .landing-page--event .landing-phone-screens {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Comparison table ---------- */
+.landing-page--event .landing-table__caption {
+  caption-side: top;
+  padding: 0 0 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+  color: rgba(35, 31, 30, 0.7);
+}
+
+.landing-page--event .landing-table tbody tr[aria-current="page"] th,
+.landing-page--event .landing-table tbody tr[aria-current="page"] td {
+  background: #fdf3f3;
+}
+
+.landing-page--event .landing-table__current {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-red, #c9222f);
+}
+
+/* Phones: each row becomes a labelled card, so nothing scrolls sideways */
+@media (max-width: 720px) {
+  .landing-page--event .landing-table-wrap:has(.landing-table--stack) {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .landing-page--event .landing-table--stack,
+  .landing-page--event .landing-table--stack tbody,
+  .landing-page--event .landing-table--stack tr,
+  .landing-page--event .landing-table--stack th,
+  .landing-page--event .landing-table--stack td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .landing-page--event .landing-table--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .landing-page--event .landing-table--stack caption {
+    display: block;
+  }
+
+  .landing-page--event .landing-table--stack tr {
+    margin: 0 0 0.85rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .landing-page--event .landing-table--stack th[scope="row"] {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+  }
+
+  .landing-page--event .landing-table--stack td {
+    padding: 0.55rem 1rem;
+    border: 0;
+  }
+
+  .landing-page--event .landing-table--stack td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgba(35, 31, 30, 0.55);
+  }
+}
+
+/* ---------- Form panel ---------- */
+.landing-page--event .landing-cta-form__note {
+  margin: 0.75rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(35, 31, 30, 0.7);
+}
+
+.landing-page--event .landing-cta-block__copy .landing-cta-block__support {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.landing-page--event .landing-cta-block__copy a {
+  color: #fff;
+}
+
+/* Header: shorter demo label */
+@media (max-width: 1440px) and (min-width: 901px) {
+  .site-header .figma-header__cta .figma-btn--event-demo {
+    min-width: 0;
+    white-space: nowrap;
+  }
+}

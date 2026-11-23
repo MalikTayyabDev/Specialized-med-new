@@ -196,8 +196,37 @@
 
       var successMessage = form.getAttribute("data-success-message") || "Success! Your request has been sent.";
       var errorMessage = form.getAttribute("data-error-message") || "";
+      var errorEvent = form.getAttribute("data-track-error") || "";
+
+      function trackError(type) {
+        if (!errorEvent) return;
+        try {
+          var landingEl = qs("[data-landing]");
+          var params = { landing_page: landingEl ? landingEl.getAttribute("data-landing") || "" : "", error_type: type };
+          var sid = landingEl ? landingEl.getAttribute("data-service-id") : "";
+          if (sid) params.service_id = sid;
+          pushSmEvent(errorEvent, params);
+        } catch (_) {}
+      }
+
+      // Browser validation blocks the submit event; record one validation error per attempt.
+      var invalidReported = false;
+      form.addEventListener(
+        "invalid",
+        function () {
+          if (invalidReported) return;
+          invalidReported = true;
+          trackError("validation");
+          window.setTimeout(function () {
+            invalidReported = false;
+          }, 500);
+        },
+        true
+      );
 
       form.addEventListener("submit", async function (e) {
+        // Browsers without fetch fall back to a normal form POST.
+        if (typeof window.fetch !== "function") return;
         e.preventDefault();
         if (submitBtn && submitBtn.disabled) return;
         var fd = new FormData(form);
@@ -254,13 +283,12 @@
             }, 50);
             return;
           }
+          trackError("api");
           setStatus(errorMessage || "Error: " + ((data && data.message) || "Unable to send. Please try again."), true);
         } catch (error) {
-          try {
-            form.submit();
-            return;
-          } catch (_) {}
-          setStatus(errorMessage || "Something went wrong. Please try again.", true);
+          // Do not re-send with a native POST: the request may already have reached the server.
+          trackError("network");
+          setStatus(errorMessage || "We could not confirm that your request was sent. Please try again or call 1-855-773-2633.", true);
         } finally {
           if (submitBtn) {
             submitBtn.textContent = originalText || "Submit";

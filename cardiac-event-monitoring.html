@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <script>
@@ -63,178 +63,150 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "name": "Cardiac Event Monitoring | Specialized Medical",
-  "headline": "Cardiac Event Monitoring",
-  "url": "https://www.specialized-med.com/cardiac-event-monitoring.html",
-  "description": "Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended monitoring period.",
-  "inLanguage": "en-US",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "medicalAudience": {
-    "@type": "MedicalAudience",
-    "audienceType": "Clinician"
-  }
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Cardiac Event Monitoring",
-  "provider": {
-    "@type": "Organization",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "serviceType": "Ambulatory Cardiac Monitoring",
-  "areaServed": "United States",
-  "description": "Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended monitoring period.",
-  "url": "https://www.specialized-med.com/cardiac-event-monitoring.html"
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.specialized-med.com/"
+      "@type": "Organization",
+      "@id": "https://www.specialized-med.com/#organization",
+      "name": "Specialized Medical, LLC",
+      "url": "https://www.specialized-med.com/",
+      "telephone": "+1-855-773-2633",
+      "logo": "https://www.specialized-med.com/images/figma-assets/brand-logo.webp"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://www.specialized-med.com/services.html"
+      "@type": "WebSite",
+      "@id": "https://www.specialized-med.com/#website",
+      "url": "https://www.specialized-med.com/",
+      "name": "Specialized Medical",
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "inLanguage": "en-US"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "Person",
+      "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#author",
+      "name": "Steven M. Burns",
+      "jobTitle": "President & CEO",
+      "worksFor": {
+        "@id": "https://www.specialized-med.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#primaryimage",
+      "url": "https://www.specialized-med.com/images/landing/cardiac-event-monitoring-hero.jpg",
+      "contentUrl": "https://www.specialized-med.com/images/landing/cardiac-event-monitoring-hero.jpg",
+      "name": "Cardiac event monitoring",
+      "width": 1920,
+      "height": 900,
+      "caption": "Young adult woman holding an assigned phone while wearing a two-component S-Patch cardiac event monitor at home."
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#webpage",
+      "url": "https://www.specialized-med.com/cardiac-event-monitoring.html",
+      "name": "Cardiac Event Monitoring (1-30 Days) | Specialized Medical",
+      "headline": "Cardiac Event Monitoring for Physician Practices",
+      "description": "Cardiac event monitoring for up to 30 days, with symptom logging, live test-status visibility when connected, and physician-directed reporting.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://www.specialized-med.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#author"
+      },
+      "mainEntity": {
+        "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#service"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#primaryimage"
+      },
+      "breadcrumb": {
+        "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#service",
       "name": "Cardiac Event Monitoring",
-      "item": "https://www.specialized-med.com/cardiac-event-monitoring.html"
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a cardiac event monitor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It is an ambulatory ECG monitor designed to capture rhythm information associated with intermittent symptoms or selected automatically detected events."
+      "serviceType": "Ambulatory cardiac event monitoring",
+      "url": "https://www.specialized-med.com/cardiac-event-monitoring.html",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "description": "Cardiac event monitoring for up to 30 days, as prescribed. Connected studies support symptom logging and live test-status visibility. Qualifying clinical findings are communicated during the study under the prescribed notification protocol, with a final report for physician review.",
+      "image": {
+        "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#primaryimage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#webpage"
       }
     },
     {
-      "@type": "Question",
-      "name": "How long is an event monitor worn?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The prescribed period may extend up to 30 days, depending on the physician’s order and monitoring setup."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does the patient press a button when symptoms occur?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In many event-monitoring workflows, the patient marks symptoms as instructed. Some configurations may also detect selected events automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if the patient forgets to mark a symptom?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Automatic detection may capture some rhythm events, but patients should follow the symptom-marking instructions whenever possible."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is an event monitor the same as MCT?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Both MCT and Event Monitoring have LIVE operational visibility and can present qualifying clinical findings during the test. MCT generally provides broader continuous remote clinical surveillance, while Event Monitoring emphasizes episodic recordings and may use a different notification workflow."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will the practice be contacted for every event?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Communication depends on the prescribed criteria and practice protocol."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can an event monitor detect symptoms that are not caused by an arrhythmia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The monitor records ECG information. The physician determines whether the rhythm correlates with the patient’s symptoms."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should a patient do during severe symptoms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Follow emergency instructions and call 911 when appropriate. Do not wait for a monitoring-center call."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can the patient continue normal activities?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Patients should follow the activity and device-care instructions provided for the prescribed monitor."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in the final report?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The final report may summarize captured events, rhythm findings, symptom correlations, representative strips, and other study measurements."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.specialized-med.com/cardiac-event-monitoring.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.specialized-med.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cardiac Monitoring Services",
+          "item": "https://www.specialized-med.com/cardiac-monitoring-services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cardiac Event Monitoring",
+          "item": "https://www.specialized-med.com/cardiac-event-monitoring.html"
+        }
+      ]
     }
   ]
 }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cardiac Event Monitoring | Specialized Medical</title>
-  <meta name="description" content="Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended monitoring period.">
-  <!-- Social sharing (iMessage/WhatsApp/Facebook/Twitter) -->
+  <title>Cardiac Event Monitoring (1-30 Days) | Specialized Medical</title>
+  <meta name="description" content="Cardiac event monitoring for up to 30 days, with symptom logging, live test-status visibility when connected, and physician-directed reporting.">
   <meta property="og:site_name" content="Specialized Medical">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cardiac Event Monitoring | Specialized Medical">
-  <meta property="og:description" content="Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended monitoring period.">
+  <meta property="og:title" content="Cardiac Event Monitoring (1-30 Days) | Specialized Medical">
+  <meta property="og:description" content="Cardiac event monitoring for up to 30 days, with symptom logging, live test-status visibility when connected, and physician-directed reporting.">
   <meta property="og:url" content="https://www.specialized-med.com/cardiac-event-monitoring.html">
-  <meta property="og:image" content="https://www.specialized-med.com/images/landing/cardiac-event-monitoring.webp">
+  <meta property="og:image" content="https://www.specialized-med.com/images/landing/cardiac-event-monitoring-hero.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Young adult woman holding an assigned phone while wearing a two-component S-Patch cardiac event monitor at home.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cardiac Event Monitoring | Specialized Medical">
-  <meta name="twitter:description" content="Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended monitoring period.">
-  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/cardiac-event-monitoring.webp">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" href="favicon.svg?v=ea9bbc50ae">
+  <meta name="twitter:title" content="Cardiac Event Monitoring (1-30 Days) | Specialized Medical">
+  <meta name="twitter:description" content="Cardiac event monitoring for up to 30 days, with symptom logging, live test-status visibility when connected, and physician-directed reporting.">
+  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/cardiac-event-monitoring-hero.jpg">
+  <meta name="twitter:image:alt" content="Young adult woman holding an assigned phone while wearing a two-component S-Patch cardiac event monitor at home.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="icon" href="/favicon.svg?v=ea9bbc50ae">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="images/landing/cardiac-event-monitoring.webp?v=245b83b8ee" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css?v=1bad96baac">
-  <link rel="stylesheet" href="css/home.css?v=090a393fa2">
-  <link rel="stylesheet" href="css/services.css?v=de0139ab71">
-  <link rel="stylesheet" href="css/faq.css?v=c9b924a842">
-  <link rel="stylesheet" href="css/landing.css?v=cba27f97cb">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preload" as="image" type="image/webp" href="/images/landing/cardiac-event-monitoring-hero-960.webp?v=3e09a55bd9" imagesrcset="/images/landing/cardiac-event-monitoring-hero-960.webp?v=3e09a55bd9 960w, /images/landing/cardiac-event-monitoring-hero-1280.webp?v=2276869f07 1280w, /images/landing/cardiac-event-monitoring-hero.webp?v=6636948e91 1920w" imagesizes="(min-width: 1462px) 1430px, calc(100vw - 32px)" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/global.css?v=1bad96baac">
+  <link rel="stylesheet" href="/css/chrome.css?v=21dc8e5542">
+  <link rel="stylesheet" href="/css/landing-mct.css?v=6e8799d245">
+  <link rel="stylesheet" href="/css/faq.css?v=c9b924a842">
+  <link rel="stylesheet" href="/css/landing-event.css?v=938be8634c">
   <link rel="canonical" href="https://www.specialized-med.com/cardiac-event-monitoring.html">
 </head>
 <body>
@@ -246,11 +218,12 @@
       style="display:none;visibility:hidden">
     </iframe>
   </noscript>
+  <a class="skip-link" href="cardiac-event-monitoring.html#main-content">Skip to content</a>
   <div class="site-root">
     <header class="site-header site-header--figma">
       <div class="figma-container figma-header__inner site-header__inner">
         <a href="./" class="figma-brand" aria-label="Specialized Medical home">
-          <img class="figma-brand__mark" src="images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="" width="236" fetchpriority="low" height="52" decoding="async">
+          <img class="figma-brand__mark" src="/images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="Specialized Medical" width="236" fetchpriority="low" height="52" decoding="async">
         </a>
         <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
           <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -263,286 +236,345 @@
           <a class="figma-nav__link" href="faq.html">FAQs</a>
           <a class="figma-nav__link" href="contact.html">Contact</a>
           <div class="figma-nav__mobile">
-            <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
+            <a class="figma-nav__phone" href="tel:+18557732633" data-mct-track="phone_click" data-track-placement="mobile_nav">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact.html#contact-form">Request a Demo</a>
-              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+              <a class="figma-btn figma-btn--outline-dark" href="cardiac-event-monitoring.html#request-event-demo" data-mct-track="event_demo_cta_click" data-track-placement="mobile_nav">Request an Event Demo</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
         </nav>
         <div class="figma-header__cta">
-          <a class="figma-phone" href="tel:+18557732633">
-            <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
+          <a class="figma-phone" href="tel:+18557732633" data-mct-track="phone_click" data-track-placement="header">
+            <img class="figma-phone__icon" src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
-          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+          <a class="figma-btn figma-btn--outline-dark figma-btn--event-demo" href="cardiac-event-monitoring.html#request-event-demo" data-mct-track="event_demo_cta_click" data-track-placement="header">Request an Event Demo</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
     </header>
 
-<main class="landing-page services-page services-page--figma" data-landing="cardiac-event-monitoring">
+    <main class="landing-page landing-page--event services-page services-page--figma" data-landing="cardiac-event-monitoring" data-service-id="event_monitoring" id="main-content" tabindex="-1">
     <nav class="landing-breadcrumb" aria-label="Breadcrumb">
       <div class="figma-container">
         <ol class="landing-breadcrumb__list">
           <li><a href="./">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
           <li><span aria-current="page">Cardiac Event Monitoring</span></li>
         </ol>
       </div>
     </nav>
+
+    <!-- 01 Hero -->
     <section class="landing-hero" aria-labelledby="event-hero-heading">
-      <div class="landing-hero__plate landing-hero__plate--cardiac-event-monitoring">
-        <img class="landing-hero__media" src="images/landing/cardiac-event-monitoring.webp?v=245b83b8ee" alt="Cardiac event monitoring capturing ECG information for intermittent symptoms over up to 30 days" width="1430" height="550" fetchpriority="high" decoding="async">
+      <div class="landing-hero__plate landing-hero__plate--event">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/images/landing/cardiac-event-monitoring-hero-960.webp?v=3e09a55bd9 960w, /images/landing/cardiac-event-monitoring-hero-1280.webp?v=2276869f07 1280w, /images/landing/cardiac-event-monitoring-hero.webp?v=6636948e91 1920w"
+            sizes="(min-width: 1462px) 1430px, calc(100vw - 32px)">
+          <img
+            class="landing-hero__media"
+            src="/images/landing/cardiac-event-monitoring-hero-960.jpg?v=4c78551bfe"
+            srcset="/images/landing/cardiac-event-monitoring-hero-960.jpg?v=4c78551bfe 960w, /images/landing/cardiac-event-monitoring-hero-1280.jpg?v=73fd12ea69 1280w, /images/landing/cardiac-event-monitoring-hero.jpg?v=2d5299ee9c 1920w"
+            sizes="(min-width: 1462px) 1430px, calc(100vw - 32px)"
+            width="1920"
+            height="900"
+            alt="Young adult woman holding an assigned phone while wearing a two-component S-Patch cardiac event monitor at home."
+            loading="eager"
+            decoding="async"
+            fetchpriority="high">
+        </picture>
         <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
           <p class="figma-hero__pill">
             <span class="figma-hero__pill-dot" aria-hidden="true"></span>
-            Cardiac Event Monitoring
+            INTERMITTENT SYMPTOMS | LIVE TEST STATUS | PHYSICIAN-DIRECTED NOTIFICATIONS
           </p>
-          <h1 id="event-hero-heading" class="landing-hero__title">
-            Cardiac <span class="landing-hero__title-accent">Event Monitoring</span>
-          </h1>
-          <p class="landing-hero__lead">Cardiac event monitoring is designed to capture ECG information associated with intermittent symptoms or automatically detected rhythm events over an extended monitoring period. Depending on the prescribed configuration, an event may be initiated by the patient, detected by the device, or both. The resulting ECG information supports physician evaluation of symptoms that may not occur during a short Holter study.</p>
+          <h1 id="event-hero-heading" class="landing-hero__title">Cardiac Event Monitoring for <span class="landing-hero__title-accent">Physician Practices</span></h1>
+          <p class="landing-hero__lead landing-answer">Cardiac event monitoring captures ECG information associated with intermittent symptoms or selected automatically detected rhythm events over a prescribed period of up to 30 days. It helps the ordering clinician evaluate symptoms that may not occur during a short Holter study.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://www.heart.org/en/health-topics/arrhythmia/symptoms-diagnosis--monitoring-of-arrhythmia/cardiac-event-recorder" target="_blank" rel="noopener noreferrer">[2]</a></sup></p>
+          <p class="landing-hero__lead">Specialized Medical combines connected monitoring, a simple patient symptom logger, LIVE technical-status visibility and patient support. Qualifying findings are presented during the study according to the ordering physician&rsquo;s notification protocol, followed by a physician-ready final report.</p>
           <div class="landing-hero__actions">
-            <a class="figma-btn figma-btn--solid" href="#cta-form">Request Event Monitoring Information</a>
-            <a class="figma-btn figma-btn--outline-dark" href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist</a>
+            <a class="figma-btn figma-btn--solid" href="cardiac-event-monitoring.html#request-event-demo" data-mct-track="event_demo_cta_click" data-track-placement="hero">Request an Event Monitoring Demo</a>
+            <a class="figma-btn figma-btn--outline-dark" href="tel:+18557732633" data-mct-track="phone_click" data-track-placement="hero">Call 1-855-773-2633</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="event-how-heading">
+    <!-- 02 Program benefits -->
+    <section class="landing-section landing-section--muted" aria-labelledby="event-program-heading">
       <div class="figma-container">
-        <h2 id="event-how-heading" class="landing-h2">How Event <span class="landing-h2__accent">Monitoring Works</span></h2>
-        <p class="landing-p">Event monitoring configurations may use continuous recording, loop memory, patient-triggered events, automatically detected events, or a combination. The exact behavior depends on the prescribed device and service setup &mdash; not every feature is enabled in every configuration.</p>
-        <ol class="landing-flow" aria-label="Symptom-to-event capture workflow">
-          <li class="landing-flow__step"><strong>Symptom occurs</strong><span>Patient notices palpitations, dizziness, or other symptoms</span></li>
-          <li class="landing-flow__step"><strong>Event marked</strong><span>Patient marks the event when instructed</span></li>
-          <li class="landing-flow__step"><strong>ECG captured</strong><span>Segment is stored or transmitted</span></li>
-          <li class="landing-flow__step"><strong>Event reviewed</strong><span>Reviewed within the monitoring workflow</span></li>
-          <li class="landing-flow__step"><strong>Report / notification</strong><span>Follows the prescribed workflow</span></li>
+        <h2 id="event-program-heading" class="landing-h2">A Complete Event Monitoring Program for <span class="landing-h2__accent">Your Practice</span></h2>
+        <div class="landing-feature-grid landing-benefits" role="list">
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Symptoms with ECG context</h3>
+            <p class="landing-p">Digital symptom entries are matched with corresponding ECG information, helping the clinician distinguish symptomatic from asymptomatic findings.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Support while the study is active</h3>
+            <p class="landing-p">LIVE visibility into battery, electrode contact and connectivity helps our team identify technical problems and assist the patient during wear.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Equipment and workflow included</h3>
+            <p class="landing-p">Monitoring equipment, patient supplies, enrollment support and reporting are provided without a capital equipment purchase.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Clinical purpose -->
+    <section class="landing-section" aria-labelledby="event-when-heading">
+      <div class="figma-container">
+        <h2 id="event-when-heading" class="landing-h2">When May a Physician Choose <span class="landing-h2__accent">Event Monitoring?</span></h2>
+        <p class="landing-p landing-answer">Event monitoring may help when palpitations, dizziness or other episodes suggest a possible rhythm problem but are not expected to occur during a one- or two-day recording. The physician considers symptom frequency, the clinical question and the patient&rsquo;s ability to use the prescribed system.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://www.heart.org/en/health-topics/arrhythmia/symptoms-diagnosis--monitoring-of-arrhythmia/cardiac-event-recorder" target="_blank" rel="noopener noreferrer">[2]</a></sup></p>
+        <p class="landing-p">The monitoring period is selected for the individual patient. Up to 30 days creates a longer opportunity to capture relevant events; it is not a requirement that every patient complete 30 days.</p>
+        <ul class="landing-list">
+          <li>Intermittent symptoms that may fall outside a <a href="holter-monitoring-services.html">24&ndash;48-hour Holter</a> window.</li>
+          <li>A need to compare reported symptom times with available ECG information.</li>
+          <li>Selected automatically detected events when that capability is enabled in the prescribed configuration.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 04 How it works -->
+    <section class="landing-section landing-section--muted" aria-labelledby="event-how-heading">
+      <div class="figma-container">
+        <h2 id="event-how-heading" class="landing-h2">How Event Monitoring Works &ndash; and <span class="landing-h2__accent">How It Differs</span></h2>
+        <p class="landing-p landing-answer">The patient wears the prescribed monitor and uses the assigned phone to record symptoms. Patient-marked events and selected automatically detected events, when enabled, enter the Event Monitoring review and communication workflow.</p>
+        <ol class="landing-flow landing-flow--event" aria-label="Four-step Event Monitoring process">
+          <li class="landing-flow__step"><strong>Prescribe</strong><span>Prescribe the study and agree on notification criteria.</span></li>
+          <li class="landing-flow__step"><strong>Set up</strong><span>Set up the monitor and assigned phone; teach symptom logging.</span></li>
+          <li class="landing-flow__step"><strong>Capture and review</strong><span>Capture and review events under the prescribed workflow.</span></li>
+          <li class="landing-flow__step"><strong>Findings and final report</strong><span>Present qualifying findings during the study and deliver the final report.</span></li>
         </ol>
+        <p class="landing-p">Event Monitoring focuses on event capture and symptom correlation. Holter and Long-Term Holter provide continuous recording with clinical findings presented after the final report. <a href="mobile-cardiac-telemetry-mct.html">MCT</a> adds a distinct service involving concurrent computerized rhythm analysis and attended surveillance. The ordering physician selects the service that fits the clinical need.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup></p>
+        <p class="landing-p">Using a connected monitor does not make every test MCT. The prescribed service determines which findings are reviewed, how they are presented and when the practice is contacted. All prescribed services are described on <a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a>.</p>
       </div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="event-when-heading">
+    <!-- 05 Symptoms and automatic events -->
+    <section class="landing-section" aria-labelledby="event-symptoms-heading">
       <div class="figma-container">
-        <h2 id="event-when-heading" class="landing-h2">When Event Monitoring <span class="landing-h2__accent">May Be Considered</span></h2>
-        <p class="landing-p">Examples may include intermittent palpitations, dizziness, brief symptoms, or suspected rhythm events that are not expected every day. The physician determines whether event monitoring, <a href="long-term-holter-monitoring.html">Long-Term Holter</a>, or <a href="mobile-cardiac-telemetry-mct.html">MCT</a> is the appropriate test.</p>
-        <p class="landing-p">Event monitoring depends in part on correct device use and timely symptom marking when patient activation is part of the prescription.</p>
+        <h2 id="event-symptoms-heading" class="landing-h2">Patient-Marked Symptoms and <span class="landing-h2__accent">Automatic Events</span></h2>
+        <p class="landing-p landing-answer">Patient-triggered entries add the patient&rsquo;s experience to the ECG record. The patient uses Log Symptoms on the assigned phone, following the study instructions. The recorded time helps the clinician compare symptoms with the available ECG.</p>
+        <p class="landing-p">Automatic detection, when enabled, can capture selected rhythm events without a patient entry. It complements symptom logging; it does not capture every possible event or replace the patient&rsquo;s instructions.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup></p>
+        <p class="landing-p">Symptoms do not always correspond to an arrhythmia. A symptom entry alongside the recorded rhythm can still help the physician evaluate the episode.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup></p>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="event-triggers-heading">
+    <!-- 06 LIVE test status -->
+    <section class="landing-section landing-section--muted" aria-labelledby="event-live-heading">
       <div class="figma-container">
-        <h2 id="event-triggers-heading" class="landing-h2">Patient-Triggered and <span class="landing-h2__accent">Automatic Events</span></h2>
-        <p class="landing-p">Patient-triggered events help correlate symptoms with the ECG at that time. Automatic detection can capture selected rhythm patterns even when the patient does not press the symptom button. Automatic detection is not perfect and not every event is guaranteed to be recognized.</p>
+        <h2 id="event-live-heading" class="landing-h2">LIVE Test-Status Visibility and Help <span class="landing-h2__accent">During Wear</span></h2>
+        <p class="landing-p landing-answer">Specialized Medical can follow the technical condition of a connected study: battery status, electrode contact, signal quality, Bluetooth communication, cellular connectivity and whether ECG data is being received. When an issue is identified, our team can contact the patient to help restore the study.</p>
+        <p class="landing-p">The <a href="s-patch-cardiac-monitoring-system.html">S-Patch cardiac monitoring system</a> communicates with the assigned phone by Bluetooth. The phone transmits through available cellular service, using the program&rsquo;s multi-carrier connectivity approach. Live visibility and transmission depend on connectivity at the patient&rsquo;s location.</p>
+        <div class="landing-phone-screens" role="list">
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Device Status</h3>
+            <p class="landing-p">Keeps connection information visible on the assigned, preconfigured phone.</p>
+          </article>
+          <article class="landing-feature-card" role="listitem">
+            <h3 class="landing-h3">Log Symptoms</h3>
+            <p class="landing-p">Lets the patient record a symptom so its time can be compared with the ECG.</p>
+          </article>
+        </div>
+        <p class="landing-p">The patient phone has two essential screens: Device Status and Log Symptoms. It is preconfigured for the study, keeping connection information and symptom entry accessible without unrelated smartphone functions. If it is misplaced, support can help locate or ring it when it is powered on and connected.</p>
+        <p class="landing-p">Technical-status support is distinct from clinical notification. Event findings that meet the physician&rsquo;s criteria are presented according to the prescribed protocol. Device specifications are on the <a href="services/equipment.html">cardiac monitoring equipment options</a> page.</p>
+      </div>
+    </section>
+
+    <!-- 07 Turnkey program -->
+    <section class="landing-section" aria-labelledby="event-turnkey-heading">
+      <div class="figma-container">
+        <h2 id="event-turnkey-heading" class="landing-h2">A Turnkey Program for <span class="landing-h2__accent">Staff and Patients</span></h2>
+        <p class="landing-p landing-answer">Your practice uses the established Hook Up &gt; Enroll &gt; Disconnect workflow. Patients can be pre-enrolled before their appointment, allowing staff to prepare the record and focus the visit on the prescribed setup and patient education.</p>
+        <p class="landing-p">Specialized Medical supplies the monitoring equipment and patient supplies, helps staff implement the program, and provides 24/7 patient and technical support. The patient learns how to carry the assigned phone, log symptoms and reach support using the instructions supplied with the study.</p>
+        <p class="landing-p">Practices also receive physician-ready reports, portal review and electronic signature capabilities, plus billing templates and administrative support for the practice&rsquo;s global billing workflow. See how this fits into <a href="cardiology-practice-cardiac-monitoring.html">cardiac monitoring for cardiology practices</a>.</p>
         <div class="landing-note landing-note--info" role="note">
-          <p class="landing-note__title">Marking symptoms</p>
-          <p class="landing-note__body">Mark symptoms as soon as practical after they begin, record what was felt and what you were doing, and follow the study instructions for confirming the event was captured.</p>
-        </div>
-        <figure class="landing-diagram" role="group" aria-label="Patient symptom button and event capture">
-          <div class="landing-diagram__frame">
-          <div class="landing-diagram__symptom-btn">
-            <div class="landing-diagram__symptom-device" aria-hidden="true">
-              <span class="landing-diagram__symptom-label">Symptom button</span>
-              <span class="landing-diagram__symptom-action">Press / tap when instructed</span>
-            </div>
-            <ol class="landing-diagram__mini-steps">
-              <li>Symptom occurs</li>
-              <li>Patient marks the event</li>
-              <li>ECG segment is stored or transmitted</li>
-              <li>Event is reviewed per protocol</li>
-            </ol>
-          </div>
-          </div>
-          <figcaption class="landing-figure__cap">Patient symptom-button illustration: mark symptoms when instructed; urgent symptoms require emergency care rather than waiting for a monitoring call.</figcaption>
-        </figure>
-        <div class="landing-note landing-note--alert" role="note">
-          <p class="landing-note__title">Emergency symptoms</p>
-          <p class="landing-note__body">Patients with chest pain, severe shortness of breath, fainting, stroke symptoms, or other urgent symptoms should follow their physician&rsquo;s instructions and seek emergency assistance &mdash; call 911 &mdash; rather than waiting for a monitoring call.</p>
+          <p class="landing-note__body">No capital equipment purchase is required. Per-test fees and other applicable charges follow the practice agreement.</p>
         </div>
       </div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="event-reporting-heading">
+    <!-- 08 Findings and report -->
+    <section class="landing-section landing-section--muted" aria-labelledby="event-findings-heading">
       <div class="figma-container">
-        <div class="landing-split">
-          <div class="landing-split__copy">
-            <h2 id="event-reporting-heading" class="landing-h2">Reporting and Physician <span class="landing-h2__accent">Communication</span></h2>
-        <p class="landing-p">Event reports and notifications are handled according to the prescribed monitoring protocol. Routine event documentation is distinct from findings that meet the physician&rsquo;s notification criteria.</p>
-          </div>
-          <div class="landing-split__media">
-        <figure class="landing-figure">
-          <img src="images/figma-services/report-sample.jpg?v=3191d11923" alt="De-identified cardiac event report example showing symptom, time, rhythm description, representative strip, and communication status" loading="lazy" decoding="async">
-          <figcaption class="landing-figure__cap">De-identified event report example: symptom, time, rhythm description, representative strip, and communication status.</figcaption>
-        </figure>
-          </div>
-        </div>
+        <h2 id="event-findings-heading" class="landing-h2">Findings During the Study. <span class="landing-h2__accent">A Clear Final Report.</span></h2>
+        <p class="landing-p landing-answer">Qualifying Event Monitoring findings are presented while the study is active according to the ordering physician&rsquo;s notification protocol. The protocol sets the criteria, recipients and communication methods, which may include email, text and phone. Routine event documentation does not necessarily trigger a clinical notification.</p>
+        <p class="landing-p">Digital symptoms appear with the corresponding ECG information so the physician can see the reported symptom context. The final report organizes captured findings, representative ECG strips and available symptom correlations for review, interpretation and signature.</p>
+        <p class="landing-p">Delivery timing depends on the protocol, signal quality and connectivity. The treating clinician interprets the findings and determines the next step.</p>
+        <!-- Optional report example (brief s.5): only a genuine, approved, de-identified Specialized Medical Event report. -->
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="event-compare-heading">
+    <!-- 09 Comparison -->
+    <section class="landing-section" id="compare-event" aria-labelledby="event-compare-heading">
       <div class="figma-container">
-        <h2 id="event-compare-heading" class="landing-h2">Event Monitoring Compared With <span class="landing-h2__accent">MCT and Holter</span></h2>
-        <p class="landing-p">All four test types provide LIVE operational visibility while the study is in progress. Event Monitoring emphasizes episodic capture and can present qualifying findings during the test. <a href="mobile-cardiac-telemetry-mct.html">MCT</a> provides broader in-progress clinical surveillance and protocol-based presentation of qualifying findings. <a href="holter-monitoring-services.html">Holter</a> and <a href="long-term-holter-monitoring.html">Long-Term Holter</a> provide continuous recording, but clinical results are presented after the final report is generated.</p>
-        <div class="landing-compare-block">
-          <p class="landing-p landing-p--wide">Specialized Medical <strong>LIVE STREAMING</strong> configurations provide <strong>LIVE test-status visibility</strong> while the study is in progress. Specialized Medical can see operational information such as battery level, electrode contact and signal quality, whether the monitor is communicating, and whether the patient appears to remain properly connected. When a parameter falls outside the expected range, Specialized Medical contacts the patient and works with the patient to correct the issue so the study has the best opportunity to be completed successfully. For Holter and Extended / Long-Term Holter LIVE STREAMING studies, clinical results are presented after the final report is generated. For Event Monitoring and Mobile Cardiac Telemetry (MCT), qualifying clinical findings are presented while the test is in progress according to the prescribed notification protocol. Traditional <strong>NOT LIVE STREAMING</strong> Holter configurations do not provide LIVE test-status visibility during the study.</p>
-        </div>
-        <div class="landing-table-wrap" role="region" aria-label="Cardiac monitoring service comparison" tabindex="0">
-          <table class="landing-table">
-            <caption class="sr-only">Comparison of live-streaming and non-live Holter, Event, and MCT monitoring by duration, LIVE test-status visibility, and clinical-findings timing</caption>
+        <h2 id="event-compare-heading" class="landing-h2">Compare Event Monitoring, <span class="landing-h2__accent">Holter and MCT</span></h2>
+        <p class="landing-p">Select the test for the clinical question and the required timing of findings. These are Specialized Medical service descriptions; the physician determines the appropriate prescription.</p>
+        <div class="landing-table-wrap" role="region" aria-label="Event Monitoring compared with Holter and MCT" tabindex="0">
+          <table class="landing-table landing-table--stack">
+            <caption class="landing-table__caption">Specialized Medical monitoring services by prescribed window, focus and timing of clinical findings</caption>
             <thead>
               <tr>
-                <th scope="col">Monitoring Type</th>
-                <th scope="col">Typical Duration</th>
-                <th scope="col">LIVE Test-Status Visibility</th>
-                <th scope="col">Clinical Findings Presented</th>
+                <th scope="col">Service</th>
+                <th scope="col">Prescribed window</th>
+                <th scope="col">Focus</th>
+                <th scope="col">Clinical findings</th>
               </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row"><a href="holter-monitoring-services.html">Holter Monitoring (LIVE STREAMING)</a></th>
-              <td>24&ndash;48 hours</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days (LIVE STREAMING)</a></th>
-              <td>More than 48 hours to 7 days</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="extended-holter-monitoring-8-14-days.html">8&ndash;14 Day Extended Holter (LIVE STREAMING)</a></th>
-              <td>8&ndash;14 days</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><strong>Cardiac Event Monitoring (LIVE STREAMING)</strong></th>
-              <td>Up to 30 days</td>
-              <td>Yes</td>
-              <td>During Test &mdash; According to Prescribed Notification Protocol</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT) (LIVE STREAMING)</a></th>
-              <td>Up to 30 days</td>
-              <td>Yes</td>
-              <td>During Test &mdash; According to Prescribed Notification Protocol</td>
-            </tr>
-            <tr>
-              <th scope="row">Holter Monitoring (NOT LIVE STREAMING VERSION)</th>
-              <td>24&ndash;48 hours</td>
-              <td><span class="landing-table__no">NO</span></td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row">Extended Holter (NOT LIVE STREAMING VERSION)</th>
-              <td>3&ndash;7 days</td>
-              <td><span class="landing-table__no">NO</span></td>
-              <td>After Final Report Is Generated</td>
-            </tr>
+              <tr>
+                <th scope="row"><a href="holter-monitoring-services.html">24–48 Hour Holter Monitoring</a></th>
+                <td data-label="Prescribed window">24–48 hours</td>
+                <td data-label="Focus">Continuous ECG recording</td>
+                <td data-label="Clinical findings">After the final report is generated</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days</a></th>
+                <td data-label="Prescribed window">More than 48 hours through 7 days</td>
+                <td data-label="Focus">Longer continuous ECG recording</td>
+                <td data-label="Clinical findings">After the final report is generated</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="extended-holter-monitoring-8-14-days.html">8–14 Day Extended Holter</a></th>
+                <td data-label="Prescribed window">8–14 days</td>
+                <td data-label="Focus">Longer continuous ECG recording</td>
+                <td data-label="Clinical findings">After the final report is generated</td>
+              </tr>
+              <tr aria-current="page">
+                <th scope="row">Cardiac Event Monitoring<span class="landing-table__current">(this page)</span></th>
+                <td data-label="Prescribed window">Up to 30 days</td>
+                <td data-label="Focus">Patient-triggered and selected automatic events, when enabled</td>
+                <td data-label="Clinical findings">Qualifying findings during the study per protocol; final report</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></th>
+                <td data-label="Prescribed window">Up to 30 days</td>
+                <td data-label="Focus">Concurrent computerized analysis and attended surveillance</td>
+                <td data-label="Clinical findings">Qualifying findings during the study per protocol; final report</td>
+              </tr>
             </tbody>
           </table>
         </div>
+        <p class="landing-p">LIVE technical-status visibility is available with connected studies. Recording-only Holter options do not provide this live visibility.</p>
+        <p class="landing-p landing-p--actions"><a class="figma-btn figma-btn--solid" href="cardiac-event-monitoring.html#request-event-demo" data-mct-track="event_demo_cta_click" data-track-placement="mid_page">Request an Event Monitoring Demo</a></p>
       </div>
     </section>
 
-<section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="event-faq-heading">
+    <!-- 10 FAQs -->
+    <section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="event-faq-heading">
       <div class="figma-container faq-accordion__inner">
-        <h2 id="event-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
+        <h2 id="event-faq-heading" class="landing-h2">Cardiac Event Monitoring: Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
         <div class="faq-category">
           <div class="faq-category__list">
 <div class="faq-item is-open">
       <button type="button" id="faq-trigger-event-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-event-0">
-        <span class="faq-item__q">What is a cardiac event monitor?</span>
+        <span class="faq-item__q">1. What is a cardiac event monitor?</span>
         <svg class="faq-item__chevron is-open" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-0" role="region" aria-labelledby="faq-trigger-event-0" class="faq-item__panel">
-        <p>It is an ambulatory ECG monitor designed to capture rhythm information associated with intermittent symptoms or selected automatically detected events.</p>
+        <p>It is an ambulatory ECG system used to capture rhythm information during intermittent symptoms or selected automatically detected events. The physician uses the recorded ECG and symptom context to evaluate the clinical question.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://www.heart.org/en/health-topics/arrhythmia/symptoms-diagnosis--monitoring-of-arrhythmia/cardiac-event-recorder" target="_blank" rel="noopener noreferrer">[2]</a></sup></p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-1">
-        <span class="faq-item__q">How long is an event monitor worn?</span>
+        <span class="faq-item__q">2. How long is Event Monitoring prescribed?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-1" role="region" aria-labelledby="faq-trigger-event-1" class="faq-item__panel" hidden>
-        <p>The prescribed period may extend up to 30 days, depending on the physician&rsquo;s order and monitoring setup.</p>
+        <p>Specialized Medical supports prescribed Event Monitoring studies of up to 30 days. The ordering clinician chooses the duration; patients should follow that prescription rather than assume every study lasts a full month.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-2">
-        <span class="faq-item__q">Does the patient press a button when symptoms occur?</span>
+        <span class="faq-item__q">3. When might Event Monitoring help more than a short Holter?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-2" role="region" aria-labelledby="faq-trigger-event-2" class="faq-item__panel" hidden>
-        <p>In many event-monitoring workflows, the patient marks symptoms as instructed. Some configurations may also detect selected events automatically.</p>
+        <p>A longer event-monitoring window may be useful when relevant symptoms are not expected within 24-48 hours. Symptom frequency, the clinical question and the patient's ability to use the system guide the physician's choice.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup><sup class="landing-cite"><a href="https://www.heart.org/en/health-topics/arrhythmia/symptoms-diagnosis--monitoring-of-arrhythmia/cardiac-event-recorder" target="_blank" rel="noopener noreferrer">[2]</a></sup></p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-3">
-        <span class="faq-item__q">What if the patient forgets to mark a symptom?</span>
+        <span class="faq-item__q">4. Is Event Monitoring the same as MCT?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-3" role="region" aria-labelledby="faq-trigger-event-3" class="faq-item__panel" hidden>
-        <p>Automatic detection may capture some rhythm events, but patients should follow the symptom-marking instructions whenever possible.</p>
+        <p>No. Event Monitoring emphasizes event capture and symptom correlation. MCT is a different service involving concurrent computerized analysis and attended surveillance. Both can present qualifying findings during testing, but the prescribed review and notification workflows differ.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup></p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-4">
-        <span class="faq-item__q">Is an event monitor the same as MCT?</span>
+        <span class="faq-item__q">5. Does the patient need to press a symptom button?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-4" role="region" aria-labelledby="faq-trigger-event-4" class="faq-item__panel" hidden>
-        <p>No. Both MCT and Event Monitoring have LIVE operational visibility and can present qualifying clinical findings during the test. MCT generally provides broader continuous remote clinical surveillance, while Event Monitoring emphasizes episodic recordings and may use a different notification workflow.</p>
+        <p>Patients should use Log Symptoms on the assigned phone as instructed. Automatic detection may capture selected events when enabled, but it does not replace symptom logging or ensure that every episode will be captured.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-5">
-        <span class="faq-item__q">Will the practice be contacted for every event?</span>
+        <span class="faq-item__q">6. Can events be captured without symptoms?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-5" role="region" aria-labelledby="faq-trigger-event-5" class="faq-item__panel" hidden>
-        <p>No. Communication depends on the prescribed criteria and practice protocol.</p>
+        <p>Selected rhythm events can be captured automatically when that feature is enabled in the prescribed configuration. The physician interprets their significance. Automatic capture does not mean all asymptomatic arrhythmias will be identified.<sup class="landing-cite"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">[1]</a></sup></p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-6">
-        <span class="faq-item__q">Can an event monitor detect symptoms that are not caused by an arrhythmia?</span>
+        <span class="faq-item__q">7. Does the patient need a personal smartphone?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-6" role="region" aria-labelledby="faq-trigger-event-6" class="faq-item__panel" hidden>
-        <p>The monitor records ECG information. The physician determines whether the rhythm correlates with the patient&rsquo;s symptoms.</p>
+        <p>The connected Specialized Medical workflow uses an assigned, preconfigured phone. Its two patient screens are Device Status and Log Symptoms. The practice explains how to keep that phone with the monitor during the study.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-7">
-        <span class="faq-item__q">What should a patient do during severe symptoms?</span>
+        <span class="faq-item__q">8. What happens if the monitor or phone loses connection?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-7" role="region" aria-labelledby="faq-trigger-event-7" class="faq-item__panel" hidden>
-        <p>Follow emergency instructions and call 911 when appropriate. Do not wait for a monitoring-center call.</p>
+        <p>Loss of connectivity can interrupt live transmission and visibility. Specialized Medical can identify technical-status problems and help the patient troubleshoot. Patients should follow the supplied instructions and contact support; available study data depend on the equipment and circumstances.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-8">
-        <span class="faq-item__q">Can the patient continue normal activities?</span>
+        <span class="faq-item__q">9. Will the practice receive a notification for every event?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-8" role="region" aria-labelledby="faq-trigger-event-8" class="faq-item__panel" hidden>
-        <p>Patients should follow the activity and device-care instructions provided for the prescribed monitor.</p>
+        <p>No. Qualifying findings are communicated according to the physician's notification criteria and agreed contact pathway. Routine event documentation and a finding requiring clinical notification are different parts of the workflow.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-event-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-9">
-        <span class="faq-item__q">What is included in the final report?</span>
+        <span class="faq-item__q">10. What appears in the final report?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-event-9" role="region" aria-labelledby="faq-trigger-event-9" class="faq-item__panel" hidden>
-        <p>The final report may summarize captured events, rhythm findings, symptom correlations, representative strips, and other study measurements.</p>
+        <p>The report organizes captured ECG findings, representative strips and available symptom correlations. Digital symptom entries provide context alongside the corresponding ECG information. The ordering physician reviews, interprets and signs the report through the portal workflow.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-event-10" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-10">
+        <span class="faq-item__q">11. Does the practice have to purchase monitoring equipment?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-event-10" role="region" aria-labelledby="faq-trigger-event-10" class="faq-item__panel" hidden>
+        <p>No capital equipment purchase is required for the program. Specialized Medical provides equipment, supplies and support under the practice agreement. Per-test fees and any other applicable contractual charges remain separate from equipment purchase.</p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button type="button" id="faq-trigger-event-11" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-event-11">
+        <span class="faq-item__q">12. What should the patient do during urgent symptoms?</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="faq-panel-event-11" role="region" aria-labelledby="faq-trigger-event-11" class="faq-item__panel" hidden>
+        <p>Call 911 for urgent symptoms such as chest pain, severe shortness of breath, fainting or stroke symptoms. Do not wait for a monitoring call or rely on a symptom entry to obtain emergency assistance.</p>
       </div>
     </div>
           </div>
@@ -550,77 +582,95 @@
       </div>
     </section>
 
-    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="event-cta-heading">
+    <!-- 11 Demo request -->
+    <section class="landing-section landing-cta-block" id="request-event-demo" aria-labelledby="event-cta-heading">
       <div class="figma-container">
         <div class="landing-cta-block__box">
           <div class="landing-cta-block__copy">
-            <h2 id="event-cta-heading" class="landing-h2">Request Event Monitoring Information</h2>
-            <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
-            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
-            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>
+            <h2 id="event-cta-heading" class="landing-h2">See Event Monitoring in Your Practice&rsquo;s Workflow</h2>
+            <p class="landing-p">Request a demonstration of the S-Patch, assigned phone, digital symptom logging, LIVE technical-status view, notification process and physician reporting portal. Tell us about your current monitoring workflow and the patients your practice serves.</p>
+            <p class="landing-p landing-cta-block__phone">Call: <a href="tel:+18557732633" data-mct-track="phone_click" data-track-placement="form">1-855-SPEC-MED (1-855-773-2633)</a></p>
+            <p class="landing-p landing-cta-block__support"><strong>Patients:</strong> for monitor or setup questions, use the support number supplied with your study. For urgent symptoms, call 911.</p>
           </div>
-          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
+          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST" data-track-start="demo_form_start" data-track-success="generate_lead" data-track-error="demo_form_error" data-success-message="Thank you. Your Event Monitoring demo request has been sent to the Specialized Medical team." data-error-message="We could not confirm that your request was sent. Please try again or call 1-855-773-2633.">
             <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
-            <input type="hidden" name="subject" value="Request Event Monitoring Information — Cardiac Event Monitoring">
+            <input type="hidden" name="subject" value="Event Monitoring Demo Request">
             <input type="hidden" name="from_page" value="cardiac-event-monitoring">
+            <input type="hidden" name="originating_service" value="event_monitoring">
             <input type="hidden" name="redirect" value="">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Name</span>
+                <span class="landing-cta-form__label">Full name <abbr title="required">*</abbr></span>
                 <input name="name" type="text" autocomplete="name" required>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Organization</span>
+                <span class="landing-cta-form__label">Organization <abbr title="required">*</abbr></span>
                 <input name="organization" type="text" autocomplete="organization" required>
               </label>
             </div>
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Email</span>
-                <input name="email" type="email" autocomplete="email" required>
+                <span class="landing-cta-form__label">Work email <abbr title="required">*</abbr></span>
+                <input name="email" type="email" autocomplete="work email" inputmode="email" required>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Phone</span>
-                <input name="phone" type="tel" autocomplete="tel" required>
+                <span class="landing-cta-form__label">Phone <span class="landing-cta-form__optional">(optional)</span></span>
+                <input name="phone" type="tel" autocomplete="work tel" inputmode="tel">
               </label>
             </div>
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric" required>
+                <span class="landing-cta-form__label">Number of locations <span class="landing-cta-form__optional">(optional)</span></span>
+                <input name="locations" type="number" min="1" inputmode="numeric">
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest" required>
-                  <option value="" disabled>Select an option</option>
-                  <option value="Holter Monitoring">Holter Monitoring</option>
-                  <option value="Long-Term Holter Monitoring">Long-Term Holter Monitoring</option>
+                <span class="landing-cta-form__label">Primary monitoring interest <span class="landing-cta-form__optional">(optional)</span></span>
+                <select name="interest">
                   <option value="Cardiac Event Monitoring" selected>Cardiac Event Monitoring</option>
+                  <option value="24–48 Hour Holter">24–48 Hour Holter</option>
+                  <option value="Extended Holter Through 7 Days">Extended Holter Through 7 Days</option>
+                  <option value="8–14 Day Extended Holter">8–14 Day Extended Holter</option>
                   <option value="Mobile Cardiac Telemetry (MCT)">Mobile Cardiac Telemetry (MCT)</option>
-                  <option value="Post-TAVR monitoring program">Post-TAVR monitoring program</option>
                   <option value="Multiple test types / full program">Multiple test types / full program</option>
                 </select>
               </label>
             </div>
-            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request Event Monitoring Information</button>
+            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request an Event Monitoring Demo</button>
+            <p class="landing-cta-form__note">For practice inquiries. Please do not include patient names, dates of birth, medical records or other patient information in this form. See our <a href="privacy.html">Privacy Policy</a>.</p>
             <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="event-related-heading">
+    <!-- 12 Author, review, references -->
+    <section class="landing-section" aria-labelledby="event-eeat-heading">
       <div class="figma-container">
-        <h2 id="event-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>
-        <ul class="landing-related">
-          <li><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></li>
-          <li><a href="holter-monitoring-services.html">Holter Monitoring Services</a></li>
-          <li><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days</a></li>
-          <li><a href="extended-holter-monitoring-8-14-days.html">8&ndash;14 Day Extended Holter</a></li>
-          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
-          <li><a href="live-ecg-monitoring.html">Live ECG Monitoring</a></li>
-        </ul>
+        <h2 id="event-eeat-heading" class="landing-h2">Author, Clinical Review and <span class="landing-h2__accent">References</span></h2>
+        <div class="landing-eeat">
+          <div class="landing-eeat__author">
+            <h3 class="landing-h3">Author</h3>
+            <p class="landing-p"><strong>Steven M. Burns</strong>, President &amp; CEO, Specialized Medical LLC. Service content reflects Specialized Medical&rsquo;s ambulatory monitoring workflow and practice support.</p>
+          </div>
+          <div class="landing-eeat__review">
+            <h3 class="landing-h3">Clinical review</h3>
+            <p class="landing-p"><strong>Last updated:</strong> November 23, 2026</p>
+            <!-- TODO before publication (brief s.8): enter the actual clinical reviewer's name, credentials, specialty and review date; then add reviewedBy/lastReviewed to the JSON-LD. -->
+            <p class="landing-p">Reviewed by Specialized Medical for service, workflow, and technical accuracy. This page provides general information for healthcare professionals and does not replace clinical judgment, payer requirements, emergency services, or institutional protocols.</p>
+          </div>
+          <div class="landing-eeat__policy">
+            <h3 class="landing-h3">Questions and corrections</h3>
+            <p class="landing-p">Contact <a href="contact.html">Specialized Medical</a> or call 1-855-773-2633.</p>
+          </div>
+          <div class="landing-eeat__refs">
+            <h3 class="landing-h3">References</h3>
+            <ol class="landing-refs">
+              <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6931745/" target="_blank" rel="noopener noreferrer">Steinberg JS, et al. 2017 ISHNE-HRS expert consensus statement on ambulatory ECG and external cardiac monitoring/telemetry. Ann Noninvasive Electrocardiol. 2017;22:e12447. PMCID: PMC6931745</a></li>
+              <li><a href="https://www.heart.org/en/health-topics/arrhythmia/symptoms-diagnosis--monitoring-of-arrhythmia/cardiac-event-recorder" target="_blank" rel="noopener noreferrer">American Heart Association. Cardiac Event Recorder. Reviewed October 10, 2024.</a></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -636,7 +686,7 @@
         <div class="figma-footer__main">
           <div class="figma-footer__brand">
             <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
-              <img class="figma-brand__mark" src="images/figma-assets/brand-logo.webp?v=f8509ae975" alt="" width="412" loading="lazy" height="90" decoding="async">
+              <img class="figma-brand__mark" src="/images/figma-assets/brand-logo.webp?v=f8509ae975" alt="Specialized Medical" width="412" height="90" decoding="async" loading="lazy">
             </a>
             <p class="figma-footer__tagline">Turnkey cardiac monitoring with LIVE ECG data.</p>
           </div>
@@ -647,23 +697,24 @@
               <a href="services.html">Services</a>
               <a href="faq.html">FAQs</a>
               <a href="contact.html">Contact</a>
+              <a href="privacy.html">Privacy</a>
               <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </nav>
             <div class="figma-footer__line">
               <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
-                <img src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="Phone Icon" width="20" height="20" decoding="async">
+                <img src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="20" height="20" decoding="async">
               </span>
               <a class="figma-footer__link" href="tel:+18557732633">
-                <span class="figma-footer__muted">1-855-SPEC-MED</span> 
+                <span class="figma-footer__muted">1-855-SPEC-MED</span>
                 <span class="figma-footer__strong">(1-855-773-2633)</span>
               </a>
             </div>
             <div class="figma-footer__line">
-              <img src="icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
+              <img src="/icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
               <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
             </div>
             <div class="figma-footer__line">
-              <img src="images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
+              <img src="/images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
               <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
             </div>
           </div>
@@ -675,11 +726,11 @@
         </div>
         <div class="figma-footer__hr" aria-hidden="true"></div>
         <div class="figma-footer__bottom">
-          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
+          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></p>
           <div class="figma-footer__social">
-            <img src="images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <img src="/images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
             <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
-              <img src="images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+              <img src="/images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
@@ -687,8 +738,8 @@
     </footer>
 
   </div>
-  <script src="js/analytics.js?v=329dbec6d8" defer></script>
-  <script src="js/main.js?v=9a987e8d2e" defer></script>
+  <script src="/js/landing-lite.js?v=a891c442d6" defer></script>
+  <script src="/js/analytics.js?v=329dbec6d8" defer></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
