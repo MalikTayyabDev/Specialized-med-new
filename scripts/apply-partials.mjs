@@ -33,9 +33,10 @@ const PAGES = [
   { file: "live-ecg-monitoring.html", base: "", active: "services" },
   { file: "post-tavr-cardiac-monitoring.html", base: "", active: "services" },
   { file: "cardiology-practice-cardiac-monitoring.html", base: "", active: "services" },
-  // This page lives in a subfolder, but we inject <base href> so links should
-  // be site-root-relative (no ../ prefixes), otherwise nav can escape the subfolder.
-  { file: "services/equipment.html", base: "", active: "services" },
+  // This page lives in /services/. Use root-relative links ("/about.html"):
+  // crawlers and link checkers do not run the <base href> script, so plain
+  // relative links would resolve to /services/about.html (404).
+  { file: "services/equipment.html", base: "/", active: "services" },
 
   // Pretty URLs (folder index.html)
   { file: "about/index.html", base: "../", active: "about" },
