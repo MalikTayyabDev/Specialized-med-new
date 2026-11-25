@@ -18,6 +18,11 @@ import java.util.regex.Pattern;
  * scripts/cache-bust.mjs, which changes the version whenever the file's
  * content changes) are cached for a year, because any update produces a new
  * URL. All other responses are left untouched.
+ *
+ * Optional init-param "robotsTag" (e.g. "noindex, nofollow" on staging) adds an
+ * X-Robots-Tag header to every response, so pages, images, sitemap.xml and
+ * llms.txt are all kept out of search indexes. Leave it empty in production.
+ * scripts/set-indexing.mjs switches it together with the page meta tags.
  */
 public class HtmlCacheFilter implements Filter {
 
@@ -28,6 +33,8 @@ public class HtmlCacheFilter implements Filter {
     private static final Pattern ASSET_EXTENSION = Pattern.compile(
         "\\.(css|js|mjs|png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf|mp4|webm)$",
         Pattern.CASE_INSENSITIVE);
+
+    private String robotsTag = "";
 
     @Override
     public void doFilter(
@@ -40,6 +47,10 @@ public class HtmlCacheFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         String path = req.getRequestURI().substring(req.getContextPath().length());
+
+        if (!robotsTag.isEmpty()) {
+            res.setHeader("X-Robots-Tag", robotsTag);
+        }
 
         if (isHtmlRoute(path)) {
             res.setHeader("Cache-Control", HTML_POLICY);
@@ -71,6 +82,8 @@ public class HtmlCacheFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) {
+        String value = filterConfig.getInitParameter("robotsTag");
+        robotsTag = value == null ? "" : value.trim();
     }
 
     @Override

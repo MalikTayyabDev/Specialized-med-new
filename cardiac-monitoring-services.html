@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <script>
@@ -63,243 +63,331 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Cardiac Monitoring Services | LIVE Streaming ECG | Specialized Medical",
-  "headline": "Cardiac Monitoring Services Built Around LIVE Visibility and Patient Support",
-  "url": "https://www.specialized-med.com/cardiac-monitoring-services.html",
-  "description": "Compare Holter, Extended Holter, Event and Mobile Cardiac Telemetry solutions with LIVE test-status visibility, proactive patient support and physician-ready reporting.",
-  "inLanguage": "en-US",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  }
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": [
-    "Organization",
-    "MedicalBusiness"
-  ],
-  "name": "Specialized Medical",
-  "url": "https://www.specialized-med.com/",
-  "telephone": "+1-855-773-2633",
-  "description": "Specialized Medical provides turnkey ambulatory cardiac monitoring services including Holter, Long-Term Holter, Cardiac Event Monitoring, and Mobile Cardiac Telemetry."
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Cardiac Monitoring Services",
-  "provider": {
-    "@type": "Organization",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "serviceType": "Ambulatory Cardiac Monitoring",
-  "areaServed": "United States",
-  "description": "Compare Holter, Extended Holter, Event and Mobile Cardiac Telemetry solutions with LIVE test-status visibility, proactive patient support and physician-ready reporting.",
-  "url": "https://www.specialized-med.com/cardiac-monitoring-services.html"
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.specialized-med.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://www.specialized-med.com/services.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Cardiac Monitoring Services",
-      "item": "https://www.specialized-med.com/cardiac-monitoring-services.html"
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What types of cardiac monitoring does Specialized Medical offer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Specialized Medical offers Holter Monitoring, Extended and Long-Term Holter Monitoring, Cardiac Event Monitoring and Mobile Cardiac Telemetry. LIVE STREAMING and selected NOT LIVE STREAMING Holter configurations are available."
+      "@type": "Organization",
+      "@id": "https://www.specialized-med.com/#organization",
+      "name": "Specialized Medical LLC",
+      "url": "https://www.specialized-med.com/",
+      "email": "info@specialized-med.com",
+      "telephone": "+1-855-773-2633",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34145 Pacific Coast Highway, #700",
+        "addressLocality": "Dana Point",
+        "addressRegion": "CA",
+        "postalCode": "92629",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales and support",
+        "telephone": "+1-855-773-2633",
+        "email": "info@specialized-med.com",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ],
+        "areaServed": "US"
       }
     },
     {
-      "@type": "Question",
-      "name": "Are all Specialized Medical tests LIVE STREAMING?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The four primary options shown in the comparison table are LIVE STREAMING. Specialized Medical also offers two NOT LIVE STREAMING Holter options for patients who refuse to carry the additional cellular phone."
+      "@type": "ImageObject",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#primaryimage",
+      "url": "https://www.specialized-med.com/images/landing/cardiac-monitoring-services-hero-1920.jpg",
+      "contentUrl": "https://www.specialized-med.com/images/landing/cardiac-monitoring-services-hero-1920.jpg",
+      "width": 1920,
+      "height": 900,
+      "caption": "Cardiologist and ECG monitoring specialist reviewing a live cardiac monitoring study"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#service",
+      "name": "Ambulatory Cardiac Monitoring Services",
+      "serviceType": "Nationwide ambulatory cardiac monitoring services",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Cardiologists, electrophysiologists, hospitals, physician practices and cardiovascular programs"
+      },
+      "description": "Holter, Long-Term and Extended Holter, Cardiac Event Monitoring and Mobile Cardiac Telemetry services with patient support and physician-ready reporting."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#holter-service",
+      "name": "Holter Monitoring Service",
+      "serviceType": "24–48 hour ambulatory Holter monitoring",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Healthcare organizations"
       }
     },
     {
-      "@type": "Question",
-      "name": "What does LIVE test-status visibility mean?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It means Specialized Medical can follow operational indicators such as battery status, electrode contact and quality, Bluetooth connection, cellular connectivity and successful ECG data transmission while the study is underway."
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#long-term-holter-service",
+      "name": "Long-Term Holter Monitoring Service",
+      "serviceType": "Ambulatory Holter monitoring for more than 48 hours through 7 days",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Healthcare organizations"
       }
     },
     {
-      "@type": "Question",
-      "name": "What happens if an electrode loses contact?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "When the system indicates that electrode quality or contact has fallen out of the expected range, Specialized Medical can contact the patient and help them correct the issue."
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#extended-holter-service",
+      "name": "Extended Holter Monitoring Service",
+      "serviceType": "8–14 day ambulatory Holter monitoring",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Healthcare organizations"
       }
     },
     {
-      "@type": "Question",
-      "name": "Can Specialized Medical tell whether the patient is connected?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For LIVE STREAMING tests, the team can see whether the monitor and phone are communicating and whether ECG data is being received, helping identify when the patient may no longer be properly connected."
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#event-service",
+      "name": "Cardiac Event Monitoring Service",
+      "serviceType": "Cardiac event monitoring for up to 30 days",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Healthcare organizations"
       }
     },
     {
-      "@type": "Question",
-      "name": "When are Holter findings presented?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For Holter and Extended/Long-Term Holter studies, clinical findings are presented after the final report is generated."
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#mct-service",
+      "name": "Mobile Cardiac Telemetry Service",
+      "serviceType": "Mobile cardiac telemetry for up to 30 days",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Healthcare organizations"
       }
     },
     {
-      "@type": "Question",
-      "name": "When are Event and MCT findings presented?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Qualifying findings from Cardiac Event Monitoring and MCT are presented while the test is in progress according to the physician’s prescribed notification protocol."
-      }
+      "@type": "MedicalWebPage",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#webpage",
+      "url": "https://www.specialized-med.com/cardiac-monitoring-services.html",
+      "name": "Cardiac Monitoring Services | Specialized Medical",
+      "description": "Compare Holter, longer Holter, Event and MCT services, including test-status visibility, patient support and the timing of clinical findings.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.specialized-med.com/#website",
+        "url": "https://www.specialized-med.com/",
+        "name": "Specialized Medical"
+      },
+      "about": [
+        {
+          "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#service"
+        },
+        {
+          "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#holter-service"
+        },
+        {
+          "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#long-term-holter-service"
+        },
+        {
+          "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#extended-holter-service"
+        },
+        {
+          "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#event-service"
+        },
+        {
+          "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#mct-service"
+        }
+      ],
+      "primaryImageOfPage": {
+        "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#primaryimage"
+      },
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "lastReviewed": "2026-11-24",
+      "specialty": "https://schema.org/Cardiovascular"
     },
     {
-      "@type": "Question",
-      "name": "Why would a patient use a NOT LIVE STREAMING Holter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "This option is available when a patient refuses to carry the additional cellular phone. It records ECG data for later analysis but does not provide LIVE test-status visibility during the wear period."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.specialized-med.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cardiac Monitoring Services",
+          "item": "https://www.specialized-med.com/cardiac-monitoring-services.html"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "How does the monitor transmit ECG data?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The monitor communicates with the assigned phone by Bluetooth. The phone then transmits ECG data through available cellular service. The phone is locked down to two essential patient screens - Device Status and Log Symptoms - to reduce complexity and help the patient remain connected."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the patient record symptoms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The patient uses the dedicated Log Symptoms screen on the assigned phone. The simplified interface allows the patient to document symptoms during the study without navigating unrelated smartphone functions. The reported symptom time can then be compared with the transmitted ECG data."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens if the assigned phone is misplaced?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Specialized Medical can help locate the assigned phone using geolocation and can remotely activate an audible ring to make the phone easier to find, provided it is powered on and connected. This added support helps reduce disruption to the monitoring study."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which cellular networks are used?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Specialized Medical connectivity approach uses Verizon, T-Mobile and AT&T to help maintain service across a broad range of locations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can patients be pre-enrolled?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Practices may pre-enroll patients in advance so the final enrollment and hookup process is faster when the patient arrives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Specialized Medical support post-TAVR monitoring?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Specialized Medical provides LIVE STREAMING monitoring options that can support post-discharge rhythm surveillance when prescribed by the treating heart team."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long should a patient be monitored after TAVR?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The treating heart team determines the appropriate patient selection, test type and monitoring duration based on the patient’s clinical status and the program’s protocol."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Specialized Medical replace the physician’s clinical judgment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Specialized Medical provides monitoring technology, review workflows and communication support. Clinical decisions remain with the treating physician and healthcare organization."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How are final reports signed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Physicians can review and complete the electronic signature workflow through the Specialized Medical portal."
-      }
+      "@type": "FAQPage",
+      "@id": "https://www.specialized-med.com/cardiac-monitoring-services.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What cardiac monitoring services does Specialized Medical offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Specialized Medical supports Holter Monitoring, Long-Term and Extended Holter Monitoring, Cardiac Event Monitoring and Mobile Cardiac Telemetry. The ordering physician selects the test and duration for each patient."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is ambulatory cardiac monitoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ambulatory cardiac monitoring records a patient's ECG while the patient continues ordinary activities outside a hospital. The physician chooses the service and monitoring duration based on the clinical question."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does LIVE test-status visibility mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For supported live studies, Specialized Medical can follow operational indicators such as monitor battery, electrode contact, Bluetooth connection, cellular connection and successful ECG data transmission while the study is underway."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are all Specialized Medical monitoring options LIVE STREAMING?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The primary Holter, longer Holter, Event and MCT options described as LIVE STREAMING include live test-status visibility. Selected non-live Holter configurations are also available when a patient refuses to carry the assigned cellular phone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are Holter findings presented to the ordering physician?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Holter and Long-Term or Extended Holter studies, findings are presented after the final report is generated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are Event and MCT findings presented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Qualifying findings from Cardiac Event Monitoring and Mobile Cardiac Telemetry may be presented during the study according to the physician-prescribed notification protocol, followed by a final report."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a live study loses an electrode or connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a supported operational indicator falls outside the expected range, Specialized Medical can contact the patient and help troubleshoot the battery, electrode, phone, Bluetooth, cellular or transmission issue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which cellular networks support the assigned monitoring phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The assigned phone uses available AT&T, T-Mobile and Verizon service. Connectivity varies by location and network conditions, and uninterrupted coverage is not guaranteed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Specialized Medical support post-TAVR monitoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. When prescribed by the treating heart team, supported live monitoring services can be configured for post-discharge rhythm surveillance under the organization's patient-selection and notification protocol."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does cardiac monitoring replace the treating physician's judgment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Specialized Medical provides monitoring technology, operational support, review workflows and communication support. Test selection, interpretation and patient-care decisions remain with the treating physician and healthcare organization."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cardiac Monitoring Services | LIVE Streaming ECG | Specialized Medical</title>
-  <meta name="description" content="Compare Holter, Extended Holter, Event and Mobile Cardiac Telemetry solutions with LIVE test-status visibility, proactive patient support and physician-ready reporting.">
-  <!-- Social sharing (iMessage/WhatsApp/Facebook/Twitter) -->
-  <meta property="og:site_name" content="Specialized Medical">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Cardiac Monitoring Services | Specialized Medical</title>
+  <meta name="description" content="Compare Holter, Extended Holter, Event and MCT services with live test-status visibility, proactive patient support and physician-ready reporting.">
+  <meta name="author" content="Specialized Medical LLC">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cardiac Monitoring Services | LIVE Streaming ECG | Specialized Medical">
-  <meta property="og:description" content="Compare Holter, Extended Holter, Event and Mobile Cardiac Telemetry solutions with LIVE test-status visibility, proactive patient support and physician-ready reporting.">
+  <meta property="og:site_name" content="Specialized Medical">
+  <meta property="og:title" content="Cardiac Monitoring Services with LIVE Visibility">
+  <meta property="og:description" content="Holter, longer Holter, Event and MCT services supported by active test-status visibility, patient assistance and physician-ready reporting.">
   <meta property="og:url" content="https://www.specialized-med.com/cardiac-monitoring-services.html">
-  <meta property="og:image" content="https://www.specialized-med.com/images/landing/cardiac-monitoring-services.png">
+  <meta property="og:image" content="https://www.specialized-med.com/images/landing/cardiac-monitoring-services-hero-1920.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Cardiologist and ECG monitoring specialist reviewing a live cardiac monitoring study">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cardiac Monitoring Services | LIVE Streaming ECG | Specialized Medical">
-  <meta name="twitter:description" content="Compare Holter, Extended Holter, Event and Mobile Cardiac Telemetry solutions with LIVE test-status visibility, proactive patient support and physician-ready reporting.">
-  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/cardiac-monitoring-services.png">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" href="favicon.svg?v=ea9bbc50ae">
+  <meta name="twitter:title" content="Cardiac Monitoring Services with LIVE Visibility">
+  <meta name="twitter:description" content="Compare ambulatory cardiac monitoring services and the support provided during each prescribed study.">
+  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/cardiac-monitoring-services-hero-1920.jpg">
+  <link rel="icon" href="/favicon.svg?v=ea9bbc50ae">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="images/landing/cardiac-monitoring-services.png?v=9486228245" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css?v=1bad96baac">
-  <link rel="stylesheet" href="css/home.css?v=090a393fa2">
-  <link rel="stylesheet" href="css/services.css?v=de0139ab71">
-  <link rel="stylesheet" href="css/faq.css?v=c9b924a842">
-  <link rel="stylesheet" href="css/landing.css?v=0bc3ce0681">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preload" as="image" type="image/webp" href="/images/landing/cardiac-monitoring-services-hero-960.webp?v=6f8f6cbf85" imagesrcset="/images/landing/cardiac-monitoring-services-hero-960.webp?v=6f8f6cbf85 960w, /images/landing/cardiac-monitoring-services-hero-1280.webp?v=e0572c9620 1280w, /images/landing/cardiac-monitoring-services-hero-1920.webp?v=b2c5f93fe7 1920w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/global.css?v=1bad96baac">
+  <link rel="stylesheet" href="/css/chrome.css?v=21dc8e5542">
+  <link rel="stylesheet" href="/css/landing-mct.css?v=6e8799d245">
+  <link rel="stylesheet" href="/css/faq.css?v=c9b924a842">
+  <link rel="stylesheet" href="/css/landing-pkg.css?v=9cef0e826e">
   <link rel="canonical" href="https://www.specialized-med.com/cardiac-monitoring-services.html">
 </head>
 <body>
@@ -311,11 +399,12 @@
       style="display:none;visibility:hidden">
     </iframe>
   </noscript>
+  <a class="skip-link" href="cardiac-monitoring-services.html#main-content">Skip to content</a>
   <div class="site-root">
     <header class="site-header site-header--figma">
       <div class="figma-container figma-header__inner site-header__inner">
         <a href="./" class="figma-brand" aria-label="Specialized Medical home">
-          <img class="figma-brand__mark" src="images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="" width="236" fetchpriority="low" height="52" decoding="async">
+          <img class="figma-brand__mark" src="/images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="Specialized Medical" width="236" fetchpriority="low" height="52" decoding="async">
         </a>
         <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
           <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -330,525 +419,182 @@
           <div class="figma-nav__mobile">
             <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact.html#contact-form">Request a Demo</a>
-              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+              <a class="figma-btn figma-btn--outline-dark" href="cardiac-monitoring-services.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
         </nav>
         <div class="figma-header__cta">
           <a class="figma-phone" href="tel:+18557732633">
-            <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
+            <img class="figma-phone__icon" src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
-          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+          <a class="figma-btn figma-btn--outline-dark figma-btn--tavr-demo" href="cardiac-monitoring-services.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
     </header>
 
-<main class="landing-page services-page services-page--figma" data-landing="cardiac-monitoring-services">
+    <main class="landing-page landing-page--pkg services-page services-page--figma" data-landing="cardiac-monitoring-services" data-service-id="cardiac_monitoring_services" id="main-content" tabindex="-1">
     <nav class="landing-breadcrumb" aria-label="Breadcrumb">
       <div class="figma-container">
         <ol class="landing-breadcrumb__list">
           <li><a href="./">Home</a></li>
-          <li><a href="services.html">Services</a></li>
           <li><span aria-current="page">Cardiac Monitoring Services</span></li>
         </ol>
       </div>
     </nav>
-    <section class="landing-hero" aria-labelledby="cms-hero-heading">
-      <div class="landing-hero__plate landing-hero__plate--cardiac-monitoring-services">
-        <img class="landing-hero__media" src="images/landing/cardiac-monitoring-services.png?v=9486228245" alt="Holter, Event Monitoring, and Mobile Cardiac Telemetry services from Specialized Medical for physician practices" width="1430" height="550" fetchpriority="high" decoding="async">
+
+    <section class="landing-hero" aria-labelledby="cardiac-monitoring-services-hero-heading">
+      <div class="landing-hero__plate landing-hero__plate--pkg landing-hero__plate--pkg-navy">
+        <picture>
+          <source type="image/webp" srcset="/images/landing/cardiac-monitoring-services-hero-960.webp?v=6f8f6cbf85 960w, /images/landing/cardiac-monitoring-services-hero-1280.webp?v=e0572c9620 1280w, /images/landing/cardiac-monitoring-services-hero-1920.webp?v=b2c5f93fe7 1920w" sizes="100vw">
+          <img class="landing-hero__media" src="/images/landing/cardiac-monitoring-services-hero-960.jpg?v=0db38ccd8f" srcset="/images/landing/cardiac-monitoring-services-hero-960.jpg?v=0db38ccd8f 960w, /images/landing/cardiac-monitoring-services-hero-1280.jpg?v=bebf078e3c 1280w, /images/landing/cardiac-monitoring-services-hero-1920.jpg?v=5d8afa7110 1920w" sizes="100vw" width="1920" height="900" alt="Cardiologist and ECG monitoring specialist reviewing a live cardiac monitoring study" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
         <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
-          <p class="figma-hero__pill">
-            <span class="figma-hero__pill-dot" aria-hidden="true"></span>
-            Cardiac Monitoring Services
-          </p>
-          <h1 id="cms-hero-heading" class="landing-hero__title">
-            Cardiac Monitoring Services Built Around <span class="landing-hero__title-accent">LIVE Visibility</span> and Patient Support
-          </h1>
+          <p class="figma-hero__pill"><span class="figma-hero__pill-dot" aria-hidden="true"></span>NATIONWIDE AMBULATORY MONITORING</p>
+          <h1 id="cardiac-monitoring-services-hero-heading" class="landing-hero__title">Cardiac Monitoring Services with LIVE Visibility and <span class="landing-hero__title-accent">Patient Support</span></h1>
+          <p class="landing-hero__lead landing-answer">Compare Holter, longer Holter, Event and Mobile Cardiac Telemetry services—supported by active test-status visibility, proactive patient assistance and physician-ready reporting.</p>
           <div class="landing-hero__actions">
-            <a class="figma-btn figma-btn--solid" href="#cta-form">Schedule a Cardiac Monitoring Demonstration</a>
+            <a class="figma-btn figma-btn--solid" data-mct-track="sm_cta_click" data-track-name="hero_demo" href="cardiac-monitoring-services.html#request-demo">Schedule a Demonstration</a>
+            <a class="figma-btn figma-btn--outline-dark" data-mct-track="sm_cta_click" data-track-name="hero_compare" href="cardiac-monitoring-services.html#compare">Compare Services</a>
           </div>
+          <ul class="landing-hero__points" aria-label="Highlights"><li>Holter through 14 days</li><li>Event and MCT up to 30 days</li><li>Nationwide support</li></ul>
         </div>
       </div>
     </section>
 
-    <section class="landing-section landing-section--opening" aria-label="Cardiac monitoring services overview">
-      <div class="figma-container">
-        <p class="landing-p">Specialized Medical provides a complete range of <a href="ambulatory-cardiac-monitoring.html">ambulatory cardiac monitoring</a> solutions designed to help healthcare organizations obtain dependable ECG data, maintain visibility into active studies and receive clear, physician-ready reporting. Our platform supports Holter Monitoring, Extended and Long-Term Holter Monitoring, Cardiac Event Monitoring and Mobile Cardiac Telemetry (MCT), with flexible device options for a wide range of clinical and patient needs.</p>
-        <p class="landing-p">Unlike monitoring workflows that may not reveal a technical problem until a study has ended, our LIVE STREAMING solutions allow our team to follow key test-status indicators while monitoring is in progress. We can see battery status, electrode quality and contact with the body, device and phone connectivity, cellular communication and whether ECG data is being received. When a parameter falls outside the expected range, our team contacts the patient and works with them to correct the issue before valuable monitoring time is lost.</p>
-        <p class="landing-p">Every monitoring type has a different clinical purpose. The key distinction is not simply whether the device records ECG data. It is whether the study provides LIVE test-status visibility and when clinical findings are presented to the ordering provider.</p>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--trust" aria-label="Overview">
+      <div class="figma-container"><ul class="landing-trust-strip"><li><strong>24–48 hours</strong><span>Holter Monitoring</span></li><li><strong>Through 14 days</strong><span>Long-Term and Extended Holter</span></li><li><strong>Up to 30 days</strong><span>Event Monitoring and MCT</span></li><li><strong>3 carrier networks</strong><span>AT&T, T-Mobile and Verizon</span></li></ul></div>
     </section>
 
-    <section class="landing-section landing-section--muted landing-section--intro-band" aria-labelledby="cms-better-visibility-heading">
-      <div class="figma-container">
-        <h2 id="cms-better-visibility-heading" class="landing-h2">Cardiac Monitoring Built for <span class="landing-h2__accent">Better Visibility</span></h2>
-        <p class="landing-p">See how Specialized Medical combines LIVE test-status visibility, proactive patient support and physician-ready reporting.</p>
-        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form">Schedule a Cardiac Monitoring Demonstration</a></p>
-      </div>
+    <section class="landing-section" aria-labelledby="cardiac-monitoring-services-s1-heading">
+      <div class="figma-container landing-definition"><div><p class="landing-eyebrow">Direct answer</p><h2 class="landing-h2" id="cardiac-monitoring-services-s1-heading">What are cardiac <span class="landing-h2__accent">monitoring services?</span></h2><div class="landing-answer-box"><strong>Cardiac monitoring services record and organize ambulatory ECG data for physician review.</strong> Specialized Medical supports short and longer Holter studies, Cardiac Event Monitoring and Mobile Cardiac Telemetry. The ordering physician determines the appropriate test, duration and notification protocol.</div><p class="landing-p landing-lede">The important differences are not limited to wear time. Healthcare organizations should also compare whether the study provides live operational visibility, when clinical findings are presented, how patients receive help and how reports reach the ordering physician.</p><p class="landing-reviewed">Published and reviewed for service accuracy by Specialized Medical LLC. Last reviewed November 24, 2026.</p></div><aside class="landing-spec-panel"><h3 class="landing-h3">One service partner can support</h3><ul class="landing-checks"><li>Patient enrollment and pre-enrollment</li><li>Monitor hookup and assigned-phone workflow</li><li>Live operational test-status review where supported</li><li>Proactive patient troubleshooting</li><li>Physician-prescribed notification protocols</li><li>Final report delivery and electronic signature workflow</li><li>Practice and hospital implementation support</li></ul></aside></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="cms-live-visibility-heading">
-      <div class="figma-container">
-        <h2 id="cms-live-visibility-heading" class="landing-h2">LIVE Visibility Helps Protect the Quality of <span class="landing-h2__accent">Every Study</span></h2>
-        <p class="landing-p">A cardiac monitor can only provide useful information when it remains powered, properly attached, connected and successfully transmitting data. Specialized Medical does not treat monitoring as a passive process. For our LIVE STREAMING studies, our team has ongoing visibility into the operational health of the test while it is underway.</p>
-        <p class="landing-p">This visibility helps us identify many technical issues that can reduce the quality or completeness of a study, including a low battery, poor electrode contact, interrupted Bluetooth communication, loss of cellular connection, a monitor that has been removed or a study that is no longer transmitting as expected.</p>
-        <p class="landing-p">When an issue is detected, our team contacts the patient and works with them to correct it. The goal is to restore the study quickly, preserve monitoring time and reduce the likelihood that the physician receives an incomplete or unusable test.</p>
-        <h3 class="landing-h3">Status indicators that may be followed during a LIVE STREAMING study</h3>
-        <ul class="landing-status-strip" aria-label="Status indicators that may be followed during a LIVE STREAMING study">
-          <li>Monitor battery level</li>
-          <li>Electrode quality and contact with the patient&rsquo;s body</li>
-          <li>Monitor-to-phone Bluetooth connection</li>
-          <li>Phone-to-network cellular connection</li>
-          <li>Successful ECG data transmission</li>
-          <li>Whether the patient appears to remain actively connected</li>
-          <li>Signal quality and visible technical artifact</li>
-        </ul>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--center" id="compare" aria-labelledby="cardiac-monitoring-services-s2-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Service comparison</p><h2 class="landing-h2" id="cardiac-monitoring-services-s2-heading">Choose the prescribed <span class="landing-h2__accent">monitoring path</span></h2><p class="landing-p landing-section__intro">Use this table to compare typical duration, live operational visibility and the timing of clinical findings. The ordering physician makes the patient-specific selection.</p><div aria-label="Choose the prescribed monitoring path" class="landing-table-wrap" role="region" tabindex="0"><table class="landing-table landing-table--stack"><thead><tr><th scope="col">Monitoring service</th><th scope="col">Typical duration</th><th scope="col">LIVE test-status visibility</th><th scope="col">When clinical findings are presented</th></tr></thead><tbody><tr><th scope="row"><a href="holter-monitoring-services.html">Holter — LIVE STREAMING</a></th><td data-label="Typical duration">24–48 hours</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="When clinical findings are presented">After the final report is generated</td></tr><tr><th scope="row"><a href="long-term-holter-monitoring.html">Long-Term Holter — LIVE STREAMING</a></th><td data-label="Typical duration">More than 48 hours through 7 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="When clinical findings are presented">After the final report is generated</td></tr><tr><th scope="row"><a href="extended-holter-monitoring-8-14-days.html">Extended Holter — LIVE STREAMING</a></th><td data-label="Typical duration">8–14 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="When clinical findings are presented">After the final report is generated</td></tr><tr><th scope="row"><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring — LIVE STREAMING</a></th><td data-label="Typical duration">Up to 30 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="When clinical findings are presented">Qualifying findings during the study under the prescribed protocol</td></tr><tr><th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry — LIVE STREAMING</a></th><td data-label="Typical duration">Up to 30 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="When clinical findings are presented">Qualifying findings during the study under the prescribed protocol</td></tr><tr><th scope="row">Holter — NOT LIVE STREAMING</th><td data-label="Typical duration">24–48 hours</td><td class="landing-no" data-label="LIVE test-status visibility">No</td><td data-label="When clinical findings are presented">After the final report is generated</td></tr><tr><th scope="row">Extended Holter — NOT LIVE STREAMING</th><td data-label="Typical duration">3–7 days</td><td class="landing-no" data-label="LIVE test-status visibility">No</td><td data-label="When clinical findings are presented">After the final report is generated</td></tr></tbody></table></div><p class="landing-reviewed">The non-live Holter configurations are intended for patients who refuse to carry the assigned cellular phone. They record for later analysis and do not provide live operational test-status visibility during the wear period.</p></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="cms-compare-heading">
-      <div class="figma-container">
-        <h2 id="cms-compare-heading" class="landing-h2">Choose &amp; Compare Specialized Medical Cardiac Monitoring <span class="landing-h2__accent">Solutions</span></h2>
-        <p class="landing-p"><strong>LIVE Test-Status Visibility</strong> means Specialized Medical can follow the operational condition of a LIVE STREAMING study while it is underway. This includes battery level, electrode contact and quality, monitor-to-phone connection, cellular connectivity and successful data transmission. If a parameter falls out of range, our team can contact the patient and help correct the issue.</p>
-        <p class="landing-p"><strong>Clinical Findings Presented</strong> describes when diagnostic findings are delivered to the ordering provider. For Holter and Extended/Long-Term Holter studies, findings are presented after the final report is generated. For Cardiac Event Monitoring and Mobile Cardiac Telemetry, qualifying findings are presented during the study according to the prescribed notification protocol.</p>
-        <p class="landing-p">The two NOT LIVE STREAMING Holter options are intended for patients who refuse to carry the additional cellular phone. These studies are recorded for later analysis and do not provide LIVE test-status visibility during the wear period.</p>
-        <div class="landing-table-wrap" role="region" aria-label="Cardiac monitoring service comparison" tabindex="0">
-          <table class="landing-table">
-            <caption class="sr-only">Comparison of live-streaming and non-live Holter, Event, and MCT monitoring by duration, LIVE test-status visibility, and clinical-findings timing</caption>
-            <thead>
-              <tr>
-                <th scope="col">Monitoring Type</th>
-                <th scope="col">Typical Duration</th>
-                <th scope="col">LIVE Test-Status Visibility</th>
-                <th scope="col">Clinical Findings Presented</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th scope="row"><a href="holter-monitoring-services.html">Holter Monitoring (LIVE STREAMING)</a></th>
-              <td>24&ndash;48 hours</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days (LIVE STREAMING)</a></th>
-              <td>More than 48 hours to 7 days</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="extended-holter-monitoring-8-14-days.html">8&ndash;14 Day Extended Holter (LIVE STREAMING)</a></th>
-              <td>8&ndash;14 days</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring (LIVE STREAMING)</a></th>
-              <td>Up to 30 days</td>
-              <td>Yes</td>
-              <td>During Test &mdash; According to Prescribed Notification Protocol</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT) (LIVE STREAMING)</a></th>
-              <td>Up to 30 days</td>
-              <td>Yes</td>
-              <td>During Test &mdash; According to Prescribed Notification Protocol</td>
-            </tr>
-            <tr>
-              <th scope="row">Holter Monitoring (NOT LIVE STREAMING VERSION)</th>
-              <td>24&ndash;48 hours</td>
-              <td><span class="landing-table__no">NO</span></td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row">Extended Holter (NOT LIVE STREAMING VERSION)</th>
-              <td>3&ndash;7 days</td>
-              <td><span class="landing-table__no">NO</span></td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <section class="landing-section landing-section--center" aria-labelledby="cardiac-monitoring-services-s3-heading">
+      <div class="figma-container"><p class="landing-eyebrow">One partner, multiple options</p><h2 class="landing-h2" id="cardiac-monitoring-services-s3-heading">Ambulatory cardiac monitoring services for different <span class="landing-h2__accent">prescribed needs</span></h2><div class="landing-feature-grid" role="list"><article class="landing-feature-card" role="listitem"><span class="landing-tag">LIVE AVAILABLE</span><h3 class="landing-h3">Holter Monitoring</h3><p class="landing-p">Continuous ambulatory ECG recording for a defined 24–48 hour period, with findings presented after the final report is generated.</p><a href="holter-monitoring-services.html">Explore Holter Monitoring →</a></article><article class="landing-feature-card" role="listitem"><span class="landing-tag">LIVE AVAILABLE</span><h3 class="landing-h3">Long-Term Holter</h3><p class="landing-p">Continuous recording for more than 48 hours through 7 days when a conventional Holter window may be too short.</p><a href="long-term-holter-monitoring.html">Explore longer Holter studies →</a></article><article class="landing-feature-card" role="listitem"><span class="landing-tag">LIVE AVAILABLE</span><h3 class="landing-h3">Extended Holter</h3><p class="landing-p">An 8–14 day continuous study supported by patient assistance and final physician-ready reporting.</p><a href="extended-holter-monitoring-8-14-days.html">Explore Extended Holter →</a></article><article class="landing-feature-card" role="listitem"><span class="landing-tag">LIVE STREAMING</span><h3 class="landing-h3">Cardiac Event Monitoring</h3><p class="landing-p">Longer monitoring for intermittent symptoms, with qualifying findings presented under the physician-prescribed notification protocol.</p><a href="cardiac-event-monitoring.html">Explore Event Monitoring →</a></article><article class="landing-feature-card" role="listitem"><span class="landing-tag">LIVE STREAMING</span><h3 class="landing-h3">Mobile Cardiac Telemetry</h3><p class="landing-p">Continuous rhythm surveillance with qualifying findings presented during the study under the prescribed notification protocol.</p><a href="mobile-cardiac-telemetry-mct.html">Explore Mobile Cardiac Telemetry →</a></article><article class="landing-feature-card" role="listitem"><span class="landing-tag landing-tag--muted">RECORDED FOR LATER ANALYSIS</span><h3 class="landing-h3">Non-LIVE Holter Options</h3><p class="landing-p">24–48 hour and 3–7 day Holter configurations for a patient who refuses the assigned cellular phone.</p><a href="cardiac-monitoring-services.html#request-demo">Ask about non-live configurations →</a></article></div></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="cms-partner-heading">
-      <div class="figma-container">
-        <h2 id="cms-partner-heading" class="landing-h2">One Monitoring Partner. Multiple Clinical <span class="landing-h2__accent">Options.</span></h2>
-        <p class="landing-p">Specialized Medical helps practices select and operate the monitoring workflow that fits the prescribed test, the patient&rsquo;s condition and the desired timing of clinical information.</p>
-        <div class="landing-grid landing-grid--2">
-          <article class="landing-card">
-            <h3 class="landing-h3"><a href="holter-monitoring-services.html">Holter Monitoring (LIVE STREAMING)</a></h3>
-            <p class="landing-p">Holter Monitoring is commonly prescribed for 24 to 48 hours when continuous ECG recording is needed over a defined period. With the Specialized Medical LIVE STREAMING version, our team can see test-status information as the study progresses and assist the patient if the battery, electrodes or connection require attention. Clinical findings are presented after the final report is generated.</p>
-            <p class="landing-p"><a href="holter-monitoring-services.html">Learn More About Holter Monitoring</a></p>
-          </article>
-          <article class="landing-card">
-            <h3 class="landing-h3"><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days (LIVE STREAMING)</a></h3>
-            <p class="landing-p">Extended Holter Monitoring records ECG continuously for more than 48 hours and up to 7 days, when a 24&ndash;48 hour window may be too short. LIVE test-status visibility helps our team support the patient and protect study quality throughout the longer wear period. Clinical findings are presented after the final report is generated.</p>
-            <p class="landing-p"><a href="long-term-holter-monitoring.html">Explore Extended Holter Through 7 Days</a></p>
-          </article>
-          <article class="landing-card">
-            <h3 class="landing-h3"><a href="extended-holter-monitoring-8-14-days.html">8&ndash;14 Day Extended Holter (LIVE STREAMING)</a></h3>
-            <p class="landing-p">The 8&ndash;14 day Extended Holter records ECG continuously across a longer prescribed window. LIVE test-status visibility helps our team keep the longer recording on track. Clinical findings are presented after the final report is generated.</p>
-            <p class="landing-p"><a href="extended-holter-monitoring-8-14-days.html">Explore 8&ndash;14 Day Extended Holter</a></p>
-          </article>
-          <article class="landing-card">
-            <h3 class="landing-h3"><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring (LIVE STREAMING)</a></h3>
-            <p class="landing-p">Cardiac Event Monitoring may be used for intermittent symptoms or rhythm events that may not occur during a shorter study. Qualifying clinical findings can be presented while the test is in progress according to the physician&rsquo;s prescribed notification protocol, while the monitoring team also maintains LIVE operational visibility.</p>
-            <p class="landing-p"><a href="cardiac-event-monitoring.html">View Cardiac Event Monitoring</a></p>
-          </article>
-          <article class="landing-card">
-            <h3 class="landing-h3"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry - MCT (LIVE STREAMING)</a></h3>
-            <p class="landing-p">MCT provides continuous rhythm surveillance with qualifying clinical findings presented during the monitoring period according to the prescribed notification protocol. It is well suited to patients who require closer rhythm oversight, including selected patients following procedures such as TAVR.</p>
-            <p class="landing-p"><a href="mobile-cardiac-telemetry-mct.html">Learn About Mobile Cardiac Telemetry</a></p>
-          </article>
-        </div>
-        <h3 class="landing-h3">Non-LIVE Holter Options</h3>
-        <p class="landing-p">For patients who refuse to carry the additional cellular phone, Specialized Medical also offers a 24-48 hour Holter and a 3-7 day Extended Holter in a NOT LIVE STREAMING configuration. These studies do not provide LIVE test-status visibility, and findings are presented after the final report is generated.</p>
-        <p class="landing-p"><a class="figma-btn figma-btn--outline" href="#cta-form">Ask About Non-LIVE Holter Options</a></p>
-      </div>
+    <section class="landing-section landing-section--muted" aria-labelledby="cardiac-monitoring-services-s4-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Operational visibility</p><h2 class="landing-h2" id="cardiac-monitoring-services-s4-heading">LIVE visibility helps protect <span class="landing-h2__accent">monitoring time</span></h2><p class="landing-p landing-section__intro">A prescribed study is useful only when the monitor remains powered, attached, connected and transmitting as expected. For supported live studies, Specialized Medical follows relevant operational indicators and can assist the patient when a problem is identified.</p><div class="landing-status-grid"><div class="landing-status"><b>Battery</b><span>Monitor power status</span></div><div class="landing-status"><b>Electrodes</b><span>Contact and quality</span></div><div class="landing-status"><b>Bluetooth</b><span>Monitor-to-phone link</span></div><div class="landing-status"><b>Cellular</b><span>Phone-to-network link</span></div><div class="landing-status"><b>Transmission</b><span>ECG data receipt</span></div><div class="landing-status"><b>Signal</b><span>Visible technical artifact</span></div></div><p class="landing-p">Operational visibility is not the same as a clinical alert. Event and MCT communication of qualifying findings follows the ordering physician's prescribed notification protocol.</p></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="cms-post-tavr-heading">
-      <div class="figma-container">
-        <h2 id="cms-post-tavr-heading" class="landing-h2">Post-TAVR Monitoring Designed for the Period After <span class="landing-h2__accent">Discharge</span></h2>
-        <p class="landing-p">Patients may leave the hospital before every conduction disturbance becomes apparent. Ambulatory ECG monitoring can help the heart team maintain rhythm surveillance during the post-discharge period, when delayed high-grade atrioventricular block and other rhythm changes may occur in selected patients.</p>
-        <p class="landing-p">Specialized Medical is especially well suited to post-TAVR monitoring because our LIVE STREAMING workflow combines continuous ECG transmission, multi-carrier cellular connectivity, LIVE test-status visibility and active patient support. The heart team receives a monitoring solution designed to remain connected while the patient returns home, rather than a passive recorder that may not reveal technical problems until the study is over.</p>
-        <h3 class="landing-h3">Why Specialized Medical is a strong post-TAVR monitoring partner</h3>
-        <ul class="landing-list">
-          <li><a href="live-ecg-monitoring.html">LIVE ECG transmission</a> throughout the prescribed monitoring period</li>
-          <li>Qualifying clinical findings presented during MCT according to the prescribed notification protocol</li>
-          <li>Visibility into battery, electrodes, connectivity and successful data transmission</li>
-          <li>Proactive contact with the patient when a technical issue is identified</li>
-          <li>Multi-carrier cellular connectivity using Verizon, T-Mobile and AT&amp;T</li>
-          <li>Single-wire, two-electrode <a href="s-patch-cardiac-monitoring-system.html">S-Patch</a> configuration designed for patient mobility and repositioning</li>
-          <li>Physician-ready reporting and electronic signature workflow</li>
-          <li>A dedicated monitoring process that can be aligned with the heart team&rsquo;s post-TAVR protocol</li>
-        </ul>
-        <ol class="landing-flow" aria-label="Post-TAVR hospital-to-home monitoring timeline">
-          <li class="landing-flow__step"><strong>Hospital</strong></li>
-          <li class="landing-flow__step"><strong>Discharge</strong></li>
-          <li class="landing-flow__step"><strong>Home</strong></li>
-          <li class="landing-flow__step"><strong>Physician review</strong></li>
-        </ol>
-        <div class="landing-note landing-note--info" role="note">
-          <p class="landing-note__title">Building or Expanding a Post-TAVR Monitoring Program?</p>
-          <p class="landing-note__body">Learn how Specialized Medical can support post-discharge rhythm surveillance with LIVE ECG transmission, multi-carrier connectivity, proactive patient support and a workflow designed around the heart team&rsquo;s protocol.</p>
-        </div>
-        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="post-tavr-cardiac-monitoring.html">Explore delayed heart-block monitoring after TAVR</a></p>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--center" aria-labelledby="cardiac-monitoring-services-s5-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Complete workflow</p><h2 class="landing-h2" id="cardiac-monitoring-services-s5-heading">From order to <span class="landing-h2__accent">physician review</span></h2><p class="landing-p landing-section__intro">A repeatable process helps staff, patients, the monitoring team and physicians understand what happens at every stage.</p><ol class="landing-flow landing-flow--pkg" data-steps="6"><li class="landing-flow__step"><strong>Order and pre-enroll</strong><span>The practice selects the prescribed test and can prepare the patient record before hookup.</span></li><li class="landing-flow__step"><strong>Apply and connect</strong><span>Staff applies the monitor, assigns the phone for a live study and confirms readiness.</span></li><li class="landing-flow__step"><strong>Verify live status</strong><span>The monitor, phone, cellular connection and ECG transmission are checked.</span></li><li class="landing-flow__step"><strong>Support the patient</strong><span>The team assists with supported battery, electrode and connectivity issues.</span></li><li class="landing-flow__step"><strong>Follow the protocol</strong><span>Qualifying Event and MCT findings are communicated under prescribed instructions.</span></li><li class="landing-flow__step"><strong>Deliver the report</strong><span>The ordering physician receives the applicable final report for review and signature.</span></li></ol></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="cms-workflow-heading">
-      <div class="figma-container">
-        <h2 id="cms-workflow-heading" class="landing-h2">A Monitoring Workflow Built for Patients, Staff and <span class="landing-h2__accent">Physicians</span></h2>
-        <ol class="landing-flow" aria-label="Six-step Specialized Medical monitoring workflow">
-          <li class="landing-flow__step"><strong>Order and pre-enroll</strong><span>The practice selects the prescribed test and may pre-enroll the patient days, weeks or months before hookup.</span></li>
-          <li class="landing-flow__step"><strong>Apply and connect</strong><span>Staff applies the monitor, assigns the cellular phone when using a LIVE STREAMING option and confirms the connection.</span></li>
-          <li class="landing-flow__step"><strong>Verify LIVE status</strong><span>Specialized Medical confirms that the monitor, phone, network and ECG transmission are functioning.</span></li>
-          <li class="landing-flow__step"><strong>Support the patient</strong><span>If battery, electrode quality, connectivity or transmission falls out of range, our team contacts the patient and works with them to correct the issue.</span></li>
-          <li class="landing-flow__step"><strong>Review and present findings</strong><span>Holter findings are presented after the final report is generated. Event and MCT qualifying findings are presented during the study according to the prescribed notification protocol.</span></li>
-          <li class="landing-flow__step"><strong>Deliver the final report</strong><span>The physician receives a clear final report and can complete the electronic signature workflow.</span></li>
-        </ol>
-      </div>
+    <section class="landing-section landing-section--center" aria-labelledby="cardiac-monitoring-services-s6-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Connected in the patient's environment</p><h2 class="landing-h2" id="cardiac-monitoring-services-s6-heading">A dedicated phone and multi-carrier <span class="landing-h2__accent">cellular approach</span></h2><p class="landing-p landing-section__intro">The monitor communicates with the assigned phone by Bluetooth. The phone transmits data through available AT&amp;T, T-Mobile or Verizon service and is simplified to essential monitoring functions.</p><div aria-label="ECG transmission path" class="landing-path"><div>Wearable monitor</div><div aria-hidden="true" class="landing-path__arrow">→</div><div>Assigned phone</div><div aria-hidden="true" class="landing-path__arrow">→</div><div>Monitoring center</div></div><div class="landing-feature-grid" role="list"><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Two essential screens</h3><p class="landing-p">The patient sees Device Status and Log Symptoms rather than unrelated smartphone apps and settings.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Automatic reconnection</h3><p class="landing-p">The system is designed to reconnect when service becomes available after an interruption. Coverage varies and is not guaranteed.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Phone-location assistance</h3><p class="landing-p">If the assigned phone is misplaced while powered and connected, the team can assist with geolocation and an audible ring.</p></article></div></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="cms-networks-heading">
-      <div class="figma-container">
-        <h2 id="cms-networks-heading" class="landing-h2">Stay Connected Across Multiple <span class="landing-h2__accent">Cellular Networks</span></h2>
-        <p class="landing-p">A monitoring system is only useful when it can remain connected in the patient&rsquo;s real environment. Specialized Medical uses a cellular phone gateway designed to connect through Verizon, T-Mobile and AT&amp;T, helping the system maintain service across a broad range of locations, including many rural areas where relying on a single carrier may be limiting.</p>
-        <p class="landing-p">The monitor communicates with the assigned phone by Bluetooth, and the phone transmits ECG data through the available cellular network. When connectivity is interrupted, the system is designed to reconnect automatically when service becomes available. LIVE test-status visibility allows our team to recognize when communication has been interrupted and assist the patient when necessary.</p>
-        <figure class="landing-diagram" role="group" aria-label="Monitor to phone to network to monitoring center">
-          <div class="landing-diagram__frame">
-          <div class="landing-diagram__network">
-            <div class="landing-diagram__network-chain">
-              <div class="landing-diagram__device landing-diagram__device--patch"><span>Monitor</span></div>
-              <div class="landing-diagram__connector landing-diagram__connector--inline" aria-hidden="true">Bluetooth</div>
-              <div class="landing-diagram__device landing-diagram__device--phone"><span>Assigned phone</span></div>
-              <div class="landing-diagram__connector landing-diagram__connector--inline" aria-hidden="true">Cellular</div>
-              <div class="landing-diagram__device landing-diagram__device--cloud"><span>Monitoring center</span></div>
-            </div>
-            <div class="landing-diagram__carriers" aria-label="Cellular networks">
-              <span>Verizon</span>
-              <span>T-Mobile</span>
-              <span>AT&amp;T</span>
-            </div>
-          </div>
-          </div>
-          
-        </figure>
-      </div>
+    <section class="landing-section landing-section--muted" aria-labelledby="cardiac-monitoring-services-s7-heading">
+      <div class="figma-container landing-definition"><div><p class="landing-eyebrow">Wearable system</p><h2 class="landing-h2" id="cardiac-monitoring-services-s7-heading">A compact <span class="landing-h2__accent">two-electrode configuration</span></h2><p class="landing-p landing-lede">The S-Patch uses two small circular electrodes connected by a single wire. The electrode positions can be changed on the skin as directed, supporting patient mobility while the monitor remains connected to the assigned phone.</p><ul class="landing-checks"><li>Two small disks with one connecting wire</li><li>0.6-ounce wearable configuration</li><li>Minimum 10-day battery life</li><li>Up to 30-day prescribed wear period</li><li>IP55-rated enclosure</li></ul><p class="landing-p"><a class="figma-btn figma-btn--outline-dark" data-mct-track="sm_cta_click" data-track-name="spatch_learn" href="s-patch-cardiac-monitoring-system.html">Explore the S-Patch System</a></p></div><aside class="landing-feature-card"><h3 class="landing-h3">Clear reporting for physician review</h3><p class="landing-p">Holter findings are presented after the final report is generated. Event and MCT qualifying findings are presented during the study under the prescribed notification protocol, followed by the final report.</p><ul class="landing-checks"><li>Study summary and supporting ECG information</li><li>Symptom context when available</li><li>Secure report-delivery workflow</li><li>Electronic physician review and signature</li></ul><p class="landing-reviewed">The ordering physician remains responsible for final interpretation and patient-care decisions.</p></aside></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="cms-patient-phone-heading">
-      <div class="figma-container">
-        <div class="landing-split">
-          <div class="landing-split__copy">
-            <h2 id="cms-patient-phone-heading" class="landing-h2">A Patient Phone Simplified for <span class="landing-h2__accent">Cardiac Monitoring</span></h2>
-        <p class="landing-p">The assigned cellular phone is configured as a dedicated cardiac monitoring device, not as a general-purpose smartphone. It is locked down to only two essential patient screens: Device Status and Log Symptoms. This simplified design helps patients remain connected without having to navigate apps, messages, settings or other smartphone functions.</p>
-        <p class="landing-p">The Device Status screen gives the patient a simple view of the monitoring connection. The Log Symptoms screen allows the patient to record symptoms during the study so the physician can compare the reported symptom time with the transmitted ECG data. If the assigned phone is misplaced, Specialized Medical can help locate it using geolocation and can remotely activate an audible ring to make it easier for the patient to find, provided the phone is powered on and connected.</p>
-        <ul class="landing-list">
-          <li>Dedicated exclusively to the prescribed cardiac monitoring study</li>
-          <li>Only two patient-facing screens: Device Status and Log Symptoms</li>
-          <li>No web browsing, email, social media, games or unnecessary applications</li>
-          <li>No complex menus or settings for the patient to manage</li>
-          <li>Preconfigured and ready for the monitoring study</li>
-          <li>Automatic Bluetooth communication with the cardiac monitor</li>
-          <li>Automatic ECG transmission through the available cellular network</li>
-          <li>Simple symptom logging during the prescribed monitoring period</li>
-          <li>Remote geolocation and audible ring assistance if the assigned phone is misplaced</li>
-          <li>LIVE visibility that allows Specialized Medical to identify communication interruptions and assist the patient when needed</li>
-        </ul>
-          </div>
-          <div class="landing-split__media">
-        <figure class="landing-diagram" role="group" aria-label="Assigned patient phone with Device Status and Log Symptoms screens">
-          <div class="landing-diagram__frame">
-          <div class="landing-phone-demo" aria-hidden="true">
-            <div class="landing-phone-demo__shell">
-              <div class="landing-phone-demo__screen">
-                <div class="landing-phone-demo__card">
-                  <p class="landing-phone-demo__card-title">Device Status</p>
-                </div>
-                <div class="landing-phone-demo__card">
-                  <p class="landing-phone-demo__card-title">Log Symptoms</p>
-                </div>
-                <div class="landing-phone-demo__tabs">
-                  <span class="landing-phone-demo__tab landing-phone-demo__tab--active">Device Status</span>
-                  <span class="landing-phone-demo__tab">Log Symptoms</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-          <figcaption class="landing-figure__cap">Only two simple screens - connection status and symptom logging.</figcaption>
-        </figure>
-          </div>
-        </div>
-      </div>
+    <section class="landing-section" aria-labelledby="cardiac-monitoring-services-s8-heading">
+      <div class="figma-container"><div class="landing-callout-band"><div><h2 class="landing-h2" id="cardiac-monitoring-services-s8-heading">Planning a post-TAVR <span class="landing-h2__accent">monitoring workflow?</span></h2><p class="landing-p">Specialized Medical can align supported live monitoring, patient assistance and notification processes with the treating heart team's post-discharge protocol.</p></div><a class="figma-btn figma-btn--solid" data-mct-track="sm_cta_click" data-track-name="tavr_learn" href="post-tavr-cardiac-monitoring.html">Explore Post-TAVR Monitoring</a></div></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="cms-spatch-heading">
-      <div class="figma-container">
-        <div class="landing-split">
-          <div class="landing-split__copy">
-            <h2 id="cms-spatch-heading" class="landing-h2">A Simple Two-Electrode Monitoring <span class="landing-h2__accent">Configuration</span></h2>
-        <p class="landing-p">The S-Patch uses a single wire with two electrodes, allowing the electrode positions to be changed on the skin as directed. This can help reduce repeated stress on the same skin location while maintaining strong P-wave clarity and reliable ECG acquisition. The compact configuration is designed to support everyday movement while the patient remains connected to the assigned phone.</p>
-          </div>
-          <div class="landing-split__media">
-        <figure class="landing-figure">
-          <img src="images/figma-services/s-patch.jpg?v=43dd7bacb1" alt="Specialized Medical S-Patch single-wire two-electrode wearable cardiac monitor" loading="lazy" decoding="async">
-          
-        </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-section landing-section--muted" aria-labelledby="cms-practice-heading">
-      <div class="figma-container">
-        <h2 id="cms-practice-heading" class="landing-h2">Designed to Fit the Cardiology Practice <span class="landing-h2__accent">Workflow</span></h2>
-        <p class="landing-p">Specialized Medical provides more than a monitor. The service is designed to support the complete <a href="cardiology-practice-cardiac-monitoring.html">practice</a> workflow, including patient enrollment, pre-enrollment, device hookup, technical support, physician-ready reporting, electronic signature and billing-support information. The goal is to make monitoring easier for the practice while keeping the physician in control of the prescribed test and notification parameters.</p>
-        <ul class="landing-list">
-          <li>Pre-enroll patients before the appointment</li>
-          <li>Complete hookup, enrollment and disconnection through a streamlined workflow</li>
-          <li>Use billing templates and supporting information designed for the practice&rsquo;s billing team</li>
-          <li>Receive physician-ready reports</li>
-          <li>Complete electronic signatures from the portal</li>
-          <li>Access monitoring options from a single service partner</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="landing-section" aria-labelledby="cms-reporting-heading">
-      <div class="figma-container">
-        <div class="landing-split">
-          <div class="landing-split__copy">
-            <h2 id="cms-reporting-heading" class="landing-h2">Clear Reporting for the Ordering <span class="landing-h2__accent">Physician</span></h2>
-        <p class="landing-p">The final report should help the physician review the study efficiently. Specialized Medical provides physician-ready reporting designed to summarize the monitoring period while preserving the supporting ECG information needed for clinical review. Report availability and the timing of clinical findings depend on the prescribed monitoring type.</p>
-        <ul class="landing-list">
-          <li>Holter and Extended/Long-Term Holter: findings are presented after the final report is generated.</li>
-          <li>Event Monitoring and MCT: qualifying clinical findings are presented during the study according to the prescribed notification protocol, followed by the final report.</li>
-          <li>Electronic signature workflow allows the physician to complete and return the signed report through the portal.</li>
-        </ul>
-          </div>
-          <div class="landing-split__media">
-        <figure class="landing-figure">
-          <img src="images/figma-services/report-sample.jpg?v=3191d11923" alt="De-identified physician-ready cardiac monitoring report with electronic signature workflow" loading="lazy" decoding="async">
-          
-        </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-section landing-section--muted" aria-labelledby="cms-demo-band-heading">
-      <div class="figma-container">
-        <h2 id="cms-demo-band-heading" class="landing-h2">See How Specialized Medical Can Improve Your Monitoring <span class="landing-h2__accent">Workflow</span></h2>
-        <p class="landing-p">Schedule a demonstration to see the S-Patch, LIVE test-status visibility, patient-support workflow, clinical notification process and physician reporting platform.</p>
-        <p class="landing-p"><a class="figma-btn figma-btn--solid" href="#cta-form">Schedule a Demonstration</a></p>
-      </div>
-    </section>
-
-<section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="cms-faq-heading">
+    <section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" id="faq" aria-labelledby="cardiac-monitoring-services-faq-heading">
       <div class="figma-container faq-accordion__inner">
-        <h2 id="cms-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
+        <p class="landing-eyebrow">Frequently asked questions</p>
+        <h2 id="cardiac-monitoring-services-faq-heading" class="landing-h2">Cardiac monitoring <span class="landing-h2__accent">service answers</span></h2>
         <div class="faq-category">
           <div class="faq-category__list">
 <div class="faq-item is-open">
-      <button type="button" id="faq-trigger-cms-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-cms-0">
-        <span class="faq-item__q">What types of cardiac monitoring does Specialized Medical offer?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-cardiac-monitoring-services-0">
+        <span class="faq-item__q">What cardiac monitoring services does Specialized Medical offer?</span>
         <svg class="faq-item__chevron is-open" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-0" role="region" aria-labelledby="faq-trigger-cms-0" class="faq-item__panel">
-        <p>Specialized Medical offers Holter Monitoring, Extended and Long-Term Holter Monitoring, Cardiac Event Monitoring and Mobile Cardiac Telemetry. LIVE STREAMING and selected NOT LIVE STREAMING Holter configurations are available.</p>
+      <div id="faq-panel-cardiac-monitoring-services-0" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-0" class="faq-item__panel">
+        <p>Specialized Medical supports Holter Monitoring, Long-Term and Extended Holter Monitoring, Cardiac Event Monitoring and Mobile Cardiac Telemetry. The ordering physician selects the test and duration for each patient.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-1">
-        <span class="faq-item__q">Are all Specialized Medical tests LIVE STREAMING?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-1">
+        <span class="faq-item__q">What is ambulatory cardiac monitoring?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-1" role="region" aria-labelledby="faq-trigger-cms-1" class="faq-item__panel" hidden>
-        <p>The four primary options shown in the comparison table are LIVE STREAMING. Specialized Medical also offers two NOT LIVE STREAMING Holter options for patients who refuse to carry the additional cellular phone.</p>
+      <div id="faq-panel-cardiac-monitoring-services-1" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-1" class="faq-item__panel" hidden>
+        <p>Ambulatory cardiac monitoring records a patient's ECG while the patient continues ordinary activities outside a hospital. The physician chooses the service and monitoring duration based on the clinical question.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-2">
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-2">
         <span class="faq-item__q">What does LIVE test-status visibility mean?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-2" role="region" aria-labelledby="faq-trigger-cms-2" class="faq-item__panel" hidden>
-        <p>It means Specialized Medical can follow operational indicators such as battery status, electrode contact and quality, Bluetooth connection, cellular connectivity and successful ECG data transmission while the study is underway.</p>
+      <div id="faq-panel-cardiac-monitoring-services-2" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-2" class="faq-item__panel" hidden>
+        <p>For supported live studies, Specialized Medical can follow operational indicators such as monitor battery, electrode contact, Bluetooth connection, cellular connection and successful ECG data transmission while the study is underway.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-3">
-        <span class="faq-item__q">What happens if an electrode loses contact?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-3">
+        <span class="faq-item__q">Are all Specialized Medical monitoring options LIVE STREAMING?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-3" role="region" aria-labelledby="faq-trigger-cms-3" class="faq-item__panel" hidden>
-        <p>When the system indicates that electrode quality or contact has fallen out of the expected range, Specialized Medical can contact the patient and help them correct the issue.</p>
+      <div id="faq-panel-cardiac-monitoring-services-3" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-3" class="faq-item__panel" hidden>
+        <p>No. The primary Holter, longer Holter, Event and MCT options described as LIVE STREAMING include live test-status visibility. Selected non-live Holter configurations are also available when a patient refuses to carry the assigned cellular phone.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-4">
-        <span class="faq-item__q">Can Specialized Medical tell whether the patient is connected?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-4">
+        <span class="faq-item__q">When are Holter findings presented to the ordering physician?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-4" role="region" aria-labelledby="faq-trigger-cms-4" class="faq-item__panel" hidden>
-        <p>For LIVE STREAMING tests, the team can see whether the monitor and phone are communicating and whether ECG data is being received, helping identify when the patient may no longer be properly connected.</p>
+      <div id="faq-panel-cardiac-monitoring-services-4" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-4" class="faq-item__panel" hidden>
+        <p>For Holter and Long-Term or Extended Holter studies, findings are presented after the final report is generated.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-5">
-        <span class="faq-item__q">When are Holter findings presented?</span>
-        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div id="faq-panel-cms-5" role="region" aria-labelledby="faq-trigger-cms-5" class="faq-item__panel" hidden>
-        <p>For Holter and Extended/Long-Term Holter studies, clinical findings are presented after the final report is generated.</p>
-      </div>
-    </div>
-<div class="faq-item">
-      <button type="button" id="faq-trigger-cms-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-6">
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-5">
         <span class="faq-item__q">When are Event and MCT findings presented?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-6" role="region" aria-labelledby="faq-trigger-cms-6" class="faq-item__panel" hidden>
-        <p>Qualifying findings from Cardiac Event Monitoring and MCT are presented while the test is in progress according to the physician&rsquo;s prescribed notification protocol.</p>
+      <div id="faq-panel-cardiac-monitoring-services-5" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-5" class="faq-item__panel" hidden>
+        <p>Qualifying findings from Cardiac Event Monitoring and Mobile Cardiac Telemetry may be presented during the study according to the physician-prescribed notification protocol, followed by a final report.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-7">
-        <span class="faq-item__q">Why would a patient use a NOT LIVE STREAMING Holter?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-6">
+        <span class="faq-item__q">What happens if a live study loses an electrode or connection?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-7" role="region" aria-labelledby="faq-trigger-cms-7" class="faq-item__panel" hidden>
-        <p>This option is available when a patient refuses to carry the additional cellular phone. It records ECG data for later analysis but does not provide LIVE test-status visibility during the wear period.</p>
+      <div id="faq-panel-cardiac-monitoring-services-6" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-6" class="faq-item__panel" hidden>
+        <p>When a supported operational indicator falls outside the expected range, Specialized Medical can contact the patient and help troubleshoot the battery, electrode, phone, Bluetooth, cellular or transmission issue.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-8">
-        <span class="faq-item__q">How does the monitor transmit ECG data?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-7">
+        <span class="faq-item__q">Which cellular networks support the assigned monitoring phone?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-8" role="region" aria-labelledby="faq-trigger-cms-8" class="faq-item__panel" hidden>
-        <p>The monitor communicates with the assigned phone by Bluetooth. The phone then transmits ECG data through available cellular service. The phone is locked down to two essential patient screens - Device Status and Log Symptoms - to reduce complexity and help the patient remain connected.</p>
+      <div id="faq-panel-cardiac-monitoring-services-7" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-7" class="faq-item__panel" hidden>
+        <p>The assigned phone uses available AT&amp;T, T-Mobile and Verizon service. Connectivity varies by location and network conditions, and uninterrupted coverage is not guaranteed.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-9">
-        <span class="faq-item__q">How does the patient record symptoms?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-8">
+        <span class="faq-item__q">Can Specialized Medical support post-TAVR monitoring?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-9" role="region" aria-labelledby="faq-trigger-cms-9" class="faq-item__panel" hidden>
-        <p>The patient uses the dedicated Log Symptoms screen on the assigned phone. The simplified interface allows the patient to document symptoms during the study without navigating unrelated smartphone functions. The reported symptom time can then be compared with the transmitted ECG data.</p>
+      <div id="faq-panel-cardiac-monitoring-services-8" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-8" class="faq-item__panel" hidden>
+        <p>Yes. When prescribed by the treating heart team, supported live monitoring services can be configured for post-discharge rhythm surveillance under the organization's patient-selection and notification protocol.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-cms-10" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-10">
-        <span class="faq-item__q">What happens if the assigned phone is misplaced?</span>
+      <button type="button" id="faq-trigger-cardiac-monitoring-services-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiac-monitoring-services-9">
+        <span class="faq-item__q">Does cardiac monitoring replace the treating physician's judgment?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-cms-10" role="region" aria-labelledby="faq-trigger-cms-10" class="faq-item__panel" hidden>
-        <p>Specialized Medical can help locate the assigned phone using geolocation and can remotely activate an audible ring to make the phone easier to find, provided it is powered on and connected. This added support helps reduce disruption to the monitoring study.</p>
-      </div>
-    </div>
-<div class="faq-item">
-      <button type="button" id="faq-trigger-cms-11" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-11">
-        <span class="faq-item__q">Which cellular networks are used?</span>
-        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div id="faq-panel-cms-11" role="region" aria-labelledby="faq-trigger-cms-11" class="faq-item__panel" hidden>
-        <p>The Specialized Medical connectivity approach uses Verizon, T-Mobile and AT&amp;T to help maintain service across a broad range of locations.</p>
-      </div>
-    </div>
-<div class="faq-item">
-      <button type="button" id="faq-trigger-cms-12" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-12">
-        <span class="faq-item__q">Can patients be pre-enrolled?</span>
-        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div id="faq-panel-cms-12" role="region" aria-labelledby="faq-trigger-cms-12" class="faq-item__panel" hidden>
-        <p>Yes. Practices may pre-enroll patients in advance so the final enrollment and hookup process is faster when the patient arrives.</p>
-      </div>
-    </div>
-<div class="faq-item">
-      <button type="button" id="faq-trigger-cms-13" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-13">
-        <span class="faq-item__q">Does Specialized Medical support post-TAVR monitoring?</span>
-        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div id="faq-panel-cms-13" role="region" aria-labelledby="faq-trigger-cms-13" class="faq-item__panel" hidden>
-        <p>Yes. Specialized Medical provides LIVE STREAMING monitoring options that can support post-discharge rhythm surveillance when prescribed by the treating heart team.</p>
-      </div>
-    </div>
-<div class="faq-item">
-      <button type="button" id="faq-trigger-cms-14" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-14">
-        <span class="faq-item__q">How long should a patient be monitored after TAVR?</span>
-        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div id="faq-panel-cms-14" role="region" aria-labelledby="faq-trigger-cms-14" class="faq-item__panel" hidden>
-        <p>The treating heart team determines the appropriate patient selection, test type and monitoring duration based on the patient&rsquo;s clinical status and the program&rsquo;s protocol.</p>
-      </div>
-    </div>
-<div class="faq-item">
-      <button type="button" id="faq-trigger-cms-15" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-15">
-        <span class="faq-item__q">Does Specialized Medical replace the physician&rsquo;s clinical judgment?</span>
-        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div id="faq-panel-cms-15" role="region" aria-labelledby="faq-trigger-cms-15" class="faq-item__panel" hidden>
-        <p>No. Specialized Medical provides monitoring technology, review workflows and communication support. Clinical decisions remain with the treating physician and healthcare organization.</p>
-      </div>
-    </div>
-<div class="faq-item">
-      <button type="button" id="faq-trigger-cms-16" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cms-16">
-        <span class="faq-item__q">How are final reports signed?</span>
-        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div id="faq-panel-cms-16" role="region" aria-labelledby="faq-trigger-cms-16" class="faq-item__panel" hidden>
-        <p>Physicians can review and complete the electronic signature workflow through the Specialized Medical portal.</p>
+      <div id="faq-panel-cardiac-monitoring-services-9" role="region" aria-labelledby="faq-trigger-cardiac-monitoring-services-9" class="faq-item__panel" hidden>
+        <p>No. Specialized Medical provides monitoring technology, operational support, review workflows and communication support. Test selection, interpretation and patient-care decisions remain with the treating physician and healthcare organization.</p>
       </div>
     </div>
           </div>
@@ -856,58 +602,72 @@
       </div>
     </section>
 
-    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="cms-cta-heading">
+    <section class="landing-section landing-cta-block" id="request-demo" aria-labelledby="cardiac-monitoring-services-cta-heading">
       <div class="figma-container">
         <div class="landing-cta-block__box">
           <div class="landing-cta-block__copy">
-            <h2 id="cms-cta-heading" class="landing-h2">Schedule a Cardiac Monitoring Demonstration</h2>
-            <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
-            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
+            <h2 id="cardiac-monitoring-services-cta-heading" class="landing-h2">Compare the monitoring options with our team</h2>
+            <p class="landing-p landing-lede">We can review your current ambulatory monitoring workflow, explain the differences between services and demonstrate how enrollment, live operational support, clinical communication and reporting can be configured.</p><ul class="landing-checks"><li>One practice, multiple locations or hospital program</li><li>Holter, longer Holter, Event and MCT options</li><li>Patient-support and connectivity workflow</li><li>Physician notification and report routing</li><li>Controlled pilot before broader rollout</li></ul><p class="landing-p"><strong>Prefer to speak directly?</strong><br/><a href="tel:+18557732633">1-855-SPEC-MED (1-855-773-2633)</a><br/><a href="mailto:info@specialized-med.com">info@specialized-med.com</a></p>
           </div>
-          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
+          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST" data-form-name="cardiac_monitoring_services_inquiry" data-track-start="demo_form_start" data-track-submit="sm_lead_form_submit_attempt" data-track-error="demo_form_error" data-track-success="none" data-success-message="Thank you. Your request has been sent to the Specialized Medical team." data-error-message="We could not confirm that your request was sent. Please try again or call 1-855-773-2633.">
             <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
-            <input type="hidden" name="subject" value="Schedule a Cardiac Monitoring Demonstration — Cardiac Monitoring Services">
+            <input type="hidden" name="subject" value="Cardiac monitoring services inquiry">
+            <input type="hidden" name="from_name" value="Specialized Medical website">
             <input type="hidden" name="from_page" value="cardiac-monitoring-services">
             <input type="hidden" name="redirect" value="">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+            <input type="hidden" name="page_url" value="">
+            <input type="hidden" name="referrer" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_term" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="gclid" value="">
+            <input type="hidden" name="msclkid" value="">
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Name</span>
-                <input name="name" type="text" autocomplete="name" required>
+                <span class="landing-cta-form__label">First name <abbr title="required">*</abbr></span>
+                <input autocomplete="given-name" name="first_name" required="" type="text"/>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Organization</span>
-                <input name="organization" type="text" autocomplete="organization" required>
+                <span class="landing-cta-form__label">Last name <abbr title="required">*</abbr></span>
+                <input autocomplete="family-name" name="last_name" required="" type="text"/>
               </label>
             </div>
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Email</span>
-                <input name="email" type="email" autocomplete="email" required>
+                <span class="landing-cta-form__label">Work email <abbr title="required">*</abbr></span>
+                <input autocomplete="email" name="email" required="" type="email"/>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Phone</span>
-                <input name="phone" type="tel" autocomplete="tel" required>
+                <span class="landing-cta-form__label">Phone <abbr title="required">*</abbr></span>
+                <input autocomplete="tel" name="phone" required="" type="tel"/>
               </label>
             </div>
             <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Practice or organization <abbr title="required">*</abbr></span>
+                <input autocomplete="organization" name="organization" required="" type="text"/>
+              </label>
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric" required>
-              </label>
-              <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest" required>
-                  <option value="" disabled>Select an option</option>
-                  <option value="Holter Monitoring">Holter Monitoring</option>
-                  <option value="Long-Term Holter Monitoring">Long-Term Holter Monitoring</option>
-                  <option value="Cardiac Event Monitoring">Cardiac Event Monitoring</option>
-                  <option value="Mobile Cardiac Telemetry (MCT)">Mobile Cardiac Telemetry (MCT)</option>
-                  <option value="Post-TAVR monitoring program">Post-TAVR monitoring program</option>
-                  <option value="Multiple test types / full program" selected>Multiple test types / full program</option>
-                </select>
+                <select name="locations"><option>1</option><option>2–5</option><option>6–10</option><option>11+</option></select>
               </label>
             </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Primary monitoring interest</span>
+                <select name="interest"><option>Compare all services</option><option>Holter and longer Holter</option><option>Cardiac Event Monitoring</option><option>Mobile Cardiac Telemetry</option><option>Post-TAVR monitoring</option><option>Multi-location implementation</option></select>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Tell us about your monitoring needs <span class="landing-cta-form__optional">(optional)</span></span>
+                <textarea name="message" placeholder="Describe your organization and workflow. Do not include patient information."></textarea>
+              </label>
+            </div>
+            <p class="landing-cta-form__note"><strong>Do not submit protected health information (PHI).</strong> This form is for business and service inquiries only. See the <a href="privacy.html">Privacy Policy</a>.</p>
             <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Schedule a Cardiac Monitoring Demonstration</button>
             <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
           </form>
@@ -915,9 +675,11 @@
       </div>
     </section>
 
-
-
-
+    <section class="landing-disclaimer" aria-label="Information notice">
+      <div class="figma-container">
+        <p class="landing-disclaimer__text">Information on this page is for healthcare-organization evaluation and does not replace physician judgment, device instructions, emergency services or patient-specific medical advice.</p>
+      </div>
+    </section>
   </main>
     <footer class="site-footer site-footer--figma">
       <div class="figma-container">
@@ -925,7 +687,7 @@
         <div class="figma-footer__main">
           <div class="figma-footer__brand">
             <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
-              <img class="figma-brand__mark" src="images/figma-assets/brand-logo.webp?v=f8509ae975" alt="" width="412" loading="lazy" height="90" decoding="async">
+              <img class="figma-brand__mark" src="/images/figma-assets/brand-logo.webp?v=f8509ae975" alt="Specialized Medical" width="412" height="90" decoding="async" loading="lazy">
             </a>
             <p class="figma-footer__tagline">Turnkey cardiac monitoring with LIVE ECG data.</p>
           </div>
@@ -936,23 +698,24 @@
               <a href="services.html">Services</a>
               <a href="faq.html">FAQs</a>
               <a href="contact.html">Contact</a>
+              <a href="privacy.html">Privacy</a>
               <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </nav>
             <div class="figma-footer__line">
               <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
-                <img src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="Phone Icon" width="20" height="20" decoding="async">
+                <img src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="20" height="20" decoding="async">
               </span>
               <a class="figma-footer__link" href="tel:+18557732633">
-                <span class="figma-footer__muted">1-855-SPEC-MED</span> 
+                <span class="figma-footer__muted">1-855-SPEC-MED</span>
                 <span class="figma-footer__strong">(1-855-773-2633)</span>
               </a>
             </div>
             <div class="figma-footer__line">
-              <img src="icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
+              <img src="/icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
               <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
             </div>
             <div class="figma-footer__line">
-              <img src="images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
+              <img src="/images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
               <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
             </div>
           </div>
@@ -964,11 +727,11 @@
         </div>
         <div class="figma-footer__hr" aria-hidden="true"></div>
         <div class="figma-footer__bottom">
-          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
+          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></p>
           <div class="figma-footer__social">
-            <img src="images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <img src="/images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
             <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
-              <img src="images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+              <img src="/images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
@@ -976,8 +739,8 @@
     </footer>
 
   </div>
-  <script src="js/analytics.js?v=329dbec6d8" defer></script>
-  <script src="js/main.js?v=9a987e8d2e" defer></script>
+  <script src="/js/landing-lite.js?v=4d753e7e8d" defer></script>
+  <script src="/js/analytics.js?v=329dbec6d8" defer></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

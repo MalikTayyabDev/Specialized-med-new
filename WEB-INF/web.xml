@@ -31,6 +31,12 @@
     <filter>
         <filter-name>HtmlCacheFilter</filter-name>
         <filter-class>com.specializedmedical.web.HtmlCacheFilter</filter-class>
+        <!-- Staging: "noindex, nofollow" adds X-Robots-Tag to every response.
+             Production: empty. Switched by: npm run seo:noindex / npm run seo:index -->
+        <init-param>
+            <param-name>robotsTag</param-name>
+            <param-value>noindex, nofollow</param-value>
+        </init-param>
     </filter>
 
     <filter-mapping>

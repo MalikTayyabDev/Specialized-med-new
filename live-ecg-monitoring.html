@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <script>
@@ -63,178 +63,235 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "name": "Live ECG Monitoring | Specialized Medical",
-  "headline": "Live ECG Monitoring",
-  "url": "https://www.specialized-med.com/live-ecg-monitoring.html",
-  "description": "Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available.",
-  "inLanguage": "en-US",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "medicalAudience": {
-    "@type": "MedicalAudience",
-    "audienceType": "Clinician"
-  }
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Live ECG Monitoring",
-  "provider": {
-    "@type": "Organization",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "serviceType": "Ambulatory Cardiac Monitoring",
-  "areaServed": "United States",
-  "description": "Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available.",
-  "url": "https://www.specialized-med.com/live-ecg-monitoring.html"
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.specialized-med.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://www.specialized-med.com/services.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Live ECG Monitoring",
-      "item": "https://www.specialized-med.com/live-ecg-monitoring.html"
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is live ECG monitoring?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It is ambulatory ECG monitoring in which rhythm information is transmitted during the prescribed study rather than waiting until the recording is complete."
+      "@type": "Organization",
+      "@id": "https://www.specialized-med.com/#organization",
+      "name": "Specialized Medical LLC",
+      "url": "https://www.specialized-med.com/",
+      "email": "info@specialized-med.com",
+      "telephone": "+1-855-773-2633",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34145 Pacific Coast Highway, #700",
+        "addressLocality": "Dana Point",
+        "addressRegion": "CA",
+        "postalCode": "92629",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales and support",
+        "telephone": "+1-855-773-2633",
+        "email": "info@specialized-med.com",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ],
+        "areaServed": "US"
       }
     },
     {
-      "@type": "Question",
-      "name": "Is live ECG monitoring the same as MCT?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "MCT is a principal form of live ambulatory ECG monitoring. Exact features depend on the prescribed service and configuration."
-      }
+      "@type": "ImageObject",
+      "@id": "https://www.specialized-med.com/live-ecg-monitoring.html#primaryimage",
+      "url": "https://www.specialized-med.com/images/landing/live-ecg-monitoring-hero-1920.jpg",
+      "contentUrl": "https://www.specialized-med.com/images/landing/live-ecg-monitoring-hero-1920.jpg",
+      "width": 1920,
+      "height": 900,
+      "caption": "Patient at home viewing the dedicated phone while wearing the two-disk ECG monitor"
     },
     {
-      "@type": "Question",
-      "name": "Is someone watching every heartbeat at all times?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The service processes and reviews ECG information within the monitoring workflow. It should not be described as one person manually watching every beat continuously."
-      }
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/live-ecg-monitoring.html#service",
+      "name": "Live Ambulatory ECG Monitoring",
+      "serviceType": "Live and remote ambulatory ECG monitoring services",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Cardiologists, electrophysiologists, hospitals, physician practices and cardiovascular programs"
+      },
+      "description": "Ambulatory ECG monitoring workflows that transmit rhythm information during the prescribed study through an assigned phone when connectivity is available, with operational test-status visibility, patient support and physician-prescribed communication."
     },
     {
-      "@type": "Question",
-      "name": "How quickly is a physician notified?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Communication timing depends on successful transmission, review, the prescribed criteria, and the practice’s notification protocol."
-      }
+      "@type": "MedicalWebPage",
+      "@id": "https://www.specialized-med.com/live-ecg-monitoring.html#webpage",
+      "url": "https://www.specialized-med.com/live-ecg-monitoring.html",
+      "name": "Live ECG Monitoring | Specialized Medical",
+      "description": "How live ambulatory ECG data moves from the wearable monitor through an assigned phone and cellular network into the monitoring workflow.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.specialized-med.com/#website",
+        "url": "https://www.specialized-med.com/",
+        "name": "Specialized Medical"
+      },
+      "about": {
+        "@id": "https://www.specialized-med.com/live-ecg-monitoring.html#service"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.specialized-med.com/live-ecg-monitoring.html#primaryimage"
+      },
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "lastReviewed": "2026-11-24",
+      "specialty": "https://schema.org/Cardiovascular"
     },
     {
-      "@type": "Question",
-      "name": "What happens without cellular coverage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Transmission may be delayed until connectivity returns. The system is designed to reconnect when possible."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.specialized-med.com/live-ecg-monitoring.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.specialized-med.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cardiac Monitoring Services",
+          "item": "https://www.specialized-med.com/cardiac-monitoring-services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Live ECG Monitoring",
+          "item": "https://www.specialized-med.com/live-ecg-monitoring.html"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Does the phone have to stay with the patient?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. In this workflow the phone is the data gateway and should remain powered, charged, and near the patient."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can live monitoring prevent a cardiac emergency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No such guarantee is made. It is a diagnostic service that may provide earlier visibility into qualifying rhythm events."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should patients call the monitoring company during chest pain?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Patients with urgent symptoms should call 911 or follow their physician’s emergency instructions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in the final report?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The report summarizes the study and provides representative ECG information for physician review and interpretation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can live ECG monitoring be used after discharge?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A physician may prescribe it after discharge when ambulatory rhythm surveillance is appropriate, including selected delayed heart-block surveillance after TAVR."
-      }
+      "@type": "FAQPage",
+      "@id": "https://www.specialized-med.com/live-ecg-monitoring.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is live ECG monitoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Live ECG monitoring is ambulatory monitoring in which rhythm information is transmitted during the prescribed study rather than waiting for the wearable to be returned. In the Specialized Medical workflow, the monitor communicates with an assigned phone, which transmits available ECG information when connectivity is available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is live ECG monitoring the same as Mobile Cardiac Telemetry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mobile Cardiac Telemetry is a principal live ambulatory ECG service, but live transmission can also support connected Holter, longer Holter and Event Monitoring configurations. Clinical communication timing still depends on the prescribed service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is someone manually watching every heartbeat at all times?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The service processes and reviews ECG information within the monitoring workflow. Live should not be described as one dedicated person manually watching every heartbeat continuously or as instantaneous communication under every condition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What operational information can Specialized Medical see during a supported live study?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The team can follow supported indicators such as monitor battery, electrode contact and quality, monitor-to-phone Bluetooth connection, phone-to-network cellular connection and successful ECG data receipt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when a live study loses cellular coverage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Transmission may be delayed until connectivity returns. The system is designed to reconnect when service becomes available, but uninterrupted coverage and instantaneous transmission are not guaranteed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the assigned phone need to remain near the patient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In the connected workflow, the assigned phone is the gateway between the wearable monitor and the cellular network. It should remain powered, charged and near the patient according to the supplied instructions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are Holter findings presented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Holter and Long-Term or Extended Holter studies, clinical findings are presented after the final report is generated, even when the connected study provides live operational test-status visibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are Event and MCT findings presented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Qualifying findings from Cardiac Event Monitoring and Mobile Cardiac Telemetry may be presented during the study according to the ordering physician's prescribed notification protocol, followed by a final report."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is live ECG monitoring an emergency-response service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a diagnostic ambulatory monitoring service and does not replace 911, emergency medical services or the treating physician's emergency instructions. Patients with urgent symptoms should follow their emergency instructions immediately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can live ECG monitoring be used after hospital discharge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A treating physician may prescribe ambulatory rhythm monitoring after discharge when appropriate, including selected post-TAVR patients under the heart team's patient-selection and notification protocol."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>Live ECG Monitoring | Specialized Medical</title>
-  <meta name="description" content="Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available.">
-  <!-- Social sharing (iMessage/WhatsApp/Facebook/Twitter) -->
-  <meta property="og:site_name" content="Specialized Medical">
+  <meta name="description" content="See how live ECG monitoring transmits ambulatory rhythm data through an assigned phone with test-status visibility, patient assistance and reporting.">
+  <meta name="author" content="Specialized Medical LLC">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Live ECG Monitoring | Specialized Medical">
-  <meta property="og:description" content="Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available.">
+  <meta property="og:site_name" content="Specialized Medical">
+  <meta property="og:title" content="Live ECG Monitoring That Keeps the Active Study Visible">
+  <meta property="og:description" content="Understand live ambulatory ECG transmission, test-status visibility, patient support and physician-prescribed communication workflows.">
   <meta property="og:url" content="https://www.specialized-med.com/live-ecg-monitoring.html">
-  <meta property="og:image" content="https://www.specialized-med.com/images/landing/live-ecg-monitoring.jpg">
+  <meta property="og:image" content="https://www.specialized-med.com/images/landing/live-ecg-monitoring-hero-1920.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Patient at home viewing the dedicated phone while wearing the two-disk ECG monitor">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Live ECG Monitoring | Specialized Medical">
-  <meta name="twitter:description" content="Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available.">
-  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/live-ecg-monitoring.jpg">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" href="favicon.svg?v=ea9bbc50ae">
+  <meta name="twitter:description" content="How ambulatory ECG data moves from the wearable monitor to the monitoring workflow during the prescribed study.">
+  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/live-ecg-monitoring-hero-1920.jpg">
+  <link rel="icon" href="/favicon.svg?v=ea9bbc50ae">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="images/landing/live-ecg-monitoring.jpg?v=e965f172f8" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css?v=1bad96baac">
-  <link rel="stylesheet" href="css/home.css?v=090a393fa2">
-  <link rel="stylesheet" href="css/services.css?v=de0139ab71">
-  <link rel="stylesheet" href="css/faq.css?v=c9b924a842">
-  <link rel="stylesheet" href="css/landing.css?v=0bc3ce0681">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preload" as="image" type="image/webp" href="/images/landing/live-ecg-monitoring-hero-960.webp?v=7b2ec154ba" imagesrcset="/images/landing/live-ecg-monitoring-hero-960.webp?v=7b2ec154ba 960w, /images/landing/live-ecg-monitoring-hero-1280.webp?v=2391007807 1280w, /images/landing/live-ecg-monitoring-hero-1920.webp?v=c8e9c04e1b 1920w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/global.css?v=1bad96baac">
+  <link rel="stylesheet" href="/css/chrome.css?v=21dc8e5542">
+  <link rel="stylesheet" href="/css/landing-mct.css?v=6e8799d245">
+  <link rel="stylesheet" href="/css/faq.css?v=c9b924a842">
+  <link rel="stylesheet" href="/css/landing-pkg.css?v=9cef0e826e">
   <link rel="canonical" href="https://www.specialized-med.com/live-ecg-monitoring.html">
 </head>
 <body>
@@ -246,11 +303,12 @@
       style="display:none;visibility:hidden">
     </iframe>
   </noscript>
+  <a class="skip-link" href="live-ecg-monitoring.html#main-content">Skip to content</a>
   <div class="site-root">
     <header class="site-header site-header--figma">
       <div class="figma-container figma-header__inner site-header__inner">
         <a href="./" class="figma-brand" aria-label="Specialized Medical home">
-          <img class="figma-brand__mark" src="images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="" width="236" fetchpriority="low" height="52" decoding="async">
+          <img class="figma-brand__mark" src="/images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="Specialized Medical" width="236" fetchpriority="low" height="52" decoding="async">
         </a>
         <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
           <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -265,261 +323,187 @@
           <div class="figma-nav__mobile">
             <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact.html#contact-form">Request a Demo</a>
-              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+              <a class="figma-btn figma-btn--outline-dark" href="live-ecg-monitoring.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
         </nav>
         <div class="figma-header__cta">
           <a class="figma-phone" href="tel:+18557732633">
-            <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
+            <img class="figma-phone__icon" src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
-          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+          <a class="figma-btn figma-btn--outline-dark figma-btn--tavr-demo" href="live-ecg-monitoring.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
     </header>
 
-<main class="landing-page services-page services-page--figma" data-landing="live-ecg-monitoring">
+    <main class="landing-page landing-page--pkg services-page services-page--figma" data-landing="live-ecg-monitoring" data-service-id="live_ecg_monitoring" id="main-content" tabindex="-1">
     <nav class="landing-breadcrumb" aria-label="Breadcrumb">
       <div class="figma-container">
         <ol class="landing-breadcrumb__list">
           <li><a href="./">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
           <li><span aria-current="page">Live ECG Monitoring</span></li>
         </ol>
       </div>
     </nav>
-    <section class="landing-hero" aria-labelledby="live-hero-heading">
-      <div class="landing-hero__plate landing-hero__plate--live-ecg-monitoring">
-        <img class="landing-hero__media" src="images/landing/live-ecg-monitoring.jpg?v=e965f172f8" alt="Live ECG monitoring transmitting rhythm data from a wearable monitor during the prescribed study" width="1430" height="550" fetchpriority="high" decoding="async">
+
+    <section class="landing-hero" aria-labelledby="live-ecg-monitoring-hero-heading">
+      <div class="landing-hero__plate landing-hero__plate--pkg landing-hero__plate--pkg-navy">
+        <picture>
+          <source type="image/webp" srcset="/images/landing/live-ecg-monitoring-hero-960.webp?v=7b2ec154ba 960w, /images/landing/live-ecg-monitoring-hero-1280.webp?v=2391007807 1280w, /images/landing/live-ecg-monitoring-hero-1920.webp?v=c8e9c04e1b 1920w" sizes="100vw">
+          <img class="landing-hero__media" src="/images/landing/live-ecg-monitoring-hero-960.jpg?v=a76d77a1ca" srcset="/images/landing/live-ecg-monitoring-hero-960.jpg?v=a76d77a1ca 960w, /images/landing/live-ecg-monitoring-hero-1280.jpg?v=8c5d2008f7 1280w, /images/landing/live-ecg-monitoring-hero-1920.jpg?v=8948ad321c 1920w" sizes="100vw" width="1920" height="900" alt="Patient at home viewing the dedicated phone while wearing the two-disk ECG monitor" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
         <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
-          <p class="figma-hero__pill">
-            <span class="figma-hero__pill-dot" aria-hidden="true"></span>
-            Live ECG Monitoring
-          </p>
-          <h1 id="live-hero-heading" class="landing-hero__title">
-            Live ECG <span class="landing-hero__title-accent">Monitoring</span>
-          </h1>
-          <p class="landing-hero__lead">Live ECG monitoring allows rhythm data to be transmitted from a wearable monitor during the prescribed ambulatory study. In the Specialized Medical workflow, the wearable communicates with a connected smartphone, and the phone transmits ECG information to the monitoring platform when connectivity is available. This makes it possible to review qualifying events and communicate according to the physician’s notification protocol before the final study is complete.</p>
+          <p class="figma-hero__pill"><span class="figma-hero__pill-dot" aria-hidden="true"></span>CONNECTED AMBULATORY ECG</p>
+          <h1 id="live-ecg-monitoring-hero-heading" class="landing-hero__title">Live ECG Monitoring That Keeps the Active <span class="landing-hero__title-accent">Study Visible</span></h1>
+          <p class="landing-hero__lead landing-answer">Transmit ambulatory ECG information during the prescribed study while supporting operational test-status visibility, proactive patient assistance and physician-directed communication.</p>
           <div class="landing-hero__actions">
-            <a class="figma-btn figma-btn--solid" href="#cta-form">Request a Live ECG Monitoring Demonstration</a>
-            <a class="figma-btn figma-btn--outline-dark" href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist</a>
+            <a class="figma-btn figma-btn--solid" data-mct-track="sm_cta_click" data-track-name="hero_demo" href="live-ecg-monitoring.html#request-demo">Request a Live ECG Demo</a>
+            <a class="figma-btn figma-btn--outline-dark" data-mct-track="sm_cta_click" data-track-name="hero_how" href="live-ecg-monitoring.html#how-it-works">See How It Works</a>
           </div>
+          <ul class="landing-hero__points" aria-label="Highlights"><li>Assigned monitoring phone</li><li>Multi-carrier cellular approach</li><li>Nationwide support</li></ul>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="live-what-heading">
-      <div class="figma-container">
-        <h2 id="live-what-heading" class="landing-h2">What &ldquo;Live&rdquo; Means in <span class="landing-h2__accent">Ambulatory ECG Monitoring</span></h2>
-        <p class="landing-p">Live means ECG information is transmitted during the study rather than waiting for the device to be returned. It does not mean that every beat is watched continuously by a dedicated technician or that communication is instantaneous under all conditions.</p>
-        <p class="landing-p">Transmission depends on monitor operation, Bluetooth connection, phone status, network availability, and successful data receipt.</p>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--trust" aria-label="Overview">
+      <div class="figma-container"><ul class="landing-trust-strip"><li><strong>During the study</strong><span>ECG information transmitted when connected</span></li><li><strong>LIVE status</strong><span>Battery, electrodes and connection</span></li><li><strong>3 networks</strong><span>AT&T, T-Mobile and Verizon</span></li><li><strong>Protocol controlled</strong><span>Clinical communication follows the order</span></li></ul></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="live-path-heading">
-      <div class="figma-container">
-        <h2 id="live-path-heading" class="landing-h2">From Patient to <span class="landing-h2__accent">Monitoring Platform</span></h2>
-        <ol class="landing-flow" aria-label="Five-step live ECG data flow">
-          <li class="landing-flow__step"><strong>ECG acquired</strong><span>Wearable monitor records the rhythm</span></li>
-          <li class="landing-flow__step"><strong>Bluetooth</strong><span>Monitor connects to the provided smartphone</span></li>
-          <li class="landing-flow__step"><strong>Network transmission</strong><span>Phone transmits through available network</span></li>
-          <li class="landing-flow__step"><strong>Monitoring workflow</strong><span>Data enters the monitoring platform</span></li>
-          <li class="landing-flow__step"><strong>Protocol communication</strong><span>Qualifying findings communicated according to protocol</span></li>
-        </ol>
-        <div class="landing-note landing-note--info" role="note">
-          <p class="landing-note__title">Reconnection after interruption</p>
-          <p class="landing-note__body">The system is designed to reconnect automatically after temporary interruption. This is not an absolute guarantee that no data or transmission delay can ever occur.</p>
-        </div>
-      </div>
+    <section class="landing-section" aria-labelledby="live-ecg-monitoring-s1-heading">
+      <div class="figma-container landing-definition"><div><p class="landing-eyebrow">Direct answer</p><h2 class="landing-h2" id="live-ecg-monitoring-s1-heading">What is live <span class="landing-h2__accent">ECG monitoring?</span></h2><div class="landing-answer-box"><strong>Live ECG monitoring transmits ambulatory rhythm information during the prescribed study instead of waiting until the wearable is returned.</strong> In the Specialized Medical workflow, the wearable monitor communicates with an assigned phone by Bluetooth. The phone sends available ECG information through cellular service into the monitoring workflow when connectivity is available.</div><p class="landing-p landing-lede">Live transmission can support continuous ECG monitoring, remote ECG oversight and earlier visibility into qualifying Event or MCT findings. It does not mean that one person manually watches every beat or that every transmission and communication is instantaneous.</p><p class="landing-reviewed">Published and reviewed for service accuracy by Specialized Medical LLC. Last reviewed November 24, 2026.</p></div><aside class="landing-spec-panel"><h3 class="landing-h3">What live visibility can support</h3><ul class="landing-checks"><li>Confirmation that ECG data is being received</li><li>Monitor battery-status review</li><li>Electrode-contact and signal-quality review</li><li>Bluetooth and cellular connection status</li><li>Proactive patient troubleshooting</li><li>Physician-prescribed clinical communication</li><li>Organized final reporting</li></ul></aside></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="live-benefits-heading">
-      <div class="figma-container">
-        <h2 id="live-benefits-heading" class="landing-h2">Clinical and <span class="landing-h2__accent">Operational Benefits</span></h2>
-        <p class="landing-p">Live transmission may help provide earlier visibility into rhythm information, remote oversight during the study, documented physician notification pathways, patient support, and organized final reporting.</p>
-        <ul class="landing-list">
-          <li>Fewer disconnected systems across test types</li>
-          <li>Clearer notification protocols</li>
-          <li>Accessible reports</li>
-          <li>Physician electronic signature</li>
-        </ul>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--center" id="how-it-works" aria-labelledby="live-ecg-monitoring-s2-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Patient to monitoring workflow</p><h2 class="landing-h2" id="live-ecg-monitoring-s2-heading">How live ambulatory ECG <span class="landing-h2__accent">data moves</span></h2><p class="landing-p landing-section__intro">Each link must function for ECG information to reach the monitoring workflow during the study.</p><div aria-label="Live ECG transmission path" class="landing-path"><div class="landing-path__step"><b>Wearable monitor</b><span>Acquires the ECG</span></div><div aria-hidden="true" class="landing-path__arrow">→</div><div class="landing-path__step"><b>Bluetooth</b><span>Connects monitor to phone</span></div><div aria-hidden="true" class="landing-path__arrow">→</div><div class="landing-path__step"><b>Assigned phone</b><span>Acts as the data gateway</span></div><div aria-hidden="true" class="landing-path__arrow">→</div><div class="landing-path__step"><b>Cellular network</b><span>Transmits when available</span></div><div aria-hidden="true" class="landing-path__arrow">→</div><div class="landing-path__step"><b>Monitoring workflow</b><span>Receives data for review</span></div></div><div class="landing-note landing-note--info"><p class="landing-note__title">What happens after an interruption?</p><p class="landing-note__body">The system is designed to reconnect when service becomes available after a temporary interruption. Transmission still depends on monitor operation, Bluetooth, phone power and status, network availability and successful data receipt. Uninterrupted coverage and instantaneous transmission are not guaranteed.</p></div></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="live-disclaimer-heading">
-      <div class="figma-container">
-        <h2 id="live-disclaimer-heading" class="landing-h2">Live Monitoring Is <span class="landing-h2__accent">Not Emergency Response</span></h2>
-        <div class="landing-note landing-note--alert" role="note">
-          <p class="landing-note__title">Live monitoring is not emergency response</p>
-          <p class="landing-note__body">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>
-        </div>
-      </div>
+    <section class="landing-section landing-section--center" aria-labelledby="live-ecg-monitoring-s3-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Two distinct responsibilities</p><h2 class="landing-h2" id="live-ecg-monitoring-s3-heading">Operational visibility is not the same as <span class="landing-h2__accent">clinical notification</span></h2><p class="landing-p landing-section__intro">Separating these two functions makes the service easier for staff and patients to understand accurately.</p><div class="landing-feature-grid landing-feature-grid--2" role="list"><article class="landing-feature-card" role="listitem"><span class="landing-tag">OPERATIONAL</span><h3 class="landing-h3">Keeping the study connected</h3><p class="landing-p">For supported live configurations, Specialized Medical can follow key technical indicators and assist the patient when a problem is identified.</p><ul class="landing-checks"><li>Battery level</li><li>Electrode contact and quality</li><li>Monitor-to-phone connection</li><li>Phone-to-network connection</li><li>Successful ECG data receipt</li><li>Visible technical artifact</li></ul></article><article class="landing-feature-card" role="listitem"><span class="landing-tag">CLINICAL</span><h3 class="landing-h3">Communicating qualifying findings</h3><p class="landing-p">Clinical communication depends on the ordered service and the physician-prescribed criteria, contacts and escalation pathway.</p><ul class="landing-checks"><li>Event and MCT findings may be presented during the study</li><li>Communication follows the prescribed protocol</li><li>Holter findings are presented after the final report</li><li>The treating physician makes patient-care decisions</li><li>The final report supports physician review and interpretation</li></ul></article></div></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="live-compare-heading">
-      <div class="figma-container">
-        <h2 id="live-compare-heading" class="landing-h2">Live ECG Versus <span class="landing-h2__accent">Post-Study Review</span></h2>
-        <p class="landing-p">Every modality has LIVE operational visibility during the test. MCT and Event Monitoring present qualifying clinical findings during the test according to protocol, while Holter and Long-Term Holter clinical results are presented after the final report is generated. Each modality has an appropriate role &mdash; the ordering physician selects based on the clinical question.</p>
-        <div class="landing-compare-block">
-          <p class="landing-p landing-p--wide">Specialized Medical <strong>LIVE STREAMING</strong> configurations provide <strong>LIVE test-status visibility</strong> while the study is in progress. Specialized Medical can see operational information such as battery level, electrode contact and signal quality, whether the monitor is communicating, and whether the patient appears to remain properly connected. When a parameter falls outside the expected range, Specialized Medical contacts the patient and works with the patient to correct the issue so the study has the best opportunity to be completed successfully. For Holter and Extended / Long-Term Holter LIVE STREAMING studies, clinical results are presented after the final report is generated. For Event Monitoring and Mobile Cardiac Telemetry (MCT), qualifying clinical findings are presented while the test is in progress according to the prescribed notification protocol. Traditional <strong>NOT LIVE STREAMING</strong> Holter configurations do not provide LIVE test-status visibility during the study.</p>
-        </div>
-        <div class="landing-table-wrap" role="region" aria-label="Cardiac monitoring service comparison" tabindex="0">
-          <table class="landing-table">
-            <caption class="sr-only">Comparison of live-streaming and non-live Holter, Event, and MCT monitoring by duration, LIVE test-status visibility, and clinical-findings timing</caption>
-            <thead>
-              <tr>
-                <th scope="col">Monitoring Type</th>
-                <th scope="col">Typical Duration</th>
-                <th scope="col">LIVE Test-Status Visibility</th>
-                <th scope="col">Clinical Findings Presented</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th scope="row"><a href="holter-monitoring-services.html">Holter Monitoring (LIVE STREAMING)</a></th>
-              <td>24&ndash;48 hours</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days (LIVE STREAMING)</a></th>
-              <td>More than 48 hours to 7 days</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="extended-holter-monitoring-8-14-days.html">8&ndash;14 Day Extended Holter (LIVE STREAMING)</a></th>
-              <td>8&ndash;14 days</td>
-              <td>Yes</td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring (LIVE STREAMING)</a></th>
-              <td>Up to 30 days</td>
-              <td>Yes</td>
-              <td>During Test &mdash; According to Prescribed Notification Protocol</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT) (LIVE STREAMING)</a></th>
-              <td>Up to 30 days</td>
-              <td>Yes</td>
-              <td>During Test &mdash; According to Prescribed Notification Protocol</td>
-            </tr>
-            <tr>
-              <th scope="row">Holter Monitoring (NOT LIVE STREAMING VERSION)</th>
-              <td>24&ndash;48 hours</td>
-              <td><span class="landing-table__no">NO</span></td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            <tr>
-              <th scope="row">Extended Holter (NOT LIVE STREAMING VERSION)</th>
-              <td>3&ndash;7 days</td>
-              <td><span class="landing-table__no">NO</span></td>
-              <td>After Final Report Is Generated</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <section class="landing-section landing-section--muted" aria-labelledby="live-ecg-monitoring-s4-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Active patient support</p><h2 class="landing-h2" id="live-ecg-monitoring-s4-heading">When a technical problem appears, the team can act before more monitoring time <span class="landing-h2__accent">is lost</span></h2><p class="landing-p landing-section__intro">A low battery, poor electrode contact, Bluetooth interruption, cellular interruption or stopped transmission can affect an ambulatory study. When a supported indicator falls outside the expected range, Specialized Medical can contact the patient and help troubleshoot the issue.</p><div class="landing-feature-grid" role="list"><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Identify</h3><p class="landing-p">Review supported operational indicators during the connected study.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Contact</h3><p class="landing-p">Reach the patient when a supported technical problem needs attention.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Troubleshoot</h3><p class="landing-p">Help restore the battery, electrode or connection condition when possible.</p></article></div></div>
     </section>
 
-<section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="live-faq-heading">
+    <section class="landing-section landing-section--muted landing-section--center" aria-labelledby="live-ecg-monitoring-s5-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Connected services</p><h2 class="landing-h2" id="live-ecg-monitoring-s5-heading">How live visibility applies across <span class="landing-h2__accent">monitoring types</span></h2><p class="landing-p landing-section__intro">Operational visibility and the timing of clinical findings are separate. The physician selects the service and duration.</p><div aria-label="How live visibility applies across monitoring types" class="landing-table-wrap" role="region" tabindex="0"><table class="landing-table landing-table--stack"><thead><tr><th scope="col">Monitoring service</th><th scope="col">Typical duration</th><th scope="col">LIVE test-status visibility</th><th scope="col">Clinical findings presented</th></tr></thead><tbody><tr><th scope="row"><a href="holter-monitoring-services.html">Holter — LIVE STREAMING</a></th><td data-label="Typical duration">24–48 hours</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="Clinical findings presented">After the final report is generated</td></tr><tr><th scope="row"><a href="long-term-holter-monitoring.html">Long-Term Holter — LIVE STREAMING</a></th><td data-label="Typical duration">More than 48 hours through 7 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="Clinical findings presented">After the final report is generated</td></tr><tr><th scope="row"><a href="extended-holter-monitoring-8-14-days.html">Extended Holter — LIVE STREAMING</a></th><td data-label="Typical duration">8–14 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="Clinical findings presented">After the final report is generated</td></tr><tr><th scope="row"><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring</a></th><td data-label="Typical duration">Up to 30 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="Clinical findings presented">Qualifying findings during the study under the prescribed protocol</td></tr><tr><th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry</a></th><td data-label="Typical duration">Up to 30 days</td><td class="landing-yes" data-label="LIVE test-status visibility">Yes</td><td data-label="Clinical findings presented">Qualifying findings during the study under the prescribed protocol</td></tr><tr><th scope="row">Non-LIVE Holter configurations</th><td data-label="Typical duration">24–48 hours or 3–7 days</td><td class="landing-no" data-label="LIVE test-status visibility">No</td><td data-label="Clinical findings presented">After the final report is generated</td></tr></tbody></table></div><p class="landing-reviewed">Selected non-live Holter configurations are available for patients who refuse to carry the assigned phone. They record for later analysis and do not provide live operational test-status visibility during wear.</p></div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="live-ecg-monitoring-s6-heading">
+      <div class="figma-container landing-definition"><div><p class="landing-eyebrow">Simplified patient technology</p><h2 class="landing-h2" id="live-ecg-monitoring-s6-heading">The assigned phone is a monitoring gateway—not a <span class="landing-h2__accent">general-purpose smartphone</span></h2><p class="landing-p landing-lede">The phone is configured for the prescribed study and keeps the patient experience focused on essential monitoring functions.</p><ul class="landing-checks"><li>Device Status and Log Symptoms screens</li><li>Automatic Bluetooth communication with the monitor</li><li>Transmission through available cellular service</li><li>No unrelated email, social media, games or browsing</li><li>Geolocation and audible-ring assistance when powered and connected</li><li>Uses available AT&amp;T, T-Mobile and Verizon service</li></ul></div><aside class="landing-feature-card"><h3 class="landing-h3">The two-disk wearable is clearly demonstrated</h3><p class="landing-p">The S-Patch uses two small circular electrodes connected by a single wire. The hero intentionally shows the two disks applied directly to the skin—upper right chest and lower left beneath the pectoral area—with the assigned phone confirming the live connection. During ordinary wear, the system can be positioned beneath clothing as directed.</p><ul class="landing-checks"><li>0.6-ounce wearable configuration</li><li>Minimum 10-day battery life</li><li>Up to 30-day prescribed wear period</li><li>IP55-rated enclosure</li></ul><p class="landing-p"><a class="figma-btn figma-btn--outline-dark" data-mct-track="sm_cta_click" data-track-name="spatch_learn" href="s-patch-cardiac-monitoring-system.html">Explore the S-Patch System</a></p></aside></div>
+    </section>
+
+    <section class="landing-section landing-section--muted landing-section--center" aria-labelledby="live-ecg-monitoring-s7-heading">
+      <div class="figma-container"><p class="landing-eyebrow">From enrollment to final report</p><h2 class="landing-h2" id="live-ecg-monitoring-s7-heading">A live monitoring workflow with <span class="landing-h2__accent">defined handoffs</span></h2><ol class="landing-flow landing-flow--pkg" data-steps="6"><li class="landing-flow__step"><strong>Prescribe and enroll</strong><span>The practice selects the study, duration and applicable notification instructions.</span></li><li class="landing-flow__step"><strong>Apply and connect</strong><span>Staff applies the monitor, assigns the phone and confirms the live connection.</span></li><li class="landing-flow__step"><strong>Transmit</strong><span>The monitor sends available ECG information through the phone when connected.</span></li><li class="landing-flow__step"><strong>Support</strong><span>The team assists with supported battery, electrode and connection issues.</span></li><li class="landing-flow__step"><strong>Communicate</strong><span>Qualifying Event and MCT findings follow the prescribed notification protocol.</span></li><li class="landing-flow__step"><strong>Report</strong><span>The ordering physician receives the applicable final report for review and signature.</span></li></ol></div>
+    </section>
+
+    <section class="landing-section">
+      <div class="figma-container"><div class="landing-note landing-note--info"><p class="landing-note__title">Live ECG monitoring is not emergency response</p><p class="landing-note__body">Specialized Medical provides diagnostic ambulatory monitoring. The service does not replace 911, emergency medical services or the treating physician's emergency instructions. Patients with urgent symptoms such as chest pain, severe shortness of breath or stroke symptoms should follow their emergency instructions immediately rather than waiting for a monitoring call.</p></div></div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="live-ecg-monitoring-s8-heading">
+      <div class="figma-container"><div class="landing-callout-band"><div><h2 class="landing-h2" id="live-ecg-monitoring-s8-heading">Supporting rhythm surveillance <span class="landing-h2__accent">after discharge</span></h2><p class="landing-p">When prescribed by the treating physician, live ambulatory ECG monitoring can support selected patients returning home, including post-TAVR monitoring under the heart team's protocol.</p></div><a class="figma-btn figma-btn--solid" data-mct-track="sm_cta_click" data-track-name="tavr_learn" href="post-tavr-cardiac-monitoring.html">Explore Post-TAVR Monitoring</a></div></div>
+    </section>
+
+    <section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" id="faq" aria-labelledby="live-ecg-monitoring-faq-heading">
       <div class="figma-container faq-accordion__inner">
-        <h2 id="live-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
+        <p class="landing-eyebrow">Frequently asked questions</p>
+        <h2 id="live-ecg-monitoring-faq-heading" class="landing-h2">Live ECG <span class="landing-h2__accent">monitoring answers</span></h2>
         <div class="faq-category">
           <div class="faq-category__list">
 <div class="faq-item is-open">
-      <button type="button" id="faq-trigger-live-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-live-0">
+      <button type="button" id="faq-trigger-live-ecg-monitoring-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-live-ecg-monitoring-0">
         <span class="faq-item__q">What is live ECG monitoring?</span>
         <svg class="faq-item__chevron is-open" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-0" role="region" aria-labelledby="faq-trigger-live-0" class="faq-item__panel">
-        <p>It is ambulatory ECG monitoring in which rhythm information is transmitted during the prescribed study rather than waiting until the recording is complete.</p>
+      <div id="faq-panel-live-ecg-monitoring-0" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-0" class="faq-item__panel">
+        <p>Live ECG monitoring is ambulatory monitoring in which rhythm information is transmitted during the prescribed study rather than waiting for the wearable to be returned. In the Specialized Medical workflow, the monitor communicates with an assigned phone, which transmits available ECG information when connectivity is available.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-1">
-        <span class="faq-item__q">Is live ECG monitoring the same as MCT?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-1">
+        <span class="faq-item__q">Is live ECG monitoring the same as Mobile Cardiac Telemetry?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-1" role="region" aria-labelledby="faq-trigger-live-1" class="faq-item__panel" hidden>
-        <p>MCT is a principal form of live ambulatory ECG monitoring. Exact features depend on the prescribed service and configuration.</p>
+      <div id="faq-panel-live-ecg-monitoring-1" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-1" class="faq-item__panel" hidden>
+        <p>Mobile Cardiac Telemetry is a principal live ambulatory ECG service, but live transmission can also support connected Holter, longer Holter and Event Monitoring configurations. Clinical communication timing still depends on the prescribed service.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-2">
-        <span class="faq-item__q">Is someone watching every heartbeat at all times?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-2">
+        <span class="faq-item__q">Is someone manually watching every heartbeat at all times?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-2" role="region" aria-labelledby="faq-trigger-live-2" class="faq-item__panel" hidden>
-        <p>The service processes and reviews ECG information within the monitoring workflow. It should not be described as one person manually watching every beat continuously.</p>
+      <div id="faq-panel-live-ecg-monitoring-2" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-2" class="faq-item__panel" hidden>
+        <p>No. The service processes and reviews ECG information within the monitoring workflow. Live should not be described as one dedicated person manually watching every heartbeat continuously or as instantaneous communication under every condition.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-3">
-        <span class="faq-item__q">How quickly is a physician notified?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-3">
+        <span class="faq-item__q">What operational information can Specialized Medical see during a supported live study?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-3" role="region" aria-labelledby="faq-trigger-live-3" class="faq-item__panel" hidden>
-        <p>Communication timing depends on successful transmission, review, the prescribed criteria, and the practice&rsquo;s notification protocol.</p>
+      <div id="faq-panel-live-ecg-monitoring-3" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-3" class="faq-item__panel" hidden>
+        <p>The team can follow supported indicators such as monitor battery, electrode contact and quality, monitor-to-phone Bluetooth connection, phone-to-network cellular connection and successful ECG data receipt.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-4">
-        <span class="faq-item__q">What happens without cellular coverage?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-4">
+        <span class="faq-item__q">What happens when a live study loses cellular coverage?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-4" role="region" aria-labelledby="faq-trigger-live-4" class="faq-item__panel" hidden>
-        <p>Transmission may be delayed until connectivity returns. The system is designed to reconnect when possible.</p>
+      <div id="faq-panel-live-ecg-monitoring-4" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-4" class="faq-item__panel" hidden>
+        <p>Transmission may be delayed until connectivity returns. The system is designed to reconnect when service becomes available, but uninterrupted coverage and instantaneous transmission are not guaranteed.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-5">
-        <span class="faq-item__q">Does the phone have to stay with the patient?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-5">
+        <span class="faq-item__q">Does the assigned phone need to remain near the patient?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-5" role="region" aria-labelledby="faq-trigger-live-5" class="faq-item__panel" hidden>
-        <p>Yes. In this workflow the phone is the data gateway and should remain powered, charged, and near the patient.</p>
+      <div id="faq-panel-live-ecg-monitoring-5" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-5" class="faq-item__panel" hidden>
+        <p>Yes. In the connected workflow, the assigned phone is the gateway between the wearable monitor and the cellular network. It should remain powered, charged and near the patient according to the supplied instructions.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-6">
-        <span class="faq-item__q">Can live monitoring prevent a cardiac emergency?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-6">
+        <span class="faq-item__q">When are Holter findings presented?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-6" role="region" aria-labelledby="faq-trigger-live-6" class="faq-item__panel" hidden>
-        <p>No such guarantee is made. It is a diagnostic service that may provide earlier visibility into qualifying rhythm events.</p>
+      <div id="faq-panel-live-ecg-monitoring-6" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-6" class="faq-item__panel" hidden>
+        <p>For Holter and Long-Term or Extended Holter studies, clinical findings are presented after the final report is generated, even when the connected study provides live operational test-status visibility.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-7">
-        <span class="faq-item__q">Should patients call the monitoring company during chest pain?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-7">
+        <span class="faq-item__q">When are Event and MCT findings presented?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-7" role="region" aria-labelledby="faq-trigger-live-7" class="faq-item__panel" hidden>
-        <p>Patients with urgent symptoms should call 911 or follow their physician&rsquo;s emergency instructions.</p>
+      <div id="faq-panel-live-ecg-monitoring-7" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-7" class="faq-item__panel" hidden>
+        <p>Qualifying findings from Cardiac Event Monitoring and Mobile Cardiac Telemetry may be presented during the study according to the ordering physician's prescribed notification protocol, followed by a final report.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-8">
-        <span class="faq-item__q">What is included in the final report?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-8">
+        <span class="faq-item__q">Is live ECG monitoring an emergency-response service?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-8" role="region" aria-labelledby="faq-trigger-live-8" class="faq-item__panel" hidden>
-        <p>The report summarizes the study and provides representative ECG information for physician review and interpretation.</p>
+      <div id="faq-panel-live-ecg-monitoring-8" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-8" class="faq-item__panel" hidden>
+        <p>No. It is a diagnostic ambulatory monitoring service and does not replace 911, emergency medical services or the treating physician's emergency instructions. Patients with urgent symptoms should follow their emergency instructions immediately.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-live-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-9">
-        <span class="faq-item__q">Can live ECG monitoring be used after discharge?</span>
+      <button type="button" id="faq-trigger-live-ecg-monitoring-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-live-ecg-monitoring-9">
+        <span class="faq-item__q">Can live ECG monitoring be used after hospital discharge?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-live-9" role="region" aria-labelledby="faq-trigger-live-9" class="faq-item__panel" hidden>
-        <p>A physician may prescribe it after discharge when ambulatory rhythm surveillance is appropriate, including selected <a href="post-tavr-cardiac-monitoring.html">delayed heart-block surveillance after TAVR</a>.</p>
+      <div id="faq-panel-live-ecg-monitoring-9" role="region" aria-labelledby="faq-trigger-live-ecg-monitoring-9" class="faq-item__panel" hidden>
+        <p>Yes. A treating physician may prescribe ambulatory rhythm monitoring after discharge when appropriate, including selected post-TAVR patients under the heart team's patient-selection and notification protocol.</p>
       </div>
     </div>
           </div>
@@ -527,82 +511,82 @@
       </div>
     </section>
 
-    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="live-cta-heading">
+    <section class="landing-section landing-cta-block" id="request-demo" aria-labelledby="live-ecg-monitoring-cta-heading">
       <div class="figma-container">
         <div class="landing-cta-block__box">
           <div class="landing-cta-block__copy">
-            <h2 id="live-cta-heading" class="landing-h2">Request a Live ECG Monitoring Demonstration</h2>
-            <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
-            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
-            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>
+            <h2 id="live-ecg-monitoring-cta-heading" class="landing-h2">See the entire connection—from patient to physician workflow</h2>
+            <p class="landing-p landing-lede">We can demonstrate enrollment, monitor-to-phone connection, live operational status, patient support, notification workflow and final reporting for your organization.</p><ul class="landing-checks"><li>Connected Holter, Event and MCT workflows</li><li>Dedicated patient phone</li><li>Operational test-status visibility</li><li>Physician-prescribed communication</li><li>Controlled pilot before broader rollout</li></ul><p class="landing-p"><strong>Prefer to speak directly?</strong><br/><a href="tel:+18557732633">1-855-SPEC-MED (1-855-773-2633)</a><br/><a href="mailto:info@specialized-med.com">info@specialized-med.com</a></p>
           </div>
-          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
+          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST" data-form-name="live_ecg_monitoring_inquiry" data-track-start="demo_form_start" data-track-submit="sm_lead_form_submit_attempt" data-track-error="demo_form_error" data-track-success="none" data-success-message="Thank you. Your request has been sent to the Specialized Medical team." data-error-message="We could not confirm that your request was sent. Please try again or call 1-855-773-2633.">
             <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
-            <input type="hidden" name="subject" value="Request a Live ECG Monitoring Demonstration — Live ECG Monitoring">
+            <input type="hidden" name="subject" value="Live ECG monitoring inquiry">
+            <input type="hidden" name="from_name" value="Specialized Medical website">
             <input type="hidden" name="from_page" value="live-ecg-monitoring">
             <input type="hidden" name="redirect" value="">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+            <input type="hidden" name="page_url" value="">
+            <input type="hidden" name="referrer" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_term" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="gclid" value="">
+            <input type="hidden" name="msclkid" value="">
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Name</span>
-                <input name="name" type="text" autocomplete="name" required>
+                <span class="landing-cta-form__label">First name <abbr title="required">*</abbr></span>
+                <input autocomplete="given-name" name="first_name" required="" type="text"/>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Organization</span>
-                <input name="organization" type="text" autocomplete="organization" required>
+                <span class="landing-cta-form__label">Last name <abbr title="required">*</abbr></span>
+                <input autocomplete="family-name" name="last_name" required="" type="text"/>
               </label>
             </div>
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Email</span>
-                <input name="email" type="email" autocomplete="email" required>
+                <span class="landing-cta-form__label">Work email <abbr title="required">*</abbr></span>
+                <input autocomplete="email" name="email" required="" type="email"/>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Phone</span>
-                <input name="phone" type="tel" autocomplete="tel" required>
+                <span class="landing-cta-form__label">Phone <abbr title="required">*</abbr></span>
+                <input autocomplete="tel" name="phone" required="" type="tel"/>
               </label>
             </div>
             <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Practice or organization <abbr title="required">*</abbr></span>
+                <input autocomplete="organization" name="organization" required="" type="text"/>
+              </label>
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric" required>
-              </label>
-              <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest" required>
-                  <option value="" disabled>Select an option</option>
-                  <option value="Holter Monitoring">Holter Monitoring</option>
-                  <option value="Long-Term Holter Monitoring">Long-Term Holter Monitoring</option>
-                  <option value="Cardiac Event Monitoring">Cardiac Event Monitoring</option>
-                  <option value="Mobile Cardiac Telemetry (MCT)" selected>Mobile Cardiac Telemetry (MCT)</option>
-                  <option value="Post-TAVR monitoring program">Post-TAVR monitoring program</option>
-                  <option value="Multiple test types / full program">Multiple test types / full program</option>
-                </select>
+                <select name="locations"><option>1</option><option>2–5</option><option>6–10</option><option>11+</option></select>
               </label>
             </div>
-            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request a Live ECG Monitoring Demonstration</button>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Primary interest</span>
+                <select name="interest"><option>Live ECG workflow demonstration</option><option>Mobile Cardiac Telemetry</option><option>Cardiac Event Monitoring</option><option>Connected Holter monitoring</option><option>Post-TAVR monitoring</option><option>Multi-location implementation</option></select>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Tell us about your monitoring needs <span class="landing-cta-form__optional">(optional)</span></span>
+                <textarea name="message" placeholder="Describe your organization and workflow. Do not include patient information."></textarea>
+              </label>
+            </div>
+            <p class="landing-cta-form__note"><strong>Do not submit protected health information (PHI).</strong> This form is for business and service inquiries only. See the <a href="privacy.html">Privacy Policy</a>.</p>
+            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request a Live ECG Monitoring Demo</button>
             <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="live-related-heading">
+    <section class="landing-disclaimer" aria-label="Information notice">
       <div class="figma-container">
-        <h2 id="live-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>
-        <ul class="landing-related">
-          <li><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></li>
-          <li><a href="post-tavr-cardiac-monitoring.html">Outpatient monitoring after TAVR</a></li>
-          <li><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days</a></li>
-          <li><a href="extended-holter-monitoring-8-14-days.html">8&ndash;14 Day Extended Holter</a></li>
-          <li><a href="s-patch-cardiac-monitoring-system.html">S-Patch Cardiac Monitoring System</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="landing-disclaimer" aria-label="Diagnostic service disclaimer">
-      <div class="figma-container">
-        <p class="landing-disclaimer__text"><strong>Diagnostic Service Disclaimer:</strong> Specialized Medical provides ambulatory cardiac monitoring services and diagnostic information for review by qualified healthcare providers. The service does not replace physician judgment, emergency medical services, or instructions to call 911 when urgent symptoms occur.</p>
+        <p class="landing-disclaimer__text">This diagnostic ambulatory monitoring service does not replace physician judgment, emergency services, device instructions or patient-specific medical advice.</p>
       </div>
     </section>
   </main>
@@ -612,7 +596,7 @@
         <div class="figma-footer__main">
           <div class="figma-footer__brand">
             <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
-              <img class="figma-brand__mark" src="images/figma-assets/brand-logo.webp?v=f8509ae975" alt="" width="412" loading="lazy" height="90" decoding="async">
+              <img class="figma-brand__mark" src="/images/figma-assets/brand-logo.webp?v=f8509ae975" alt="Specialized Medical" width="412" height="90" decoding="async" loading="lazy">
             </a>
             <p class="figma-footer__tagline">Turnkey cardiac monitoring with LIVE ECG data.</p>
           </div>
@@ -623,23 +607,24 @@
               <a href="services.html">Services</a>
               <a href="faq.html">FAQs</a>
               <a href="contact.html">Contact</a>
+              <a href="privacy.html">Privacy</a>
               <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </nav>
             <div class="figma-footer__line">
               <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
-                <img src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="Phone Icon" width="20" height="20" decoding="async">
+                <img src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="20" height="20" decoding="async">
               </span>
               <a class="figma-footer__link" href="tel:+18557732633">
-                <span class="figma-footer__muted">1-855-SPEC-MED</span> 
+                <span class="figma-footer__muted">1-855-SPEC-MED</span>
                 <span class="figma-footer__strong">(1-855-773-2633)</span>
               </a>
             </div>
             <div class="figma-footer__line">
-              <img src="icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
+              <img src="/icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
               <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
             </div>
             <div class="figma-footer__line">
-              <img src="images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
+              <img src="/images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
               <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
             </div>
           </div>
@@ -651,11 +636,11 @@
         </div>
         <div class="figma-footer__hr" aria-hidden="true"></div>
         <div class="figma-footer__bottom">
-          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
+          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></p>
           <div class="figma-footer__social">
-            <img src="images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <img src="/images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
             <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
-              <img src="images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+              <img src="/images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
@@ -663,8 +648,8 @@
     </footer>
 
   </div>
-  <script src="js/analytics.js?v=329dbec6d8" defer></script>
-  <script src="js/main.js?v=9a987e8d2e" defer></script>
+  <script src="/js/landing-lite.js?v=4d753e7e8d" defer></script>
+  <script src="/js/analytics.js?v=329dbec6d8" defer></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

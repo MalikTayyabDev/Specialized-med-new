@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <script>
@@ -63,191 +63,238 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "name": "Cardiac Monitoring for Cardiology Practices | Specialized Medical",
-  "headline": "Cardiac Monitoring for Cardiology Practices",
-  "url": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html",
-  "description": "Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support.",
-  "inLanguage": "en-US",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "medicalAudience": {
-    "@type": "MedicalAudience",
-    "audienceType": "Clinician"
-  }
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": [
-    "Organization",
-    "MedicalBusiness"
-  ],
-  "name": "Specialized Medical",
-  "url": "https://www.specialized-med.com/",
-  "telephone": "+1-855-773-2633",
-  "description": "Specialized Medical provides turnkey ambulatory cardiac monitoring services including Holter, Long-Term Holter, Cardiac Event Monitoring, and Mobile Cardiac Telemetry."
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Cardiac Monitoring for Cardiology Practices",
-  "provider": {
-    "@type": "Organization",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "serviceType": "Ambulatory Cardiac Monitoring",
-  "areaServed": "United States",
-  "description": "Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support.",
-  "url": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html"
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.specialized-med.com/"
+      "@type": "Organization",
+      "@id": "https://www.specialized-med.com/#organization",
+      "name": "Specialized Medical LLC",
+      "url": "https://www.specialized-med.com/",
+      "email": "info@specialized-med.com",
+      "telephone": "+1-855-773-2633",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34145 Pacific Coast Highway, #700",
+        "addressLocality": "Dana Point",
+        "addressRegion": "CA",
+        "postalCode": "92629",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales and support",
+        "telephone": "+1-855-773-2633",
+        "email": "info@specialized-med.com",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ],
+        "areaServed": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/specializedmedical"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://www.specialized-med.com/services.html"
+      "@type": "ImageObject",
+      "@id": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html#primaryimage",
+      "url": "https://www.specialized-med.com/images/landing/cardiology-practice-cardiac-monitoring-hero-1920.jpg",
+      "contentUrl": "https://www.specialized-med.com/images/landing/cardiology-practice-cardiac-monitoring-hero-1920.jpg",
+      "width": 1920,
+      "height": 900,
+      "caption": "Medical assistant demonstrating the dual-disk S-Patch system and dedicated phone to a cardiology patient"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html#service",
       "name": "Cardiac Monitoring for Cardiology Practices",
-      "item": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html"
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does “turnkey cardiac monitoring” mean?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It means the service supports the complete workflow, including implementation, enrollment, monitoring, support, reporting, and physician review rather than providing only hardware."
-      }
+      "serviceType": "Turnkey ambulatory cardiac monitoring program for cardiology practices",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Cardiologists, electrophysiologists, cardiology practices and cardiovascular programs"
+      },
+      "description": "A nationwide ambulatory cardiac monitoring program supporting implementation, staff training, patient enrollment, monitoring operations, patient support, physician-ready reporting and electronic signature workflow."
     },
     {
-      "@type": "Question",
-      "name": "Can patients be enrolled before their appointment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Pre-enrollment can reduce the time required during the in-office hookup."
-      }
+      "@type": "MedicalWebPage",
+      "@id": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html#webpage",
+      "url": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html",
+      "name": "Cardiology Practice Cardiac Monitoring | Specialized Medical",
+      "description": "Turnkey cardiac monitoring for cardiology practices, from implementation and staff training through patient support, reporting and physician review.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.specialized-med.com/#website",
+        "url": "https://www.specialized-med.com/",
+        "name": "Specialized Medical"
+      },
+      "about": {
+        "@id": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html#service"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html#primaryimage"
+      },
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "lastReviewed": "2026-11-24",
+      "specialty": "https://schema.org/Cardiovascular"
     },
     {
-      "@type": "Question",
-      "name": "Can one program support multiple test types?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Specialized Medical supports Holter, Long-Term Holter, Event, and MCT workflows."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.specialized-med.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cardiac Monitoring Services",
+          "item": "https://www.specialized-med.com/cardiac-monitoring-services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "For Cardiology Practices",
+          "item": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Is staff training included?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Training can be tailored to the roles and workflow of the practice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can physicians sign reports electronically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, when the electronic-signature workflow is enabled for the practice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can the service support multiple office locations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. User access, inventory, enrollment, report routing, and training can be organized across multiple locations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Specialized Medical handle billing for the practice?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The service can provide workflow and documentation support, but the practice remains responsible for coding, billing, compliance, and payer requirements unless a separate written arrangement states otherwise."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How are urgent findings communicated?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For live services, communication follows the physician-defined notification protocol and contact hierarchy."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can Specialized Medical integrate with an EMR?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Integration and report-delivery options depend on the practice’s systems and the available implementation configuration."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens during implementation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The team maps workflow, configures users and protocols, trains staff, tests the process, and supports go-live."
-      }
+      "@type": "FAQPage",
+      "@id": "https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does turnkey cardiac monitoring mean for a cardiology practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It means the program supports the operational workflow around ambulatory monitoring, including implementation, user configuration, staff training, patient enrollment, device hookup, monitoring support, report delivery and physician review—not only the monitoring equipment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which cardiac monitoring studies can the program support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Specialized Medical supports Holter, Long-Term and Extended Holter, Cardiac Event Monitoring and Mobile Cardiac Telemetry workflows. The ordering physician selects the appropriate test and duration for each patient."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can patients be pre-enrolled before their appointments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Practices can prepare a patient record before the hookup appointment so staff can confirm the order, duration and notification instructions more efficiently when the patient arrives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is cardiology-practice staff training included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Implementation can include role-based training for front-office staff, medical assistants, nurses, physicians and administrators, along with practice-specific workflow and notification-protocol review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after the patient leaves the office?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For supported live workflows, Specialized Medical follows relevant operational test-status indicators and assists the patient when battery, electrode, phone, cellular or transmission issues occur. Clinical communication follows the ordered service and physician-prescribed protocol."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the program support multiple cardiology locations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. User permissions, inventory, patient enrollment, support, report routing and training can be organized for centralized or location-specific operations across multiple offices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can physicians review and sign reports electronically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. When configured, the portal supports physician review, interpretation, dating and electronic signature of final reports while the physician remains responsible for the final interpretation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Specialized Medical integrate with every EMR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Integration and report-delivery options depend on the practice's EMR, technical capabilities and implementation configuration. Available options should be confirmed during workflow discovery rather than assumed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Specialized Medical guarantee reimbursement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Specialized Medical can provide billing-support information and workflow templates, but the practice remains responsible for coding, documentation, medical necessity, payer requirements, compliance and claim submission. Payment is not guaranteed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can a cardiology practice evaluate the program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A practice can request a workflow demonstration or discuss a small no-obligation pilot. The team reviews the current process, confirms service fit, configures the pilot and evaluates the results before broader rollout."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cardiac Monitoring for Cardiology Practices | Specialized Medical</title>
-  <meta name="description" content="Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support.">
-  <!-- Social sharing (iMessage/WhatsApp/Facebook/Twitter) -->
-  <meta property="og:site_name" content="Specialized Medical">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Cardiology Practice Cardiac Monitoring | Specialized Medical</title>
+  <meta name="description" content="Turnkey cardiac monitoring for cardiology practices with implementation, patient support, live test-status visibility and physician-ready reporting.">
+  <meta name="author" content="Specialized Medical LLC">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cardiac Monitoring for Cardiology Practices | Specialized Medical">
-  <meta property="og:description" content="Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support.">
+  <meta property="og:site_name" content="Specialized Medical">
+  <meta property="og:title" content="Cardiac Monitoring for Cardiology Practices">
+  <meta property="og:description" content="A complete ambulatory cardiac monitoring program designed around cardiology-practice workflow, staff support and physician control.">
   <meta property="og:url" content="https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html">
-  <meta property="og:image" content="https://www.specialized-med.com/images/landing/cardiology-practice-cardiac-monitoring.jpg">
+  <meta property="og:image" content="https://www.specialized-med.com/images/landing/cardiology-practice-cardiac-monitoring-hero-1920.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Asian medical assistant demonstrating the two-disk S-Patch system and dedicated monitoring phone to a cardiology patient">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cardiac Monitoring for Cardiology Practices | Specialized Medical">
-  <meta name="twitter:description" content="Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support.">
-  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/cardiology-practice-cardiac-monitoring.jpg">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" href="favicon.svg?v=ea9bbc50ae">
+  <meta name="twitter:title" content="Cardiac Monitoring for Cardiology Practices">
+  <meta name="twitter:description" content="Turnkey implementation, monitoring support, reporting and physician workflow for cardiology practices.">
+  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/cardiology-practice-cardiac-monitoring-hero-1920.jpg">
+  <link rel="icon" href="/favicon.svg?v=ea9bbc50ae">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="images/landing/cardiology-practice-cardiac-monitoring.jpg?v=52bd843d7f" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css?v=1bad96baac">
-  <link rel="stylesheet" href="css/home.css?v=090a393fa2">
-  <link rel="stylesheet" href="css/services.css?v=de0139ab71">
-  <link rel="stylesheet" href="css/faq.css?v=c9b924a842">
-  <link rel="stylesheet" href="css/landing.css?v=0bc3ce0681">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preload" as="image" type="image/webp" href="/images/landing/cardiology-practice-cardiac-monitoring-hero-960.webp?v=acc404750f" imagesrcset="/images/landing/cardiology-practice-cardiac-monitoring-hero-960.webp?v=acc404750f 960w, /images/landing/cardiology-practice-cardiac-monitoring-hero-1280.webp?v=3d986779ea 1280w, /images/landing/cardiology-practice-cardiac-monitoring-hero-1920.webp?v=42ad363b7f 1920w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/global.css?v=1bad96baac">
+  <link rel="stylesheet" href="/css/chrome.css?v=21dc8e5542">
+  <link rel="stylesheet" href="/css/landing-mct.css?v=6e8799d245">
+  <link rel="stylesheet" href="/css/faq.css?v=c9b924a842">
+  <link rel="stylesheet" href="/css/landing-pkg.css?v=9cef0e826e">
   <link rel="canonical" href="https://www.specialized-med.com/cardiology-practice-cardiac-monitoring.html">
 </head>
 <body>
@@ -259,11 +306,12 @@
       style="display:none;visibility:hidden">
     </iframe>
   </noscript>
+  <a class="skip-link" href="cardiology-practice-cardiac-monitoring.html#main-content">Skip to content</a>
   <div class="site-root">
     <header class="site-header site-header--figma">
       <div class="figma-container figma-header__inner site-header__inner">
         <a href="./" class="figma-brand" aria-label="Specialized Medical home">
-          <img class="figma-brand__mark" src="images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="" width="236" fetchpriority="low" height="52" decoding="async">
+          <img class="figma-brand__mark" src="/images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="Specialized Medical" width="236" fetchpriority="low" height="52" decoding="async">
         </a>
         <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
           <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -278,238 +326,187 @@
           <div class="figma-nav__mobile">
             <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact.html#contact-form">Request a Demo</a>
-              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+              <a class="figma-btn figma-btn--outline-dark" href="cardiology-practice-cardiac-monitoring.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
         </nav>
         <div class="figma-header__cta">
           <a class="figma-phone" href="tel:+18557732633">
-            <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
+            <img class="figma-phone__icon" src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
-          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+          <a class="figma-btn figma-btn--outline-dark figma-btn--tavr-demo" href="cardiology-practice-cardiac-monitoring.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
     </header>
 
-<main class="landing-page services-page services-page--figma" data-landing="cardiology-practice-cardiac-monitoring">
+    <main class="landing-page landing-page--pkg services-page services-page--figma" data-landing="cardiology-practice-cardiac-monitoring" data-service-id="cardiology_practice_cardiac_monitoring" id="main-content" tabindex="-1">
     <nav class="landing-breadcrumb" aria-label="Breadcrumb">
       <div class="figma-container">
         <ol class="landing-breadcrumb__list">
           <li><a href="./">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><span aria-current="page">Cardiac Monitoring for Cardiology Practices</span></li>
+          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
+          <li><span aria-current="page">For Cardiology Practices</span></li>
         </ol>
       </div>
     </nav>
-    <section class="landing-hero" aria-labelledby="practice-hero-heading">
-      <div class="landing-hero__plate landing-hero__plate--cardiology-practice-cardiac-monitoring">
-        <img class="landing-hero__media" src="images/landing/cardiology-practice-cardiac-monitoring.jpg?v=52bd843d7f" alt="Turnkey cardiac monitoring operational program for cardiology practices from Specialized Medical" width="1430" height="550" fetchpriority="high" decoding="async">
+
+    <section class="landing-hero" aria-labelledby="cardiology-practice-cardiac-monitoring-hero-heading">
+      <div class="landing-hero__plate landing-hero__plate--pkg landing-hero__plate--pkg-light">
+        <picture>
+          <source type="image/webp" srcset="/images/landing/cardiology-practice-cardiac-monitoring-hero-960.webp?v=acc404750f 960w, /images/landing/cardiology-practice-cardiac-monitoring-hero-1280.webp?v=3d986779ea 1280w, /images/landing/cardiology-practice-cardiac-monitoring-hero-1920.webp?v=42ad363b7f 1920w" sizes="100vw">
+          <img class="landing-hero__media" src="/images/landing/cardiology-practice-cardiac-monitoring-hero-960.jpg?v=4e372e558a" srcset="/images/landing/cardiology-practice-cardiac-monitoring-hero-960.jpg?v=4e372e558a 960w, /images/landing/cardiology-practice-cardiac-monitoring-hero-1280.jpg?v=4483da5d39 1280w, /images/landing/cardiology-practice-cardiac-monitoring-hero-1920.jpg?v=da68eb5c37 1920w" sizes="100vw" width="1920" height="900" alt="" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
         <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
-          <p class="figma-hero__pill">
-            <span class="figma-hero__pill-dot" aria-hidden="true"></span>
-            For Cardiology Practices
-          </p>
-          <h1 id="practice-hero-heading" class="landing-hero__title">
-            Cardiac Monitoring for <span class="landing-hero__title-accent">Cardiology Practices</span>
-          </h1>
-          <p class="landing-hero__lead">Specialized Medical provides cardiology practices with more than a monitor. The service is designed as a complete operational program that supports patient enrollment, device hookup, monitoring, notifications, report delivery, physician review, electronic signature, staff training, and ongoing account support. The objective is to make ambulatory cardiac monitoring easier to operate consistently across one or multiple office locations.</p>
+          <p class="figma-hero__pill"><span class="figma-hero__pill-dot" aria-hidden="true"></span>FOR CARDIOLOGY PRACTICES</p>
+          <h1 id="cardiology-practice-cardiac-monitoring-hero-heading" class="landing-hero__title">Turnkey Cardiac Monitoring Built Around <span class="landing-hero__title-accent">Your Practice</span></h1>
+          <p class="landing-hero__lead landing-answer">Implementation, staff training, patient enrollment, monitoring support, physician-ready reporting and electronic signature—organized as one repeatable ambulatory cardiac monitoring program.</p>
           <div class="landing-hero__actions">
-            <a class="figma-btn figma-btn--solid" href="#cta-form">Request a Practice Workflow Demonstration</a>
-            <a class="figma-btn figma-btn--outline-dark" href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist</a>
+            <a class="figma-btn figma-btn--solid" data-mct-track="sm_cta_click" data-track-name="hero_demo" href="cardiology-practice-cardiac-monitoring.html#request-demo">Request a Practice Workflow Demo</a>
+            <a class="figma-btn figma-btn--outline-dark" data-mct-track="sm_cta_click" data-track-name="hero_workflow" href="cardiology-practice-cardiac-monitoring.html#workflow">See the Practice Workflow</a>
           </div>
+          <ul class="landing-hero__points" aria-label="Highlights"><li>Nationwide support</li><li>Multi-location ready</li><li>Physician-controlled protocols</li></ul>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="practice-turnkey-heading">
-      <div class="figma-container">
-        <h2 id="practice-turnkey-heading" class="landing-h2">A Turnkey <span class="landing-h2__accent">Practice Workflow</span></h2>
-        <p class="landing-p">The three core office steps are <strong>Hook Up</strong>, <strong>Enroll</strong>, and <strong>Disconnect</strong>. Patients can be pre-enrolled days, weeks, or longer in advance when appropriate, allowing the appointment-day workflow to move faster.</p>
-        <ol class="landing-flow" aria-label="Pre-enrollment to hookup process">
-          <li class="landing-flow__step"><strong>Pre-enroll</strong><span>Days or weeks in advance, when appropriate</span></li>
-          <li class="landing-flow__step"><strong>Hook Up</strong><span>Fast in-office application on appointment day</span></li>
-          <li class="landing-flow__step"><strong>Enroll</strong><span>Confirm test, duration, notification instructions</span></li>
-          <li class="landing-flow__step"><strong>Disconnect</strong><span>Device returned or disconnected per selected workflow</span></li>
-        </ol>
-        <p class="landing-p">Insurance and billing-related information can be included in the enrollment process when the practice chooses that workflow. Guaranteed reimbursement or billing compliance is not claimed.</p>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--trust" aria-label="Program overview">
+      <div class="figma-container"><ul class="landing-trust-strip"><li><strong>One program</strong><span>Multiple study types</span></li><li><strong>Role-based</strong><span>Training and permissions</span></li><li><strong>LIVE status</strong><span>Operational visibility when supported</span></li><li><strong>Physician ready</strong><span>Reporting and e-signature</span></li></ul></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="practice-implementation-heading">
-      <div class="figma-container">
-        <h2 id="practice-implementation-heading" class="landing-h2">Implementation and <span class="landing-h2__accent">Staff Training</span></h2>
-        <p class="landing-p">Implementation covers kickoff, workflow mapping, user setup, device training, practice-specific notification protocols, report routing, testing, go-live support, and follow-up. Specialized Medical works directly with the practice rather than simply shipping equipment and leaving the staff to determine the process.</p>
-        <div class="landing-swimlane" role="group" aria-label="Practice role responsibilities">
-          <div class="landing-swimlane__lane">
-            <h3 class="landing-h3">Front office</h3>
-            <ul class="landing-list"><li>Scheduling and pre-enrollment</li><li>Patient intake information</li></ul>
-          </div>
-          <div class="landing-swimlane__lane">
-            <h3 class="landing-h3">Medical assistants / nursing</h3>
-            <ul class="landing-list"><li>Hookup and device training</li><li>Patient instructions and support handoff</li></ul>
-          </div>
-          <div class="landing-swimlane__lane">
-            <h3 class="landing-h3">Physicians / administrators</h3>
-            <ul class="landing-list"><li>Notification protocols</li><li>Report review and e-signature</li><li>Program oversight</li></ul>
-          </div>
-        </div>
-      </div>
+    <section class="landing-section" aria-labelledby="cardiology-practice-cardiac-monitoring-s1-heading">
+      <div class="figma-container landing-definition"><div><p class="landing-eyebrow">Direct answer</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s1-heading">What does a turnkey cardiac monitoring program do for a <span class="landing-h2__accent">cardiology practice?</span></h2><p class="landing-p landing-lede">It gives the practice a defined operating model for ambulatory monitoring—from the first patient order through the signed final report—without leaving staff to assemble equipment, support, reporting and escalation processes on their own.</p><div class="landing-answer-box"><strong>The practical value:</strong> cardiologists retain control of the prescribed test, notification parameters and final interpretation while Specialized Medical supports implementation, active-study operations, patient troubleshooting and reporting workflow.</div><p class="landing-p">This page is intentionally focused on practice operations. For modality-specific durations, live-status availability and clinical-findings timing, use the full <a href="cardiac-monitoring-services.html">cardiac monitoring services comparison</a>.</p><p class="landing-reviewed">Published and reviewed for service accuracy by Specialized Medical LLC. Last reviewed November 24, 2026.</p></div><aside class="landing-spec-panel"><h3 class="landing-h3">Program components</h3><ul class="landing-checks"><li>Workflow discovery and implementation planning</li><li>Role-based user setup and staff training</li><li>Patient pre-enrollment and hookup workflow</li><li>Equipment and routine study supplies</li><li>Operational test-status visibility in supported live studies</li><li>Proactive patient support</li><li>Physician-ready final reporting</li><li>Electronic review and signature workflow</li><li>Billing-support information and templates</li><li>Ongoing account support</li></ul></aside></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="practice-reporting-heading">
-      <div class="figma-container">
-        <div class="landing-split">
-          <div class="landing-split__copy">
-            <h2 id="practice-reporting-heading" class="landing-h2">Reporting and Physician <span class="landing-h2__accent">Electronic Signature</span></h2>
-        <p class="landing-p">Physician-ready reports can be reviewed through the portal and electronically signed. Dictation or staff-assisted entry may be used where configured, while the physician retains responsibility for the final interpretation and signature.</p>
-          </div>
-          <div class="landing-split__media">
-        <figure class="landing-figure">
-          <img src="images/figma-services/report-sample.jpg?v=3191d11923" alt="De-identified portal report view showing physician review and electronic signature workflow" loading="lazy" decoding="async">
-          <figcaption class="landing-figure__cap">Portal report review and e-signature (de-identified).</figcaption>
-        </figure>
-          </div>
-        </div>
-        <ol class="landing-flow" aria-label="Physician report review and e-signature steps">
-          <li class="landing-flow__step"><strong>Report ready</strong><span>Completed study appears in the portal</span></li>
-          <li class="landing-flow__step"><strong>Physician review</strong><span>Findings and strips reviewed</span></li>
-          <li class="landing-flow__step"><strong>Interpretation</strong><span>Entered directly or via configured assistance</span></li>
-          <li class="landing-flow__step"><strong>E-signature</strong><span>Report signed electronically and routed</span></li>
-        </ol>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--center" id="workflow" aria-labelledby="cardiology-practice-cardiac-monitoring-s2-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Repeatable practice workflow</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s2-heading">From patient order to <span class="landing-h2__accent">signed report</span></h2><p class="landing-p landing-section__intro">A documented sequence gives front-office staff, clinical staff and physicians a shared understanding of what happens at each step.</p><ol class="landing-flow landing-flow--pkg" data-steps="6"><li class="landing-flow__step"><strong>Order and pre-enroll</strong><span>Select the prescribed study and prepare patient information before the hookup visit when appropriate.</span></li><li class="landing-flow__step"><strong>Confirm the study</strong><span>Verify test type, duration, physician instructions and notification contacts.</span></li><li class="landing-flow__step"><strong>Apply and connect</strong><span>Attach the monitor, assign the dedicated phone for live workflows and confirm readiness.</span></li><li class="landing-flow__step"><strong>Support the patient</strong><span>Specialized Medical assists with operational battery, electrode and connectivity issues.</span></li><li class="landing-flow__step"><strong>Deliver the report</strong><span>The practice receives the applicable report under the ordered service workflow.</span></li><li class="landing-flow__step"><strong>Physician review</strong><span>The physician reviews, interprets, dates and signs the final report when configured.</span></li></ol></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="practice-locations-heading">
-      <div class="figma-container">
-        <h2 id="practice-locations-heading" class="landing-h2">Monitoring Across <span class="landing-h2__accent">Multiple Locations</span></h2>
-        <p class="landing-p">Programs can use centralized or location-specific inventory, staff permissions, patient enrollment, support, report routing, and utilization review. Assigning monitors, tracking unused inventory, and maintaining clear return and replacement procedures keeps multi-site programs running consistently.</p>
-        <ol class="landing-flow" aria-label="Multi-location implementation structure">
-          <li class="landing-flow__step"><strong>Central program</strong><span>Shared protocols, training, and reporting standards</span></li>
-          <li class="landing-flow__step"><strong>Location A</strong><span>Local inventory, enrollment, and staff permissions</span></li>
-          <li class="landing-flow__step"><strong>Location B</strong><span>Local inventory, enrollment, and staff permissions</span></li>
-          <li class="landing-flow__step"><strong>Unified review</strong><span>Consistent report routing and utilization review</span></li>
-        </ol>
-      </div>
+    <section class="landing-section landing-section--center" aria-labelledby="cardiology-practice-cardiac-monitoring-s3-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Clear responsibilities</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s3-heading">Designed around the people who run <span class="landing-h2__accent">the practice</span></h2><p class="landing-p landing-section__intro">Training and access should match each role instead of forcing every user into the same workflow.</p><div class="landing-feature-grid" role="list"><article class="landing-feature-card" role="listitem"><div aria-hidden="true" class="landing-card-icon">F</div><h3 class="landing-h3">Front office</h3><ul class="landing-checks"><li>Scheduling and pre-enrollment</li><li>Patient and insurance information</li><li>Appointment readiness</li><li>Return and follow-up coordination</li></ul></article><article class="landing-feature-card" role="listitem"><div aria-hidden="true" class="landing-card-icon">C</div><h3 class="landing-h3">Medical assistants and nurses</h3><ul class="landing-checks"><li>Monitor hookup and phone assignment</li><li>Patient instructions</li><li>Connection confirmation</li><li>Support handoff</li></ul></article><article class="landing-feature-card" role="listitem"><div aria-hidden="true" class="landing-card-icon">P</div><h3 class="landing-h3">Physicians and administrators</h3><ul class="landing-checks"><li>Test selection and notification protocol</li><li>Report review and interpretation</li><li>Electronic signature</li><li>Program oversight and utilization</li></ul></article></div></div>
     </section>
 
-    <section class="landing-section" aria-labelledby="practice-billing-heading">
-      <div class="figma-container">
-        <h2 id="practice-billing-heading" class="landing-h2">Billing and <span class="landing-h2__accent">Administrative Support</span></h2>
-        <p class="landing-p">Specialized Medical can provide documentation support, workflow templates, and information needed by the practice&rsquo;s billing team. Specialized Medical does not guarantee payment, determine coding, or replace the practice&rsquo;s compliance responsibility. Detailed CPT, pricing, and payer specifics are reviewed with the practice directly because reimbursement policies can change.</p>
-      </div>
+    <section class="landing-section landing-section--muted" aria-labelledby="cardiology-practice-cardiac-monitoring-s4-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Operational visibility</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s4-heading">Support the active study without shifting the burden back to <span class="landing-h2__accent">your staff</span></h2><p class="landing-p landing-section__intro">For supported live workflows, Specialized Medical can follow operational indicators such as battery status, electrode contact, monitor-to-phone connection, cellular connectivity and successful ECG transmission. When an indicator falls outside the expected range, the patient-support team can contact the patient and help troubleshoot.</p><div class="landing-feature-grid" role="list"><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Dedicated patient phone</h3><p class="landing-p">A preconfigured phone uses available AT&amp;T, T-Mobile or Verizon service and keeps the patient experience limited to essential monitoring functions.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Proactive troubleshooting</h3><p class="landing-p">Patients can receive assistance with batteries, electrodes, Bluetooth, cellular connection and data transmission before more monitoring time is lost.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Protocol-controlled communication</h3><p class="landing-p">Operational support is separate from clinical notification. Event and MCT communication follows the physician-prescribed protocol and contact hierarchy.</p></article></div></div>
     </section>
 
-    <section class="landing-section landing-section--muted" aria-labelledby="practice-why-heading">
-      <div class="figma-container">
-        <h2 id="practice-why-heading" class="landing-h2">Why <span class="landing-h2__accent">Specialized Medical</span></h2>
-        <ul class="landing-list">
-          <li>Multiple test types through one program &mdash; <a href="cardiac-monitoring-services.html">see all cardiac monitoring services</a></li>
-          <li>Live ECG capability for MCT with multi-path connectivity</li>
-          <li><a href="s-patch-cardiac-monitoring-system.html">S-Patch</a> and lead-wire options</li>
-          <li>Implementation support and patient support</li>
-          <li>Physician-ready reporting with electronic signature</li>
-          <li>Direct account involvement and workflows designed for real cardiology practices, including <a href="post-tavr-cardiac-monitoring.html">post-TAVR programs</a> and the full range of <a href="ambulatory-cardiac-monitoring.html">ambulatory cardiac monitoring</a></li>
-        </ul>
-      </div>
+    <section class="landing-section landing-section--muted landing-section--center" aria-labelledby="cardiology-practice-cardiac-monitoring-s5-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Multiple services, one partner</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s5-heading">Support the prescribed study without rebuilding the <span class="landing-h2__accent">office process</span></h2><div aria-label="Support the prescribed study without rebuilding the office process" class="landing-table-wrap" role="region" tabindex="0"><table class="landing-table landing-table--stack"><thead><tr><th scope="col">Study</th><th scope="col">Typical duration</th><th scope="col">Practice use</th><th scope="col">Clinical findings timing</th></tr></thead><tbody><tr><th scope="row"><a href="holter-monitoring-services.html">Holter</a></th><td data-label="Typical duration">24–48 hours</td><td data-label="Practice use">Short continuous ambulatory ECG study.</td><td data-label="Clinical findings timing">After the final report is generated.</td></tr><tr><th scope="row"><a href="long-term-holter-monitoring.html">Long-Term Holter</a></th><td data-label="Typical duration">More than 48 hours to 7 days</td><td data-label="Practice use">Longer continuous recording under the ordered workflow.</td><td data-label="Clinical findings timing">After the final report is generated.</td></tr><tr><th scope="row"><a href="extended-holter-monitoring-8-14-days.html">Extended Holter</a></th><td data-label="Typical duration">8–14 days</td><td data-label="Practice use">Extended ambulatory recording for physician review.</td><td data-label="Clinical findings timing">After the final report is generated.</td></tr><tr><th scope="row"><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring</a></th><td data-label="Typical duration">Up to 30 days</td><td data-label="Practice use">Longer monitoring with digital symptom context.</td><td data-label="Clinical findings timing">Qualifying findings during the study under the prescribed protocol.</td></tr><tr><th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry</a></th><td data-label="Typical duration">Up to 30 days</td><td data-label="Practice use">Live ECG transmission and monitoring-center review.</td><td data-label="Clinical findings timing">Qualifying findings during the study under the prescribed protocol.</td></tr></tbody></table></div><p class="landing-reviewed">The ordering physician determines the test type, duration and clinical protocol. Not every configuration has live test-status visibility. No service description promises diagnosis or a clinical outcome.</p></div>
     </section>
 
-<section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="practice-faq-heading">
+    <section class="landing-section landing-section--center" aria-labelledby="cardiology-practice-cardiac-monitoring-s6-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Reporting and physician control</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s6-heading">Make the final step easier to review <span class="landing-h2__accent">and complete</span></h2><p class="landing-p landing-section__intro">The report workflow should preserve supporting ECG information while making the study easier for the ordering physician to review, interpret and sign.</p><div class="landing-feature-grid landing-feature-grid--2" role="list"><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Physician-ready reporting</h3><ul class="landing-checks"><li>Study summary and supporting ECG information</li><li>Symptomatic and asymptomatic context where available</li><li>Full Disclosure Holter reporting when ordered</li><li>Secure report-delivery workflow</li></ul></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Review and electronic signature</h3><ul class="landing-checks"><li>Report appears in the configured portal workflow</li><li>Physician reviews findings and supporting strips</li><li>Interpretation is entered through the enabled process</li><li>Physician dates and signs the final report electronically</li></ul><p class="landing-p">The physician remains responsible for the final interpretation and signature.</p></article></div></div>
+    </section>
+
+    <section class="landing-section landing-section--muted landing-section--center" aria-labelledby="cardiology-practice-cardiac-monitoring-s7-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Multi-location operations</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s7-heading">Build consistency across one office or an entire <span class="landing-h2__accent">cardiology group</span></h2><p class="landing-p landing-section__intro">Programs can be configured for centralized oversight, location-specific operations or a combination of both.</p><div class="landing-feature-grid" role="list"><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Users and permissions</h3><p class="landing-p">Organize access around staff roles, locations and responsibilities so the right people can enroll patients, manage inventory and review reports.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Inventory and utilization</h3><p class="landing-p">Define where monitors are assigned, how unused inventory is reviewed and how return or replacement processes are handled.</p></article><article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Report routing</h3><p class="landing-p">Align report delivery, physician access and follow-up responsibility with the practice's actual location and provider structure.</p></article></div></div>
+    </section>
+
+    <section class="landing-section landing-section--center" aria-labelledby="cardiology-practice-cardiac-monitoring-s8-heading">
+      <div class="figma-container"><p class="landing-eyebrow">Controlled implementation</p><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s8-heading">Start with workflow discovery, then prove <span class="landing-h2__accent">the process</span></h2><ol class="landing-flow landing-flow--pkg" data-steps="6"><li class="landing-flow__step"><strong>Discover</strong><span>Map current ordering, hookup, support, reporting and escalation processes.</span></li><li class="landing-flow__step"><strong>Configure</strong><span>Set up users, locations, service choices, contacts and notification instructions.</span></li><li class="landing-flow__step"><strong>Train</strong><span>Provide role-specific instruction and confirm staff readiness.</span></li><li class="landing-flow__step"><strong>Pilot</strong><span>Use a controlled group of patients to evaluate the real office workflow.</span></li><li class="landing-flow__step"><strong>Review</strong><span>Identify issues, clarify responsibilities and adjust the configured process.</span></li><li class="landing-flow__step"><strong>Expand</strong><span>Roll out only after the practice approves the workflow and support model.</span></li></ol></div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="cardiology-practice-cardiac-monitoring-s9-heading">
+      <div class="figma-container"><div class="landing-callout-band"><div><h2 class="landing-h2" id="cardiology-practice-cardiac-monitoring-s9-heading">Billing support without <span class="landing-h2__accent">reimbursement promises</span></h2><p class="landing-p">Specialized Medical can provide billing-support information and workflow templates. The practice remains responsible for coding, medical necessity, documentation, compliance, payer rules and claim submission. Payment is never guaranteed.</p></div><a class="figma-btn figma-btn--solid" data-mct-track="sm_cta_click" data-track-name="billing_demo" href="cardiology-practice-cardiac-monitoring.html#request-demo">Discuss Your Workflow</a></div></div>
+    </section>
+
+    <section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" id="faq" aria-labelledby="cardiology-practice-cardiac-monitoring-faq-heading">
       <div class="figma-container faq-accordion__inner">
-        <h2 id="practice-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
+        <p class="landing-eyebrow">Frequently asked questions</p>
+        <h2 id="cardiology-practice-cardiac-monitoring-faq-heading" class="landing-h2">Cardiology-practice program answers</h2>
         <div class="faq-category">
           <div class="faq-category__list">
 <div class="faq-item is-open">
-      <button type="button" id="faq-trigger-practice-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-practice-0">
-        <span class="faq-item__q">What does &ldquo;turnkey cardiac monitoring&rdquo; mean?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-0">
+        <span class="faq-item__q">What does turnkey cardiac monitoring mean for a cardiology practice?</span>
         <svg class="faq-item__chevron is-open" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-0" role="region" aria-labelledby="faq-trigger-practice-0" class="faq-item__panel">
-        <p>It means the service supports the complete workflow, including implementation, enrollment, monitoring, support, reporting, and physician review rather than providing only hardware.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-0" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-0" class="faq-item__panel">
+        <p>It means the program supports the operational workflow around ambulatory monitoring, including implementation, user configuration, staff training, patient enrollment, device hookup, monitoring support, report delivery and physician review—not only the monitoring equipment.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-1">
-        <span class="faq-item__q">Can patients be enrolled before their appointment?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-1">
+        <span class="faq-item__q">Which cardiac monitoring studies can the program support?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-1" role="region" aria-labelledby="faq-trigger-practice-1" class="faq-item__panel" hidden>
-        <p>Yes. Pre-enrollment can reduce the time required during the in-office hookup.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-1" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-1" class="faq-item__panel" hidden>
+        <p>Specialized Medical supports Holter, Long-Term and Extended Holter, Cardiac Event Monitoring and Mobile Cardiac Telemetry workflows. The ordering physician selects the appropriate test and duration for each patient.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-2">
-        <span class="faq-item__q">Can one program support multiple test types?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-2">
+        <span class="faq-item__q">Can patients be pre-enrolled before their appointments?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-2" role="region" aria-labelledby="faq-trigger-practice-2" class="faq-item__panel" hidden>
-        <p>Yes. Specialized Medical supports Holter, Long-Term Holter, Event, and MCT workflows.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-2" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-2" class="faq-item__panel" hidden>
+        <p>Yes. Practices can prepare a patient record before the hookup appointment so staff can confirm the order, duration and notification instructions more efficiently when the patient arrives.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-3">
-        <span class="faq-item__q">Is staff training included?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-3">
+        <span class="faq-item__q">Is cardiology-practice staff training included?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-3" role="region" aria-labelledby="faq-trigger-practice-3" class="faq-item__panel" hidden>
-        <p>Yes. Training can be tailored to the roles and workflow of the practice.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-3" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-3" class="faq-item__panel" hidden>
+        <p>Yes. Implementation can include role-based training for front-office staff, medical assistants, nurses, physicians and administrators, along with practice-specific workflow and notification-protocol review.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-4">
-        <span class="faq-item__q">Can physicians sign reports electronically?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-4">
+        <span class="faq-item__q">What happens after the patient leaves the office?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-4" role="region" aria-labelledby="faq-trigger-practice-4" class="faq-item__panel" hidden>
-        <p>Yes, when the electronic-signature workflow is enabled for the practice.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-4" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-4" class="faq-item__panel" hidden>
+        <p>For supported live workflows, Specialized Medical follows relevant operational test-status indicators and assists the patient when battery, electrode, phone, cellular or transmission issues occur. Clinical communication follows the ordered service and physician-prescribed protocol.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-5">
-        <span class="faq-item__q">Can the service support multiple office locations?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-5">
+        <span class="faq-item__q">Can the program support multiple cardiology locations?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-5" role="region" aria-labelledby="faq-trigger-practice-5" class="faq-item__panel" hidden>
-        <p>Yes. User access, inventory, enrollment, report routing, and training can be organized across multiple locations.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-5" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-5" class="faq-item__panel" hidden>
+        <p>Yes. User permissions, inventory, patient enrollment, support, report routing and training can be organized for centralized or location-specific operations across multiple offices.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-6">
-        <span class="faq-item__q">Does Specialized Medical handle billing for the practice?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-6">
+        <span class="faq-item__q">Can physicians review and sign reports electronically?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-6" role="region" aria-labelledby="faq-trigger-practice-6" class="faq-item__panel" hidden>
-        <p>The service can provide workflow and documentation support, but the practice remains responsible for coding, billing, compliance, and payer requirements unless a separate written arrangement states otherwise.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-6" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-6" class="faq-item__panel" hidden>
+        <p>Yes. When configured, the portal supports physician review, interpretation, dating and electronic signature of final reports while the physician remains responsible for the final interpretation.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-7">
-        <span class="faq-item__q">How are urgent findings communicated?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-7">
+        <span class="faq-item__q">Does Specialized Medical integrate with every EMR?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-7" role="region" aria-labelledby="faq-trigger-practice-7" class="faq-item__panel" hidden>
-        <p>For live services, communication follows the physician-defined notification protocol and contact hierarchy.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-7" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-7" class="faq-item__panel" hidden>
+        <p>Integration and report-delivery options depend on the practice's EMR, technical capabilities and implementation configuration. Available options should be confirmed during workflow discovery rather than assumed.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-8">
-        <span class="faq-item__q">Can Specialized Medical integrate with an EMR?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-8">
+        <span class="faq-item__q">Does Specialized Medical guarantee reimbursement?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-8" role="region" aria-labelledby="faq-trigger-practice-8" class="faq-item__panel" hidden>
-        <p>Integration and report-delivery options depend on the practice&rsquo;s systems and the available implementation configuration.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-8" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-8" class="faq-item__panel" hidden>
+        <p>No. Specialized Medical can provide billing-support information and workflow templates, but the practice remains responsible for coding, documentation, medical necessity, payer requirements, compliance and claim submission. Payment is not guaranteed.</p>
       </div>
     </div>
 <div class="faq-item">
-      <button type="button" id="faq-trigger-practice-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-practice-9">
-        <span class="faq-item__q">What happens during implementation?</span>
+      <button type="button" id="faq-trigger-cardiology-practice-cardiac-monitoring-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-cardiology-practice-cardiac-monitoring-9">
+        <span class="faq-item__q">How can a cardiology practice evaluate the program?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div id="faq-panel-practice-9" role="region" aria-labelledby="faq-trigger-practice-9" class="faq-item__panel" hidden>
-        <p>The team maps workflow, configures users and protocols, trains staff, tests the process, and supports go-live.</p>
+      <div id="faq-panel-cardiology-practice-cardiac-monitoring-9" role="region" aria-labelledby="faq-trigger-cardiology-practice-cardiac-monitoring-9" class="faq-item__panel" hidden>
+        <p>A practice can request a workflow demonstration or discuss a small no-obligation pilot. The team reviews the current process, confirms service fit, configures the pilot and evaluates the results before broader rollout.</p>
       </div>
     </div>
           </div>
@@ -517,81 +514,82 @@
       </div>
     </section>
 
-    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="practice-cta-heading">
+    <section class="landing-section landing-cta-block" id="request-demo" aria-labelledby="cardiology-practice-cardiac-monitoring-cta-heading">
       <div class="figma-container">
         <div class="landing-cta-block__box">
           <div class="landing-cta-block__copy">
-            <h2 id="practice-cta-heading" class="landing-h2">Request a Practice Workflow Demonstration</h2>
-            <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
-            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
+            <h2 id="cardiology-practice-cardiac-monitoring-cta-heading" class="landing-h2">Review your current process with our team</h2>
+            <p class="landing-p landing-lede">We can map your existing ambulatory cardiac monitoring workflow, identify responsibilities and demonstrate how enrollment, support, reporting and physician review can be configured.</p><ul class="landing-checks"><li>One or multiple cardiology locations</li><li>Current monitoring services and patient volume</li><li>Staff roles and training needs</li><li>Notification and report-routing requirements</li><li>Controlled pilot before broader rollout</li></ul><p class="landing-p"><strong>Prefer to speak directly?</strong><br/><a href="tel:+18557732633">1-855-SPEC-MED (1-855-773-2633)</a><br/><a href="mailto:info@specialized-med.com">info@specialized-med.com</a></p>
           </div>
-          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
+          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST" data-form-name="cardiology_practice_inquiry" data-track-start="demo_form_start" data-track-submit="sm_lead_form_submit_attempt" data-track-error="demo_form_error" data-track-success="none" data-success-message="Thank you. Your request has been sent to the Specialized Medical team." data-error-message="We could not confirm that your request was sent. Please try again or call 1-855-773-2633.">
             <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
-            <input type="hidden" name="subject" value="Request a Practice Workflow Demonstration — Cardiac Monitoring for Cardiology Practices">
+            <input type="hidden" name="subject" value="Cardiology practice workflow inquiry">
+            <input type="hidden" name="from_name" value="Specialized Medical website">
             <input type="hidden" name="from_page" value="cardiology-practice-cardiac-monitoring">
             <input type="hidden" name="redirect" value="">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+            <input type="hidden" name="page_url" value="">
+            <input type="hidden" name="referrer" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_term" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="gclid" value="">
+            <input type="hidden" name="msclkid" value="">
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Name</span>
-                <input name="name" type="text" autocomplete="name" required>
+                <span class="landing-cta-form__label">First name <abbr title="required">*</abbr></span>
+                <input autocomplete="given-name" name="first_name" required="" type="text"/>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Organization</span>
-                <input name="organization" type="text" autocomplete="organization" required>
+                <span class="landing-cta-form__label">Last name <abbr title="required">*</abbr></span>
+                <input autocomplete="family-name" name="last_name" required="" type="text"/>
               </label>
             </div>
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Email</span>
-                <input name="email" type="email" autocomplete="email" required>
+                <span class="landing-cta-form__label">Work email <abbr title="required">*</abbr></span>
+                <input autocomplete="email" name="email" required="" type="email"/>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Phone</span>
-                <input name="phone" type="tel" autocomplete="tel" required>
+                <span class="landing-cta-form__label">Phone <abbr title="required">*</abbr></span>
+                <input autocomplete="tel" name="phone" required="" type="tel"/>
               </label>
             </div>
             <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field">
+                <span class="landing-cta-form__label">Practice or organization <abbr title="required">*</abbr></span>
+                <input autocomplete="organization" name="organization" required="" type="text"/>
+              </label>
               <label class="landing-cta-form__field">
                 <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric" required>
-              </label>
-              <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest" required>
-                  <option value="" disabled>Select an option</option>
-                  <option value="Holter Monitoring">Holter Monitoring</option>
-                  <option value="Long-Term Holter Monitoring">Long-Term Holter Monitoring</option>
-                  <option value="Cardiac Event Monitoring">Cardiac Event Monitoring</option>
-                  <option value="Mobile Cardiac Telemetry (MCT)">Mobile Cardiac Telemetry (MCT)</option>
-                  <option value="Post-TAVR monitoring program">Post-TAVR monitoring program</option>
-                  <option value="Multiple test types / full program" selected>Multiple test types / full program</option>
-                </select>
+                <select name="locations"><option>1</option><option>2–5</option><option>6–10</option><option>11+</option></select>
               </label>
             </div>
-            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request a Practice Workflow Demonstration</button>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Primary interest</span>
+                <select name="interest"><option>Practice workflow demonstration</option><option>No-risk pilot program</option><option>Multi-location program</option><option>Holter and longer Holter</option><option>Event Monitoring</option><option>Mobile Cardiac Telemetry</option></select>
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Tell us about your workflow <span class="landing-cta-form__optional">(optional)</span></span>
+                <textarea name="message" placeholder="Describe your practice and monitoring needs. Do not include patient information."></textarea>
+              </label>
+            </div>
+            <p class="landing-cta-form__note"><strong>Do not submit protected health information (PHI).</strong> This form is for business and service inquiries only. See the <a href="privacy.html">Privacy Policy</a>.</p>
+            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request a Practice Workflow Demo</button>
             <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="practice-related-heading">
+    <section class="landing-disclaimer" aria-label="Information notice">
       <div class="figma-container">
-        <h2 id="practice-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>
-        <ul class="landing-related">
-          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
-          <li><a href="ambulatory-cardiac-monitoring.html">Ambulatory Cardiac Monitoring</a></li>
-          <li><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></li>
-          <li><a href="s-patch-cardiac-monitoring-system.html">S-Patch Cardiac Monitoring System</a></li>
-          <li><a href="post-tavr-cardiac-monitoring.html">Post-TAVR Cardiac Monitoring</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="landing-disclaimer" aria-label="Diagnostic service disclaimer">
-      <div class="figma-container">
-        <p class="landing-disclaimer__text"><strong>Diagnostic Service Disclaimer:</strong> Specialized Medical provides ambulatory cardiac monitoring services and diagnostic information for review by qualified healthcare providers. The service does not replace physician judgment, emergency medical services, or instructions to call 911 when urgent symptoms occur.</p>
+        <p class="landing-disclaimer__text">Information on this page is for healthcare-organization evaluation and does not replace physician judgment, device instructions, emergency services or patient-specific medical advice.</p>
       </div>
     </section>
   </main>
@@ -601,7 +599,7 @@
         <div class="figma-footer__main">
           <div class="figma-footer__brand">
             <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
-              <img class="figma-brand__mark" src="images/figma-assets/brand-logo.webp?v=f8509ae975" alt="" width="412" loading="lazy" height="90" decoding="async">
+              <img class="figma-brand__mark" src="/images/figma-assets/brand-logo.webp?v=f8509ae975" alt="Specialized Medical" width="412" height="90" decoding="async" loading="lazy">
             </a>
             <p class="figma-footer__tagline">Turnkey cardiac monitoring with LIVE ECG data.</p>
           </div>
@@ -612,23 +610,24 @@
               <a href="services.html">Services</a>
               <a href="faq.html">FAQs</a>
               <a href="contact.html">Contact</a>
+              <a href="privacy.html">Privacy</a>
               <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </nav>
             <div class="figma-footer__line">
               <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
-                <img src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="Phone Icon" width="20" height="20" decoding="async">
+                <img src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="20" height="20" decoding="async">
               </span>
               <a class="figma-footer__link" href="tel:+18557732633">
-                <span class="figma-footer__muted">1-855-SPEC-MED</span> 
+                <span class="figma-footer__muted">1-855-SPEC-MED</span>
                 <span class="figma-footer__strong">(1-855-773-2633)</span>
               </a>
             </div>
             <div class="figma-footer__line">
-              <img src="icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
+              <img src="/icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
               <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
             </div>
             <div class="figma-footer__line">
-              <img src="images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
+              <img src="/images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
               <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
             </div>
           </div>
@@ -640,11 +639,11 @@
         </div>
         <div class="figma-footer__hr" aria-hidden="true"></div>
         <div class="figma-footer__bottom">
-          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
+          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></p>
           <div class="figma-footer__social">
-            <img src="images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <img src="/images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
             <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
-              <img src="images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+              <img src="/images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
@@ -652,8 +651,8 @@
     </footer>
 
   </div>
-  <script src="js/analytics.js?v=329dbec6d8" defer></script>
-  <script src="js/main.js?v=9a987e8d2e" defer></script>
+  <script src="/js/landing-lite.js?v=4d753e7e8d" defer></script>
+  <script src="/js/analytics.js?v=329dbec6d8" defer></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
