@@ -220,6 +220,14 @@
         }
         // One-time gate (so "Back" doesn't keep it permanently open)
         sessionStorage.removeItem("sm_form_submitted")
+        // Confirmed lead for forms that count conversions here (e.g. S-Patch).
+        // A direct visit or refresh never reaches this line.
+        var leadForm = sessionStorage.getItem("sm_lead_form_name")
+        if (leadForm) {
+          sessionStorage.removeItem("sm_lead_form_name")
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({ event: "sm_generate_lead", form_name: leadForm, page_path: window.location.pathname })
+        }
       } catch (_) {
         window.location.replace(homeUrl())
       }

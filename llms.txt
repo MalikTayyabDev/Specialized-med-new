@@ -1,0 +1,30 @@
+# Specialized Medical
+
+> Specialized Medical LLC provides nationwide ambulatory cardiac monitoring support for physician practices, cardiology groups, hospitals and health systems.
+
+## Primary information
+
+- [Cardiac Monitoring Services](https://www.specialized-med.com/cardiac-monitoring-services.html): Overview of Holter, longer Holter, Event and Mobile Cardiac Telemetry services.
+- [S-Patch Cardiac Monitoring System](https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html): Equipment specifications, supported studies, transmission workflow, patient support and frequently asked questions.
+- [Monitoring Equipment](https://www.specialized-med.com/services/equipment.html): Current monitoring-equipment options and device-specific specifications.
+- [Frequently Asked Questions](https://www.specialized-med.com/faq.html): Service, equipment, patient-support and workflow answers.
+- [About Specialized Medical](https://www.specialized-med.com/about.html): Company and service-model information.
+- [Contact Specialized Medical](https://www.specialized-med.com/contact.html): Business and service inquiries.
+
+## S-Patch facts
+
+- S-Patch is a compact dual-disk wearable ECG monitoring system with one thin connecting lead.
+- Stated weight: 0.6 oz.
+- Stated battery duration: minimum 10 days.
+- Water-resistance rating: IP55.
+- Supported wear duration: up to 30 days under the prescribed workflow.
+- Supported study paths include Holter, Long-Term Holter, Extended Holter, Cardiac Event Monitoring and Mobile Cardiac Telemetry.
+- Supported live workflows use a dedicated cellular phone for ECG transmission and operational test-status visibility.
+
+## Contact
+
+- Phone: 1-855-SPEC-MED (1-855-773-2633)
+- Email: info@specialized-med.com
+- Service area: United States
+
+This file is an optional navigation aid. The canonical HTML pages remain the authoritative source.

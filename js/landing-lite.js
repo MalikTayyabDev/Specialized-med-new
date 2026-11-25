@@ -75,6 +75,21 @@
     });
   }
 
+  // Links to a section of the current page (e.g. "page.html#request-demo") keep the
+  // current query string, so campaign parameters stay in the URL and the browser
+  // scrolls in place instead of reloading the page.
+  function keepQueryOnSamePageLinks() {
+    if (!window.location.search) return;
+    qsa("a[href]").forEach(function (a) {
+      try {
+        var u = new URL(a.getAttribute("href"), window.location.href);
+        if (u.origin === window.location.origin && u.pathname === window.location.pathname && u.hash && !u.search) {
+          a.setAttribute("href", window.location.pathname + window.location.search + u.hash);
+        }
+      } catch (_) {}
+    });
+  }
+
   function initNav() {
     var header = qs(".site-header");
     var toggle = qs(".nav-toggle", header);
@@ -143,6 +158,11 @@
       if (serviceId) p.service_id = serviceId;
       var placement = el && el.getAttribute("data-track-placement");
       if (placement) p.cta_placement = placement;
+      var ctaName = el && el.getAttribute("data-track-name");
+      if (ctaName) {
+        p.cta_name = ctaName;
+        p.page_path = window.location.pathname;
+      }
       return p;
     }
     // Scope includes header/footer chrome so CTA/portal/phone events still fire.
@@ -224,11 +244,20 @@
         true
       );
 
+      var submitEvent = form.getAttribute("data-track-submit") || "";
+      var formName = form.getAttribute("data-form-name") || "";
+
       form.addEventListener("submit", async function (e) {
         // Browsers without fetch fall back to a normal form POST.
         if (typeof window.fetch !== "function") return;
         e.preventDefault();
         if (submitBtn && submitBtn.disabled) return;
+        // Diagnostic only: an attempt is not a lead.
+        if (submitEvent) {
+          var attempt = { page_path: window.location.pathname };
+          if (formName) attempt.form_name = formName;
+          pushSmEvent(submitEvent, attempt);
+        }
         var fd = new FormData(form);
         try {
           var redirectEl = form.querySelector('input[name="redirect"]');
@@ -268,7 +297,9 @@
               };
               var sid = landingEl ? landingEl.getAttribute("data-service-id") : "";
               if (sid) successParams.service_id = sid;
-              pushSmEvent(form.getAttribute("data-track-success") || "mct_form_success", successParams);
+              var successEvent = form.getAttribute("data-track-success") || "mct_form_success";
+              // "none": the conversion is counted on the thank-you page instead.
+              if (successEvent !== "none") pushSmEvent(successEvent, successParams);
             } catch (_) {}
             var dest = String(new URL("thanks.html", siteBaseUrl()));
             try {
@@ -277,6 +308,7 @@
             } catch (_) {}
             try {
               window.sessionStorage.setItem("sm_form_submitted", "1");
+              if (formName) window.sessionStorage.setItem("sm_lead_form_name", formName);
             } catch (_) {}
             window.setTimeout(function () {
               window.location.assign(dest);
@@ -299,6 +331,35 @@
     });
   }
 
+  // Fills hidden campaign fields (utm_*, gclid, msclkid, page_url, referrer) on
+  // forms that include them. First-touch values are kept for the browser session.
+  function initCampaignFields() {
+    var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "msclkid"];
+    var query;
+    try {
+      query = new URLSearchParams(window.location.search);
+    } catch (_) {
+      return;
+    }
+    keys.forEach(function (key) {
+      var fields = qsa('input[type="hidden"][name="' + key + '"]');
+      var value = query.get(key) || "";
+      try {
+        if (value) window.sessionStorage.setItem("sm_" + key, value);
+        else value = window.sessionStorage.getItem("sm_" + key) || "";
+      } catch (_) {}
+      fields.forEach(function (input) {
+        input.value = value;
+      });
+    });
+    qsa('input[type="hidden"][name="page_url"]').forEach(function (input) {
+      input.value = window.location.href;
+    });
+    qsa('input[type="hidden"][name="referrer"]').forEach(function (input) {
+      input.value = document.referrer || "";
+    });
+  }
+
   function initCtaFormScrollOffset() {
     if (!window.location.hash || window.location.hash.toLowerCase() !== "#cta-form") return;
     var target = qs("#cta-form");
@@ -315,9 +376,11 @@
   document.addEventListener("DOMContentLoaded", function () {
     fixRelativeAnchorsToSiteRoot();
     initInternalRootLinks();
+    keepQueryOnSamePageLinks();
     initNav();
     initFooterYear();
     initFaqAccordion();
+    initCampaignFields();
     initLandingCtaForms();
     initLandingAnalytics();
     initCtaFormScrollOffset();

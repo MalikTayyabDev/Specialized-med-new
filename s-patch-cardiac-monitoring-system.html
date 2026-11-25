@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <script>
@@ -63,172 +63,264 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "S-Patch Cardiac Monitoring System",
-  "brand": {
-    "@type": "Organization",
-    "name": "Specialized Medical"
-  },
-  "description": "The S-Patch cardiac monitoring system is Specialized Medical’s primary wearable platform for ambulatory ECG monitoring. Its compact two-component design is intended to provide a practical alternative to traditional multi-lead systems while supporting several prescribed monitoring services.",
-  "image": "https://www.specialized-med.com/images/specialized-medical-spatch-hero.jpg",
-  "url": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html"
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "S-Patch Cardiac Monitoring System",
-  "provider": {
-    "@type": "Organization",
-    "name": "Specialized Medical",
-    "url": "https://www.specialized-med.com/"
-  },
-  "serviceType": "Ambulatory Cardiac Monitoring",
-  "areaServed": "United States",
-  "description": "The S-Patch cardiac monitoring system is Specialized Medical’s primary wearable platform for ambulatory ECG monitoring. Its compact two-component design is intended to provide a practical alternative to traditional multi-lead systems while supporting several prescribed monitoring services.",
-  "url": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html"
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.specialized-med.com/"
+      "@type": "Organization",
+      "@id": "https://www.specialized-med.com/#organization",
+      "name": "Specialized Medical LLC",
+      "url": "https://www.specialized-med.com/",
+      "email": "info@specialized-med.com",
+      "telephone": "+1-855-773-2633",
+      "logo": "https://www.specialized-med.com/images/figma-assets/brand-logo.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34145 Pacific Coast Highway, #700",
+        "addressLocality": "Dana Point",
+        "addressRegion": "CA",
+        "postalCode": "92629",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales and support",
+        "telephone": "+1-855-773-2633",
+        "email": "info@specialized-med.com",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ],
+        "areaServed": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/specializedmedical"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://www.specialized-med.com/services.html"
+      "@type": "WebSite",
+      "@id": "https://www.specialized-med.com/#website",
+      "url": "https://www.specialized-med.com/",
+      "name": "Specialized Medical",
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "ImageObject",
+      "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#primaryimage",
+      "url": "https://www.specialized-med.com/images/landing/s-patch-cardiac-monitoring-system-hero-1920.jpg",
+      "contentUrl": "https://www.specialized-med.com/images/landing/s-patch-cardiac-monitoring-system-hero-1920.jpg",
+      "width": 1920,
+      "height": 900,
+      "caption": "Patient wearing the two-component S-Patch cardiac monitoring system while a clinician checks placement"
+    },
+    {
+      "@type": "MedicalDevice",
+      "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#device",
       "name": "S-Patch Cardiac Monitoring System",
-      "item": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html"
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the S-Patch?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It is Specialized Medical’s primary wearable ambulatory ECG platform used within selected Holter, Event, and MCT workflows."
+      "alternateName": "S-Patch wearable ECG monitor",
+      "description": "A compact, 0.6-ounce, dual-disk ambulatory ECG monitoring system used by Specialized Medical to support prescribed Holter, Long-Term Holter, Extended Holter, Event and Mobile Cardiac Telemetry studies.",
+      "image": {
+        "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#primaryimage"
       }
     },
     {
-      "@type": "Question",
-      "name": "Does the S-Patch require a phone?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A connected phone is used as the transmission gateway when the prescribed workflow requires data transmission."
-      }
+      "@type": "Service",
+      "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#service",
+      "name": "S-Patch Ambulatory Cardiac Monitoring Program",
+      "serviceType": "Ambulatory ECG monitoring support using the S-Patch system",
+      "provider": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Physician practices, cardiology groups, hospitals and health systems"
+      },
+      "description": "Nationwide turnkey cardiac monitoring support built around the S-Patch wearable ECG system, live transmission, proactive patient assistance and physician-ready reporting."
     },
     {
-      "@type": "Question",
-      "name": "How close should the phone remain?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The phone should remain near the patient and within the range stated in the patient instructions. Approximately 30 feet may be possible under favorable conditions, but range varies."
-      }
+      "@type": "MedicalWebPage",
+      "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#webpage",
+      "url": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html",
+      "name": "S-Patch Cardiac Monitoring System | Specialized Medical",
+      "description": "Equipment and service information for the S-Patch wearable ambulatory ECG monitoring system.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://www.specialized-med.com/#website"
+      },
+      "about": [
+        {
+          "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#device"
+        },
+        {
+          "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#service"
+        }
+      ],
+      "primaryImageOfPage": {
+        "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#primaryimage"
+      },
+      "publisher": {
+        "@id": "https://www.specialized-med.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#breadcrumb"
+      },
+      "datePublished": "2026-11-25",
+      "dateModified": "2026-11-25",
+      "lastReviewed": "2026-11-25",
+      "specialty": "https://schema.org/Cardiovascular"
     },
     {
-      "@type": "Question",
-      "name": "Is the S-Patch waterproof?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Patients should follow the exact bathing instructions supplied with their monitor. The system should not be treated as waterproof unless the specific configuration is verified for that use."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.specialized-med.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Monitoring Equipment",
+          "item": "https://www.specialized-med.com/services/equipment.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "S-Patch Cardiac Monitoring System",
+          "item": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "How long does the battery last?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Battery performance depends on the study configuration, transmission demands, and operating conditions. Only verified duration claims are published."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can the S-Patch be used for MCT?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, when configured as part of the prescribed MCT service."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should a patient do if the phone says Bluetooth disconnected?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bring the phone near the monitor, confirm the phone is powered, and follow the troubleshooting instructions or contact support."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if the adhesive irritates the skin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Contact the practice or support team for instructions. Sensitive-skin options or electrode rotation may be available depending on the configuration."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can patients mark symptoms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, when the prescribed workflow includes symptom recording through the connected phone or other provided method."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who should a patient call for help?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Use the support contact provided by the ordering practice or in the patient instructions."
-      }
+      "@type": "FAQPage",
+      "@id": "https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the S-Patch cardiac monitoring system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "S-Patch is a compact dual-disk wearable ECG monitor used by Specialized Medical for prescribed ambulatory studies. One thin lead connects the two components, and the system works with a dedicated cellular phone to transmit ECG data in supported live-monitoring workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which cardiac monitoring studies can use S-Patch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Specialized Medical uses the S-Patch platform to support Holter, Long-Term Holter, Extended Holter, Cardiac Event Monitoring and Mobile Cardiac Telemetry, depending on the physician's order and the selected workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does the S-Patch monitor weigh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The S-Patch system weighs approximately 0.6 ounces. Its two circular components are designed to be compact and unobtrusive during normal daily activity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the S-Patch battery last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The S-Patch battery lasts a minimum of 10 days under the stated system specification. A study may last up to 30 days, with battery handling managed according to the prescribed test and support workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the S-Patch water-resistant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The S-Patch is rated IP55, which means it is water-resistant for everyday wear. Patients should still follow the specific use and care instructions supplied with their prescribed study."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does S-Patch transmit ECG data live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Specialized Medical's supported live-monitoring workflows, S-Patch ECG data is transmitted through a dedicated cellular phone to the monitoring platform. This removes manual batch uploading and lets the support team follow operational study status while the test is underway."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the dedicated monitoring phone do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The preconfigured phone connects to the S-Patch and sends ECG data over an available cellular network. Its patient-facing functions are intentionally limited to device status and symptom logging, helping keep the study workflow simple."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if an electrode, battery or connection issue occurs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When operational indicators fall outside the expected range, Specialized Medical's support team can contact the patient and help troubleshoot the battery, electrode contact, Bluetooth connection, cellular connection or data transmission before additional monitoring time is lost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do physician practices need to purchase S-Patch equipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No equipment purchase is required for Specialized Medical's program. The company supplies the monitoring equipment and routine study supplies needed for the agreed program, subject to the service agreement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can a practice evaluate the S-Patch system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A physician practice, cardiology group, hospital or health system can request a demonstration or discuss a small no-obligation pilot with Specialized Medical. The team will confirm fit, workflow and implementation requirements before patient use."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>S-Patch Cardiac Monitoring System | Specialized Medical</title>
-  <meta name="description" content="The S-Patch cardiac monitoring system is Specialized Medical’s primary wearable platform for ambulatory ECG monitoring. Its compact two-component design is intended to provide a practical alternative to traditional multi-lead systems while supporting several prescribed monitoring services.">
-  <!-- Social sharing (iMessage/WhatsApp/Facebook/Twitter) -->
+  <meta name="description" content="Explore the compact S-Patch wearable ECG monitor for Holter, Event and MCT studies, with live transmission and nationwide turnkey support.">
+  <meta name="author" content="Specialized Medical LLC">
   <meta property="og:site_name" content="Specialized Medical">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="S-Patch Cardiac Monitoring System | Specialized Medical">
-  <meta property="og:description" content="The S-Patch cardiac monitoring system is Specialized Medical’s primary wearable platform for ambulatory ECG monitoring. Its compact two-component design is intended to provide a practical alternative to traditional multi-lead systems while supporting several prescribed monitoring services.">
+  <meta property="og:title" content="S-Patch Cardiac Monitoring System">
+  <meta property="og:description" content="A compact dual-disk wearable ECG system for Holter, Event and Mobile Cardiac Telemetry studies—supported by live transmission and a turnkey service team.">
   <meta property="og:url" content="https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html">
-  <meta property="og:image" content="https://www.specialized-med.com/images/specialized-medical-spatch-hero.jpg">
+  <meta property="og:image" content="https://www.specialized-med.com/images/landing/s-patch-cardiac-monitoring-system-hero-1920.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Patient wearing the two-component S-Patch cardiac monitor while a clinician checks placement">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="S-Patch Cardiac Monitoring System | Specialized Medical">
-  <meta name="twitter:description" content="The S-Patch cardiac monitoring system is Specialized Medical’s primary wearable platform for ambulatory ECG monitoring. Its compact two-component design is intended to provide a practical alternative to traditional multi-lead systems while supporting several prescribed monitoring services.">
-  <meta name="twitter:image" content="https://www.specialized-med.com/images/specialized-medical-spatch-hero.jpg">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" href="favicon.svg?v=ea9bbc50ae">
+  <meta name="twitter:title" content="S-Patch Cardiac Monitoring System">
+  <meta name="twitter:description" content="One compact wearable ECG system for multiple prescribed ambulatory cardiac monitoring studies.">
+  <meta name="twitter:image" content="https://www.specialized-med.com/images/landing/s-patch-cardiac-monitoring-system-hero-1920.jpg">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="icon" href="/favicon.svg?v=ea9bbc50ae">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" type="image/webp" href="images/specialized-medical-spatch-hero.webp?v=888973af46" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css?v=1bad96baac">
-  <link rel="stylesheet" href="css/home.css?v=090a393fa2">
-  <link rel="stylesheet" href="css/services.css?v=de0139ab71">
-  <link rel="stylesheet" href="css/faq.css?v=c9b924a842">
-  <link rel="stylesheet" href="css/landing.css?v=0bc3ce0681">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preload" as="image" type="image/webp" href="/images/landing/s-patch-cardiac-monitoring-system-hero-960.webp?v=27f4d989bf" imagesrcset="/images/landing/s-patch-cardiac-monitoring-system-hero-960.webp?v=27f4d989bf 960w, /images/landing/s-patch-cardiac-monitoring-system-hero-1280.webp?v=cc3d60bf8b 1280w, /images/landing/s-patch-cardiac-monitoring-system-hero-1920.webp?v=9a726ce43f 1920w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/global.css?v=1bad96baac">
+  <link rel="stylesheet" href="/css/chrome.css?v=21dc8e5542">
+  <link rel="stylesheet" href="/css/landing-mct.css?v=6e8799d245">
+  <link rel="stylesheet" href="/css/faq.css?v=c9b924a842">
+  <link rel="stylesheet" href="/css/landing-spatch.css?v=0af6139470">
   <link rel="canonical" href="https://www.specialized-med.com/s-patch-cardiac-monitoring-system.html">
 </head>
 <body>
@@ -240,11 +332,12 @@
       style="display:none;visibility:hidden">
     </iframe>
   </noscript>
+  <a class="skip-link" href="s-patch-cardiac-monitoring-system.html#main-content">Skip to content</a>
   <div class="site-root">
     <header class="site-header site-header--figma">
       <div class="figma-container figma-header__inner site-header__inner">
         <a href="./" class="figma-brand" aria-label="Specialized Medical home">
-          <img class="figma-brand__mark" src="images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="" width="236" fetchpriority="low" height="52" decoding="async">
+          <img class="figma-brand__mark" src="/images/figma-assets/brand-logo-472.webp?v=73c2900279" alt="Specialized Medical" width="236" fetchpriority="low" height="52" decoding="async">
         </a>
         <button type="button" class="nav-toggle nav-toggle--figma" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
           <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -259,261 +352,311 @@
           <div class="figma-nav__mobile">
             <a class="figma-nav__phone" href="tel:+18557732633">Call: 1-855-773-2633</a>
             <div class="figma-nav__actions">
-              <a class="figma-btn figma-btn--outline-dark" href="contact.html#contact-form">Request a Demo</a>
-              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+              <a class="figma-btn figma-btn--outline-dark" href="s-patch-cardiac-monitoring-system.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+              <a class="figma-btn figma-btn--solid" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </div>
           </div>
         </nav>
         <div class="figma-header__cta">
           <a class="figma-phone" href="tel:+18557732633">
-            <img class="figma-phone__icon" src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
+            <img class="figma-phone__icon" src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="14" height="14" decoding="async">
             <span class="figma-phone__num">1-855-773-2633</span>
           </a>
-          <a class="figma-btn figma-btn--outline-dark" href="contact.html">Request a Demo</a>
-          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
+          <a class="figma-btn figma-btn--outline-dark" href="s-patch-cardiac-monitoring-system.html#request-demo" data-mct-track="sm_cta_click" data-track-name="header_demo">Request a Demo</a>
+          <a class="figma-header__portal" href="https://sft.specialized-med-business.com/specMed/" data-mct-track="portal_click" target="_blank" rel="noopener noreferrer">Physician Portal</a>
         </div>
       </div>
     </header>
 
-<main class="landing-page services-page services-page--figma" data-landing="s-patch-cardiac-monitoring-system">
+    <main class="landing-page landing-page--spatch services-page services-page--figma" data-landing="s-patch-cardiac-monitoring-system" data-service-id="s_patch" id="main-content" tabindex="-1">
     <nav class="landing-breadcrumb" aria-label="Breadcrumb">
       <div class="figma-container">
         <ol class="landing-breadcrumb__list">
           <li><a href="./">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="services/equipment.html">Monitoring Equipment</a></li>
           <li><span aria-current="page">S-Patch Cardiac Monitoring System</span></li>
         </ol>
       </div>
     </nav>
+
     <section class="landing-hero" aria-labelledby="spatch-hero-heading">
-      <div class="landing-hero__plate landing-hero__plate--s-patch-cardiac-monitoring-system">
+      <div class="landing-hero__plate landing-hero__plate--spatch">
         <picture>
-          <source type="image/webp" srcset="images/specialized-medical-spatch-hero.webp?v=888973af46">
-          <img class="landing-hero__media" src="images/specialized-medical-spatch-hero.jpg?v=6ac05d1657" alt="Patient wearing the Specialized Medical S-Patch two-component wearable ECG monitor while a clinician checks the placement" width="1536" height="1024" fetchpriority="high" decoding="async">
+          <source type="image/webp" srcset="/images/landing/s-patch-cardiac-monitoring-system-hero-960.webp?v=27f4d989bf 960w, /images/landing/s-patch-cardiac-monitoring-system-hero-1280.webp?v=cc3d60bf8b 1280w, /images/landing/s-patch-cardiac-monitoring-system-hero-1920.webp?v=9a726ce43f 1920w" sizes="100vw">
+          <img class="landing-hero__media" src="/images/landing/s-patch-cardiac-monitoring-system-hero-960.jpg?v=3749edd336" srcset="/images/landing/s-patch-cardiac-monitoring-system-hero-960.jpg?v=3749edd336 960w, /images/landing/s-patch-cardiac-monitoring-system-hero-1280.jpg?v=57f7965dc1 1280w, /images/landing/s-patch-cardiac-monitoring-system-hero-1920.jpg?v=d7eb8b2fe3 1920w" sizes="100vw" width="1920" height="900" alt="Patient wearing the two-component S-Patch cardiac monitor while a clinician checks placement" loading="eager" fetchpriority="high" decoding="async">
         </picture>
         <div class="landing-hero__gradient" aria-hidden="true"></div>
         <div class="landing-hero__inner figma-container">
           <p class="figma-hero__pill">
             <span class="figma-hero__pill-dot" aria-hidden="true"></span>
-            S-Patch Monitoring System
+            WEARABLE AMBULATORY ECG SYSTEM
           </p>
-          <h1 id="spatch-hero-heading" class="landing-hero__title">
-            S-Patch Cardiac <span class="landing-hero__title-accent">Monitoring System</span>
-          </h1>
-          <p class="landing-hero__lead">The S-Patch cardiac monitoring system is Specialized Medical’s primary wearable platform for ambulatory ECG monitoring. Its compact two-component design is intended to provide a practical alternative to traditional multi-lead systems while supporting several prescribed monitoring services. The monitor communicates with a connected smartphone, which serves as the gateway for data transmission when live connectivity is part of the study.</p>
+          <h1 id="spatch-hero-heading" class="landing-hero__title">The S-Patch Cardiac <span class="landing-hero__title-accent">Monitoring System</span></h1>
+          <p class="landing-hero__lead landing-answer">One compact dual-disk system for Holter, longer Holter, Event and Mobile Cardiac Telemetry studies—with live ECG transmission, a dedicated cellular phone and turnkey support from Specialized Medical.</p>
           <div class="landing-hero__actions">
-            <a class="figma-btn figma-btn--solid" href="#cta-form">Request an S-Patch Demonstration</a>
-            <a class="figma-btn figma-btn--outline-dark" href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist</a>
+            <a class="figma-btn figma-btn--solid" href="s-patch-cardiac-monitoring-system.html#request-demo" data-mct-track="sm_cta_click" data-track-name="hero_pilot">Start a No-Risk Pilot Program</a>
+            <a class="figma-btn figma-btn--outline-dark" href="s-patch-cardiac-monitoring-system.html#how-it-works" data-mct-track="sm_cta_click" data-track-name="hero_how">See How S-Patch Works</a>
           </div>
+          <ul class="landing-hero__points" aria-label="Key S-Patch benefits">
+            <li>0.6 oz</li>
+            <li>10+ day battery</li>
+            <li>IP55</li>
+            <li>Up to 30-day wear</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="spatch-overview-heading">
+    <section class="landing-section landing-section--muted" aria-label="S-Patch system overview">
       <div class="figma-container">
-        <div class="landing-split">
-          <div class="landing-split__copy">
-            <h2 id="spatch-overview-heading" class="landing-h2">S-Patch System <span class="landing-h2__accent">Overview</span></h2>
-        <p class="landing-p">The S-Patch uses a two-disk wearable configuration worn on the chest with a connected phone. Current internal specifications indicate Disk 1 is approximately 1.57 inches in diameter by 0.40 inches thick and Disk 2 is approximately 1.41 inches in diameter by 0.24 inches thick. All technical specifications are verified before publication.</p>
-        <p class="landing-p">Exact battery performance depends on configuration and use. Specific battery-life durations are published only for validated and released product configurations.</p>
-          </div>
-          <div class="landing-split__media">
-        <figure class="landing-figure">
-          <img src="images/figma-services/s-patch.jpg?v=43dd7bacb1" alt="S-Patch two-disk wearable cardiac monitor, front product view" loading="lazy" decoding="async">
-          <figcaption class="landing-figure__cap">S-Patch product view.</figcaption>
-        </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-section landing-section--muted" aria-labelledby="spatch-services-heading">
-      <div class="figma-container">
-        <h2 id="spatch-services-heading" class="landing-h2">Monitoring Services <span class="landing-h2__accent">Supported</span></h2>
-        <p class="landing-p">The platform can be used within <a href="holter-monitoring-services.html">Holter</a>, <a href="long-term-holter-monitoring.html">Extended Holter</a>, <a href="cardiac-event-monitoring.html">Event</a>, and <a href="mobile-cardiac-telemetry-mct.html">MCT</a> workflows depending on the prescribed configuration. A single study does not simultaneously function as all four tests &mdash; the prescription determines the configuration.</p>
-        <p class="landing-p">The workflow changes between live and non-live studies: when live connectivity is prescribed (for example, <a href="live-ecg-monitoring.html">live ECG monitoring</a> within MCT), the connected phone transmits during the study. For Holter-type studies, the recording is analyzed after completion, with clinical results presented after the final report is generated. Every configuration retains LIVE test-status visibility while the study is in progress.</p>
-      </div>
-    </section>
-
-    <section class="landing-section" aria-labelledby="spatch-connectivity-heading">
-      <div class="figma-container">
-        <h2 id="spatch-connectivity-heading" class="landing-h2">Connectivity and <span class="landing-h2__accent">Phone Requirements</span></h2>
-        <p class="landing-p">The monitor connects to the phone by Bluetooth, with an operating distance of approximately 30 feet under favorable conditions. Patients should keep the phone close, powered, and charged. Absolute range is not guaranteed because walls, body position, interference, and environment can affect performance.</p>
-        <p class="landing-p">Multi-path cellular connectivity means the phone uses available network pathways to transmit when possible, helping support use across varied coverage environments.</p>
-        <ol class="landing-flow" aria-label="Monitor to phone connectivity path">
-          <li class="landing-flow__step"><strong>S-Patch monitor</strong><span>ECG acquired on the chest</span></li>
-          <li class="landing-flow__step"><strong>Bluetooth (~30 ft under favorable conditions)</strong><span>Monitor pairs with the connected phone</span></li>
-          <li class="landing-flow__step"><strong>Multi-path cellular / network</strong><span>Phone transmits when connectivity is available</span></li>
-          <li class="landing-flow__step"><strong>Monitoring platform</strong><span>Data received and processed</span></li>
-        </ol>
-        <figure class="landing-diagram" role="group" aria-label="Monitor-to-phone connectivity">
-          <div class="landing-diagram__frame">
-          <div class="landing-diagram__connect">
-            <div class="landing-diagram__device landing-diagram__device--patch"><span>S-Patch monitor</span></div>
-            <div class="landing-diagram__connector" aria-hidden="true">Bluetooth ~30 ft*</div>
-            <div class="landing-diagram__device landing-diagram__device--phone"><span>Connected phone</span></div>
-            <div class="landing-diagram__connector" aria-hidden="true">Cellular / network</div>
-            <div class="landing-diagram__device landing-diagram__device--cloud"><span>Monitoring platform</span></div>
-            <p class="landing-diagram__hint">*Range varies with walls, body position, and interference.</p>
-          </div>
-          </div>
-          <figcaption class="landing-figure__cap">Monitor-to-phone-to-cloud connectivity diagram for live-transmission workflows.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="landing-section landing-section--muted" aria-labelledby="spatch-care-heading">
-      <div class="figma-container">
-        <h2 id="spatch-care-heading" class="landing-h2">Device Care and <span class="landing-h2__accent">Patient Use</span></h2>
-        <ul class="landing-list">
-          <li>Follow the exact bathing instructions supplied with the monitor &mdash; do not treat the system as waterproof unless the configuration is verified for that use</li>
-          <li>Follow adhesive-care instructions and report significant skin irritation</li>
-          <li>Keep the phone charged and follow any device charging procedures for the study</li>
-          <li>Record symptoms through the connected phone or other provided method when the workflow includes symptom recording</li>
-          <li>If the monitor or phone disconnects, bring them near each other, confirm the phone is powered, and follow the troubleshooting instructions or contact support</li>
-          <li>Do not attach the device directly to skin electrodes unless the approved setup specifically requires it</li>
-          <li>Avoid long power-button presses that may turn off the phone</li>
+        <ul class="landing-trust-strip" aria-label="S-Patch system overview">
+          <li><strong>2 disks</strong><span>One thin connecting lead</span></li>
+          <li><strong>5 study paths</strong><span>One consistent platform</span></li>
+          <li><strong>LIVE</strong><span>Transmission in supported workflows</span></li>
+          <li><strong>Nationwide</strong><span>Turnkey practice support</span></li>
         </ul>
-        <div class="landing-table-wrap" role="region" aria-label="S-Patch troubleshooting" tabindex="0">
-          <table class="landing-table">
-            <caption class="sr-only">S-Patch troubleshooting: common issues and what to do</caption>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="spatch-what-heading">
+      <div class="figma-container landing-definition">
+        <div>
+          <p class="landing-eyebrow">Direct answer</p>
+          <h2 id="spatch-what-heading" class="landing-h2">What Is the <span class="landing-h2__accent">S-Patch?</span></h2>
+          <p class="landing-p landing-answer">S-Patch is a compact wearable ECG monitor built around two small circular components connected by one thin lead. Specialized Medical uses the system to support multiple physician-prescribed ambulatory cardiac monitoring studies through one familiar equipment and reporting workflow.</p>
+          <div class="landing-answer-box"><strong>In practical terms:</strong> practices can use one patient-friendly platform for short Holter studies, longer Holter studies, Cardiac Event Monitoring and Mobile Cardiac Telemetry instead of managing a different device workflow for every study type.</div>
+          <p class="landing-p">The monitor pairs with a dedicated, preconfigured phone. In supported live workflows, that phone automatically transmits ECG data through an available cellular network. Patients do not need to upload recordings manually or navigate a general-purpose smartphone.</p>
+          <p class="landing-reviewed">Published and reviewed for service accuracy by Specialized Medical LLC. Last reviewed November 25, 2026.</p>
+        </div>
+        <aside class="landing-spec-panel" aria-label="S-Patch equipment specifications">
+          <h3 class="landing-h3">S-Patch specifications</h3>
+          <dl class="landing-spec-list">
+            <div><dt>0.6 oz</dt><dd>Total stated weight</dd></div>
+            <div><dt>10+ days</dt><dd>Minimum battery duration</dd></div>
+            <div><dt>IP55</dt><dd>Water-resistant rating</dd></div>
+            <div><dt>Up to 30 days</dt><dd>Supported wear duration</dd></div>
+            <div><dt>1.57 in</dt><dd>Larger disk diameter</dd></div>
+            <div><dt>1.41 in</dt><dd>Smaller disk diameter</dd></div>
+          </dl>
+          <p class="landing-spec-panel__note">Use and care always follow the instructions for the prescribed study. A longer study may require battery handling under the support workflow. Compare all <a href="services/equipment.html" style="color:#fff">monitoring equipment options</a>.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted landing-section--center" id="how-it-works" aria-labelledby="spatch-paths-heading">
+      <div class="figma-container">
+        <p class="landing-eyebrow">One platform, multiple prescriptions</p>
+        <h2 id="spatch-paths-heading" class="landing-h2">Five Ambulatory Cardiac <span class="landing-h2__accent">Monitoring Paths</span></h2>
+        <p class="landing-p landing-section__intro">The physician selects the appropriate study. Specialized Medical configures the workflow, supports the patient and delivers the applicable report.</p>
+        <div class="landing-table-wrap" role="region" aria-label="Study paths supported by S-Patch" tabindex="0">
+          <table class="landing-table landing-table--stack">
+            <caption class="landing-table__caption">Study paths supported by the S-Patch platform</caption>
             <thead>
-              <tr><th scope="col">Issue</th><th scope="col">What to do</th></tr>
+              <tr>
+                <th scope="col">Study path</th>
+                <th scope="col">Typical duration</th>
+                <th scope="col">How S-Patch supports it</th>
+                <th scope="col">Clinical communication</th>
+              </tr>
             </thead>
             <tbody>
-              <tr><th scope="row">Phone not charging</th><td>Check the charger and cable, use a working outlet, and keep the phone powered; contact support if charging does not resume.</td></tr>
-              <tr><th scope="row">Bluetooth disconnected</th><td>Bring the phone near the monitor, confirm the phone is powered on, and follow the reconnection instructions.</td></tr>
-              <tr><th scope="row">Network disconnected</th><td>Transmission resumes when connectivity returns; move to an area with coverage when practical.</td></tr>
-              <tr><th scope="row">Monitor detached</th><td>Follow the reattachment or replacement instructions provided with the study, or contact support.</td></tr>
-              <tr><th scope="row">Skin irritation</th><td>Contact the practice or support team; sensitive-skin options or electrode rotation may be available depending on configuration.</td></tr>
-              <tr><th scope="row">Missing ECG trace</th><td>Check device placement and phone connection, then contact support if the trace does not return.</td></tr>
-              <tr><th scope="row">Unsure about study status</th><td>Contact the support number in the patient instructions; Specialized Medical maintains LIVE test-status visibility and may also reach out.</td></tr>
+              <tr>
+                <th scope="row"><a href="holter-monitoring-services.html">Holter</a></th>
+                <td data-label="Typical duration">24–48 hours</td>
+                <td data-label="How S-Patch supports it">Continuous ECG acquisition with streamlined enrollment and disconnect.</td>
+                <td data-label="Clinical communication">Results are provided in the final report after the recording is processed.</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="long-term-holter-monitoring.html">Long-Term Holter</a></th>
+                <td data-label="Typical duration">More than 48 hours to 7 days</td>
+                <td data-label="How S-Patch supports it">Compact wear and at least 10 days of stated battery duration support longer collection.</td>
+                <td data-label="Clinical communication">Results are provided in the final report.</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="extended-holter-monitoring-8-14-days.html">Extended Holter</a></th>
+                <td data-label="Typical duration">8–14 days</td>
+                <td data-label="How S-Patch supports it">The same wearable platform continues the study under the ordered configuration.</td>
+                <td data-label="Clinical communication">Results are provided in the final report.</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring</a></th>
+                <td data-label="Typical duration">Up to 30 days</td>
+                <td data-label="How S-Patch supports it">Digital symptom entries align patient-reported events with the ECG timeline.</td>
+                <td data-label="Clinical communication">Qualifying findings follow the physician-prescribed notification protocol.</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry</a></th>
+                <td data-label="Typical duration">Up to 30 days</td>
+                <td data-label="How S-Patch supports it">Live ECG transmission supports ongoing monitoring-center review under the ordered service.</td>
+                <td data-label="Clinical communication">Qualifying findings follow the physician-prescribed notification protocol.</td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <div class="landing-note landing-note--alert" role="note">
-          <p class="landing-note__title">Emergency symptoms</p>
-          <p class="landing-note__body">Patients with chest pain, severe shortness of breath, fainting, stroke symptoms, or other urgent symptoms should follow their physician&rsquo;s instructions and seek emergency assistance &mdash; call 911 &mdash; rather than waiting for a monitoring call.</p>
-        </div>
+        <p class="landing-p landing-section__intro">Study duration, notification thresholds and clinical use are determined by the prescribing physician. Live operational visibility is not the same as a diagnosis or guaranteed clinical outcome.</p>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="spatch-leadwire-heading">
+    <section class="landing-section landing-section--center" aria-labelledby="spatch-wear-heading">
       <div class="figma-container">
-        <div class="landing-split">
-          <div class="landing-split__copy">
-            <h2 id="spatch-leadwire-heading" class="landing-h2">S-Patch and <span class="landing-h2__accent">Lead-Wire Options</span></h2>
-        <p class="landing-p">The S-Patch is the primary wearable option, and a lead-wire system is available as an alternative when a different configuration is needed. Both are supported service configurations &mdash; neither is disparaged. Differences in channels, wear style, battery routines, patient comfort considerations, and use cases are compared only with verified specifications during program setup.</p>
-          </div>
-          <div class="landing-split__media">
-        <div class="landing-media-pair">
-        <figure class="landing-figure">
-          <img src="images/figma-services/s-patch.jpg?v=43dd7bacb1" alt="S-Patch primary wearable cardiac monitoring option" loading="lazy" decoding="async">
-          <figcaption class="landing-figure__cap">S-Patch &mdash; primary wearable option.</figcaption>
-        </figure>
-        <figure class="landing-figure">
-          <img src="images/figma-services/lead-wire.jpg?v=89ae98beba" alt="Lead-wire cardiac monitoring system alternative configuration" loading="lazy" decoding="async">
-          <figcaption class="landing-figure__cap">Lead-wire system &mdash; alternative configuration.</figcaption>
-        </figure>
-        </div>
-          </div>
+        <p class="landing-eyebrow">Designed for wearability</p>
+        <h2 id="spatch-wear-heading" class="landing-h2">A Small Monitor That Stays Out of the <span class="landing-h2__accent">Patient&rsquo;s Way</span></h2>
+        <p class="landing-p landing-section__intro">The S-Patch configuration is intentionally simple: two low-profile disks, one connecting lead and a dedicated phone that handles transmission.</p>
+        <div class="landing-feature-grid" role="list">
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Two-component design</h3><p class="landing-p">The disks sit on two instructed skin locations. The single lead can be routed beneath clothing to support a more discreet patient experience.</p></article>
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Lightweight for daily wear</h3><p class="landing-p">At approximately 0.6 ounces, S-Patch is designed to minimize bulk while the patient moves through normal day-to-day activities.</p></article>
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Repositionable electrodes</h3><p class="landing-p">Electrode positions can be changed on the skin as directed, helping avoid repeated stress on a single location while maintaining ECG acquisition.</p></article>
         </div>
       </div>
     </section>
 
-<section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" aria-labelledby="spatch-faq-heading">
+    <section class="landing-section landing-section--navy" aria-labelledby="spatch-transmission-heading">
+      <div class="figma-container">
+        <p class="landing-eyebrow">Always Connected workflow</p>
+        <h2 id="spatch-transmission-heading" class="landing-h2">ECG Transmission Without <span class="landing-h2__accent">Manual Uploading</span></h2>
+        <p class="landing-p landing-section__intro">The assigned monitoring phone connects to S-Patch over Bluetooth and transmits through an available AT&amp;T, T-Mobile or Verizon cellular network. The phone is dedicated to the study and keeps the patient experience intentionally simple.</p>
+        <div class="landing-feature-grid" role="list">
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Only two patient screens</h3><p class="landing-p">Device Status and Log Symptoms—without web browsing, email, games or unnecessary settings.</p></article>
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Automatic transmission</h3><p class="landing-p">Supported live workflows send ECG data as it is recorded, removing end-of-study batch uploads and related delays. See <a href="live-ecg-monitoring.html" style="color:#fff">LIVE ECG monitoring</a>.</p></article>
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Multi-carrier resilience</h3><p class="landing-p">The cellular workflow is designed to use available carrier coverage across diverse patient environments, including many rural areas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--center" aria-labelledby="spatch-support-heading">
+      <div class="figma-container">
+        <p class="landing-eyebrow">Proactive support</p>
+        <h2 id="spatch-support-heading" class="landing-h2">Operational Issues Can Be Addressed While the <span class="landing-h2__accent">Study Is Active</span></h2>
+        <p class="landing-p landing-section__intro">Live test-status visibility helps the support team identify practical problems that might otherwise reduce usable monitoring time.</p>
+        <div class="landing-feature-grid landing-feature-grid--2" role="list">
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">What the team can follow</h3>
+            <ul class="landing-checks"><li>Battery status</li><li>Electrode contact and signal quality</li><li>Monitor-to-phone Bluetooth connection</li><li>Cellular communication</li><li>Whether ECG data is being received</li></ul></article>
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">What happens next</h3><p class="landing-p">If an operational indicator moves outside the expected range, Specialized Medical can contact the patient and help correct the issue. The team may guide the patient through electrode, battery, phone or connection steps before more monitoring time is lost.</p><p class="landing-p">This support concerns equipment and transmission status. Clinical findings are handled according to the ordered service and physician-prescribed notification protocol.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--muted landing-section--center" aria-labelledby="spatch-workflow-heading">
+      <div class="figma-container">
+        <p class="landing-eyebrow">From order to report</p>
+        <h2 id="spatch-workflow-heading" class="landing-h2">A Consistent Workflow for Staff and <span class="landing-h2__accent">Physicians</span></h2>
+        <ol class="landing-flow landing-flow--spatch" aria-label="S-Patch workflow from order to report">
+          <li class="landing-flow__step"><strong>Order and pre-enroll</strong><span>The practice selects the prescribed study and can prepare the patient record before the hookup appointment.</span></li>
+          <li class="landing-flow__step"><strong>Hook up the S-Patch</strong><span>Staff follows the placement workflow, pairs the dedicated phone and confirms study readiness.</span></li>
+          <li class="landing-flow__step"><strong>Support the active study</strong><span>Specialized Medical assists the patient and monitors relevant operational indicators in supported live workflows.</span></li>
+          <li class="landing-flow__step"><strong>Review and finalize</strong><span>The practice receives the applicable physician-ready report with an electronic review, interpretation, dating and signature workflow.</span></li>
+        </ol>
+        <p class="landing-p landing-section__intro">More on the practice side: <a href="cardiology-practice-cardiac-monitoring.html">cardiac monitoring for cardiology practices</a>.</p>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="spatch-program-heading">
+      <div class="figma-container">
+        <div class="landing-callout-band">
+          <div>
+            <h2 id="spatch-program-heading" class="landing-h2">More Than a Monitoring Device</h2>
+            <p class="landing-p">Equipment, routine supplies, patient support, live operational visibility, reporting workflow and billing-support templates are organized as one program.</p>
+          </div>
+          <a class="figma-btn figma-btn--solid" href="s-patch-cardiac-monitoring-system.html#request-demo" data-mct-track="sm_cta_click" data-track-name="midpage_demo">Request a Demonstration</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="figma-section faq-accordion landing-section landing-faq landing-section--muted" id="faq" aria-labelledby="spatch-faq-heading">
       <div class="figma-container faq-accordion__inner">
-        <h2 id="spatch-faq-heading" class="landing-h2">Frequently Asked <span class="landing-h2__accent">Questions</span></h2>
+        <p class="landing-eyebrow">Frequently asked questions</p>
+        <h2 id="spatch-faq-heading" class="landing-h2">S-Patch System <span class="landing-h2__accent">Answers</span></h2>
+        <p class="landing-p">Clear answers for practices evaluating the wearable ECG system and service workflow.</p>
         <div class="faq-category">
           <div class="faq-category__list">
 <div class="faq-item is-open">
       <button type="button" id="faq-trigger-spatch-0" class="faq-item__trigger" aria-expanded="true" aria-controls="faq-panel-spatch-0">
-        <span class="faq-item__q">What is the S-Patch?</span>
+        <span class="faq-item__q">What is the S-Patch cardiac monitoring system?</span>
         <svg class="faq-item__chevron is-open" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-0" role="region" aria-labelledby="faq-trigger-spatch-0" class="faq-item__panel">
-        <p>It is Specialized Medical&rsquo;s primary wearable ambulatory ECG platform used within selected Holter, Event, and MCT workflows.</p>
+        <p>S-Patch is a compact dual-disk wearable ECG monitor used by Specialized Medical for prescribed ambulatory studies. One thin lead connects the two components, and the system works with a dedicated cellular phone to transmit ECG data in supported live-monitoring workflows.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-1" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-1">
-        <span class="faq-item__q">Does the S-Patch require a phone?</span>
+        <span class="faq-item__q">Which cardiac monitoring studies can use S-Patch?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-1" role="region" aria-labelledby="faq-trigger-spatch-1" class="faq-item__panel" hidden>
-        <p>A connected phone is used as the transmission gateway when the prescribed workflow requires data transmission.</p>
+        <p>Specialized Medical uses the S-Patch platform to support Holter, Long-Term Holter, Extended Holter, Cardiac Event Monitoring and Mobile Cardiac Telemetry, depending on the physician's order and the selected workflow.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-2" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-2">
-        <span class="faq-item__q">How close should the phone remain?</span>
+        <span class="faq-item__q">How much does the S-Patch monitor weigh?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-2" role="region" aria-labelledby="faq-trigger-spatch-2" class="faq-item__panel" hidden>
-        <p>The phone should remain near the patient and within the range stated in the patient instructions. Approximately 30 feet may be possible under favorable conditions, but range varies.</p>
+        <p>The S-Patch system weighs approximately 0.6 ounces. Its two circular components are designed to be compact and unobtrusive during normal daily activity.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-3" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-3">
-        <span class="faq-item__q">Is the S-Patch waterproof?</span>
+        <span class="faq-item__q">How long does the S-Patch battery last?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-3" role="region" aria-labelledby="faq-trigger-spatch-3" class="faq-item__panel" hidden>
-        <p>Patients should follow the exact bathing instructions supplied with their monitor. The system should not be treated as waterproof unless the specific configuration is verified for that use.</p>
+        <p>The S-Patch battery lasts a minimum of 10 days under the stated system specification. A study may last up to 30 days, with battery handling managed according to the prescribed test and support workflow.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-4" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-4">
-        <span class="faq-item__q">How long does the battery last?</span>
+        <span class="faq-item__q">Is the S-Patch water-resistant?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-4" role="region" aria-labelledby="faq-trigger-spatch-4" class="faq-item__panel" hidden>
-        <p>Battery performance depends on the study configuration, transmission demands, and operating conditions. Only verified duration claims are published.</p>
+        <p>Yes. The S-Patch is rated IP55, which means it is water-resistant for everyday wear. Patients should still follow the specific use and care instructions supplied with their prescribed study.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-5" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-5">
-        <span class="faq-item__q">Can the S-Patch be used for MCT?</span>
+        <span class="faq-item__q">Does S-Patch transmit ECG data live?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-5" role="region" aria-labelledby="faq-trigger-spatch-5" class="faq-item__panel" hidden>
-        <p>Yes, when configured as part of the prescribed MCT service.</p>
+        <p>In Specialized Medical's supported live-monitoring workflows, S-Patch ECG data is transmitted through a dedicated cellular phone to the monitoring platform. This removes manual batch uploading and lets the support team follow operational study status while the test is underway.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-6" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-6">
-        <span class="faq-item__q">What should a patient do if the phone says Bluetooth disconnected?</span>
+        <span class="faq-item__q">What does the dedicated monitoring phone do?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-6" role="region" aria-labelledby="faq-trigger-spatch-6" class="faq-item__panel" hidden>
-        <p>Bring the phone near the monitor, confirm the phone is powered, and follow the troubleshooting instructions or contact support.</p>
+        <p>The preconfigured phone connects to the S-Patch and sends ECG data over an available cellular network. Its patient-facing functions are intentionally limited to device status and symptom logging, helping keep the study workflow simple.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-7" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-7">
-        <span class="faq-item__q">What if the adhesive irritates the skin?</span>
+        <span class="faq-item__q">What happens if an electrode, battery or connection issue occurs?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-7" role="region" aria-labelledby="faq-trigger-spatch-7" class="faq-item__panel" hidden>
-        <p>Contact the practice or support team for instructions. Sensitive-skin options or electrode rotation may be available depending on the configuration.</p>
+        <p>When operational indicators fall outside the expected range, Specialized Medical's support team can contact the patient and help troubleshoot the battery, electrode contact, Bluetooth connection, cellular connection or data transmission before additional monitoring time is lost.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-8" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-8">
-        <span class="faq-item__q">Can patients mark symptoms?</span>
+        <span class="faq-item__q">Do physician practices need to purchase S-Patch equipment?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-8" role="region" aria-labelledby="faq-trigger-spatch-8" class="faq-item__panel" hidden>
-        <p>Yes, when the prescribed workflow includes symptom recording through the connected phone or other provided method.</p>
+        <p>No equipment purchase is required for Specialized Medical's program. The company supplies the monitoring equipment and routine study supplies needed for the agreed program, subject to the service agreement.</p>
       </div>
     </div>
 <div class="faq-item">
       <button type="button" id="faq-trigger-spatch-9" class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-spatch-9">
-        <span class="faq-item__q">Who should a patient call for help?</span>
+        <span class="faq-item__q">How can a practice evaluate the S-Patch system?</span>
         <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div id="faq-panel-spatch-9" role="region" aria-labelledby="faq-trigger-spatch-9" class="faq-item__panel" hidden>
-        <p>Use the support contact provided by the ordering practice or in the patient instructions.</p>
+        <p>A physician practice, cardiology group, hospital or health system can request a demonstration or discuss a small no-obligation pilot with Specialized Medical. The team will confirm fit, workflow and implementation requirements before patient use.</p>
       </div>
     </div>
           </div>
@@ -521,84 +664,112 @@
       </div>
     </section>
 
-    <section class="landing-section landing-cta-block" id="cta-form" aria-labelledby="spatch-cta-heading">
+    <section class="landing-section landing-cta-block" id="request-demo" aria-labelledby="spatch-cta-heading">
       <div class="figma-container">
         <div class="landing-cta-block__box">
           <div class="landing-cta-block__copy">
-            <h2 id="spatch-cta-heading" class="landing-h2">Request an S-Patch Demonstration</h2>
-            <p class="landing-p">Specialized Medical can review the practice&rsquo;s current ambulatory cardiac monitoring workflow, explain the available service options, and demonstrate how enrollment, monitoring, reporting, and physician review can be configured.</p>
-            <p class="landing-p landing-cta-block__phone">Prefer to talk? <a href="tel:+18557732633">Speak With a Cardiac Monitoring Specialist &mdash; 1-855-SPEC-MED (1-855-773-2633)</a></p>
-            <p class="landing-cta-form__emergency">Specialized Medical provides diagnostic ambulatory monitoring. The system is not a replacement for emergency medical services. Patients with urgent symptoms should call 911 or follow emergency instructions rather than waiting for a monitoring call.</p>
+            <h2 id="spatch-cta-heading" class="landing-h2">See S-Patch in Your Own Workflow</h2>
+            <p class="landing-p">Request a demonstration or ask about a small no-obligation pilot for your physician practice, cardiology group, hospital or health system.</p>
+            <ul class="landing-checks">
+              <li>Confirm study types and practice fit</li>
+              <li>Review enrollment, hookup and reporting</li>
+              <li>Understand patient-support responsibilities</li>
+              <li>Plan a controlled pilot before broader rollout</li>
+            </ul>
+            <p class="landing-p landing-cta-block__phone"><strong>Prefer to speak directly?</strong><br><a href="tel:+18557732633">1-855-SPEC-MED (1-855-773-2633)</a><br><a href="mailto:info@specialized-med.com">info@specialized-med.com</a></p>
           </div>
-          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST">
+          <form class="landing-cta-form" action="https://api.web3forms.com/submit" method="POST" data-form-name="s_patch_inquiry" data-track-start="demo_form_start" data-track-submit="sm_lead_form_submit_attempt" data-track-error="demo_form_error" data-track-success="none" data-success-message="Thank you. Your S-Patch request has been sent to the Specialized Medical team." data-error-message="We could not confirm that your request was sent. Please try again or call 1-855-773-2633.">
             <input type="hidden" name="access_key" value="8ec7a28a-1979-4c39-8791-18fbf60bba44">
-            <input type="hidden" name="subject" value="Request an S-Patch Demonstration — S-Patch Cardiac Monitoring System">
+            <input type="hidden" name="subject" value="S-Patch landing page inquiry">
+            <input type="hidden" name="from_name" value="Specialized Medical website">
             <input type="hidden" name="from_page" value="s-patch-cardiac-monitoring-system">
+            <input type="hidden" name="originating_service" value="s_patch">
             <input type="hidden" name="redirect" value="">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+            <input type="hidden" name="page_url" value="">
+            <input type="hidden" name="referrer" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_term" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="gclid" value="">
+            <input type="hidden" name="msclkid" value="">
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Name</span>
-                <input name="name" type="text" autocomplete="name" required>
+                <span class="landing-cta-form__label">First name <abbr title="required">*</abbr></span>
+                <input name="first_name" type="text" autocomplete="given-name" required>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Organization</span>
-                <input name="organization" type="text" autocomplete="organization" required>
+                <span class="landing-cta-form__label">Last name <abbr title="required">*</abbr></span>
+                <input name="last_name" type="text" autocomplete="family-name" required>
               </label>
             </div>
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Email</span>
+                <span class="landing-cta-form__label">Work email <abbr title="required">*</abbr></span>
                 <input name="email" type="email" autocomplete="email" required>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Phone</span>
+                <span class="landing-cta-form__label">Phone <abbr title="required">*</abbr></span>
                 <input name="phone" type="tel" autocomplete="tel" required>
               </label>
             </div>
             <div class="landing-cta-form__row">
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Number of locations</span>
-                <input name="locations" type="number" min="1" inputmode="numeric" required>
+                <span class="landing-cta-form__label">Organization <abbr title="required">*</abbr></span>
+                <input name="organization" type="text" autocomplete="organization" required>
               </label>
               <label class="landing-cta-form__field">
-                <span class="landing-cta-form__label">Primary monitoring interest</span>
-                <select name="interest" required>
-                  <option value="" disabled>Select an option</option>
-                  <option value="Holter Monitoring">Holter Monitoring</option>
-                  <option value="Long-Term Holter Monitoring">Long-Term Holter Monitoring</option>
-                  <option value="Cardiac Event Monitoring">Cardiac Event Monitoring</option>
-                  <option value="Mobile Cardiac Telemetry (MCT)">Mobile Cardiac Telemetry (MCT)</option>
-                  <option value="Post-TAVR monitoring program">Post-TAVR monitoring program</option>
-                  <option value="Multiple test types / full program" selected>Multiple test types / full program</option>
+                <span class="landing-cta-form__label">Role <span class="landing-cta-form__optional">(optional)</span></span>
+                <input name="role" type="text" autocomplete="organization-title">
+              </label>
+            </div>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">Primary interest</span>
+                <select name="interest">
+                  <option value="S-Patch demonstration" selected>S-Patch demonstration</option>
+                  <option value="No-risk pilot program">No-risk pilot program</option>
+                  <option value="Holter and longer Holter studies">Holter and longer Holter studies</option>
+                  <option value="Event Monitoring">Event Monitoring</option>
+                  <option value="Mobile Cardiac Telemetry">Mobile Cardiac Telemetry</option>
+                  <option value="Hospital or health-system program">Hospital or health-system program</option>
                 </select>
               </label>
             </div>
-            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request an S-Patch Demonstration</button>
+            <div class="landing-cta-form__row">
+              <label class="landing-cta-form__field landing-cta-form__field--full">
+                <span class="landing-cta-form__label">How can we help? <span class="landing-cta-form__optional">(optional)</span></span>
+                <textarea name="message" placeholder="Tell us about your practice and monitoring workflow. Do not include patient information."></textarea>
+              </label>
+            </div>
+            <p class="landing-cta-form__note"><strong>Do not submit protected health information (PHI).</strong> This form is for business and service inquiries only. See the <a href="privacy.html">Privacy Policy</a>. By submitting, you consent to be contacted about Specialized Medical services.</p>
+            <button type="submit" class="figma-btn figma-btn--solid landing-cta-form__submit">Request S-Patch Information</button>
             <p class="landing-cta-form__status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
 
-    <section class="landing-section" aria-labelledby="spatch-related-heading">
+    <section class="landing-section landing-section--muted" aria-labelledby="spatch-related-heading">
       <div class="figma-container">
         <h2 id="spatch-related-heading" class="landing-h2">Related Cardiac Monitoring <span class="landing-h2__accent">Resources</span></h2>
         <ul class="landing-related">
-          <li><a href="mobile-cardiac-telemetry-mct.html">Mobile Cardiac Telemetry (MCT)</a></li>
-          <li><a href="holter-monitoring-services.html">Holter Monitoring Services</a></li>
-          <li><a href="long-term-holter-monitoring.html">Extended Holter Through 7 Days</a></li>
-          <li><a href="extended-holter-monitoring-8-14-days.html">8&ndash;14 Day Extended Holter</a></li>
-          <li><a href="cardiac-event-monitoring.html">Cardiac Event Monitoring</a></li>
-          <li><a href="live-ecg-monitoring.html">Live ECG Monitoring</a></li>
-          <li><a href="post-tavr-cardiac-monitoring.html">Post-TAVR ambulatory monitoring with the S-Patch</a></li>
+          <li><a href="cardiac-monitoring-services.html">Cardiac Monitoring Services</a></li>
+          <li><a href="services/equipment.html">Monitoring Equipment</a></li>
+          <li><a href="services.html">Service Overview</a></li>
+          <li><a href="clinical-stories.html">Clinical Stories</a></li>
+          <li><a href="about.html">About Specialized Medical</a></li>
+          <li><a href="faq.html">Frequently Asked Questions</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </section>
 
-    <section class="landing-disclaimer" aria-label="Diagnostic service disclaimer">
+    <section class="landing-disclaimer" aria-label="Information notice">
       <div class="figma-container">
-        <p class="landing-disclaimer__text"><strong>Diagnostic Service Disclaimer:</strong> Specialized Medical provides ambulatory cardiac monitoring services and diagnostic information for review by qualified healthcare providers. The service does not replace physician judgment, emergency medical services, or instructions to call 911 when urgent symptoms occur.</p>
+        <p class="landing-disclaimer__text">Information on this page is for healthcare-organization evaluation and does not replace physician judgment, device instructions, or patient-specific medical advice.</p>
       </div>
     </section>
   </main>
@@ -608,7 +779,7 @@
         <div class="figma-footer__main">
           <div class="figma-footer__brand">
             <a href="./" class="figma-brand figma-brand--footer" aria-label="Specialized Medical home">
-              <img class="figma-brand__mark" src="images/figma-assets/brand-logo.webp?v=f8509ae975" alt="" width="412" loading="lazy" height="90" decoding="async">
+              <img class="figma-brand__mark" src="/images/figma-assets/brand-logo.webp?v=f8509ae975" alt="Specialized Medical" width="412" height="90" decoding="async" loading="lazy">
             </a>
             <p class="figma-footer__tagline">Turnkey cardiac monitoring with LIVE ECG data.</p>
           </div>
@@ -619,23 +790,24 @@
               <a href="services.html">Services</a>
               <a href="faq.html">FAQs</a>
               <a href="contact.html">Contact</a>
+              <a href="privacy.html">Privacy</a>
               <a href="https://sft.specialized-med-business.com/specMed/" target="_blank" rel="noopener noreferrer">Physician Portal</a>
             </nav>
             <div class="figma-footer__line">
               <span class="figma-footer__icon figma-footer__icon--phone" aria-hidden="true">
-                <img src="icons/vector3527-jgyk.svg?v=7add5820a3" alt="Phone Icon" width="20" height="20" decoding="async">
+                <img src="/icons/vector3527-jgyk.svg?v=7add5820a3" alt="" width="20" height="20" decoding="async">
               </span>
               <a class="figma-footer__link" href="tel:+18557732633">
-                <span class="figma-footer__muted">1-855-SPEC-MED</span> 
+                <span class="figma-footer__muted">1-855-SPEC-MED</span>
                 <span class="figma-footer__strong">(1-855-773-2633)</span>
               </a>
             </div>
             <div class="figma-footer__line">
-              <img src="icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
+              <img src="/icons/fi62447103527-gtjs.svg?v=bd221f9739" alt="" width="20" height="20" decoding="async">
               <a href="mailto:info@specialized-med.com">info@specialized-med.com</a>
             </div>
             <div class="figma-footer__line">
-              <img src="images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
+              <img src="/images/figma-assets/location_icon.png?v=d684544405" alt="" width="20" height="20" decoding="async">
               <p class="figma-footer__address">Specialized Medical, LLC 34145 Pacific Coast Highway, #700 Dana Point, CA 92629</p>
             </div>
           </div>
@@ -647,11 +819,11 @@
         </div>
         <div class="figma-footer__hr" aria-hidden="true"></div>
         <div class="figma-footer__bottom">
-          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved.</p>
+          <p class="figma-footer__copy">&copy; <span id="footer-year"></span> Specialized Medical, LLC. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></p>
           <div class="figma-footer__social">
-            <img src="images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
+            <img src="/images/figma-assets/hipaa-badge.png?v=b8a17e36ca" alt="HIPAA" width="69" height="20" class="figma-footer__hipaa" loading="lazy" decoding="async">
             <a href="https://www.facebook.com/specializedmedical" class="figma-footer__fb" aria-label="Facebook">
-              <img src="images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
+              <img src="/images/facebook-like.jpg?v=a8999547b8" alt="Like us on Facebook" width="90" height="26" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
@@ -659,8 +831,8 @@
     </footer>
 
   </div>
-  <script src="js/analytics.js?v=329dbec6d8" defer></script>
-  <script src="js/main.js?v=9a987e8d2e" defer></script>
+  <script src="/js/landing-lite.js?v=4d753e7e8d" defer></script>
+  <script src="/js/analytics.js?v=329dbec6d8" defer></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
