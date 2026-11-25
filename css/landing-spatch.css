@@ -1,11 +1,10 @@
 /* S-Patch Cardiac Monitoring System page: page-specific deltas on top of
    landing-mct.css, ported from the client's developer package (Nov 2026). */
 
+/* Site palette: red accents, charcoal text/dark panels, warm light-grey sections */
 .landing-page--spatch {
-  --sp-navy: #0b2545;
-  --sp-navy-2: #153d66;
-  --sp-sky: #eef5fb;
-  --sp-line: #dce5ee;
+  --sp-dark: #231f1e;
+  --sp-soft: #fcf4f5;
 }
 
 #request-demo,
@@ -13,9 +12,9 @@
   scroll-margin-top: 96px;
 }
 
-/* ---------- Hero: navy overlay on the left carries white live text ---------- */
+/* ---------- Hero: light copy panel, dark text, red accent ---------- */
 .landing-hero__plate--spatch {
-  background-color: #e9eef4;
+  background-color: #f3f1f0;
   background-image: none;
 }
 
@@ -26,10 +25,10 @@
 .landing-hero__plate--spatch .landing-hero__gradient {
   background: linear-gradient(
     90deg,
-    rgba(8, 30, 55, 0.94) 0%,
-    rgba(8, 30, 55, 0.86) 34%,
-    rgba(8, 30, 55, 0.34) 57%,
-    rgba(8, 30, 55, 0) 76%
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.9) 32%,
+    rgba(255, 255, 255, 0.6) 46%,
+    rgba(255, 255, 255, 0) 60%
   );
 }
 
@@ -37,36 +36,8 @@
   max-width: min(600px, 50%);
 }
 
-.landing-hero__plate--spatch .landing-hero__title {
-  color: #fff;
-}
-
-.landing-hero__plate--spatch .landing-hero__title-accent {
-  color: #ffb9bf;
-}
-
 .landing-hero__plate--spatch .landing-hero__lead {
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.landing-hero__plate--spatch .figma-hero__pill {
-  color: rgba(255, 255, 255, 0.92);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.landing-hero__plate--spatch .figma-btn--outline-dark {
-  background: #fff;
-  color: var(--sp-navy);
-  border-color: #fff;
-}
-
-.landing-hero__plate--spatch .figma-btn--outline-dark:hover {
-  background: rgba(255, 255, 255, 0.88);
-  color: var(--sp-navy);
-}
-
-.landing-hero__plate--spatch .landing-hero__actions a:focus-visible {
-  outline-color: #fff;
+  color: rgba(35, 31, 30, 0.85);
 }
 
 .landing-hero__points {
@@ -78,13 +49,13 @@
   list-style: none;
   font-size: 0.92rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--sp-dark);
 }
 
 .landing-hero__points li::before {
   content: "\2713";
   margin-right: 0.38rem;
-  color: #77dfba;
+  color: var(--color-red, #c9222f);
 }
 
 @media (min-width: 901px) {
@@ -101,7 +72,7 @@
     height: auto;
     min-height: 0;
     padding-block: 0;
-    background-color: var(--sp-navy);
+    background-color: #f7f5f2;
   }
 
   .landing-hero .landing-hero__plate.landing-hero__plate--spatch {
@@ -202,8 +173,8 @@
   padding: 1.15rem 1.35rem;
   border-left: 4px solid var(--color-red, #c9222f);
   border-radius: 0 12px 12px 0;
-  background: var(--sp-sky);
-  color: var(--sp-navy);
+  background: var(--sp-soft);
+  color: var(--sp-dark);
   line-height: 1.6;
 }
 
@@ -216,9 +187,8 @@
 .landing-spec-panel {
   padding: 2rem;
   border-radius: 20px;
-  background: var(--sp-navy);
+  background: var(--sp-dark);
   color: #fff;
-  box-shadow: 0 18px 45px rgba(11, 37, 69, 0.12);
 }
 
 .landing-spec-panel .landing-h3 {
@@ -249,40 +219,13 @@
 .landing-spec-list dd {
   margin: 0;
   font-size: 0.86rem;
-  color: #d8e4ef;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .landing-spec-panel__note {
   margin: 1rem 0 0;
   font-size: 0.86rem;
-  color: #d8e4ef;
-}
-
-/* ---------- Dark navy section ---------- */
-.landing-section--navy {
-  background: var(--sp-navy);
-  color: #fff;
-  border-radius: 20px;
-  margin-inline: 0.5rem;
-}
-
-.landing-section--navy .landing-h2,
-.landing-section--navy .landing-h3 {
-  color: #fff;
-}
-
-.landing-section--navy .landing-h2__accent {
-  color: #ffb9bf;
-}
-
-.landing-section--navy .landing-p,
-.landing-section--navy .landing-eyebrow {
-  color: #d8e4ef;
-}
-
-.landing-section--navy .landing-feature-card {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 /* ---------- Checklists ---------- */
@@ -335,7 +278,7 @@
   align-items: center;
   padding: 2.2rem 2.4rem;
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--sp-navy), var(--sp-navy-2));
+  background: var(--sp-dark);
   color: #fff;
 }
 
@@ -353,15 +296,9 @@
 
 .landing-callout-band .landing-p {
   margin: 0;
-  color: #d8e4ef;
+  color: rgba(255, 255, 255, 0.78);
 }
 
-.landing-callout-band .figma-btn {
-  background: #fff;
-  color: var(--sp-navy);
-  border-color: #fff;
-  white-space: nowrap;
-}
 
 /* ---------- Paths table: labelled cards on phones ---------- */
 .landing-page--spatch .landing-table__caption {
@@ -461,5 +398,9 @@
 }
 
 .landing-page--spatch .landing-cta-block__copy a {
+  color: #fff;
+}
+
+.landing-spec-panel a {
   color: #fff;
 }

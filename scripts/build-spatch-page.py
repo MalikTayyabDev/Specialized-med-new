@@ -336,7 +336,7 @@ def body():
             <div><dt>1.57 in</dt><dd>Larger disk diameter</dd></div>
             <div><dt>1.41 in</dt><dd>Smaller disk diameter</dd></div>
           </dl>
-          <p class="landing-spec-panel__note">Use and care always follow the instructions for the prescribed study. A longer study may require battery handling under the support workflow. Compare all <a href="services/equipment.html" style="color:#fff">monitoring equipment options</a>.</p>
+          <p class="landing-spec-panel__note">Use and care always follow the instructions for the prescribed study. A longer study may require battery handling under the support workflow. Compare all <a href="services/equipment.html">monitoring equipment options</a>.</p>
         </aside>
       </div>
     </section>
@@ -379,14 +379,14 @@ def body():
       </div>
     </section>
 
-    <section class="landing-section landing-section--navy" aria-labelledby="spatch-transmission-heading">
+    <section class="landing-section landing-section--muted landing-section--center" aria-labelledby="spatch-transmission-heading">
       <div class="figma-container">
         <p class="landing-eyebrow">Always Connected workflow</p>
         <h2 id="spatch-transmission-heading" class="landing-h2">ECG Transmission Without <span class="landing-h2__accent">Manual Uploading</span></h2>
         <p class="landing-p landing-section__intro">The assigned monitoring phone connects to S-Patch over Bluetooth and transmits through an available AT&amp;T, T-Mobile or Verizon cellular network. The phone is dedicated to the study and keeps the patient experience intentionally simple.</p>
         <div class="landing-feature-grid" role="list">
           <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Only two patient screens</h3><p class="landing-p">Device Status and Log Symptoms—without web browsing, email, games or unnecessary settings.</p></article>
-          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Automatic transmission</h3><p class="landing-p">Supported live workflows send ECG data as it is recorded, removing end-of-study batch uploads and related delays. See <a href="live-ecg-monitoring.html" style="color:#fff">LIVE ECG monitoring</a>.</p></article>
+          <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Automatic transmission</h3><p class="landing-p">Supported live workflows send ECG data as it is recorded, removing end-of-study batch uploads and related delays. See <a href="live-ecg-monitoring.html">LIVE ECG monitoring</a>.</p></article>
           <article class="landing-feature-card" role="listitem"><h3 class="landing-h3">Multi-carrier resilience</h3><p class="landing-p">The cellular workflow is designed to use available carrier coverage across diverse patient environments, including many rural areas.</p></article>
         </div>
       </div>
